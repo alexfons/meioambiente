@@ -1,0 +1,25 @@
+{
+    "meioambienteApp": {
+        "aditivocontrato" : {
+            "home": {
+                "title": "Aditivocontratoes",
+                "createLabel": "Criar novo Aditivocontrato",
+                "createOrEditLabel": "Criar ou editar Aditivocontrato"
+            },
+            "created": "Um novo Aditivocontrato é criado com o identificador {{ param }}",
+            "updated": "Um Aditivocontrato é atualizado com o identificador {{ param }}",
+            "deleted": "Um Aditivocontrato é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Aditivocontrato {{ id }}?"
+            },
+            "detail": {
+                "title": "Aditivocontrato"
+            },
+            "numaditivo": "Numaditivo",
+            "tipoaditivo": "Tipoaditivo",
+            "data": "Data",
+            "prazoaditivo": "Prazoaditivo",
+            "valor": "Valor"
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "ocorrenciaapresentacao" : {
+            "home": {
+                "title": "Ocorrenciaapresentacaos",
+                "createLabel": "Create a new Ocorrenciaapresentacao",
+                "createOrEditLabel": "Create or edit a Ocorrenciaapresentacao"
+            },
+            "created": "A new Ocorrenciaapresentacao is created with identifier {{ param }}",
+            "updated": "A Ocorrenciaapresentacao is updated with identifier {{ param }}",
+            "deleted": "A Ocorrenciaapresentacao is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Ocorrenciaapresentacao {{ id }}?"
+            },
+            "detail": {
+                "title": "Ocorrenciaapresentacao"
+            }
+        }
+    }
+}

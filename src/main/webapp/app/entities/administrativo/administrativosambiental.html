@@ -1,0 +1,94 @@
+<div>
+    <h2 data-translate="meioambienteApp.administrativo.home.title">Administrativos</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="administrativo-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.administrativo.home.createLabel">
+                        Create new Administrativo
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.administrativo.descricao">Descricao</span></th>
+                    <th><span data-translate="meioambienteApp.administrativo.assunto">Assunto</span></th>
+                    <th><span data-translate="meioambienteApp.administrativo.local">Local</span></th>
+                    <th><span data-translate="meioambienteApp.administrativo.album">Album</span></th>
+                    <th><span data-translate="meioambienteApp.administrativo.folder">Folder</span></th>
+                    <th><span data-translate="meioambienteApp.administrativo.consideracao">Consideracao</span></th>
+                    <th><span data-translate="meioambienteApp.administrativo.data">Data</span></th>
+                    <th><span data-translate="meioambienteApp.administrativo.tipo">Tipo</span></th>
+                    <th><span data-translate="meioambienteApp.administrativo.obra">Obra</span></th>
+                    <th><span data-translate="meioambienteApp.administrativo.fotos">Fotos</span></th>
+                    <th><span data-translate="meioambienteApp.administrativo.docs">Docs</span></th>
+                    <th><span data-translate="meioambienteApp.administrativo.participantes">Participantes</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="administrativo in vm.administrativos track by administrativo.id">
+                    <td><a ui-sref="administrativo-ambiental-detail({id:administrativo.id})">{{administrativo.id}}</a></td>
+                    <td>{{administrativo.descricao}}</td>
+                    <td>{{administrativo.assunto}}</td>
+                    <td>{{administrativo.local}}</td>
+                    <td>{{administrativo.album}}</td>
+                    <td>{{administrativo.folder}}</td>
+                    <td>{{administrativo.consideracao}}</td>
+                    <td>{{administrativo.data | date:'medium'}}</td>
+                    <td>
+                        <a ui-sref="tipoadministrativo-ambiental-detail({id:administrativo.tipoId})">{{administrativo.tipoId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="obra-ambiental-detail({id:administrativo.obraId})">{{administrativo.obraId}}</a>
+                    </td>
+                    <td>
+                        <span ng-repeat="fotos in administrativo.fotos">
+                            <a class="form-control-static" ui-sref="foto-ambiental-detail({id: fotos.id})">{{fotos.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td>
+                        <span ng-repeat="docs in administrativo.docs">
+                            <a class="form-control-static" ui-sref="documento-ambiental-detail({id: docs.id})">{{docs.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td>
+                        <span ng-repeat="participantes in administrativo.participantes">
+                            <a class="form-control-static" ui-sref="participante-ambiental-detail({id: participantes.id})">{{participantes.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="administrativo-ambiental-detail({id:administrativo.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="administrativo-ambiental.edit({id:administrativo.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="administrativo-ambiental.delete({id:administrativo.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

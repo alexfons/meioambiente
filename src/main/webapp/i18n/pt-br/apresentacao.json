@@ -1,0 +1,27 @@
+{
+    "meioambienteApp": {
+        "apresentacao" : {
+            "home": {
+                "title": "Apresentacaos",
+                "createLabel": "Criar novo Apresentacao",
+                "createOrEditLabel": "Criar ou editar Apresentacao"
+            },
+            "created": "Um novo Apresentacao é criado com o identificador {{ param }}",
+            "updated": "Um Apresentacao é atualizado com o identificador {{ param }}",
+            "deleted": "Um Apresentacao é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Apresentacao {{ id }}?"
+            },
+            "detail": {
+                "title": "Apresentacao"
+            },
+            "numero": "Numero",
+            "obs": "Obs",
+            "notificacao": "Notificacao",
+            "data": "Data",
+            "obra": "Obra",
+            "ocorrenciasapresentacao": "Ocorrenciasapresentacao",
+            "fotos": "Fotos"
+        }
+    }
+}

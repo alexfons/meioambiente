@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "trecho" : {
+            "home": {
+                "title": "Trechos",
+                "createLabel": "Criar novo Trecho",
+                "createOrEditLabel": "Criar ou editar Trecho"
+            },
+            "created": "Um novo Trecho é criado com o identificador {{ param }}",
+            "updated": "Um Trecho é atualizado com o identificador {{ param }}",
+            "deleted": "Um Trecho é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Trecho {{ id }}?"
+            },
+            "detail": {
+                "title": "Trecho"
+            }
+        }
+    }
+}

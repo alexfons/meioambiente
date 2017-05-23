@@ -1,0 +1,73 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "tipoobra",
+            "otherEntityName": "tipoObra",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "inspetor",
+            "otherEntityName": "inspetor",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "fiscal",
+            "otherEntityName": "fiscal",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "trecho",
+            "otherEntityName": "trecho",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "contratosobra",
+            "otherEntityName": "contratoobra",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "historicos",
+            "otherEntityName": "historico",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "pendente",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "map",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "user",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "track",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "certificadoMes",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170515105941",
+    "entityTableName": "obra",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "angularJSSuffix": "ambiental"
+}

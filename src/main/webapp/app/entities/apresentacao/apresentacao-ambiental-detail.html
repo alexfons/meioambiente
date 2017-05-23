@@ -1,0 +1,51 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.apresentacao.detail.title">Apresentacao</span> {{vm.apresentacao.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.apresentacao.numero">Numero</span></dt>
+        <dd>
+            <span>{{vm.apresentacao.numero}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.apresentacao.obs">Obs</span></dt>
+        <dd>
+            <span>{{vm.apresentacao.obs}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.apresentacao.notificacao">Notificacao</span></dt>
+        <dd>
+            <span>{{vm.apresentacao.notificacao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.apresentacao.data">Data</span></dt>
+        <dd>
+            <span>{{vm.apresentacao.data | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.apresentacao.obra">Obra</span></dt>
+        <dd>
+            <a ui-sref="obra-ambiental-detail({id:vm.apresentacao.obraId})">{{vm.apresentacao.obraId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.apresentacao.ocorrenciasapresentacao">Ocorrenciasapresentacao</span></dt>
+        <dd>
+            <span ng-repeat="ocorrenciasapresentacao in vm.apresentacao.ocorrenciasapresentacaos">
+                <a ui-sref="ocorrenciaapresentacao-ambiental-detail({id: ocorrenciasapresentacao.id})">{{ocorrenciasapresentacao.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.apresentacao.fotos">Fotos</span></dt>
+        <dd>
+            <span ng-repeat="fotos in vm.apresentacao.fotos">
+                <a ui-sref="foto-ambiental-detail({id: fotos.id})">{{fotos.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="apresentacao-ambiental-detail.edit({id:vm.apresentacao.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "orgaoemissor" : {
+            "home": {
+                "title": "Orgaoemissors",
+                "createLabel": "Create a new Orgaoemissor",
+                "createOrEditLabel": "Create or edit a Orgaoemissor"
+            },
+            "created": "A new Orgaoemissor is created with identifier {{ param }}",
+            "updated": "A Orgaoemissor is updated with identifier {{ param }}",
+            "deleted": "A Orgaoemissor is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Orgaoemissor {{ id }}?"
+            },
+            "detail": {
+                "title": "Orgaoemissor"
+            }
+        }
+    }
+}

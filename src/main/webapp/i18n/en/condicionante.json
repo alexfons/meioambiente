@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "condicionante" : {
+            "home": {
+                "title": "Condicionantes",
+                "createLabel": "Create a new Condicionante",
+                "createOrEditLabel": "Create or edit a Condicionante"
+            },
+            "created": "A new Condicionante is created with identifier {{ param }}",
+            "updated": "A Condicionante is updated with identifier {{ param }}",
+            "deleted": "A Condicionante is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Condicionante {{ id }}?"
+            },
+            "detail": {
+                "title": "Condicionante"
+            }
+        }
+    }
+}

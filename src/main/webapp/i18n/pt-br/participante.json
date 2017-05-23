@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "participante" : {
+            "home": {
+                "title": "Participantes",
+                "createLabel": "Criar novo Participante",
+                "createOrEditLabel": "Criar ou editar Participante"
+            },
+            "created": "Um novo Participante é criado com o identificador {{ param }}",
+            "updated": "Um Participante é atualizado com o identificador {{ param }}",
+            "deleted": "Um Participante é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Participante {{ id }}?"
+            },
+            "detail": {
+                "title": "Participante"
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "fiscal" : {
+            "home": {
+                "title": "Fiscals",
+                "createLabel": "Create a new Fiscal",
+                "createOrEditLabel": "Create or edit a Fiscal"
+            },
+            "created": "A new Fiscal is created with identifier {{ param }}",
+            "updated": "A Fiscal is updated with identifier {{ param }}",
+            "deleted": "A Fiscal is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Fiscal {{ id }}?"
+            },
+            "detail": {
+                "title": "Fiscal"
+            }
+        }
+    }
+}

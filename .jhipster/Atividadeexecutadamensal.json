@@ -1,0 +1,39 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "atividade",
+            "otherEntityName": "atividade",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "percentualatacado",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "fim",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "inicio",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "lado",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "percentualconcluido",
+            "fieldType": "Float"
+        }
+    ],
+    "changelogDate": "20170515105945",
+    "entityTableName": "atividadeexecutadamensal",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "ambiental"
+}

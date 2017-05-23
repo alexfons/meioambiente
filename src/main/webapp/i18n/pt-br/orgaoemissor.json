@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "orgaoemissor" : {
+            "home": {
+                "title": "Orgaoemissors",
+                "createLabel": "Criar novo Orgaoemissor",
+                "createOrEditLabel": "Criar ou editar Orgaoemissor"
+            },
+            "created": "Um novo Orgaoemissor é criado com o identificador {{ param }}",
+            "updated": "Um Orgaoemissor é atualizado com o identificador {{ param }}",
+            "deleted": "Um Orgaoemissor é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Orgaoemissor {{ id }}?"
+            },
+            "detail": {
+                "title": "Orgaoemissor"
+            }
+        }
+    }
+}

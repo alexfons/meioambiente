@@ -1,0 +1,23 @@
+{
+    "meioambienteApp": {
+        "tipoObra" : {
+            "home": {
+                "title": "Tipo Obras",
+                "createLabel": "Criar novo Tipo Obra",
+                "createOrEditLabel": "Criar ou editar Tipo Obra"
+            },
+            "created": "Um novo Tipo Obra é criado com o identificador {{ param }}",
+            "updated": "Um Tipo Obra é atualizado com o identificador {{ param }}",
+            "deleted": "Um Tipo Obra é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Tipo Obra {{ id }}?"
+            },
+            "detail": {
+                "title": "Tipo Obra"
+            },
+            "descricao": "Descricao",
+            "categoria": "Categoria",
+            "subcategoria": "Subcategoria"
+        }
+    }
+}

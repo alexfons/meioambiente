@@ -1,0 +1,67 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.obra.detail.title">Obra</span> {{vm.obra.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.obra.pendente">Pendente</span></dt>
+        <dd>
+            <span>{{vm.obra.pendente}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.obra.map">Map</span></dt>
+        <dd>
+            <span>{{vm.obra.map}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.obra.user">User</span></dt>
+        <dd>
+            <span>{{vm.obra.user}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.obra.track">Track</span></dt>
+        <dd>
+            <span>{{vm.obra.track}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.obra.certificadoMes">Certificado Mes</span></dt>
+        <dd>
+            <span>{{vm.obra.certificadoMes}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.obra.tipoobra">Tipoobra</span></dt>
+        <dd>
+            <a ui-sref="tipo-obra-ambiental-detail({id:vm.obra.tipoobraId})">{{vm.obra.tipoobraId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.obra.inspetor">Inspetor</span></dt>
+        <dd>
+            <a ui-sref="inspetor-ambiental-detail({id:vm.obra.inspetorId})">{{vm.obra.inspetorId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.obra.fiscal">Fiscal</span></dt>
+        <dd>
+            <a ui-sref="fiscal-ambiental-detail({id:vm.obra.fiscalId})">{{vm.obra.fiscalId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.obra.trecho">Trecho</span></dt>
+        <dd>
+            <a ui-sref="trecho-ambiental-detail({id:vm.obra.trechoId})">{{vm.obra.trechoId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.obra.contratosobra">Contratosobra</span></dt>
+        <dd>
+            <span ng-repeat="contratosobra in vm.obra.contratosobras">
+                <a ui-sref="contratoobra-ambiental-detail({id: contratosobra.id})">{{contratosobra.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.obra.historicos">Historicos</span></dt>
+        <dd>
+            <span ng-repeat="historicos in vm.obra.historicos">
+                <a ui-sref="historico-ambiental-detail({id: historicos.id})">{{historicos.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="obra-ambiental-detail.edit({id:vm.obra.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

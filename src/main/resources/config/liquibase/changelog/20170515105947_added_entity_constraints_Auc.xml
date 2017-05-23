@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Auc.
+    -->
+    <changeSet id="20170515105947-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="atividadelicenca_id"
+                                 baseTableName="auc"
+                                 constraintName="fk_auc_atividadelicenca_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="atividadelicenca"/>
+
+        <addForeignKeyConstraint baseColumnNames="orgaoemissor_id"
+                                 baseTableName="auc"
+                                 constraintName="fk_auc_orgaoemissor_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="orgaoemissor"/>
+
+        <addForeignKeyConstraint baseColumnNames="obra_id"
+                                 baseTableName="auc"
+                                 constraintName="fk_auc_obra_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="obra"/>
+
+        <addForeignKeyConstraint baseColumnNames="projeto_id"
+                                 baseTableName="auc"
+                                 constraintName="fk_auc_projeto_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="projeto"/>
+
+        <addForeignKeyConstraint baseColumnNames="empresa_id"
+                                 baseTableName="auc"
+                                 constraintName="fk_auc_empresa_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="empresa"/>
+
+        <addForeignKeyConstraint baseColumnNames="aucs_id"
+                                 baseTableName="auc_condicionantes"
+                                 constraintName="fk_auc_condicionantes_aucs_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="auc"/>
+        <addForeignKeyConstraint baseColumnNames="condicionantes_id"
+                                 baseTableName="auc_condicionantes"
+                                 constraintName="fk_auc_condicionantes_condicionantes_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="condicionante"/>
+        
+        <addForeignKeyConstraint baseColumnNames="aucs_id"
+                                 baseTableName="auc_fotos"
+                                 constraintName="fk_auc_fotos_aucs_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="auc"/>
+        <addForeignKeyConstraint baseColumnNames="fotos_id"
+                                 baseTableName="auc_fotos"
+                                 constraintName="fk_auc_fotos_fotos_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="foto"/>
+        
+        <addForeignKeyConstraint baseColumnNames="aucs_id"
+                                 baseTableName="auc_docs"
+                                 constraintName="fk_auc_docs_aucs_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="auc"/>
+        <addForeignKeyConstraint baseColumnNames="docs_id"
+                                 baseTableName="auc_docs"
+                                 constraintName="fk_auc_docs_docs_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="documento"/>
+        
+    </changeSet>
+</databaseChangeLog>

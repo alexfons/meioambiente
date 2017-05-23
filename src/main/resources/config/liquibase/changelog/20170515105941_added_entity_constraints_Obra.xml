@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Obra.
+    -->
+    <changeSet id="20170515105941-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="tipoobra_id"
+                                 baseTableName="obra"
+                                 constraintName="fk_obra_tipoobra_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tipo_obra"/>
+
+        <addForeignKeyConstraint baseColumnNames="inspetor_id"
+                                 baseTableName="obra"
+                                 constraintName="fk_obra_inspetor_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="inspetor"/>
+
+        <addForeignKeyConstraint baseColumnNames="fiscal_id"
+                                 baseTableName="obra"
+                                 constraintName="fk_obra_fiscal_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fiscal"/>
+
+        <addForeignKeyConstraint baseColumnNames="trecho_id"
+                                 baseTableName="obra"
+                                 constraintName="fk_obra_trecho_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="trecho"/>
+
+        <addForeignKeyConstraint baseColumnNames="obras_id"
+                                 baseTableName="obra_contratosobra"
+                                 constraintName="fk_obra_contratosobra_obras_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="obra"/>
+        <addForeignKeyConstraint baseColumnNames="contratosobras_id"
+                                 baseTableName="obra_contratosobra"
+                                 constraintName="fk_obra_contratosobra_contratosobras_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="contratoobra"/>
+        
+        <addForeignKeyConstraint baseColumnNames="obras_id"
+                                 baseTableName="obra_historicos"
+                                 constraintName="fk_obra_historicos_obras_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="obra"/>
+        <addForeignKeyConstraint baseColumnNames="historicos_id"
+                                 baseTableName="obra_historicos"
+                                 constraintName="fk_obra_historicos_historicos_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="historico"/>
+        
+    </changeSet>
+</databaseChangeLog>

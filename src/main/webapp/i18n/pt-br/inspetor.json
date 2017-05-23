@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "inspetor" : {
+            "home": {
+                "title": "Inspetors",
+                "createLabel": "Criar novo Inspetor",
+                "createOrEditLabel": "Criar ou editar Inspetor"
+            },
+            "created": "Um novo Inspetor é criado com o identificador {{ param }}",
+            "updated": "Um Inspetor é atualizado com o identificador {{ param }}",
+            "deleted": "Um Inspetor é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Inspetor {{ id }}?"
+            },
+            "detail": {
+                "title": "Inspetor"
+            }
+        }
+    }
+}

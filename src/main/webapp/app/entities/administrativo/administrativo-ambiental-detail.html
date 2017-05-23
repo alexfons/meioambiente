@@ -1,0 +1,73 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.administrativo.detail.title">Administrativo</span> {{vm.administrativo.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.administrativo.descricao">Descricao</span></dt>
+        <dd>
+            <span>{{vm.administrativo.descricao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.administrativo.assunto">Assunto</span></dt>
+        <dd>
+            <span>{{vm.administrativo.assunto}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.administrativo.local">Local</span></dt>
+        <dd>
+            <span>{{vm.administrativo.local}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.administrativo.album">Album</span></dt>
+        <dd>
+            <span>{{vm.administrativo.album}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.administrativo.folder">Folder</span></dt>
+        <dd>
+            <span>{{vm.administrativo.folder}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.administrativo.consideracao">Consideracao</span></dt>
+        <dd>
+            <span>{{vm.administrativo.consideracao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.administrativo.data">Data</span></dt>
+        <dd>
+            <span>{{vm.administrativo.data | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.administrativo.tipo">Tipo</span></dt>
+        <dd>
+            <a ui-sref="tipoadministrativo-ambiental-detail({id:vm.administrativo.tipoId})">{{vm.administrativo.tipoId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.administrativo.obra">Obra</span></dt>
+        <dd>
+            <a ui-sref="obra-ambiental-detail({id:vm.administrativo.obraId})">{{vm.administrativo.obraId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.administrativo.fotos">Fotos</span></dt>
+        <dd>
+            <span ng-repeat="fotos in vm.administrativo.fotos">
+                <a ui-sref="foto-ambiental-detail({id: fotos.id})">{{fotos.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.administrativo.docs">Docs</span></dt>
+        <dd>
+            <span ng-repeat="docs in vm.administrativo.docs">
+                <a ui-sref="documento-ambiental-detail({id: docs.id})">{{docs.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.administrativo.participantes">Participantes</span></dt>
+        <dd>
+            <span ng-repeat="participantes in vm.administrativo.participantes">
+                <a ui-sref="participante-ambiental-detail({id: participantes.id})">{{participantes.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="administrativo-ambiental-detail.edit({id:vm.administrativo.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

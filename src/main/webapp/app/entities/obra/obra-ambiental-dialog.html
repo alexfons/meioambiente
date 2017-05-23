@@ -1,0 +1,88 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myObraLabel" data-translate="meioambienteApp.obra.home.createOrEditLabel">Create or edit a Obra</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.obra.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.obra.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.obra.pendente" for="field_pendente">Pendente</label>
+            <input type="text" class="form-control" name="pendente" id="field_pendente"
+                    ng-model="vm.obra.pendente"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.obra.map" for="field_map">Map</label>
+            <input type="text" class="form-control" name="map" id="field_map"
+                    ng-model="vm.obra.map"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.obra.user" for="field_user">User</label>
+            <input type="text" class="form-control" name="user" id="field_user"
+                    ng-model="vm.obra.user"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.obra.track" for="field_track">Track</label>
+            <input type="text" class="form-control" name="track" id="field_track"
+                    ng-model="vm.obra.track"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.obra.certificadoMes" for="field_certificadoMes">Certificado Mes</label>
+            <input type="text" class="form-control" name="certificadoMes" id="field_certificadoMes"
+                    ng-model="vm.obra.certificadoMes"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="meioambienteApp.obra.tipoobra" for="field_tipoobra">Tipoobra</label>
+            <select class="form-control" id="field_tipoobra" name="tipoobra" ng-model="vm.obra.tipoobraId" ng-options="tipoObra.id as tipoObra.id for tipoObra in vm.tipoobras"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.obra.inspetor" for="field_inspetor">Inspetor</label>
+            <select class="form-control" id="field_inspetor" name="inspetor" ng-model="vm.obra.inspetorId" ng-options="inspetor.id as inspetor.id for inspetor in vm.inspetors"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.obra.fiscal" for="field_fiscal">Fiscal</label>
+            <select class="form-control" id="field_fiscal" name="fiscal" ng-model="vm.obra.fiscalId" ng-options="fiscal.id as fiscal.id for fiscal in vm.fiscals"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.obra.trecho" for="field_trecho">Trecho</label>
+            <select class="form-control" id="field_trecho" name="trecho" ng-model="vm.obra.trechoId" ng-options="trecho.id as trecho.id for trecho in vm.trechos"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.obra.contratosobra" for="field_contratosobra">Contratosobra</label>
+            <select class="form-control" id="field_contratosobra" multiple name="contratosobra" ng-model="vm.obra.contratosobras" ng-options="contratoobra as contratoobra.id for contratoobra in vm.contratoobras track by contratoobra.id"></select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.obra.historicos" for="field_historicos">Historicos</label>
+            <select class="form-control" id="field_historicos" multiple name="historicos" ng-model="vm.obra.historicos" ng-options="historico as historico.id for historico in vm.historicos track by historico.id"></select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

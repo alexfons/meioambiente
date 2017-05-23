@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "historico" : {
+            "home": {
+                "title": "Historicos",
+                "createLabel": "Criar novo Historico",
+                "createOrEditLabel": "Criar ou editar Historico"
+            },
+            "created": "Um novo Historico é criado com o identificador {{ param }}",
+            "updated": "Um Historico é atualizado com o identificador {{ param }}",
+            "deleted": "Um Historico é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Historico {{ id }}?"
+            },
+            "detail": {
+                "title": "Historico"
+            }
+        }
+    }
+}

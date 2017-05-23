@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "fiscal" : {
+            "home": {
+                "title": "Fiscals",
+                "createLabel": "Criar novo Fiscal",
+                "createOrEditLabel": "Criar ou editar Fiscal"
+            },
+            "created": "Um novo Fiscal é criado com o identificador {{ param }}",
+            "updated": "Um Fiscal é atualizado com o identificador {{ param }}",
+            "deleted": "Um Fiscal é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Fiscal {{ id }}?"
+            },
+            "detail": {
+                "title": "Fiscal"
+            }
+        }
+    }
+}

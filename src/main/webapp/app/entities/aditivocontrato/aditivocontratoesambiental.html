@@ -1,0 +1,64 @@
+<div>
+    <h2 data-translate="meioambienteApp.aditivocontrato.home.title">Aditivocontratoes</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="aditivocontrato-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.aditivocontrato.home.createLabel">
+                        Create new Aditivocontrato
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.aditivocontrato.numaditivo">Numaditivo</span></th>
+                    <th><span data-translate="meioambienteApp.aditivocontrato.tipoaditivo">Tipoaditivo</span></th>
+                    <th><span data-translate="meioambienteApp.aditivocontrato.data">Data</span></th>
+                    <th><span data-translate="meioambienteApp.aditivocontrato.prazoaditivo">Prazoaditivo</span></th>
+                    <th><span data-translate="meioambienteApp.aditivocontrato.valor">Valor</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="aditivocontrato in vm.aditivocontratoes track by aditivocontrato.id">
+                    <td><a ui-sref="aditivocontrato-ambiental-detail({id:aditivocontrato.id})">{{aditivocontrato.id}}</a></td>
+                    <td>{{aditivocontrato.numaditivo}}</td>
+                    <td>{{aditivocontrato.tipoaditivo}}</td>
+                    <td>{{aditivocontrato.data | date:'medium'}}</td>
+                    <td>{{aditivocontrato.prazoaditivo}}</td>
+                    <td>{{aditivocontrato.valor}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="aditivocontrato-ambiental-detail({id:aditivocontrato.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="aditivocontrato-ambiental.edit({id:aditivocontrato.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="aditivocontrato-ambiental.delete({id:aditivocontrato.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

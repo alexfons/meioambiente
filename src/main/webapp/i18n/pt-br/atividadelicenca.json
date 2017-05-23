@@ -1,0 +1,22 @@
+{
+    "meioambienteApp": {
+        "atividadelicenca" : {
+            "home": {
+                "title": "Atividadelicencas",
+                "createLabel": "Criar novo Atividadelicenca",
+                "createOrEditLabel": "Criar ou editar Atividadelicenca"
+            },
+            "created": "Um novo Atividadelicenca é criado com o identificador {{ param }}",
+            "updated": "Um Atividadelicenca é atualizado com o identificador {{ param }}",
+            "deleted": "Um Atividadelicenca é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Atividadelicenca {{ id }}?"
+            },
+            "detail": {
+                "title": "Atividadelicenca"
+            },
+            "codigo": "Codigo",
+            "descricao": "Descricao"
+        }
+    }
+}

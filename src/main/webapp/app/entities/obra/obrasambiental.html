@@ -1,0 +1,80 @@
+<div>
+    <h2 data-translate="meioambienteApp.obra.home.title">Obras</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="obra-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.obra.home.createLabel">
+                        Create new Obra
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.reset()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="pendente"><span data-translate="meioambienteApp.obra.pendente">Pendente</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="map"><span data-translate="meioambienteApp.obra.map">Map</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="user"><span data-translate="meioambienteApp.obra.user">User</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="track"><span data-translate="meioambienteApp.obra.track">Track</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="certificadoMes"><span data-translate="meioambienteApp.obra.certificadoMes">Certificado Mes</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="tipoobraId"><span data-translate="meioambienteApp.obra.tipoobra">Tipoobra</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="inspetorId"><span data-translate="meioambienteApp.obra.inspetor">Inspetor</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="fiscalId"><span data-translate="meioambienteApp.obra.fiscal">Fiscal</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="trechoId"><span data-translate="meioambienteApp.obra.trecho">Trecho</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
+                <tr ng-repeat="obra in vm.obras track by obra.id">
+                    <td><a ui-sref="obra-ambiental-detail({id:obra.id})">{{obra.id}}</a></td>
+                    <td>{{obra.pendente}}</td>
+                    <td>{{obra.map}}</td>
+                    <td>{{obra.user}}</td>
+                    <td>{{obra.track}}</td>
+                    <td>{{obra.certificadoMes}}</td>
+                    <td>
+                        <a ui-sref="tipo-obra-ambiental-detail({id:obra.tipoobraId})">{{obra.tipoobraId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="inspetor-ambiental-detail({id:obra.inspetorId})">{{obra.inspetorId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="fiscal-ambiental-detail({id:obra.fiscalId})">{{obra.fiscalId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="trecho-ambiental-detail({id:obra.trechoId})">{{obra.trechoId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="obra-ambiental-detail({id:obra.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="obra-ambiental.edit({id:obra.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="obra-ambiental.delete({id:obra.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

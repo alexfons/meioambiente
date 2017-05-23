@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "empresa" : {
+            "home": {
+                "title": "Empresas",
+                "createLabel": "Criar novo Empresa",
+                "createOrEditLabel": "Criar ou editar Empresa"
+            },
+            "created": "Um novo Empresa é criado com o identificador {{ param }}",
+            "updated": "Um Empresa é atualizado com o identificador {{ param }}",
+            "deleted": "Um Empresa é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Empresa {{ id }}?"
+            },
+            "detail": {
+                "title": "Empresa"
+            }
+        }
+    }
+}

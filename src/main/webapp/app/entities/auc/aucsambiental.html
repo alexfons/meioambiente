@@ -1,0 +1,172 @@
+<div>
+    <h2 data-translate="meioambienteApp.auc.home.title">Aucs</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="auc-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.auc.home.createLabel">
+                        Create new Auc
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.reset()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="fceivalor"><span data-translate="meioambienteApp.auc.fceivalor">Fceivalor</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="inativo"><span data-translate="meioambienteApp.auc.inativo">Inativo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="prazomes"><span data-translate="meioambienteApp.auc.prazomes">Prazomes</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="reposicaoflorestal"><span data-translate="meioambienteApp.auc.reposicaoflorestal">Reposicaoflorestal</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="compensacaoambiental"><span data-translate="meioambienteApp.auc.compensacaoambiental">Compensacaoambiental</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="prazovalidade"><span data-translate="meioambienteApp.auc.prazovalidade">Prazovalidade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="fcei"><span data-translate="meioambienteApp.auc.fcei">Fcei</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="reciboentregadocs"><span data-translate="meioambienteApp.auc.reciboentregadocs">Reciboentregadocs</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="numero"><span data-translate="meioambienteApp.auc.numero">Numero</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="numeroprocesso"><span data-translate="meioambienteApp.auc.numeroprocesso">Numeroprocesso</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="numerooficiolocalpedido"><span data-translate="meioambienteApp.auc.numerooficiolocalpedido">Numerooficiolocalpedido</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="numerooficiooficialpedido"><span data-translate="meioambienteApp.auc.numerooficiooficialpedido">Numerooficiooficialpedido</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="numerooficiolocalrecebimento"><span data-translate="meioambienteApp.auc.numerooficiolocalrecebimento">Numerooficiolocalrecebimento</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="numerooficiooficialrecebimento"><span data-translate="meioambienteApp.auc.numerooficiooficialrecebimento">Numerooficiooficialrecebimento</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="numeroparecertecnico"><span data-translate="meioambienteApp.auc.numeroparecertecnico">Numeroparecertecnico</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="numerooficioprorrogacao1"><span data-translate="meioambienteApp.auc.numerooficioprorrogacao1">Numerooficioprorrogacao 1</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="numerooficioconcessaoprorrogacao1"><span data-translate="meioambienteApp.auc.numerooficioconcessaoprorrogacao1">Numerooficioconcessaoprorrogacao 1</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="numerooficioprorrogacao2"><span data-translate="meioambienteApp.auc.numerooficioprorrogacao2">Numerooficioprorrogacao 2</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="numerooficioconcessaoprorrogacao2"><span data-translate="meioambienteApp.auc.numerooficioconcessaoprorrogacao2">Numerooficioconcessaoprorrogacao 2</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="numerooficioprorrogacao3"><span data-translate="meioambienteApp.auc.numerooficioprorrogacao3">Numerooficioprorrogacao 3</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="numerooficioconcessaoprorrogacao3"><span data-translate="meioambienteApp.auc.numerooficioconcessaoprorrogacao3">Numerooficioconcessaoprorrogacao 3</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="album"><span data-translate="meioambienteApp.auc.album">Album</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="folder"><span data-translate="meioambienteApp.auc.folder">Folder</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="pendente"><span data-translate="meioambienteApp.auc.pendente">Pendente</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="andamento"><span data-translate="meioambienteApp.auc.andamento">Andamento</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="descricao"><span data-translate="meioambienteApp.auc.descricao">Descricao</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="observacao"><span data-translate="meioambienteApp.auc.observacao">Observacao</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="docsentregues"><span data-translate="meioambienteApp.auc.docsentregues">Docsentregues</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="reposicaoflorestalobs"><span data-translate="meioambienteApp.auc.reposicaoflorestalobs">Reposicaoflorestalobs</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="compensacaoambientalobs"><span data-translate="meioambienteApp.auc.compensacaoambientalobs">Compensacaoambientalobs</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="fceidataprotocolo"><span data-translate="meioambienteApp.auc.fceidataprotocolo">Fceidataprotocolo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="fceidatapagamento"><span data-translate="meioambienteApp.auc.fceidatapagamento">Fceidatapagamento</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dataentregadocs"><span data-translate="meioambienteApp.auc.dataentregadocs">Dataentregadocs</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dataoficiolocalpedido"><span data-translate="meioambienteApp.auc.dataoficiolocalpedido">Dataoficiolocalpedido</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dataoficioreoficialpedido"><span data-translate="meioambienteApp.auc.dataoficioreoficialpedido">Dataoficioreoficialpedido</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dataoficiolocalrecebimento"><span data-translate="meioambienteApp.auc.dataoficiolocalrecebimento">Dataoficiolocalrecebimento</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dataoficioreoficialrecebimento"><span data-translate="meioambienteApp.auc.dataoficioreoficialrecebimento">Dataoficioreoficialrecebimento</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dataemissao"><span data-translate="meioambienteApp.auc.dataemissao">Dataemissao</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="datapedidoprorrogacao1"><span data-translate="meioambienteApp.auc.datapedidoprorrogacao1">Datapedidoprorrogacao 1</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dataexpedicaoprorrogacao1"><span data-translate="meioambienteApp.auc.dataexpedicaoprorrogacao1">Dataexpedicaoprorrogacao 1</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="datavalidadeprorrogacao1"><span data-translate="meioambienteApp.auc.datavalidadeprorrogacao1">Datavalidadeprorrogacao 1</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="datapedidoprorrogacao2"><span data-translate="meioambienteApp.auc.datapedidoprorrogacao2">Datapedidoprorrogacao 2</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dataexpedicaoprorrogacao2"><span data-translate="meioambienteApp.auc.dataexpedicaoprorrogacao2">Dataexpedicaoprorrogacao 2</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="datavalidadeprorrogacao2"><span data-translate="meioambienteApp.auc.datavalidadeprorrogacao2">Datavalidadeprorrogacao 2</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="datapedidoprorrogacao3"><span data-translate="meioambienteApp.auc.datapedidoprorrogacao3">Datapedidoprorrogacao 3</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dataexpedicaoprorrogacao3"><span data-translate="meioambienteApp.auc.dataexpedicaoprorrogacao3">Dataexpedicaoprorrogacao 3</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="datavalidadeprorrogacao3"><span data-translate="meioambienteApp.auc.datavalidadeprorrogacao3">Datavalidadeprorrogacao 3</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="datavencimento"><span data-translate="meioambienteApp.auc.datavencimento">Datavencimento</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="datavencimentoatual"><span data-translate="meioambienteApp.auc.datavencimentoatual">Datavencimentoatual</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="atividadelicencaId"><span data-translate="meioambienteApp.auc.atividadelicenca">Atividadelicenca</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="orgaoemissorId"><span data-translate="meioambienteApp.auc.orgaoemissor">Orgaoemissor</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="obraId"><span data-translate="meioambienteApp.auc.obra">Obra</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="projetoId"><span data-translate="meioambienteApp.auc.projeto">Projeto</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="empresaId"><span data-translate="meioambienteApp.auc.empresa">Empresa</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
+                <tr ng-repeat="auc in vm.aucs track by auc.id">
+                    <td><a ui-sref="auc-ambiental-detail({id:auc.id})">{{auc.id}}</a></td>
+                    <td>{{auc.fceivalor}}</td>
+                    <td>{{auc.inativo}}</td>
+                    <td>{{auc.prazomes}}</td>
+                    <td>{{auc.reposicaoflorestal}}</td>
+                    <td>{{auc.compensacaoambiental}}</td>
+                    <td>{{auc.prazovalidade}}</td>
+                    <td>{{auc.fcei}}</td>
+                    <td>{{auc.reciboentregadocs}}</td>
+                    <td>{{auc.numero}}</td>
+                    <td>{{auc.numeroprocesso}}</td>
+                    <td>{{auc.numerooficiolocalpedido}}</td>
+                    <td>{{auc.numerooficiooficialpedido}}</td>
+                    <td>{{auc.numerooficiolocalrecebimento}}</td>
+                    <td>{{auc.numerooficiooficialrecebimento}}</td>
+                    <td>{{auc.numeroparecertecnico}}</td>
+                    <td>{{auc.numerooficioprorrogacao1}}</td>
+                    <td>{{auc.numerooficioconcessaoprorrogacao1}}</td>
+                    <td>{{auc.numerooficioprorrogacao2}}</td>
+                    <td>{{auc.numerooficioconcessaoprorrogacao2}}</td>
+                    <td>{{auc.numerooficioprorrogacao3}}</td>
+                    <td>{{auc.numerooficioconcessaoprorrogacao3}}</td>
+                    <td>{{auc.album}}</td>
+                    <td>{{auc.folder}}</td>
+                    <td>{{auc.pendente}}</td>
+                    <td>{{auc.andamento}}</td>
+                    <td>{{auc.descricao}}</td>
+                    <td>{{auc.observacao}}</td>
+                    <td>{{auc.docsentregues}}</td>
+                    <td>{{auc.reposicaoflorestalobs}}</td>
+                    <td>{{auc.compensacaoambientalobs}}</td>
+                    <td>{{auc.fceidataprotocolo | date:'medium'}}</td>
+                    <td>{{auc.fceidatapagamento | date:'medium'}}</td>
+                    <td>{{auc.dataentregadocs | date:'medium'}}</td>
+                    <td>{{auc.dataoficiolocalpedido | date:'medium'}}</td>
+                    <td>{{auc.dataoficioreoficialpedido | date:'medium'}}</td>
+                    <td>{{auc.dataoficiolocalrecebimento | date:'medium'}}</td>
+                    <td>{{auc.dataoficioreoficialrecebimento | date:'medium'}}</td>
+                    <td>{{auc.dataemissao | date:'medium'}}</td>
+                    <td>{{auc.datapedidoprorrogacao1 | date:'medium'}}</td>
+                    <td>{{auc.dataexpedicaoprorrogacao1 | date:'medium'}}</td>
+                    <td>{{auc.datavalidadeprorrogacao1 | date:'medium'}}</td>
+                    <td>{{auc.datapedidoprorrogacao2 | date:'medium'}}</td>
+                    <td>{{auc.dataexpedicaoprorrogacao2 | date:'medium'}}</td>
+                    <td>{{auc.datavalidadeprorrogacao2 | date:'medium'}}</td>
+                    <td>{{auc.datapedidoprorrogacao3 | date:'medium'}}</td>
+                    <td>{{auc.dataexpedicaoprorrogacao3 | date:'medium'}}</td>
+                    <td>{{auc.datavalidadeprorrogacao3 | date:'medium'}}</td>
+                    <td>{{auc.datavencimento | date:'medium'}}</td>
+                    <td>{{auc.datavencimentoatual | date:'medium'}}</td>
+                    <td>
+                        <a ui-sref="atividadelicenca-ambiental-detail({id:auc.atividadelicencaId})">{{auc.atividadelicencaId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="orgaoemissor-ambiental-detail({id:auc.orgaoemissorId})">{{auc.orgaoemissorId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="obra-ambiental-detail({id:auc.obraId})">{{auc.obraId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="projeto-ambiental-detail({id:auc.projetoId})">{{auc.projetoId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="empresa-ambiental-detail({id:auc.empresaId})">{{auc.empresaId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="auc-ambiental-detail({id:auc.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="auc-ambiental.edit({id:auc.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="auc-ambiental.delete({id:auc.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

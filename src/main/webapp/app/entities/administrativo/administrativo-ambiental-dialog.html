@@ -1,0 +1,96 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myAdministrativoLabel" data-translate="meioambienteApp.administrativo.home.createOrEditLabel">Create or edit a Administrativo</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.administrativo.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.administrativo.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.administrativo.descricao" for="field_descricao">Descricao</label>
+            <input type="text" class="form-control" name="descricao" id="field_descricao"
+                    ng-model="vm.administrativo.descricao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.administrativo.assunto" for="field_assunto">Assunto</label>
+            <input type="text" class="form-control" name="assunto" id="field_assunto"
+                    ng-model="vm.administrativo.assunto"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.administrativo.local" for="field_local">Local</label>
+            <input type="text" class="form-control" name="local" id="field_local"
+                    ng-model="vm.administrativo.local"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.administrativo.album" for="field_album">Album</label>
+            <input type="text" class="form-control" name="album" id="field_album"
+                    ng-model="vm.administrativo.album"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.administrativo.folder" for="field_folder">Folder</label>
+            <input type="text" class="form-control" name="folder" id="field_folder"
+                    ng-model="vm.administrativo.folder"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.administrativo.consideracao" for="field_consideracao">Consideracao</label>
+            <input type="text" class="form-control" name="consideracao" id="field_consideracao"
+                    ng-model="vm.administrativo.consideracao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.administrativo.data" for="field_data">Data</label>
+                <div class="input-group">
+                    <input id="field_data" type="text" class="form-control" name="data" datetime-picker="{{dateformat}}" ng-model="vm.administrativo.data" is-open="vm.datePickerOpenStatus.data"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('data')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="meioambienteApp.administrativo.tipo" for="field_tipo">Tipo</label>
+            <select class="form-control" id="field_tipo" name="tipo" ng-model="vm.administrativo.tipoId" ng-options="tipoadministrativo.id as tipoadministrativo.id for tipoadministrativo in vm.tipos | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.administrativo.obra" for="field_obra">Obra</label>
+            <select class="form-control" id="field_obra" name="obra" ng-model="vm.administrativo.obraId" ng-options="obra.id as obra.id for obra in vm.obras"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.administrativo.fotos" for="field_fotos">Fotos</label>
+            <select class="form-control" id="field_fotos" multiple name="fotos" ng-model="vm.administrativo.fotos" ng-options="foto as foto.id for foto in vm.fotos track by foto.id"></select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.administrativo.docs" for="field_docs">Docs</label>
+            <select class="form-control" id="field_docs" multiple name="docs" ng-model="vm.administrativo.docs" ng-options="documento as documento.id for documento in vm.documentos track by documento.id"></select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.administrativo.participantes" for="field_participantes">Participantes</label>
+            <select class="form-control" id="field_participantes" multiple name="participantes" ng-model="vm.administrativo.participantes" ng-options="participante as participante.id for participante in vm.participantes track by participante.id"></select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

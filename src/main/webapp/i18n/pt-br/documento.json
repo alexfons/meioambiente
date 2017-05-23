@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "documento" : {
+            "home": {
+                "title": "Documentos",
+                "createLabel": "Criar novo Documento",
+                "createOrEditLabel": "Criar ou editar Documento"
+            },
+            "created": "Um novo Documento é criado com o identificador {{ param }}",
+            "updated": "Um Documento é atualizado com o identificador {{ param }}",
+            "deleted": "Um Documento é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Documento {{ id }}?"
+            },
+            "detail": {
+                "title": "Documento"
+            }
+        }
+    }
+}

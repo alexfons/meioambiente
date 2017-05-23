@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "contratoobra" : {
+            "home": {
+                "title": "Contratoobras",
+                "createLabel": "Criar novo Contratoobra",
+                "createOrEditLabel": "Criar ou editar Contratoobra"
+            },
+            "created": "Um novo Contratoobra é criado com o identificador {{ param }}",
+            "updated": "Um Contratoobra é atualizado com o identificador {{ param }}",
+            "deleted": "Um Contratoobra é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Contratoobra {{ id }}?"
+            },
+            "detail": {
+                "title": "Contratoobra"
+            }
+        }
+    }
+}

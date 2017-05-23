@@ -1,0 +1,32 @@
+{
+    "meioambienteApp": {
+        "administrativo" : {
+            "home": {
+                "title": "Administrativos",
+                "createLabel": "Criar novo Administrativo",
+                "createOrEditLabel": "Criar ou editar Administrativo"
+            },
+            "created": "Um novo Administrativo é criado com o identificador {{ param }}",
+            "updated": "Um Administrativo é atualizado com o identificador {{ param }}",
+            "deleted": "Um Administrativo é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Administrativo {{ id }}?"
+            },
+            "detail": {
+                "title": "Administrativo"
+            },
+            "descricao": "Descricao",
+            "assunto": "Assunto",
+            "local": "Local",
+            "album": "Album",
+            "folder": "Folder",
+            "consideracao": "Consideracao",
+            "data": "Data",
+            "tipo": "Tipo",
+            "obra": "Obra",
+            "fotos": "Fotos",
+            "docs": "Docs",
+            "participantes": "Participantes"
+        }
+    }
+}

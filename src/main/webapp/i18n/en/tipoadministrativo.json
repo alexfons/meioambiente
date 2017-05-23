@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "tipoadministrativo" : {
+            "home": {
+                "title": "Tipoadministrativos",
+                "createLabel": "Create a new Tipoadministrativo",
+                "createOrEditLabel": "Create or edit a Tipoadministrativo"
+            },
+            "created": "A new Tipoadministrativo is created with identifier {{ param }}",
+            "updated": "A Tipoadministrativo is updated with identifier {{ param }}",
+            "deleted": "A Tipoadministrativo is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tipoadministrativo {{ id }}?"
+            },
+            "detail": {
+                "title": "Tipoadministrativo"
+            }
+        }
+    }
+}

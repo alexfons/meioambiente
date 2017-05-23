@@ -1,0 +1,31 @@
+{
+    "meioambienteApp": {
+        "obra" : {
+            "home": {
+                "title": "Obras",
+                "createLabel": "Criar novo Obra",
+                "createOrEditLabel": "Criar ou editar Obra"
+            },
+            "created": "Um novo Obra é criado com o identificador {{ param }}",
+            "updated": "Um Obra é atualizado com o identificador {{ param }}",
+            "deleted": "Um Obra é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Obra {{ id }}?"
+            },
+            "detail": {
+                "title": "Obra"
+            },
+            "pendente": "Pendente",
+            "map": "Map",
+            "user": "User",
+            "track": "Track",
+            "certificadoMes": "Certificado Mes",
+            "tipoobra": "Tipoobra",
+            "inspetor": "Inspetor",
+            "fiscal": "Fiscal",
+            "trecho": "Trecho",
+            "contratosobra": "Contratosobra",
+            "historicos": "Historicos"
+        }
+    }
+}

@@ -1,0 +1,62 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myAtividadeexecutadamensalLabel" data-translate="meioambienteApp.atividadeexecutadamensal.home.createOrEditLabel">Create or edit a Atividadeexecutadamensal</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.atividadeexecutadamensal.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.atividadeexecutadamensal.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.atividadeexecutadamensal.percentualatacado" for="field_percentualatacado">Percentualatacado</label>
+            <input type="number" class="form-control" name="percentualatacado" id="field_percentualatacado"
+                    ng-model="vm.atividadeexecutadamensal.percentualatacado"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.atividadeexecutadamensal.fim" for="field_fim">Fim</label>
+            <input type="number" class="form-control" name="fim" id="field_fim"
+                    ng-model="vm.atividadeexecutadamensal.fim"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.atividadeexecutadamensal.inicio" for="field_inicio">Inicio</label>
+            <input type="number" class="form-control" name="inicio" id="field_inicio"
+                    ng-model="vm.atividadeexecutadamensal.inicio"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.atividadeexecutadamensal.lado" for="field_lado">Lado</label>
+            <input type="text" class="form-control" name="lado" id="field_lado"
+                    ng-model="vm.atividadeexecutadamensal.lado"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.atividadeexecutadamensal.percentualconcluido" for="field_percentualconcluido">Percentualconcluido</label>
+            <input type="number" class="form-control" name="percentualconcluido" id="field_percentualconcluido"
+                    ng-model="vm.atividadeexecutadamensal.percentualconcluido"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="meioambienteApp.atividadeexecutadamensal.atividade" for="field_atividade">Atividade</label>
+            <select class="form-control" id="field_atividade" name="atividade" ng-model="vm.atividadeexecutadamensal.atividadeId" ng-options="atividade.id as atividade.id for atividade in vm.atividades"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

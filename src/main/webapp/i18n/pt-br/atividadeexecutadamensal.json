@@ -1,0 +1,26 @@
+{
+    "meioambienteApp": {
+        "atividadeexecutadamensal" : {
+            "home": {
+                "title": "Atividadeexecutadamensals",
+                "createLabel": "Criar novo Atividadeexecutadamensal",
+                "createOrEditLabel": "Criar ou editar Atividadeexecutadamensal"
+            },
+            "created": "Um novo Atividadeexecutadamensal é criado com o identificador {{ param }}",
+            "updated": "Um Atividadeexecutadamensal é atualizado com o identificador {{ param }}",
+            "deleted": "Um Atividadeexecutadamensal é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Atividadeexecutadamensal {{ id }}?"
+            },
+            "detail": {
+                "title": "Atividadeexecutadamensal"
+            },
+            "percentualatacado": "Percentualatacado",
+            "fim": "Fim",
+            "inicio": "Inicio",
+            "lado": "Lado",
+            "percentualconcluido": "Percentualconcluido",
+            "atividade": "Atividade"
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "foto" : {
+            "home": {
+                "title": "Fotos",
+                "createLabel": "Criar novo Foto",
+                "createOrEditLabel": "Criar ou editar Foto"
+            },
+            "created": "Um novo Foto é criado com o identificador {{ param }}",
+            "updated": "Um Foto é atualizado com o identificador {{ param }}",
+            "deleted": "Um Foto é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Foto {{ id }}?"
+            },
+            "detail": {
+                "title": "Foto"
+            }
+        }
+    }
+}

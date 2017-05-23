@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.atividadeexecutadamensal.detail.title">Atividadeexecutadamensal</span> {{vm.atividadeexecutadamensal.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.atividadeexecutadamensal.percentualatacado">Percentualatacado</span></dt>
+        <dd>
+            <span>{{vm.atividadeexecutadamensal.percentualatacado}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.atividadeexecutadamensal.fim">Fim</span></dt>
+        <dd>
+            <span>{{vm.atividadeexecutadamensal.fim}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.atividadeexecutadamensal.inicio">Inicio</span></dt>
+        <dd>
+            <span>{{vm.atividadeexecutadamensal.inicio}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.atividadeexecutadamensal.lado">Lado</span></dt>
+        <dd>
+            <span>{{vm.atividadeexecutadamensal.lado}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.atividadeexecutadamensal.percentualconcluido">Percentualconcluido</span></dt>
+        <dd>
+            <span>{{vm.atividadeexecutadamensal.percentualconcluido}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.atividadeexecutadamensal.atividade">Atividade</span></dt>
+        <dd>
+            <a ui-sref="atividade-ambiental-detail({id:vm.atividadeexecutadamensal.atividadeId})">{{vm.atividadeexecutadamensal.atividadeId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="atividadeexecutadamensal-ambiental-detail.edit({id:vm.atividadeexecutadamensal.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>
