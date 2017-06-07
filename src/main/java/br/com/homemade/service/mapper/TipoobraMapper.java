@@ -1,7 +1,7 @@
 package br.com.homemade.service.mapper;
 
 import br.com.homemade.domain.*;
-import br.com.homemade.service.dto.TipoobraDTO;
+import br.com.homemade.service.dto.TipoobraDTO2;
 
 import org.mapstruct.*;
 
@@ -9,7 +9,7 @@ import org.mapstruct.*;
  * Mapper for the entity Tipoobra and its DTO TipoobraDTO.
  */
 @Mapper(componentModel = "spring", uses = {})
-public interface TipoobraMapper extends EntityMapper <TipoobraDTO, Tipoobra> {
+public interface TipoobraMapper extends EntityMapper <TipoobraDTO2, Tipoobra> {
     
     
     /**

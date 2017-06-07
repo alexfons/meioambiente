@@ -7,7 +7,7 @@ import java.util.Objects;
 /**
  * A DTO for the Tipoobra entity.
  */
-public class TipoobraDTO implements Serializable {
+public class TipoobraDTO2 implements Serializable {
 
     private Long id;
 
@@ -58,7 +58,7 @@ public class TipoobraDTO implements Serializable {
             return false;
         }
 
-        TipoobraDTO tipoobraDTO = (TipoobraDTO) o;
+        TipoobraDTO2 tipoobraDTO = (TipoobraDTO2) o;
         if(tipoobraDTO.getId() == null || getId() == null) {
             return false;
         }

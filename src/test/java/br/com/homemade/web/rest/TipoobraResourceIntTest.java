@@ -4,7 +4,7 @@ import br.com.homemade.MeioambienteApp;
 
 import br.com.homemade.domain.Tipoobra;
 import br.com.homemade.repository.TipoobraRepository;
-import br.com.homemade.service.dto.TipoobraDTO;
+import br.com.homemade.service.dto.TipoobraDTO2;
 import br.com.homemade.service.mapper.TipoobraMapper;
 import br.com.homemade.web.rest.errors.ExceptionTranslator;
 
@@ -105,7 +105,7 @@ public class TipoobraResourceIntTest {
         int databaseSizeBeforeCreate = tipoobraRepository.findAll().size();
 
         // Create the Tipoobra
-        TipoobraDTO tipoobraDTO = tipoobraMapper.toDto(tipoobra);
+        TipoobraDTO2 tipoobraDTO = tipoobraMapper.toDto(tipoobra);
         restTipoobraMockMvc.perform(post("/api/tipoobras")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(tipoobraDTO)))
@@ -127,7 +127,7 @@ public class TipoobraResourceIntTest {
 
         // Create the Tipoobra with an existing ID
         tipoobra.setId(1L);
-        TipoobraDTO tipoobraDTO = tipoobraMapper.toDto(tipoobra);
+        TipoobraDTO2 tipoobraDTO = tipoobraMapper.toDto(tipoobra);
 
         // An entity with an existing ID cannot be created, so this API call must fail
         restTipoobraMockMvc.perform(post("/api/tipoobras")
@@ -193,7 +193,7 @@ public class TipoobraResourceIntTest {
             .descricao(UPDATED_DESCRICAO)
             .categoria(UPDATED_CATEGORIA)
             .subcategoria(UPDATED_SUBCATEGORIA);
-        TipoobraDTO tipoobraDTO = tipoobraMapper.toDto(updatedTipoobra);
+        TipoobraDTO2 tipoobraDTO = tipoobraMapper.toDto(updatedTipoobra);
 
         restTipoobraMockMvc.perform(put("/api/tipoobras")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -215,7 +215,7 @@ public class TipoobraResourceIntTest {
         int databaseSizeBeforeUpdate = tipoobraRepository.findAll().size();
 
         // Create the Tipoobra
-        TipoobraDTO tipoobraDTO = tipoobraMapper.toDto(tipoobra);
+        TipoobraDTO2 tipoobraDTO = tipoobraMapper.toDto(tipoobra);
 
         // If the entity doesn't have an ID, it will be created instead of just being updated
         restTipoobraMockMvc.perform(put("/api/tipoobras")
@@ -263,10 +263,10 @@ public class TipoobraResourceIntTest {
     @Test
     @Transactional
     public void dtoEqualsVerifier() throws Exception {
-        TestUtil.equalsVerifier(TipoobraDTO.class);
-        TipoobraDTO tipoobraDTO1 = new TipoobraDTO();
+        TestUtil.equalsVerifier(TipoobraDTO2.class);
+        TipoobraDTO2 tipoobraDTO1 = new TipoobraDTO2();
         tipoobraDTO1.setId(1L);
-        TipoobraDTO tipoobraDTO2 = new TipoobraDTO();
+        TipoobraDTO2 tipoobraDTO2 = new TipoobraDTO2();
         assertThat(tipoobraDTO1).isNotEqualTo(tipoobraDTO2);
         tipoobraDTO2.setId(tipoobraDTO1.getId());
         assertThat(tipoobraDTO1).isEqualTo(tipoobraDTO2);
