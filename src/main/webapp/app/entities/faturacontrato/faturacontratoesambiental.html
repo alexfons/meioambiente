@@ -1,0 +1,102 @@
+<div>
+    <h2 data-translate="meioambienteApp.faturacontrato.home.title">Faturacontratoes</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="faturacontrato-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.faturacontrato.home.createLabel">
+                        Create new Faturacontrato
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.faturacontrato.dataop">Dataop</span></th>
+                    <th><span data-translate="meioambienteApp.faturacontrato.despesasexeanteriores">Despesasexeanteriores</span></th>
+                    <th><span data-translate="meioambienteApp.faturacontrato.idfaturacontrato">Idfaturacontrato</span></th>
+                    <th><span data-translate="meioambienteApp.faturacontrato.nfatura">Nfatura</span></th>
+                    <th><span data-translate="meioambienteApp.faturacontrato.nprocesso">Nprocesso</span></th>
+                    <th><span data-translate="meioambienteApp.faturacontrato.nsolicitacao">Nsolicitacao</span></th>
+                    <th><span data-translate="meioambienteApp.faturacontrato.parcela">Parcela</span></th>
+                    <th><span data-translate="meioambienteApp.faturacontrato.nobancaria">Nobancaria</span></th>
+                    <th><span data-translate="meioambienteApp.faturacontrato.nop">Nop</span></th>
+                    <th><span data-translate="meioambienteApp.faturacontrato.nummedicao">Nummedicao</span></th>
+                    <th><span data-translate="meioambienteApp.faturacontrato.restosapagar">Restosapagar</span></th>
+                    <th><span data-translate="meioambienteApp.faturacontrato.tipomedicao">Tipomedicao</span></th>
+                    <th><span data-translate="meioambienteApp.faturacontrato.valorpi">Valorpi</span></th>
+                    <th><span data-translate="meioambienteApp.faturacontrato.valorreajuste">Valorreajuste</span></th>
+                    <th><span data-translate="meioambienteApp.faturacontrato.valorus">Valorus</span></th>
+                    <th><span data-translate="meioambienteApp.faturacontrato.vreajuste">Vreajuste</span></th>
+                    <th><span data-translate="meioambienteApp.faturacontrato.aportelocal">Aportelocal</span></th>
+                    <th><span data-translate="meioambienteApp.faturacontrato.aporteagente">Aporteagente</span></th>
+                    <th><span data-translate="meioambienteApp.faturacontrato.fonte">Fonte</span></th>
+                    <th><span data-translate="meioambienteApp.faturacontrato.idcontrato">Idcontrato</span></th>
+                    <th><span data-translate="meioambienteApp.faturacontrato.idreferenciacontrato">Idreferenciacontrato</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="faturacontrato in vm.faturacontratoes track by faturacontrato.id">
+                    <td><a ui-sref="faturacontrato-ambiental-detail({id:faturacontrato.id})">{{faturacontrato.id}}</a></td>
+                    <td>{{faturacontrato.dataop | date:'medium'}}</td>
+                    <td>{{faturacontrato.despesasexeanteriores}}</td>
+                    <td>{{faturacontrato.idfaturacontrato}}</td>
+                    <td>{{faturacontrato.nfatura}}</td>
+                    <td>{{faturacontrato.nprocesso}}</td>
+                    <td>{{faturacontrato.nsolicitacao}}</td>
+                    <td>{{faturacontrato.parcela}}</td>
+                    <td>{{faturacontrato.nobancaria}}</td>
+                    <td>{{faturacontrato.nop}}</td>
+                    <td>{{faturacontrato.nummedicao}}</td>
+                    <td>{{faturacontrato.restosapagar}}</td>
+                    <td>{{faturacontrato.tipomedicao}}</td>
+                    <td>{{faturacontrato.valorpi}}</td>
+                    <td>{{faturacontrato.valorreajuste}}</td>
+                    <td>{{faturacontrato.valorus}}</td>
+                    <td>{{faturacontrato.vreajuste}}</td>
+                    <td>{{faturacontrato.aportelocal}}</td>
+                    <td>{{faturacontrato.aporteagente}}</td>
+                    <td>
+                        <a ui-sref="fonte-ambiental-detail({id:faturacontrato.fonteId})">{{faturacontrato.fonteId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="contrato-ambiental-detail({id:faturacontrato.idcontratoId})">{{faturacontrato.idcontratoId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="referenciacontrato-ambiental-detail({id:faturacontrato.idreferenciacontratoId})">{{faturacontrato.idreferenciacontratoId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="faturacontrato-ambiental-detail({id:faturacontrato.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="faturacontrato-ambiental.edit({id:faturacontrato.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="faturacontrato-ambiental.delete({id:faturacontrato.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

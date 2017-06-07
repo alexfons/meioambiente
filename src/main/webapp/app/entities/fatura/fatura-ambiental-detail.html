@@ -1,0 +1,103 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.fatura.detail.title">Fatura</span> {{vm.fatura.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.fatura.ajustecambio">Ajustecambio</span></dt>
+        <dd>
+            <span>{{vm.fatura.ajustecambio}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fatura.dataop">Dataop</span></dt>
+        <dd>
+            <span>{{vm.fatura.dataop | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fatura.despesasexeanteriores">Despesasexeanteriores</span></dt>
+        <dd>
+            <span>{{vm.fatura.despesasexeanteriores}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fatura.nfatura">Nfatura</span></dt>
+        <dd>
+            <span>{{vm.fatura.nfatura}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fatura.nprocesso">Nprocesso</span></dt>
+        <dd>
+            <span>{{vm.fatura.nprocesso}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fatura.nsolicitacao">Nsolicitacao</span></dt>
+        <dd>
+            <span>{{vm.fatura.nsolicitacao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fatura.parcela">Parcela</span></dt>
+        <dd>
+            <span>{{vm.fatura.parcela}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fatura.nob">Nob</span></dt>
+        <dd>
+            <span>{{vm.fatura.nob}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fatura.nop">Nop</span></dt>
+        <dd>
+            <span>{{vm.fatura.nop}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fatura.nummedicao">Nummedicao</span></dt>
+        <dd>
+            <span>{{vm.fatura.nummedicao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fatura.restosapagar">Restosapagar</span></dt>
+        <dd>
+            <span>{{vm.fatura.restosapagar}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fatura.tipomedicao">Tipomedicao</span></dt>
+        <dd>
+            <span>{{vm.fatura.tipomedicao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fatura.valorpi">Valorpi</span></dt>
+        <dd>
+            <span>{{vm.fatura.valorpi}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fatura.valorreajuste">Valorreajuste</span></dt>
+        <dd>
+            <span>{{vm.fatura.valorreajuste}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fatura.valorus">Valorus</span></dt>
+        <dd>
+            <span>{{vm.fatura.valorus}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fatura.vreajuste">Vreajuste</span></dt>
+        <dd>
+            <span>{{vm.fatura.vreajuste}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fatura.fonte">Fonte</span></dt>
+        <dd>
+            <a ui-sref="fonte-ambiental-detail({id:vm.fatura.fonteId})">{{vm.fatura.fonteId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fatura.idcontabancaria">Idcontabancaria</span></dt>
+        <dd>
+            <a ui-sref="contabancaria-ambiental-detail({id:vm.fatura.idcontabancariaId})">{{vm.fatura.idcontabancariaId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fatura.idcontrato">Idcontrato</span></dt>
+        <dd>
+            <a ui-sref="contrato-ambiental-detail({id:vm.fatura.idcontratoId})">{{vm.fatura.idcontratoId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fatura.idreferencia">Idreferencia</span></dt>
+        <dd>
+            <a ui-sref="referencia-ambiental-detail({id:vm.fatura.idreferenciaId})">{{vm.fatura.idreferenciaId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fatura.medicao">Medicao</span></dt>
+        <dd>
+            <a ui-sref="medicao-ambiental-detail({id:vm.fatura.medicaoId})">{{vm.fatura.medicaoId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="fatura-ambiental-detail.edit({id:vm.fatura.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

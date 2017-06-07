@@ -1,0 +1,74 @@
+<div>
+    <h2 data-translate="meioambienteApp.listamovimentacao.home.title">Listamovimentacaos</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="listamovimentacao-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.listamovimentacao.home.createLabel">
+                        Create new Listamovimentacao
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.listamovimentacao.tipolancamento">Tipolancamento</span></th>
+                    <th><span data-translate="meioambienteApp.listamovimentacao.historico">Historico</span></th>
+                    <th><span data-translate="meioambienteApp.listamovimentacao.valoruscredito">Valoruscredito</span></th>
+                    <th><span data-translate="meioambienteApp.listamovimentacao.valorrcredito">Valorrcredito</span></th>
+                    <th><span data-translate="meioambienteApp.listamovimentacao.valorusdebito">Valorusdebito</span></th>
+                    <th><span data-translate="meioambienteApp.listamovimentacao.valorrdebito">Valorrdebito</span></th>
+                    <th><span data-translate="meioambienteApp.listamovimentacao.idplanocontas">Idplanocontas</span></th>
+                    <th><span data-translate="meioambienteApp.listamovimentacao.movimentacao">Movimentacao</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="listamovimentacao in vm.listamovimentacaos track by listamovimentacao.id">
+                    <td><a ui-sref="listamovimentacao-ambiental-detail({id:listamovimentacao.id})">{{listamovimentacao.id}}</a></td>
+                    <td>{{listamovimentacao.tipolancamento}}</td>
+                    <td>{{listamovimentacao.historico}}</td>
+                    <td>{{listamovimentacao.valoruscredito}}</td>
+                    <td>{{listamovimentacao.valorrcredito}}</td>
+                    <td>{{listamovimentacao.valorusdebito}}</td>
+                    <td>{{listamovimentacao.valorrdebito}}</td>
+                    <td>
+                        <a ui-sref="planocontas-ambiental-detail({id:listamovimentacao.idplanocontasId})">{{listamovimentacao.idplanocontasId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="movimentacao-ambiental-detail({id:listamovimentacao.movimentacaoId})">{{listamovimentacao.movimentacaoId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="listamovimentacao-ambiental-detail({id:listamovimentacao.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="listamovimentacao-ambiental.edit({id:listamovimentacao.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="listamovimentacao-ambiental.delete({id:listamovimentacao.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

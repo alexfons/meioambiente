@@ -13,7 +13,37 @@
             <input type="text" class="form-control" id="id" name="id"
                     ng-model="vm.fonte.id" readonly />
         </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.fonte.descricao" for="field_descricao">Descricao</label>
+            <input type="text" class="form-control" name="descricao" id="field_descricao"
+                    ng-model="vm.fonte.descricao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.fonte.fonte" for="field_fonte">Fonte</label>
+            <input type="number" class="form-control" name="fonte" id="field_fonte"
+                    ng-model="vm.fonte.fonte"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.fonte.indiceagente" for="field_indiceagente">Indiceagente</label>
+            <input type="number" class="form-control" name="indiceagente" id="field_indiceagente"
+                    ng-model="vm.fonte.indiceagente"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.fonte.indicelocal" for="field_indicelocal">Indicelocal</label>
+            <input type="number" class="form-control" name="indicelocal" id="field_indicelocal"
+                    ng-model="vm.fonte.indicelocal"
+                    />
+        </div>
 
+        <div class="form-group">
+            <label data-translate="meioambienteApp.fonte.idcontabancaria" for="field_idcontabancaria">Idcontabancaria</label>
+            <select class="form-control" id="field_idcontabancaria" name="idcontabancaria" ng-model="vm.fonte.idcontabancariaId" ng-options="contabancaria.id as contabancaria.id for contabancaria in vm.contabancarias"            >
+                <option value=""></option>
+            </select>
+        </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">

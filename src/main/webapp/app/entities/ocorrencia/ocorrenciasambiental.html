@@ -1,0 +1,120 @@
+<div>
+    <h2 data-translate="meioambienteApp.ocorrencia.home.title">Ocorrencias</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="ocorrencia-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.ocorrencia.home.createLabel">
+                        Create new Ocorrencia
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.ocorrencia.album">Album</span></th>
+                    <th><span data-translate="meioambienteApp.ocorrencia.caracterizacao">Caracterizacao</span></th>
+                    <th><span data-translate="meioambienteApp.ocorrencia.coordenadaa">Coordenadaa</span></th>
+                    <th><span data-translate="meioambienteApp.ocorrencia.coordenadae">Coordenadae</span></th>
+                    <th><span data-translate="meioambienteApp.ocorrencia.coordenadan">Coordenadan</span></th>
+                    <th><span data-translate="meioambienteApp.ocorrencia.data">Data</span></th>
+                    <th><span data-translate="meioambienteApp.ocorrencia.distanciaeixo">Distanciaeixo</span></th>
+                    <th><span data-translate="meioambienteApp.ocorrencia.feature">Feature</span></th>
+                    <th><span data-translate="meioambienteApp.ocorrencia.kmfim">Kmfim</span></th>
+                    <th><span data-translate="meioambienteApp.ocorrencia.kminicio">Kminicio</span></th>
+                    <th><span data-translate="meioambienteApp.ocorrencia.lado">Lado</span></th>
+                    <th><span data-translate="meioambienteApp.ocorrencia.numero">Numero</span></th>
+                    <th><span data-translate="meioambienteApp.ocorrencia.atividade">Atividade</span></th>
+                    <th><span data-translate="meioambienteApp.ocorrencia.obra">Obra</span></th>
+                    <th><span data-translate="meioambienteApp.ocorrencia.servico">Servico</span></th>
+                    <th><span data-translate="meioambienteApp.ocorrencia.tabela">Tabela</span></th>
+                    <th><span data-translate="meioambienteApp.ocorrencia.tipo">Tipo</span></th>
+                    <th><span data-translate="meioambienteApp.ocorrencia.tipoocorrencia">Tipoocorrencia</span></th>
+                    <th><span data-translate="meioambienteApp.ocorrencia.fotos">Fotos</span></th>
+                    <th><span data-translate="meioambienteApp.ocorrencia.historicos">Historicos</span></th>
+                    <th><span data-translate="meioambienteApp.ocorrencia.registros">Registros</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="ocorrencia in vm.ocorrencias track by ocorrencia.id">
+                    <td><a ui-sref="ocorrencia-ambiental-detail({id:ocorrencia.id})">{{ocorrencia.id}}</a></td>
+                    <td>{{ocorrencia.album}}</td>
+                    <td>{{ocorrencia.caracterizacao}}</td>
+                    <td>{{ocorrencia.coordenadaa}}</td>
+                    <td>{{ocorrencia.coordenadae}}</td>
+                    <td>{{ocorrencia.coordenadan}}</td>
+                    <td>{{ocorrencia.data | date:'medium'}}</td>
+                    <td>{{ocorrencia.distanciaeixo}}</td>
+                    <td>{{ocorrencia.feature}}</td>
+                    <td>{{ocorrencia.kmfim}}</td>
+                    <td>{{ocorrencia.kminicio}}</td>
+                    <td>{{ocorrencia.lado}}</td>
+                    <td>{{ocorrencia.numero}}</td>
+                    <td>
+                        <a ui-sref="atividade-ambiental-detail({id:ocorrencia.atividadeId})">{{ocorrencia.atividadeId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="obra-ambiental-detail({id:ocorrencia.obraId})">{{ocorrencia.obraId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="tabela-ambiental-detail({id:ocorrencia.servicoId})">{{ocorrencia.servicoId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="tabela-ambiental-detail({id:ocorrencia.tabelaId})">{{ocorrencia.tabelaId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="tipoocorrencia-ambiental-detail({id:ocorrencia.tipoId})">{{ocorrencia.tipoId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="tipoocorrencia-ambiental-detail({id:ocorrencia.tipoocorrenciaId})">{{ocorrencia.tipoocorrenciaId}}</a>
+                    </td>
+                    <td>
+                        <span ng-repeat="fotos in ocorrencia.fotos">
+                            <a class="form-control-static" ui-sref="foto-ambiental-detail({id: fotos.id})">{{fotos.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td>
+                        <span ng-repeat="historicos in ocorrencia.historicos">
+                            <a class="form-control-static" ui-sref="historico-ambiental-detail({id: historicos.id})">{{historicos.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td>
+                        <span ng-repeat="registros in ocorrencia.registros">
+                            <a class="form-control-static" ui-sref="registro-ambiental-detail({id: registros.id})">{{registros.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="ocorrencia-ambiental-detail({id:ocorrencia.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="ocorrencia-ambiental.edit({id:ocorrencia.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="ocorrencia-ambiental.delete({id:ocorrencia.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

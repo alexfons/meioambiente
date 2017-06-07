@@ -104,6 +104,10 @@
                     resolve: {
                         entity: function () {
                             return {
+                                descricao: null,
+                                fonte: null,
+                                indiceagente: null,
+                                indicelocal: null,
                                 id: null
                             };
                         }

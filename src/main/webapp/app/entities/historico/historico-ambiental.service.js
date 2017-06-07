@@ -4,9 +4,9 @@
         .module('meioambienteApp')
         .factory('Historico', Historico);
 
-    Historico.$inject = ['$resource'];
+    Historico.$inject = ['$resource', 'DateUtils'];
 
-    function Historico ($resource) {
+    function Historico ($resource, DateUtils) {
         var resourceUrl =  'api/historicos/:id';
 
         return $resource(resourceUrl, {}, {
@@ -16,6 +16,7 @@
                 transformResponse: function (data) {
                     if (data) {
                         data = angular.fromJson(data);
+                        data.data = DateUtils.convertDateTimeFromServer(data.data);
                     }
                     return data;
                 }

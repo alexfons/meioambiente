@@ -1,0 +1,72 @@
+<div>
+    <h2 data-translate="meioambienteApp.fisicografico.home.title">Fisicograficos</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="fisicografico-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.fisicografico.home.createLabel">
+                        Create new Fisicografico
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.fisicografico.atacada">Atacada</span></th>
+                    <th><span data-translate="meioambienteApp.fisicografico.extensao">Extensao</span></th>
+                    <th><span data-translate="meioambienteApp.fisicografico.fim">Fim</span></th>
+                    <th><span data-translate="meioambienteApp.fisicografico.inicio">Inicio</span></th>
+                    <th><span data-translate="meioambienteApp.fisicografico.npontos">Npontos</span></th>
+                    <th><span data-translate="meioambienteApp.fisicografico.pontofim">Pontofim</span></th>
+                    <th><span data-translate="meioambienteApp.fisicografico.pontoinicio">Pontoinicio</span></th>
+                    <th><span data-translate="meioambienteApp.fisicografico.atividade">Atividade</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="fisicografico in vm.fisicograficos track by fisicografico.id">
+                    <td><a ui-sref="fisicografico-ambiental-detail({id:fisicografico.id})">{{fisicografico.id}}</a></td>
+                    <td>{{fisicografico.atacada}}</td>
+                    <td>{{fisicografico.extensao}}</td>
+                    <td>{{fisicografico.fim}}</td>
+                    <td>{{fisicografico.inicio}}</td>
+                    <td>{{fisicografico.npontos}}</td>
+                    <td>{{fisicografico.pontofim}}</td>
+                    <td>{{fisicografico.pontoinicio}}</td>
+                    <td>
+                        <a ui-sref="atividade-ambiental-detail({id:fisicografico.atividadeId})">{{fisicografico.atividadeId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="fisicografico-ambiental-detail({id:fisicografico.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="fisicografico-ambiental.edit({id:fisicografico.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="fisicografico-ambiental.delete({id:fisicografico.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

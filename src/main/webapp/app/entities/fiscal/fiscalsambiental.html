@@ -19,12 +19,28 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.fiscal.email">Email</span></th>
+                    <th><span data-translate="meioambienteApp.fiscal.funcao">Funcao</span></th>
+                    <th><span data-translate="meioambienteApp.fiscal.localtrabalho">Localtrabalho</span></th>
+                    <th><span data-translate="meioambienteApp.fiscal.matricula">Matricula</span></th>
+                    <th><span data-translate="meioambienteApp.fiscal.nome">Nome</span></th>
+                    <th><span data-translate="meioambienteApp.fiscal.superintendencia">Superintendencia</span></th>
+                    <th><span data-translate="meioambienteApp.fiscal.telefone">Telefone</span></th>
+                    <th><span data-translate="meioambienteApp.fiscal.telefonecomercial">Telefonecomercial</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="fiscal in vm.fiscals track by fiscal.id">
                     <td><a ui-sref="fiscal-ambiental-detail({id:fiscal.id})">{{fiscal.id}}</a></td>
+                    <td>{{fiscal.email}}</td>
+                    <td>{{fiscal.funcao}}</td>
+                    <td>{{fiscal.localtrabalho}}</td>
+                    <td>{{fiscal.matricula}}</td>
+                    <td>{{fiscal.nome}}</td>
+                    <td>{{fiscal.superintendencia}}</td>
+                    <td>{{fiscal.telefone}}</td>
+                    <td>{{fiscal.telefonecomercial}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

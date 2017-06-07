@@ -1,0 +1,461 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myLicencaLabel" data-translate="meioambienteApp.licenca.home.createOrEditLabel">Create or edit a Licenca</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.licenca.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.licenca.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.album" for="field_album">Album</label>
+            <input type="text" class="form-control" name="album" id="field_album"
+                    ng-model="vm.licenca.album"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.andamento" for="field_andamento">Andamento</label>
+            <input type="text" class="form-control" name="andamento" id="field_andamento"
+                    ng-model="vm.licenca.andamento"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.compensacaoambiental" for="field_compensacaoambiental">Compensacaoambiental</label>
+                <input type="checkbox" name="compensacaoambiental" id="field_compensacaoambiental"
+                          ng-model="vm.licenca.compensacaoambiental"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.dataemissao" for="field_dataemissao">Dataemissao</label>
+                <div class="input-group">
+                    <input id="field_dataemissao" type="text" class="form-control" name="dataemissao" datetime-picker="{{dateformat}}" ng-model="vm.licenca.dataemissao" is-open="vm.datePickerOpenStatus.dataemissao"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataemissao')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.dataentregadocs" for="field_dataentregadocs">Dataentregadocs</label>
+                <div class="input-group">
+                    <input id="field_dataentregadocs" type="text" class="form-control" name="dataentregadocs" datetime-picker="{{dateformat}}" ng-model="vm.licenca.dataentregadocs" is-open="vm.datePickerOpenStatus.dataentregadocs"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataentregadocs')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.dataexpedicaoprorrogacao1" for="field_dataexpedicaoprorrogacao1">Dataexpedicaoprorrogacao 1</label>
+                <div class="input-group">
+                    <input id="field_dataexpedicaoprorrogacao1" type="text" class="form-control" name="dataexpedicaoprorrogacao1" datetime-picker="{{dateformat}}" ng-model="vm.licenca.dataexpedicaoprorrogacao1" is-open="vm.datePickerOpenStatus.dataexpedicaoprorrogacao1"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataexpedicaoprorrogacao1')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.dataexpedicaoprorrogacao2" for="field_dataexpedicaoprorrogacao2">Dataexpedicaoprorrogacao 2</label>
+                <div class="input-group">
+                    <input id="field_dataexpedicaoprorrogacao2" type="text" class="form-control" name="dataexpedicaoprorrogacao2" datetime-picker="{{dateformat}}" ng-model="vm.licenca.dataexpedicaoprorrogacao2" is-open="vm.datePickerOpenStatus.dataexpedicaoprorrogacao2"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataexpedicaoprorrogacao2')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.dataexpedicaoprorrogacao3" for="field_dataexpedicaoprorrogacao3">Dataexpedicaoprorrogacao 3</label>
+                <div class="input-group">
+                    <input id="field_dataexpedicaoprorrogacao3" type="text" class="form-control" name="dataexpedicaoprorrogacao3" datetime-picker="{{dateformat}}" ng-model="vm.licenca.dataexpedicaoprorrogacao3" is-open="vm.datePickerOpenStatus.dataexpedicaoprorrogacao3"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataexpedicaoprorrogacao3')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.dataoficiolocalpedido" for="field_dataoficiolocalpedido">Dataoficiolocalpedido</label>
+                <div class="input-group">
+                    <input id="field_dataoficiolocalpedido" type="text" class="form-control" name="dataoficiolocalpedido" datetime-picker="{{dateformat}}" ng-model="vm.licenca.dataoficiolocalpedido" is-open="vm.datePickerOpenStatus.dataoficiolocalpedido"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataoficiolocalpedido')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.dataoficiolocalrecebimento" for="field_dataoficiolocalrecebimento">Dataoficiolocalrecebimento</label>
+                <div class="input-group">
+                    <input id="field_dataoficiolocalrecebimento" type="text" class="form-control" name="dataoficiolocalrecebimento" datetime-picker="{{dateformat}}" ng-model="vm.licenca.dataoficiolocalrecebimento" is-open="vm.datePickerOpenStatus.dataoficiolocalrecebimento"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataoficiolocalrecebimento')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.dataoficioreoficialpedido" for="field_dataoficioreoficialpedido">Dataoficioreoficialpedido</label>
+                <div class="input-group">
+                    <input id="field_dataoficioreoficialpedido" type="text" class="form-control" name="dataoficioreoficialpedido" datetime-picker="{{dateformat}}" ng-model="vm.licenca.dataoficioreoficialpedido" is-open="vm.datePickerOpenStatus.dataoficioreoficialpedido"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataoficioreoficialpedido')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.dataoficioreoficialrecebimento" for="field_dataoficioreoficialrecebimento">Dataoficioreoficialrecebimento</label>
+                <div class="input-group">
+                    <input id="field_dataoficioreoficialrecebimento" type="text" class="form-control" name="dataoficioreoficialrecebimento" datetime-picker="{{dateformat}}" ng-model="vm.licenca.dataoficioreoficialrecebimento" is-open="vm.datePickerOpenStatus.dataoficioreoficialrecebimento"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataoficioreoficialrecebimento')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.datapedidoprorrogacao1" for="field_datapedidoprorrogacao1">Datapedidoprorrogacao 1</label>
+                <div class="input-group">
+                    <input id="field_datapedidoprorrogacao1" type="text" class="form-control" name="datapedidoprorrogacao1" datetime-picker="{{dateformat}}" ng-model="vm.licenca.datapedidoprorrogacao1" is-open="vm.datePickerOpenStatus.datapedidoprorrogacao1"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datapedidoprorrogacao1')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.datapedidoprorrogacao2" for="field_datapedidoprorrogacao2">Datapedidoprorrogacao 2</label>
+                <div class="input-group">
+                    <input id="field_datapedidoprorrogacao2" type="text" class="form-control" name="datapedidoprorrogacao2" datetime-picker="{{dateformat}}" ng-model="vm.licenca.datapedidoprorrogacao2" is-open="vm.datePickerOpenStatus.datapedidoprorrogacao2"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datapedidoprorrogacao2')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.datapedidoprorrogacao3" for="field_datapedidoprorrogacao3">Datapedidoprorrogacao 3</label>
+                <div class="input-group">
+                    <input id="field_datapedidoprorrogacao3" type="text" class="form-control" name="datapedidoprorrogacao3" datetime-picker="{{dateformat}}" ng-model="vm.licenca.datapedidoprorrogacao3" is-open="vm.datePickerOpenStatus.datapedidoprorrogacao3"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datapedidoprorrogacao3')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.datavalidadeprorrogacao1" for="field_datavalidadeprorrogacao1">Datavalidadeprorrogacao 1</label>
+                <div class="input-group">
+                    <input id="field_datavalidadeprorrogacao1" type="text" class="form-control" name="datavalidadeprorrogacao1" datetime-picker="{{dateformat}}" ng-model="vm.licenca.datavalidadeprorrogacao1" is-open="vm.datePickerOpenStatus.datavalidadeprorrogacao1"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datavalidadeprorrogacao1')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.datavalidadeprorrogacao2" for="field_datavalidadeprorrogacao2">Datavalidadeprorrogacao 2</label>
+                <div class="input-group">
+                    <input id="field_datavalidadeprorrogacao2" type="text" class="form-control" name="datavalidadeprorrogacao2" datetime-picker="{{dateformat}}" ng-model="vm.licenca.datavalidadeprorrogacao2" is-open="vm.datePickerOpenStatus.datavalidadeprorrogacao2"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datavalidadeprorrogacao2')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.datavalidadeprorrogacao3" for="field_datavalidadeprorrogacao3">Datavalidadeprorrogacao 3</label>
+                <div class="input-group">
+                    <input id="field_datavalidadeprorrogacao3" type="text" class="form-control" name="datavalidadeprorrogacao3" datetime-picker="{{dateformat}}" ng-model="vm.licenca.datavalidadeprorrogacao3" is-open="vm.datePickerOpenStatus.datavalidadeprorrogacao3"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datavalidadeprorrogacao3')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.datavencimento" for="field_datavencimento">Datavencimento</label>
+                <div class="input-group">
+                    <input id="field_datavencimento" type="text" class="form-control" name="datavencimento" datetime-picker="{{dateformat}}" ng-model="vm.licenca.datavencimento" is-open="vm.datePickerOpenStatus.datavencimento"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datavencimento')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.datavencimentoatual" for="field_datavencimentoatual">Datavencimentoatual</label>
+                <div class="input-group">
+                    <input id="field_datavencimentoatual" type="text" class="form-control" name="datavencimentoatual" datetime-picker="{{dateformat}}" ng-model="vm.licenca.datavencimentoatual" is-open="vm.datePickerOpenStatus.datavencimentoatual"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datavencimentoatual')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.descricao" for="field_descricao">Descricao</label>
+            <input type="text" class="form-control" name="descricao" id="field_descricao"
+                    ng-model="vm.licenca.descricao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.dispensalai" for="field_dispensalai">Dispensalai</label>
+                <input type="checkbox" name="dispensalai" id="field_dispensalai"
+                          ng-model="vm.licenca.dispensalai"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.docsentregues" for="field_docsentregues">Docsentregues</label>
+            <input type="text" class="form-control" name="docsentregues" id="field_docsentregues"
+                    ng-model="vm.licenca.docsentregues"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.eiarima" for="field_eiarima">Eiarima</label>
+                <input type="checkbox" name="eiarima" id="field_eiarima"
+                          ng-model="vm.licenca.eiarima"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.fcei" for="field_fcei">Fcei</label>
+            <input type="text" class="form-control" name="fcei" id="field_fcei"
+                    ng-model="vm.licenca.fcei"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.fceidatapagamento" for="field_fceidatapagamento">Fceidatapagamento</label>
+                <div class="input-group">
+                    <input id="field_fceidatapagamento" type="text" class="form-control" name="fceidatapagamento" datetime-picker="{{dateformat}}" ng-model="vm.licenca.fceidatapagamento" is-open="vm.datePickerOpenStatus.fceidatapagamento"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('fceidatapagamento')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.fceidataprotocolo" for="field_fceidataprotocolo">Fceidataprotocolo</label>
+                <div class="input-group">
+                    <input id="field_fceidataprotocolo" type="text" class="form-control" name="fceidataprotocolo" datetime-picker="{{dateformat}}" ng-model="vm.licenca.fceidataprotocolo" is-open="vm.datePickerOpenStatus.fceidataprotocolo"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('fceidataprotocolo')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.fceivalor" for="field_fceivalor">Fceivalor</label>
+            <input type="number" class="form-control" name="fceivalor" id="field_fceivalor"
+                    ng-model="vm.licenca.fceivalor"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.folder" for="field_folder">Folder</label>
+            <input type="text" class="form-control" name="folder" id="field_folder"
+                    ng-model="vm.licenca.folder"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.inativo" for="field_inativo">Inativo</label>
+                <input type="checkbox" name="inativo" id="field_inativo"
+                          ng-model="vm.licenca.inativo"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.inventarioflorestal" for="field_inventarioflorestal">Inventarioflorestal</label>
+                <input type="checkbox" name="inventarioflorestal" id="field_inventarioflorestal"
+                          ng-model="vm.licenca.inventarioflorestal"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.numero" for="field_numero">Numero</label>
+            <input type="text" class="form-control" name="numero" id="field_numero"
+                    ng-model="vm.licenca.numero"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.numerolap" for="field_numerolap">Numerolap</label>
+            <input type="text" class="form-control" name="numerolap" id="field_numerolap"
+                    ng-model="vm.licenca.numerolap"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.numerooficioconcessaoprorrogacao1" for="field_numerooficioconcessaoprorrogacao1">Numerooficioconcessaoprorrogacao 1</label>
+            <input type="text" class="form-control" name="numerooficioconcessaoprorrogacao1" id="field_numerooficioconcessaoprorrogacao1"
+                    ng-model="vm.licenca.numerooficioconcessaoprorrogacao1"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.numerooficioconcessaoprorrogacao2" for="field_numerooficioconcessaoprorrogacao2">Numerooficioconcessaoprorrogacao 2</label>
+            <input type="text" class="form-control" name="numerooficioconcessaoprorrogacao2" id="field_numerooficioconcessaoprorrogacao2"
+                    ng-model="vm.licenca.numerooficioconcessaoprorrogacao2"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.numerooficioconcessaoprorrogacao3" for="field_numerooficioconcessaoprorrogacao3">Numerooficioconcessaoprorrogacao 3</label>
+            <input type="text" class="form-control" name="numerooficioconcessaoprorrogacao3" id="field_numerooficioconcessaoprorrogacao3"
+                    ng-model="vm.licenca.numerooficioconcessaoprorrogacao3"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.numerooficiolocalpedido" for="field_numerooficiolocalpedido">Numerooficiolocalpedido</label>
+            <input type="text" class="form-control" name="numerooficiolocalpedido" id="field_numerooficiolocalpedido"
+                    ng-model="vm.licenca.numerooficiolocalpedido"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.numerooficiolocalrecebimento" for="field_numerooficiolocalrecebimento">Numerooficiolocalrecebimento</label>
+            <input type="text" class="form-control" name="numerooficiolocalrecebimento" id="field_numerooficiolocalrecebimento"
+                    ng-model="vm.licenca.numerooficiolocalrecebimento"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.numerooficiooficialpedido" for="field_numerooficiooficialpedido">Numerooficiooficialpedido</label>
+            <input type="text" class="form-control" name="numerooficiooficialpedido" id="field_numerooficiooficialpedido"
+                    ng-model="vm.licenca.numerooficiooficialpedido"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.numerooficiooficialrecebimento" for="field_numerooficiooficialrecebimento">Numerooficiooficialrecebimento</label>
+            <input type="text" class="form-control" name="numerooficiooficialrecebimento" id="field_numerooficiooficialrecebimento"
+                    ng-model="vm.licenca.numerooficiooficialrecebimento"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.numerooficioprorrogacao1" for="field_numerooficioprorrogacao1">Numerooficioprorrogacao 1</label>
+            <input type="text" class="form-control" name="numerooficioprorrogacao1" id="field_numerooficioprorrogacao1"
+                    ng-model="vm.licenca.numerooficioprorrogacao1"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.numerooficioprorrogacao2" for="field_numerooficioprorrogacao2">Numerooficioprorrogacao 2</label>
+            <input type="text" class="form-control" name="numerooficioprorrogacao2" id="field_numerooficioprorrogacao2"
+                    ng-model="vm.licenca.numerooficioprorrogacao2"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.numerooficioprorrogacao3" for="field_numerooficioprorrogacao3">Numerooficioprorrogacao 3</label>
+            <input type="text" class="form-control" name="numerooficioprorrogacao3" id="field_numerooficioprorrogacao3"
+                    ng-model="vm.licenca.numerooficioprorrogacao3"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.numeroparecertecnico" for="field_numeroparecertecnico">Numeroparecertecnico</label>
+            <input type="text" class="form-control" name="numeroparecertecnico" id="field_numeroparecertecnico"
+                    ng-model="vm.licenca.numeroparecertecnico"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.numeroprocesso" for="field_numeroprocesso">Numeroprocesso</label>
+            <input type="text" class="form-control" name="numeroprocesso" id="field_numeroprocesso"
+                    ng-model="vm.licenca.numeroprocesso"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.observacao" for="field_observacao">Observacao</label>
+            <input type="text" class="form-control" name="observacao" id="field_observacao"
+                    ng-model="vm.licenca.observacao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.pendente" for="field_pendente">Pendente</label>
+            <input type="text" class="form-control" name="pendente" id="field_pendente"
+                    ng-model="vm.licenca.pendente"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.prazomes" for="field_prazomes">Prazomes</label>
+                <input type="checkbox" name="prazomes" id="field_prazomes"
+                          ng-model="vm.licenca.prazomes"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.prazovalidade" for="field_prazovalidade">Prazovalidade</label>
+            <input type="number" class="form-control" name="prazovalidade" id="field_prazovalidade"
+                    ng-model="vm.licenca.prazovalidade"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.reciboentregadocs" for="field_reciboentregadocs">Reciboentregadocs</label>
+            <input type="text" class="form-control" name="reciboentregadocs" id="field_reciboentregadocs"
+                    ng-model="vm.licenca.reciboentregadocs"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.usosolo" for="field_usosolo">Usosolo</label>
+                <input type="checkbox" name="usosolo" id="field_usosolo"
+                          ng-model="vm.licenca.usosolo"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.licenca.usosoloobs" for="field_usosoloobs">Usosoloobs</label>
+            <input type="text" class="form-control" name="usosoloobs" id="field_usosoloobs"
+                    ng-model="vm.licenca.usosoloobs"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="meioambienteApp.licenca.atividadelicenca" for="field_atividadelicenca">Atividadelicenca</label>
+            <select class="form-control" id="field_atividadelicenca" name="atividadelicenca" ng-model="vm.licenca.atividadelicencaId" ng-options="atividadelicenca.id as atividadelicenca.id for atividadelicenca in vm.atividadelicencas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.licenca.empresa" for="field_empresa">Empresa</label>
+            <select class="form-control" id="field_empresa" name="empresa" ng-model="vm.licenca.empresaId" ng-options="empresa.id as empresa.id for empresa in vm.empresas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.licenca.projeto" for="field_projeto">Projeto</label>
+            <select class="form-control" id="field_projeto" name="projeto" ng-model="vm.licenca.projetoId" ng-options="projeto.id as projeto.id for projeto in vm.projetos"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.licenca.tipo" for="field_tipo">Tipo</label>
+            <select class="form-control" id="field_tipo" name="tipo" ng-model="vm.licenca.tipoId" ng-options="tipolicenca.id as tipolicenca.id for tipolicenca in vm.tipolicencas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.licenca.obra" for="field_obra">Obra</label>
+            <select class="form-control" id="field_obra" name="obra" ng-model="vm.licenca.obraId" ng-options="obra.id as obra.id for obra in vm.obras"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.licenca.orgaoemissor" for="field_orgaoemissor">Orgaoemissor</label>
+            <select class="form-control" id="field_orgaoemissor" name="orgaoemissor" ng-model="vm.licenca.orgaoemissorId" ng-options="orgaoemissor.id as orgaoemissor.id for orgaoemissor in vm.orgaoemissors"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.licenca.tipolicenca" for="field_tipolicenca">Tipolicenca</label>
+            <select class="form-control" id="field_tipolicenca" name="tipolicenca" ng-model="vm.licenca.tipolicencaId" ng-options="tipolicenca.id as tipolicenca.id for tipolicenca in vm.tipolicencas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.licenca.condicionantes" for="field_condicionantes">Condicionantes</label>
+            <select class="form-control" id="field_condicionantes" multiple name="condicionantes" ng-model="vm.licenca.condicionantes" ng-options="condicionante as condicionante.id for condicionante in vm.condicionantes track by condicionante.id"></select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.licenca.docs" for="field_docs">Docs</label>
+            <select class="form-control" id="field_docs" multiple name="docs" ng-model="vm.licenca.docs" ng-options="documento as documento.id for documento in vm.documentos track by documento.id"></select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.licenca.fotos" for="field_fotos">Fotos</label>
+            <select class="form-control" id="field_fotos" multiple name="fotos" ng-model="vm.licenca.fotos" ng-options="foto as foto.id for foto in vm.fotos track by foto.id"></select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

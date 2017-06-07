@@ -22,6 +22,12 @@ public class Linha implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
+    @Column(name = "sequencia")
+    private Integer sequencia;
+
+    @Column(name = "valor")
+    private String valor;
+
     @ManyToOne
     private Coluna coluna;
 
@@ -31,6 +37,32 @@ public class Linha implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Integer getSequencia() {
+        return sequencia;
+    }
+
+    public Linha sequencia(Integer sequencia) {
+        this.sequencia = sequencia;
+        return this;
+    }
+
+    public void setSequencia(Integer sequencia) {
+        this.sequencia = sequencia;
+    }
+
+    public String getValor() {
+        return valor;
+    }
+
+    public Linha valor(String valor) {
+        this.valor = valor;
+        return this;
+    }
+
+    public void setValor(String valor) {
+        this.valor = valor;
     }
 
     public Coluna getColuna() {
@@ -70,6 +102,8 @@ public class Linha implements Serializable {
     public String toString() {
         return "Linha{" +
             "id=" + getId() +
+            ", sequencia='" + getSequencia() + "'" +
+            ", valor='" + getValor() + "'" +
             "}";
     }
 }

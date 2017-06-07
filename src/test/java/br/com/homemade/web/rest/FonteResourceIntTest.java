@@ -23,6 +23,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import java.math.BigDecimal;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -38,6 +39,18 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = MeioambienteApp.class)
 public class FonteResourceIntTest {
+
+    private static final String DEFAULT_DESCRICAO = "AAAAAAAAAA";
+    private static final String UPDATED_DESCRICAO = "BBBBBBBBBB";
+
+    private static final Integer DEFAULT_FONTE = 1;
+    private static final Integer UPDATED_FONTE = 2;
+
+    private static final BigDecimal DEFAULT_INDICEAGENTE = new BigDecimal(1);
+    private static final BigDecimal UPDATED_INDICEAGENTE = new BigDecimal(2);
+
+    private static final BigDecimal DEFAULT_INDICELOCAL = new BigDecimal(1);
+    private static final BigDecimal UPDATED_INDICELOCAL = new BigDecimal(2);
 
     @Autowired
     private FonteRepository fonteRepository;
@@ -78,7 +91,11 @@ public class FonteResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Fonte createEntity(EntityManager em) {
-        Fonte fonte = new Fonte();
+        Fonte fonte = new Fonte()
+            .descricao(DEFAULT_DESCRICAO)
+            .fonte(DEFAULT_FONTE)
+            .indiceagente(DEFAULT_INDICEAGENTE)
+            .indicelocal(DEFAULT_INDICELOCAL);
         return fonte;
     }
 
@@ -103,6 +120,10 @@ public class FonteResourceIntTest {
         List<Fonte> fonteList = fonteRepository.findAll();
         assertThat(fonteList).hasSize(databaseSizeBeforeCreate + 1);
         Fonte testFonte = fonteList.get(fonteList.size() - 1);
+        assertThat(testFonte.getDescricao()).isEqualTo(DEFAULT_DESCRICAO);
+        assertThat(testFonte.getFonte()).isEqualTo(DEFAULT_FONTE);
+        assertThat(testFonte.getIndiceagente()).isEqualTo(DEFAULT_INDICEAGENTE);
+        assertThat(testFonte.getIndicelocal()).isEqualTo(DEFAULT_INDICELOCAL);
     }
 
     @Test
@@ -135,7 +156,11 @@ public class FonteResourceIntTest {
         restFonteMockMvc.perform(get("/api/fontes?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(fonte.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(fonte.getId().intValue())))
+            .andExpect(jsonPath("$.[*].descricao").value(hasItem(DEFAULT_DESCRICAO.toString())))
+            .andExpect(jsonPath("$.[*].fonte").value(hasItem(DEFAULT_FONTE)))
+            .andExpect(jsonPath("$.[*].indiceagente").value(hasItem(DEFAULT_INDICEAGENTE.intValue())))
+            .andExpect(jsonPath("$.[*].indicelocal").value(hasItem(DEFAULT_INDICELOCAL.intValue())));
     }
 
     @Test
@@ -148,7 +173,11 @@ public class FonteResourceIntTest {
         restFonteMockMvc.perform(get("/api/fontes/{id}", fonte.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(fonte.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(fonte.getId().intValue()))
+            .andExpect(jsonPath("$.descricao").value(DEFAULT_DESCRICAO.toString()))
+            .andExpect(jsonPath("$.fonte").value(DEFAULT_FONTE))
+            .andExpect(jsonPath("$.indiceagente").value(DEFAULT_INDICEAGENTE.intValue()))
+            .andExpect(jsonPath("$.indicelocal").value(DEFAULT_INDICELOCAL.intValue()));
     }
 
     @Test
@@ -168,6 +197,11 @@ public class FonteResourceIntTest {
 
         // Update the fonte
         Fonte updatedFonte = fonteRepository.findOne(fonte.getId());
+        updatedFonte
+            .descricao(UPDATED_DESCRICAO)
+            .fonte(UPDATED_FONTE)
+            .indiceagente(UPDATED_INDICEAGENTE)
+            .indicelocal(UPDATED_INDICELOCAL);
         FonteDTO fonteDTO = fonteMapper.toDto(updatedFonte);
 
         restFonteMockMvc.perform(put("/api/fontes")
@@ -179,6 +213,10 @@ public class FonteResourceIntTest {
         List<Fonte> fonteList = fonteRepository.findAll();
         assertThat(fonteList).hasSize(databaseSizeBeforeUpdate);
         Fonte testFonte = fonteList.get(fonteList.size() - 1);
+        assertThat(testFonte.getDescricao()).isEqualTo(UPDATED_DESCRICAO);
+        assertThat(testFonte.getFonte()).isEqualTo(UPDATED_FONTE);
+        assertThat(testFonte.getIndiceagente()).isEqualTo(UPDATED_INDICEAGENTE);
+        assertThat(testFonte.getIndicelocal()).isEqualTo(UPDATED_INDICELOCAL);
     }
 
     @Test

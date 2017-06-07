@@ -1,0 +1,41 @@
+{
+    "meioambienteApp": {
+        "ocorrencia" : {
+            "home": {
+                "title": "Ocorrencias",
+                "createLabel": "Create a new Ocorrencia",
+                "createOrEditLabel": "Create or edit a Ocorrencia"
+            },
+            "created": "A new Ocorrencia is created with identifier {{ param }}",
+            "updated": "A Ocorrencia is updated with identifier {{ param }}",
+            "deleted": "A Ocorrencia is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Ocorrencia {{ id }}?"
+            },
+            "detail": {
+                "title": "Ocorrencia"
+            },
+            "album": "Album",
+            "caracterizacao": "Caracterizacao",
+            "coordenadaa": "Coordenadaa",
+            "coordenadae": "Coordenadae",
+            "coordenadan": "Coordenadan",
+            "data": "Data",
+            "distanciaeixo": "Distanciaeixo",
+            "feature": "Feature",
+            "kmfim": "Kmfim",
+            "kminicio": "Kminicio",
+            "lado": "Lado",
+            "numero": "Numero",
+            "atividade": "Atividade",
+            "obra": "Obra",
+            "servico": "Servico",
+            "tabela": "Tabela",
+            "tipo": "Tipo",
+            "tipoocorrencia": "Tipoocorrencia",
+            "fotos": "Fotos",
+            "historicos": "Historicos",
+            "registros": "Registros"
+        }
+    }
+}

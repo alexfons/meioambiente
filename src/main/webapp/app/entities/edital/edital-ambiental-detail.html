@@ -1,0 +1,95 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.edital.detail.title">Edital</span> {{vm.edital.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.edital.comissaojulgamento">Comissaojulgamento</span></dt>
+        <dd>
+            <span>{{vm.edital.comissaojulgamento}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.edital.dataaprovacao">Dataaprovacao</span></dt>
+        <dd>
+            <span>{{vm.edital.dataaprovacao | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.edital.dataenvio">Dataenvio</span></dt>
+        <dd>
+            <span>{{vm.edital.dataenvio | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.edital.datahoraabertura">Datahoraabertura</span></dt>
+        <dd>
+            <span>{{vm.edital.datahoraabertura | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.edital.datalicitacao">Datalicitacao</span></dt>
+        <dd>
+            <span>{{vm.edital.datalicitacao | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.edital.datanumeromanifestacao">Datanumeromanifestacao</span></dt>
+        <dd>
+            <span>{{vm.edital.datanumeromanifestacao | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.edital.datapublicacao">Datapublicacao</span></dt>
+        <dd>
+            <span>{{vm.edital.datapublicacao | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.edital.datarelatorio">Datarelatorio</span></dt>
+        <dd>
+            <span>{{vm.edital.datarelatorio | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.edital.licitacao">Licitacao</span></dt>
+        <dd>
+            <span>{{vm.edital.licitacao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.edital.localrelatorio">Localrelatorio</span></dt>
+        <dd>
+            <span>{{vm.edital.localrelatorio}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.edital.modalidade">Modalidade</span></dt>
+        <dd>
+            <span>{{vm.edital.modalidade}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.edital.naturezaservico">Naturezaservico</span></dt>
+        <dd>
+            <span>{{vm.edital.naturezaservico}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.edital.numeroconvite">Numeroconvite</span></dt>
+        <dd>
+            <span>{{vm.edital.numeroconvite}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.edital.numeroedital">Numeroedital</span></dt>
+        <dd>
+            <span>{{vm.edital.numeroedital}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.edital.numeromanifestacao">Numeromanifestacao</span></dt>
+        <dd>
+            <span>{{vm.edital.numeromanifestacao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.edital.numeroprojeto">Numeroprojeto</span></dt>
+        <dd>
+            <span>{{vm.edital.numeroprojeto}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.edital.precoglobal">Precoglobal</span></dt>
+        <dd>
+            <span>{{vm.edital.precoglobal}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.edital.tipoaquisicao">Tipoaquisicao</span></dt>
+        <dd>
+            <span>{{vm.edital.tipoaquisicao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.edital.tipolicitacao">Tipolicitacao</span></dt>
+        <dd>
+            <span>{{vm.edital.tipolicitacao}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="edital-ambiental-detail.edit({id:vm.edital.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

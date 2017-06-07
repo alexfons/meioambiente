@@ -1,0 +1,66 @@
+<div>
+    <h2 data-translate="meioambienteApp.movimentacao.home.title">Movimentacaos</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="movimentacao-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.movimentacao.home.createLabel">
+                        Create new Movimentacao
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.movimentacao.data">Data</span></th>
+                    <th><span data-translate="meioambienteApp.movimentacao.tipomovimentacao">Tipomovimentacao</span></th>
+                    <th><span data-translate="meioambienteApp.movimentacao.contabancaria">Contabancaria</span></th>
+                    <th><span data-translate="meioambienteApp.movimentacao.fonte">Fonte</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="movimentacao in vm.movimentacaos track by movimentacao.id">
+                    <td><a ui-sref="movimentacao-ambiental-detail({id:movimentacao.id})">{{movimentacao.id}}</a></td>
+                    <td>{{movimentacao.data | date:'medium'}}</td>
+                    <td>{{movimentacao.tipomovimentacao}}</td>
+                    <td>
+                        <a ui-sref="contabancaria-ambiental-detail({id:movimentacao.contabancariaId})">{{movimentacao.contabancariaId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="fonte-ambiental-detail({id:movimentacao.fonteId})">{{movimentacao.fonteId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="movimentacao-ambiental-detail({id:movimentacao.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="movimentacao-ambiental.edit({id:movimentacao.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="movimentacao-ambiental.delete({id:movimentacao.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

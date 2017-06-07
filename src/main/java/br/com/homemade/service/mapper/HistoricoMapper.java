@@ -8,10 +8,12 @@ import org.mapstruct.*;
 /**
  * Mapper for the entity Historico and its DTO HistoricoDTO.
  */
-@Mapper(componentModel = "spring", uses = {})
+@Mapper(componentModel = "spring", uses = {StatusMapper.class, })
 public interface HistoricoMapper extends EntityMapper <HistoricoDTO, Historico> {
-    
-    
+    @Mapping(source = "status.id", target = "statusId")
+    HistoricoDTO toDto(Historico historico); 
+    @Mapping(source = "statusId", target = "status")
+    Historico toEntity(HistoricoDTO historicoDTO); 
     /**
      * generating the fromId for all mappers if the databaseType is sql, as the class has relationship to it might need it, instead of
      * creating a new attribute to know if the entity has any relationship from some other entity

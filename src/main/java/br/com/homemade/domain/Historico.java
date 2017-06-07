@@ -5,6 +5,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.ZonedDateTime;
 import java.util.Objects;
 
 /**
@@ -22,12 +23,60 @@ public class Historico implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
+    @Column(name = "data")
+    private ZonedDateTime data;
+
+    @Column(name = "descricao")
+    private String descricao;
+
+    @ManyToOne
+    private Status status;
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public ZonedDateTime getData() {
+        return data;
+    }
+
+    public Historico data(ZonedDateTime data) {
+        this.data = data;
+        return this;
+    }
+
+    public void setData(ZonedDateTime data) {
+        this.data = data;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public Historico descricao(String descricao) {
+        this.descricao = descricao;
+        return this;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public Historico status(Status status) {
+        this.status = status;
+        return this;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     @Override
@@ -54,6 +103,8 @@ public class Historico implements Serializable {
     public String toString() {
         return "Historico{" +
             "id=" + getId() +
+            ", data='" + getData() + "'" +
+            ", descricao='" + getDescricao() + "'" +
             "}";
     }
 }

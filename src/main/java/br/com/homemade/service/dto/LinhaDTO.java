@@ -13,6 +13,10 @@ public class LinhaDTO implements Serializable {
 
     private Long id;
 
+    private Integer sequencia;
+
+    private String valor;
+
     private Long colunaId;
 
     public Long getId() {
@@ -21,6 +25,22 @@ public class LinhaDTO implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Integer getSequencia() {
+        return sequencia;
+    }
+
+    public void setSequencia(Integer sequencia) {
+        this.sequencia = sequencia;
+    }
+
+    public String getValor() {
+        return valor;
+    }
+
+    public void setValor(String valor) {
+        this.valor = valor;
     }
 
     public Long getColunaId() {
@@ -56,6 +76,8 @@ public class LinhaDTO implements Serializable {
     public String toString() {
         return "LinhaDTO{" +
             "id=" + getId() +
+            ", sequencia='" + getSequencia() + "'" +
+            ", valor='" + getValor() + "'" +
             "}";
     }
 }

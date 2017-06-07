@@ -1,0 +1,60 @@
+<div>
+    <h2 data-translate="meioambienteApp.funcionario.home.title">Funcionarios</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="funcionario-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.funcionario.home.createLabel">
+                        Create new Funcionario
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.funcionario.funcao">Funcao</span></th>
+                    <th><span data-translate="meioambienteApp.funcionario.idfuncionarios">Idfuncionarios</span></th>
+                    <th><span data-translate="meioambienteApp.funcionario.nomefuncionario">Nomefuncionario</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="funcionario in vm.funcionarios track by funcionario.id">
+                    <td><a ui-sref="funcionario-ambiental-detail({id:funcionario.id})">{{funcionario.id}}</a></td>
+                    <td>{{funcionario.funcao}}</td>
+                    <td>{{funcionario.idfuncionarios}}</td>
+                    <td>{{funcionario.nomefuncionario}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="funcionario-ambiental-detail({id:funcionario.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="funcionario-ambiental.edit({id:funcionario.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="funcionario-ambiental.delete({id:funcionario.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

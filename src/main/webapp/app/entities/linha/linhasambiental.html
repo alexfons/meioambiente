@@ -19,6 +19,8 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.linha.sequencia">Sequencia</span></th>
+                    <th><span data-translate="meioambienteApp.linha.valor">Valor</span></th>
                     <th><span data-translate="meioambienteApp.linha.coluna">Coluna</span></th>
                     <th></th>
                 </tr>
@@ -26,6 +28,8 @@
             <tbody>
                 <tr ng-repeat="linha in vm.linhas track by linha.id">
                     <td><a ui-sref="linha-ambiental-detail({id:linha.id})">{{linha.id}}</a></td>
+                    <td>{{linha.sequencia}}</td>
+                    <td>{{linha.valor}}</td>
                     <td>
                         <a ui-sref="coluna-ambiental-detail({id:linha.colunaId})">{{linha.colunaId}}</a>
                     </td>

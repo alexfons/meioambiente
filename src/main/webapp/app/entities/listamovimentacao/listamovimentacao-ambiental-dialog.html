@@ -1,0 +1,74 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myListamovimentacaoLabel" data-translate="meioambienteApp.listamovimentacao.home.createOrEditLabel">Create or edit a Listamovimentacao</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.listamovimentacao.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.listamovimentacao.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.listamovimentacao.tipolancamento" for="field_tipolancamento">Tipolancamento</label>
+            <input type="text" class="form-control" name="tipolancamento" id="field_tipolancamento"
+                    ng-model="vm.listamovimentacao.tipolancamento"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.listamovimentacao.historico" for="field_historico">Historico</label>
+            <input type="text" class="form-control" name="historico" id="field_historico"
+                    ng-model="vm.listamovimentacao.historico"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.listamovimentacao.valoruscredito" for="field_valoruscredito">Valoruscredito</label>
+            <input type="number" class="form-control" name="valoruscredito" id="field_valoruscredito"
+                    ng-model="vm.listamovimentacao.valoruscredito"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.listamovimentacao.valorrcredito" for="field_valorrcredito">Valorrcredito</label>
+            <input type="number" class="form-control" name="valorrcredito" id="field_valorrcredito"
+                    ng-model="vm.listamovimentacao.valorrcredito"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.listamovimentacao.valorusdebito" for="field_valorusdebito">Valorusdebito</label>
+            <input type="number" class="form-control" name="valorusdebito" id="field_valorusdebito"
+                    ng-model="vm.listamovimentacao.valorusdebito"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.listamovimentacao.valorrdebito" for="field_valorrdebito">Valorrdebito</label>
+            <input type="number" class="form-control" name="valorrdebito" id="field_valorrdebito"
+                    ng-model="vm.listamovimentacao.valorrdebito"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="meioambienteApp.listamovimentacao.idplanocontas" for="field_idplanocontas">Idplanocontas</label>
+            <select class="form-control" id="field_idplanocontas" name="idplanocontas" ng-model="vm.listamovimentacao.idplanocontasId" ng-options="planocontas.id as planocontas.id for planocontas in vm.planocontas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.listamovimentacao.movimentacao" for="field_movimentacao">Movimentacao</label>
+            <select class="form-control" id="field_movimentacao" name="movimentacao" ng-model="vm.listamovimentacao.movimentacaoId" ng-options="movimentacao.id as movimentacao.id for movimentacao in vm.movimentacaos"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

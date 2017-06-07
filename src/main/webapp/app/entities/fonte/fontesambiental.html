@@ -19,12 +19,24 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.fonte.descricao">Descricao</span></th>
+                    <th><span data-translate="meioambienteApp.fonte.fonte">Fonte</span></th>
+                    <th><span data-translate="meioambienteApp.fonte.indiceagente">Indiceagente</span></th>
+                    <th><span data-translate="meioambienteApp.fonte.indicelocal">Indicelocal</span></th>
+                    <th><span data-translate="meioambienteApp.fonte.idcontabancaria">Idcontabancaria</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="fonte in vm.fontes track by fonte.id">
                     <td><a ui-sref="fonte-ambiental-detail({id:fonte.id})">{{fonte.id}}</a></td>
+                    <td>{{fonte.descricao}}</td>
+                    <td>{{fonte.fonte}}</td>
+                    <td>{{fonte.indiceagente}}</td>
+                    <td>{{fonte.indicelocal}}</td>
+                    <td>
+                        <a ui-sref="contabancaria-ambiental-detail({id:fonte.idcontabancariaId})">{{fonte.idcontabancariaId}}</a>
+                    </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

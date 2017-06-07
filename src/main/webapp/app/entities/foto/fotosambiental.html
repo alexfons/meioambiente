@@ -19,12 +19,36 @@
             <thead>
                 <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
                     <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="coordenadaa"><span data-translate="meioambienteApp.foto.coordenadaa">Coordenadaa</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="coordenadae"><span data-translate="meioambienteApp.foto.coordenadae">Coordenadae</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="coordenadan"><span data-translate="meioambienteApp.foto.coordenadan">Coordenadan</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="data"><span data-translate="meioambienteApp.foto.data">Data</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="descricaoString"><span data-translate="meioambienteApp.foto.descricaoString">Descricao String</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="foto"><span data-translate="meioambienteApp.foto.foto">Foto</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="lado"><span data-translate="meioambienteApp.foto.lado">Lado</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="link"><span data-translate="meioambienteApp.foto.link">Link</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="numero"><span data-translate="meioambienteApp.foto.numero">Numero</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="picasaId"><span data-translate="meioambienteApp.foto.picasaId">Picasa Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="ponto"><span data-translate="meioambienteApp.foto.ponto">Ponto</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="thumb"><span data-translate="meioambienteApp.foto.thumb">Thumb</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="foto in vm.fotos track by foto.id">
                     <td><a ui-sref="foto-ambiental-detail({id:foto.id})">{{foto.id}}</a></td>
+                    <td>{{foto.coordenadaa}}</td>
+                    <td>{{foto.coordenadae}}</td>
+                    <td>{{foto.coordenadan}}</td>
+                    <td>{{foto.data | date:'medium'}}</td>
+                    <td>{{foto.descricaoString}}</td>
+                    <td>{{foto.foto}}</td>
+                    <td>{{foto.lado}}</td>
+                    <td>{{foto.link}}</td>
+                    <td>{{foto.numero}}</td>
+                    <td>{{foto.picasaId}}</td>
+                    <td>{{foto.ponto}}</td>
+                    <td>{{foto.thumb}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

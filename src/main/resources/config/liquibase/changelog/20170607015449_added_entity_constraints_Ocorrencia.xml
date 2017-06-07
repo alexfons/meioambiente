@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Ocorrencia.
+    -->
+    <changeSet id="20170607015449-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="atividade_id"
+                                 baseTableName="ocorrencia"
+                                 constraintName="fk_ocorrencia_atividade_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="atividade"/>
+
+        <addForeignKeyConstraint baseColumnNames="obra_id"
+                                 baseTableName="ocorrencia"
+                                 constraintName="fk_ocorrencia_obra_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="obra"/>
+
+        <addForeignKeyConstraint baseColumnNames="servico_id"
+                                 baseTableName="ocorrencia"
+                                 constraintName="fk_ocorrencia_servico_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tabela"/>
+
+        <addForeignKeyConstraint baseColumnNames="tabela_id"
+                                 baseTableName="ocorrencia"
+                                 constraintName="fk_ocorrencia_tabela_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tabela"/>
+
+        <addForeignKeyConstraint baseColumnNames="tipo_id"
+                                 baseTableName="ocorrencia"
+                                 constraintName="fk_ocorrencia_tipo_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tipoocorrencia"/>
+
+        <addForeignKeyConstraint baseColumnNames="tipoocorrencia_id"
+                                 baseTableName="ocorrencia"
+                                 constraintName="fk_ocorrencia_tipoocorrencia_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tipoocorrencia"/>
+
+        <addForeignKeyConstraint baseColumnNames="ocorrencias_id"
+                                 baseTableName="ocorrencia_fotos"
+                                 constraintName="fk_ocorrencia_fotos_ocorrencias_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ocorrencia"/>
+        <addForeignKeyConstraint baseColumnNames="fotos_id"
+                                 baseTableName="ocorrencia_fotos"
+                                 constraintName="fk_ocorrencia_fotos_fotos_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="foto"/>
+        
+        <addForeignKeyConstraint baseColumnNames="ocorrencias_id"
+                                 baseTableName="ocorrencia_historicos"
+                                 constraintName="fk_ocorrencia_historicos_ocorrencias_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ocorrencia"/>
+        <addForeignKeyConstraint baseColumnNames="historicos_id"
+                                 baseTableName="ocorrencia_historicos"
+                                 constraintName="fk_ocorrencia_historicos_historicos_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="historico"/>
+        
+        <addForeignKeyConstraint baseColumnNames="ocorrencias_id"
+                                 baseTableName="ocorrencia_registros"
+                                 constraintName="fk_ocorrencia_registros_ocorrencias_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ocorrencia"/>
+        <addForeignKeyConstraint baseColumnNames="registros_id"
+                                 baseTableName="ocorrencia_registros"
+                                 constraintName="fk_ocorrencia_registros_registros_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="registro"/>
+        
+    </changeSet>
+</databaseChangeLog>

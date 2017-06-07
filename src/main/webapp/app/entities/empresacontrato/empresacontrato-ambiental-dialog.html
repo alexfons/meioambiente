@@ -13,7 +13,19 @@
             <input type="text" class="form-control" id="id" name="id"
                     ng-model="vm.empresacontrato.id" readonly />
         </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.empresacontrato.tipo" for="field_tipo">Tipo</label>
+            <input type="text" class="form-control" name="tipo" id="field_tipo"
+                    ng-model="vm.empresacontrato.tipo"
+                    />
+        </div>
 
+        <div class="form-group">
+            <label data-translate="meioambienteApp.empresacontrato.empresa" for="field_empresa">Empresa</label>
+            <select class="form-control" id="field_empresa" name="empresa" ng-model="vm.empresacontrato.empresaId" ng-options="empresa.id as empresa.id for empresa in vm.empresas"            >
+                <option value=""></option>
+            </select>
+        </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">

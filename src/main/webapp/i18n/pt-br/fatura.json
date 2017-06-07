@@ -1,0 +1,41 @@
+{
+    "meioambienteApp": {
+        "fatura" : {
+            "home": {
+                "title": "Faturas",
+                "createLabel": "Criar novo Fatura",
+                "createOrEditLabel": "Criar ou editar Fatura"
+            },
+            "created": "Um novo Fatura é criado com o identificador {{ param }}",
+            "updated": "Um Fatura é atualizado com o identificador {{ param }}",
+            "deleted": "Um Fatura é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Fatura {{ id }}?"
+            },
+            "detail": {
+                "title": "Fatura"
+            },
+            "ajustecambio": "Ajustecambio",
+            "dataop": "Dataop",
+            "despesasexeanteriores": "Despesasexeanteriores",
+            "nfatura": "Nfatura",
+            "nprocesso": "Nprocesso",
+            "nsolicitacao": "Nsolicitacao",
+            "parcela": "Parcela",
+            "nob": "Nob",
+            "nop": "Nop",
+            "nummedicao": "Nummedicao",
+            "restosapagar": "Restosapagar",
+            "tipomedicao": "Tipomedicao",
+            "valorpi": "Valorpi",
+            "valorreajuste": "Valorreajuste",
+            "valorus": "Valorus",
+            "vreajuste": "Vreajuste",
+            "fonte": "Fonte",
+            "idcontabancaria": "Idcontabancaria",
+            "idcontrato": "Idcontrato",
+            "idreferencia": "Idreferencia",
+            "medicao": "Medicao"
+        }
+    }
+}

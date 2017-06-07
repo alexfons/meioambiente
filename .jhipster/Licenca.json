@@ -1,0 +1,287 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "atividadelicenca",
+            "otherEntityName": "atividadelicenca",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "empresa",
+            "otherEntityName": "empresa",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "projeto",
+            "otherEntityName": "projeto",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "tipo",
+            "otherEntityName": "tipolicenca",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "obra",
+            "otherEntityName": "obra",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "orgaoemissor",
+            "otherEntityName": "orgaoemissor",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "tipolicenca",
+            "otherEntityName": "tipolicenca",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "condicionantes",
+            "otherEntityName": "condicionante",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "docs",
+            "otherEntityName": "documento",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "fotos",
+            "otherEntityName": "foto",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "album",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "andamento",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "compensacaoambiental",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "dataemissao",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataentregadocs",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataexpedicaoprorrogacao1",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataexpedicaoprorrogacao2",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataexpedicaoprorrogacao3",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataoficiolocalpedido",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataoficiolocalrecebimento",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataoficioreoficialpedido",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataoficioreoficialrecebimento",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "datapedidoprorrogacao1",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "datapedidoprorrogacao2",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "datapedidoprorrogacao3",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "datavalidadeprorrogacao1",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "datavalidadeprorrogacao2",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "datavalidadeprorrogacao3",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "datavencimento",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "datavencimentoatual",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dispensalai",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "docsentregues",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "eiarima",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "fcei",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fceidatapagamento",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "fceidataprotocolo",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "fceivalor",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "folder",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "inativo",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "inventarioflorestal",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "numero",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numerolap",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numerooficioconcessaoprorrogacao1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numerooficioconcessaoprorrogacao2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numerooficioconcessaoprorrogacao3",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numerooficiolocalpedido",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numerooficiolocalrecebimento",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numerooficiooficialpedido",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numerooficiooficialrecebimento",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numerooficioprorrogacao1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numerooficioprorrogacao2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numerooficioprorrogacao3",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numeroparecertecnico",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numeroprocesso",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "observacao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pendente",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prazomes",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "prazovalidade",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "reciboentregadocs",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "usosolo",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "usosoloobs",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170607015438",
+    "entityTableName": "licenca",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "ambiental"
+}

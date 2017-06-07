@@ -1,0 +1,89 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myMedicaoLabel" data-translate="meioambienteApp.medicao.home.createOrEditLabel">Create or edit a Medicao</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.medicao.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.medicao.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.medicao.ajustecambio" for="field_ajustecambio">Ajustecambio</label>
+                <input type="checkbox" name="ajustecambio" id="field_ajustecambio"
+                          ng-model="vm.medicao.ajustecambio"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.medicao.conferido" for="field_conferido">Conferido</label>
+            <input type="text" class="form-control" name="conferido" id="field_conferido"
+                    ng-model="vm.medicao.conferido"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.medicao.idmedicao" for="field_idmedicao">Idmedicao</label>
+            <input type="number" class="form-control" name="idmedicao" id="field_idmedicao"
+                    ng-model="vm.medicao.idmedicao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.medicao.mes" for="field_mes">Mes</label>
+                <div class="input-group">
+                    <input id="field_mes" type="text" class="form-control" name="mes" datetime-picker="{{dateformat}}" ng-model="vm.medicao.mes" is-open="vm.datePickerOpenStatus.mes"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('mes')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.medicao.nummedicao" for="field_nummedicao">Nummedicao</label>
+            <input type="number" class="form-control" name="nummedicao" id="field_nummedicao"
+                    ng-model="vm.medicao.nummedicao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.medicao.tipomedicao" for="field_tipomedicao">Tipomedicao</label>
+            <input type="text" class="form-control" name="tipomedicao" id="field_tipomedicao"
+                    ng-model="vm.medicao.tipomedicao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.medicao.valormedicao" for="field_valormedicao">Valormedicao</label>
+            <input type="number" class="form-control" name="valormedicao" id="field_valormedicao"
+                    ng-model="vm.medicao.valormedicao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.medicao.valormedicaoreajuste" for="field_valormedicaoreajuste">Valormedicaoreajuste</label>
+            <input type="number" class="form-control" name="valormedicaoreajuste" id="field_valormedicaoreajuste"
+                    ng-model="vm.medicao.valormedicaoreajuste"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.medicao.valorusmedicao" for="field_valorusmedicao">Valorusmedicao</label>
+            <input type="number" class="form-control" name="valorusmedicao" id="field_valorusmedicao"
+                    ng-model="vm.medicao.valorusmedicao"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="meioambienteApp.medicao.idcontrato" for="field_idcontrato">Idcontrato</label>
+            <select class="form-control" id="field_idcontrato" name="idcontrato" ng-model="vm.medicao.idcontratoId" ng-options="contrato.id as contrato.id for contrato in vm.contratoes"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -124,6 +124,18 @@
                     resolve: {
                         entity: function () {
                             return {
+                                coordenadaa: null,
+                                coordenadae: null,
+                                coordenadan: null,
+                                data: null,
+                                descricaoString: null,
+                                foto: null,
+                                lado: null,
+                                link: null,
+                                numero: null,
+                                picasaId: null,
+                                ponto: null,
+                                thumb: null,
                                 id: null
                             };
                         }

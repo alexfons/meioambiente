@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "usuario" : {
+            "home": {
+                "title": "Usuarios",
+                "createLabel": "Criar novo Usuario",
+                "createOrEditLabel": "Criar ou editar Usuario"
+            },
+            "created": "Um novo Usuario é criado com o identificador {{ param }}",
+            "updated": "Um Usuario é atualizado com o identificador {{ param }}",
+            "deleted": "Um Usuario é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Usuario {{ id }}?"
+            },
+            "detail": {
+                "title": "Usuario"
+            }
+        }
+    }
+}

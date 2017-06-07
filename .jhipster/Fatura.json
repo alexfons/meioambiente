@@ -1,0 +1,107 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "fonte",
+            "otherEntityName": "fonte",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "idcontabancaria",
+            "otherEntityName": "contabancaria",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "idcontrato",
+            "otherEntityName": "contrato",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "idreferencia",
+            "otherEntityName": "referencia",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "medicao",
+            "otherEntityName": "medicao",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "ajustecambio",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "dataop",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "despesasexeanteriores",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nfatura",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nprocesso",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nsolicitacao",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "parcela",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nob",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nop",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nummedicao",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "restosapagar",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tipomedicao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "valorpi",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "valorreajuste",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "valorus",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "vreajuste",
+            "fieldType": "BigDecimal"
+        }
+    ],
+    "changelogDate": "20170607011336",
+    "entityTableName": "fatura",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "ambiental"
+}

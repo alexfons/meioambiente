@@ -4,6 +4,26 @@
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.fonte.descricao">Descricao</span></dt>
+        <dd>
+            <span>{{vm.fonte.descricao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fonte.fonte">Fonte</span></dt>
+        <dd>
+            <span>{{vm.fonte.fonte}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fonte.indiceagente">Indiceagente</span></dt>
+        <dd>
+            <span>{{vm.fonte.indiceagente}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fonte.indicelocal">Indicelocal</span></dt>
+        <dd>
+            <span>{{vm.fonte.indicelocal}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fonte.idcontabancaria">Idcontabancaria</span></dt>
+        <dd>
+            <a ui-sref="contabancaria-ambiental-detail({id:vm.fonte.idcontabancariaId})">{{vm.fonte.idcontabancariaId}}</a>
+        </dd>
     </dl>
 
     <button type="submit"

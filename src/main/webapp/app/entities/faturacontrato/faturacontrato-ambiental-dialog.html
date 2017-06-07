@@ -1,0 +1,156 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myFaturacontratoLabel" data-translate="meioambienteApp.faturacontrato.home.createOrEditLabel">Create or edit a Faturacontrato</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.faturacontrato.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.faturacontrato.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.faturacontrato.dataop" for="field_dataop">Dataop</label>
+                <div class="input-group">
+                    <input id="field_dataop" type="text" class="form-control" name="dataop" datetime-picker="{{dateformat}}" ng-model="vm.faturacontrato.dataop" is-open="vm.datePickerOpenStatus.dataop"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataop')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.faturacontrato.despesasexeanteriores" for="field_despesasexeanteriores">Despesasexeanteriores</label>
+            <input type="text" class="form-control" name="despesasexeanteriores" id="field_despesasexeanteriores"
+                    ng-model="vm.faturacontrato.despesasexeanteriores"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.faturacontrato.idfaturacontrato" for="field_idfaturacontrato">Idfaturacontrato</label>
+            <input type="number" class="form-control" name="idfaturacontrato" id="field_idfaturacontrato"
+                    ng-model="vm.faturacontrato.idfaturacontrato"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.faturacontrato.nfatura" for="field_nfatura">Nfatura</label>
+            <input type="number" class="form-control" name="nfatura" id="field_nfatura"
+                    ng-model="vm.faturacontrato.nfatura"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.faturacontrato.nprocesso" for="field_nprocesso">Nprocesso</label>
+            <input type="number" class="form-control" name="nprocesso" id="field_nprocesso"
+                    ng-model="vm.faturacontrato.nprocesso"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.faturacontrato.nsolicitacao" for="field_nsolicitacao">Nsolicitacao</label>
+            <input type="number" class="form-control" name="nsolicitacao" id="field_nsolicitacao"
+                    ng-model="vm.faturacontrato.nsolicitacao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.faturacontrato.parcela" for="field_parcela">Parcela</label>
+            <input type="number" class="form-control" name="parcela" id="field_parcela"
+                    ng-model="vm.faturacontrato.parcela"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.faturacontrato.nobancaria" for="field_nobancaria">Nobancaria</label>
+            <input type="number" class="form-control" name="nobancaria" id="field_nobancaria"
+                    ng-model="vm.faturacontrato.nobancaria"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.faturacontrato.nop" for="field_nop">Nop</label>
+            <input type="number" class="form-control" name="nop" id="field_nop"
+                    ng-model="vm.faturacontrato.nop"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.faturacontrato.nummedicao" for="field_nummedicao">Nummedicao</label>
+            <input type="number" class="form-control" name="nummedicao" id="field_nummedicao"
+                    ng-model="vm.faturacontrato.nummedicao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.faturacontrato.restosapagar" for="field_restosapagar">Restosapagar</label>
+            <input type="text" class="form-control" name="restosapagar" id="field_restosapagar"
+                    ng-model="vm.faturacontrato.restosapagar"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.faturacontrato.tipomedicao" for="field_tipomedicao">Tipomedicao</label>
+            <input type="text" class="form-control" name="tipomedicao" id="field_tipomedicao"
+                    ng-model="vm.faturacontrato.tipomedicao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.faturacontrato.valorpi" for="field_valorpi">Valorpi</label>
+            <input type="number" class="form-control" name="valorpi" id="field_valorpi"
+                    ng-model="vm.faturacontrato.valorpi"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.faturacontrato.valorreajuste" for="field_valorreajuste">Valorreajuste</label>
+            <input type="number" class="form-control" name="valorreajuste" id="field_valorreajuste"
+                    ng-model="vm.faturacontrato.valorreajuste"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.faturacontrato.valorus" for="field_valorus">Valorus</label>
+            <input type="number" class="form-control" name="valorus" id="field_valorus"
+                    ng-model="vm.faturacontrato.valorus"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.faturacontrato.vreajuste" for="field_vreajuste">Vreajuste</label>
+            <input type="number" class="form-control" name="vreajuste" id="field_vreajuste"
+                    ng-model="vm.faturacontrato.vreajuste"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.faturacontrato.aportelocal" for="field_aportelocal">Aportelocal</label>
+            <input type="number" class="form-control" name="aportelocal" id="field_aportelocal"
+                    ng-model="vm.faturacontrato.aportelocal"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.faturacontrato.aporteagente" for="field_aporteagente">Aporteagente</label>
+            <input type="number" class="form-control" name="aporteagente" id="field_aporteagente"
+                    ng-model="vm.faturacontrato.aporteagente"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="meioambienteApp.faturacontrato.fonte" for="field_fonte">Fonte</label>
+            <select class="form-control" id="field_fonte" name="fonte" ng-model="vm.faturacontrato.fonteId" ng-options="fonte.id as fonte.id for fonte in vm.fontes"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.faturacontrato.idcontrato" for="field_idcontrato">Idcontrato</label>
+            <select class="form-control" id="field_idcontrato" name="idcontrato" ng-model="vm.faturacontrato.idcontratoId" ng-options="contrato.id as contrato.id for contrato in vm.contratoes"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.faturacontrato.idreferenciacontrato" for="field_idreferenciacontrato">Idreferenciacontrato</label>
+            <select class="form-control" id="field_idreferenciacontrato" name="idreferenciacontrato" ng-model="vm.faturacontrato.idreferenciacontratoId" ng-options="referenciacontrato.id as referenciacontrato.id for referenciacontrato in vm.referenciacontratoes"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,24 @@
+{
+    "meioambienteApp": {
+        "log" : {
+            "home": {
+                "title": "Logs",
+                "createLabel": "Criar novo Log",
+                "createOrEditLabel": "Criar ou editar Log"
+            },
+            "created": "Um novo Log é criado com o identificador {{ param }}",
+            "updated": "Um Log é atualizado com o identificador {{ param }}",
+            "deleted": "Um Log é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Log {{ id }}?"
+            },
+            "detail": {
+                "title": "Log"
+            },
+            "data": "Data",
+            "descricao": "Descricao",
+            "metodo": "Metodo",
+            "usuario": "Usuario"
+        }
+    }
+}

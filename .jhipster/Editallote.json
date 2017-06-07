@@ -1,0 +1,47 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "numeroedital",
+            "otherEntityName": "edital",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "dataprovacaolote",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "datarelatoriolote",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "idlote",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "lote",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "objeto",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prazo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "valororcado",
+            "fieldType": "BigDecimal"
+        }
+    ],
+    "changelogDate": "20170607011333",
+    "entityTableName": "editallote",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "ambiental"
+}

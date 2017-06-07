@@ -13,6 +13,82 @@
             <input type="text" class="form-control" id="id" name="id"
                     ng-model="vm.foto.id" readonly />
         </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.foto.coordenadaa" for="field_coordenadaa">Coordenadaa</label>
+            <input type="text" class="form-control" name="coordenadaa" id="field_coordenadaa"
+                    ng-model="vm.foto.coordenadaa"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.foto.coordenadae" for="field_coordenadae">Coordenadae</label>
+            <input type="text" class="form-control" name="coordenadae" id="field_coordenadae"
+                    ng-model="vm.foto.coordenadae"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.foto.coordenadan" for="field_coordenadan">Coordenadan</label>
+            <input type="text" class="form-control" name="coordenadan" id="field_coordenadan"
+                    ng-model="vm.foto.coordenadan"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.foto.data" for="field_data">Data</label>
+                <div class="input-group">
+                    <input id="field_data" type="text" class="form-control" name="data" datetime-picker="{{dateformat}}" ng-model="vm.foto.data" is-open="vm.datePickerOpenStatus.data"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('data')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.foto.descricaoString" for="field_descricaoString">Descricao String</label>
+            <input type="text" class="form-control" name="descricaoString" id="field_descricaoString"
+                    ng-model="vm.foto.descricaoString"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.foto.foto" for="field_foto">Foto</label>
+            <input type="text" class="form-control" name="foto" id="field_foto"
+                    ng-model="vm.foto.foto"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.foto.lado" for="field_lado">Lado</label>
+            <input type="text" class="form-control" name="lado" id="field_lado"
+                    ng-model="vm.foto.lado"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.foto.link" for="field_link">Link</label>
+            <input type="text" class="form-control" name="link" id="field_link"
+                    ng-model="vm.foto.link"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.foto.numero" for="field_numero">Numero</label>
+            <input type="number" class="form-control" name="numero" id="field_numero"
+                    ng-model="vm.foto.numero"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.foto.picasaId" for="field_picasaId">Picasa Id</label>
+            <input type="text" class="form-control" name="picasaId" id="field_picasaId"
+                    ng-model="vm.foto.picasaId"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.foto.ponto" for="field_ponto">Ponto</label>
+            <input type="number" class="form-control" name="ponto" id="field_ponto"
+                    ng-model="vm.foto.ponto"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.foto.thumb" for="field_thumb">Thumb</label>
+            <input type="text" class="form-control" name="thumb" id="field_thumb"
+                    ng-model="vm.foto.thumb"
+                    />
+        </div>
 
     </div>
     <div class="modal-footer">

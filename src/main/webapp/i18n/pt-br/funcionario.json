@@ -1,0 +1,23 @@
+{
+    "meioambienteApp": {
+        "funcionario" : {
+            "home": {
+                "title": "Funcionarios",
+                "createLabel": "Criar novo Funcionario",
+                "createOrEditLabel": "Criar ou editar Funcionario"
+            },
+            "created": "Um novo Funcionario é criado com o identificador {{ param }}",
+            "updated": "Um Funcionario é atualizado com o identificador {{ param }}",
+            "deleted": "Um Funcionario é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Funcionario {{ id }}?"
+            },
+            "detail": {
+                "title": "Funcionario"
+            },
+            "funcao": "Funcao",
+            "idfuncionarios": "Idfuncionarios",
+            "nomefuncionario": "Nomefuncionario"
+        }
+    }
+}

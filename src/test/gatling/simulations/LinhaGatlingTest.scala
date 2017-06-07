@@ -68,7 +68,7 @@ class LinhaGatlingTest extends Simulation {
             .exec(http("Create new linha")
             .post("/api/linhas")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null}""")).asJSON
+            .body(StringBody("""{"id":null, "sequencia":"0", "valor":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_linha_url"))).exitHereIfFailed
             .pause(10)

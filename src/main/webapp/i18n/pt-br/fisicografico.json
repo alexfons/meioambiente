@@ -1,0 +1,28 @@
+{
+    "meioambienteApp": {
+        "fisicografico" : {
+            "home": {
+                "title": "Fisicograficos",
+                "createLabel": "Criar novo Fisicografico",
+                "createOrEditLabel": "Criar ou editar Fisicografico"
+            },
+            "created": "Um novo Fisicografico é criado com o identificador {{ param }}",
+            "updated": "Um Fisicografico é atualizado com o identificador {{ param }}",
+            "deleted": "Um Fisicografico é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Fisicografico {{ id }}?"
+            },
+            "detail": {
+                "title": "Fisicografico"
+            },
+            "atacada": "Atacada",
+            "extensao": "Extensao",
+            "fim": "Fim",
+            "inicio": "Inicio",
+            "npontos": "Npontos",
+            "pontofim": "Pontofim",
+            "pontoinicio": "Pontoinicio",
+            "atividade": "Atividade"
+        }
+    }
+}

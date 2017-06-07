@@ -1,0 +1,25 @@
+{
+    "meioambienteApp": {
+        "movimentacao" : {
+            "home": {
+                "title": "Movimentacaos",
+                "createLabel": "Create a new Movimentacao",
+                "createOrEditLabel": "Create or edit a Movimentacao"
+            },
+            "created": "A new Movimentacao is created with identifier {{ param }}",
+            "updated": "A Movimentacao is updated with identifier {{ param }}",
+            "deleted": "A Movimentacao is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Movimentacao {{ id }}?"
+            },
+            "detail": {
+                "title": "Movimentacao"
+            },
+            "data": "Data",
+            "tipomovimentacao": "Tipomovimentacao",
+            "listamovimentacao": "Listamovimentacao",
+            "contabancaria": "Contabancaria",
+            "fonte": "Fonte"
+        }
+    }
+}

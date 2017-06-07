@@ -68,7 +68,7 @@ class FotoGatlingTest extends Simulation {
             .exec(http("Create new foto")
             .post("/api/fotos")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null}""")).asJSON
+            .body(StringBody("""{"id":null, "coordenadaa":"SAMPLE_TEXT", "coordenadae":"SAMPLE_TEXT", "coordenadan":"SAMPLE_TEXT", "data":"2020-01-01T00:00:00.000Z", "descricaoString":"SAMPLE_TEXT", "foto":"SAMPLE_TEXT", "lado":"SAMPLE_TEXT", "link":"SAMPLE_TEXT", "numero":"0", "picasaId":"SAMPLE_TEXT", "ponto":"0", "thumb":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_foto_url"))).exitHereIfFailed
             .pause(10)

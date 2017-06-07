@@ -1,0 +1,41 @@
+{
+    "meioambienteApp": {
+        "faturacontrato" : {
+            "home": {
+                "title": "Faturacontratoes",
+                "createLabel": "Criar novo Faturacontrato",
+                "createOrEditLabel": "Criar ou editar Faturacontrato"
+            },
+            "created": "Um novo Faturacontrato é criado com o identificador {{ param }}",
+            "updated": "Um Faturacontrato é atualizado com o identificador {{ param }}",
+            "deleted": "Um Faturacontrato é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Faturacontrato {{ id }}?"
+            },
+            "detail": {
+                "title": "Faturacontrato"
+            },
+            "dataop": "Dataop",
+            "despesasexeanteriores": "Despesasexeanteriores",
+            "idfaturacontrato": "Idfaturacontrato",
+            "nfatura": "Nfatura",
+            "nprocesso": "Nprocesso",
+            "nsolicitacao": "Nsolicitacao",
+            "parcela": "Parcela",
+            "nobancaria": "Nobancaria",
+            "nop": "Nop",
+            "nummedicao": "Nummedicao",
+            "restosapagar": "Restosapagar",
+            "tipomedicao": "Tipomedicao",
+            "valorpi": "Valorpi",
+            "valorreajuste": "Valorreajuste",
+            "valorus": "Valorus",
+            "vreajuste": "Vreajuste",
+            "aportelocal": "Aportelocal",
+            "aporteagente": "Aporteagente",
+            "fonte": "Fonte",
+            "idcontrato": "Idcontrato",
+            "idreferenciacontrato": "Idreferenciacontrato"
+        }
+    }
+}

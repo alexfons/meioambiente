@@ -104,6 +104,11 @@
                     resolve: {
                         entity: function () {
                             return {
+                                data: null,
+                                descricao: null,
+                                documento: null,
+                                link: null,
+                                thumb: null,
                                 id: null
                             };
                         }

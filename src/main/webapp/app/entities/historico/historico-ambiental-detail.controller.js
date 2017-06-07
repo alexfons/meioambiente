@@ -5,9 +5,9 @@
         .module('meioambienteApp')
         .controller('HistoricoAmbientalDetailController', HistoricoAmbientalDetailController);
 
-    HistoricoAmbientalDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Historico'];
+    HistoricoAmbientalDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Historico', 'Status'];
 
-    function HistoricoAmbientalDetailController($scope, $rootScope, $stateParams, previousState, entity, Historico) {
+    function HistoricoAmbientalDetailController($scope, $rootScope, $stateParams, previousState, entity, Historico, Status) {
         var vm = this;
 
         vm.historico = entity;

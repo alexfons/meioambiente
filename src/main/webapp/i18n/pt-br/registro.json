@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "registro" : {
+            "home": {
+                "title": "Registros",
+                "createLabel": "Criar novo Registro",
+                "createOrEditLabel": "Criar ou editar Registro"
+            },
+            "created": "Um novo Registro é criado com o identificador {{ param }}",
+            "updated": "Um Registro é atualizado com o identificador {{ param }}",
+            "deleted": "Um Registro é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Registro {{ id }}?"
+            },
+            "detail": {
+                "title": "Registro"
+            }
+        }
+    }
+}

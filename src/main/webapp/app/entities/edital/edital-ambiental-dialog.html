@@ -1,0 +1,168 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myEditalLabel" data-translate="meioambienteApp.edital.home.createOrEditLabel">Create or edit a Edital</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.edital.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.edital.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.edital.comissaojulgamento" for="field_comissaojulgamento">Comissaojulgamento</label>
+            <input type="text" class="form-control" name="comissaojulgamento" id="field_comissaojulgamento"
+                    ng-model="vm.edital.comissaojulgamento"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.edital.dataaprovacao" for="field_dataaprovacao">Dataaprovacao</label>
+                <div class="input-group">
+                    <input id="field_dataaprovacao" type="text" class="form-control" name="dataaprovacao" datetime-picker="{{dateformat}}" ng-model="vm.edital.dataaprovacao" is-open="vm.datePickerOpenStatus.dataaprovacao"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataaprovacao')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.edital.dataenvio" for="field_dataenvio">Dataenvio</label>
+                <div class="input-group">
+                    <input id="field_dataenvio" type="text" class="form-control" name="dataenvio" datetime-picker="{{dateformat}}" ng-model="vm.edital.dataenvio" is-open="vm.datePickerOpenStatus.dataenvio"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataenvio')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.edital.datahoraabertura" for="field_datahoraabertura">Datahoraabertura</label>
+                <div class="input-group">
+                    <input id="field_datahoraabertura" type="text" class="form-control" name="datahoraabertura" datetime-picker="{{dateformat}}" ng-model="vm.edital.datahoraabertura" is-open="vm.datePickerOpenStatus.datahoraabertura"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datahoraabertura')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.edital.datalicitacao" for="field_datalicitacao">Datalicitacao</label>
+                <div class="input-group">
+                    <input id="field_datalicitacao" type="text" class="form-control" name="datalicitacao" datetime-picker="{{dateformat}}" ng-model="vm.edital.datalicitacao" is-open="vm.datePickerOpenStatus.datalicitacao"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datalicitacao')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.edital.datanumeromanifestacao" for="field_datanumeromanifestacao">Datanumeromanifestacao</label>
+                <div class="input-group">
+                    <input id="field_datanumeromanifestacao" type="text" class="form-control" name="datanumeromanifestacao" datetime-picker="{{dateformat}}" ng-model="vm.edital.datanumeromanifestacao" is-open="vm.datePickerOpenStatus.datanumeromanifestacao"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datanumeromanifestacao')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.edital.datapublicacao" for="field_datapublicacao">Datapublicacao</label>
+                <div class="input-group">
+                    <input id="field_datapublicacao" type="text" class="form-control" name="datapublicacao" datetime-picker="{{dateformat}}" ng-model="vm.edital.datapublicacao" is-open="vm.datePickerOpenStatus.datapublicacao"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datapublicacao')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.edital.datarelatorio" for="field_datarelatorio">Datarelatorio</label>
+                <div class="input-group">
+                    <input id="field_datarelatorio" type="text" class="form-control" name="datarelatorio" datetime-picker="{{dateformat}}" ng-model="vm.edital.datarelatorio" is-open="vm.datePickerOpenStatus.datarelatorio"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datarelatorio')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.edital.licitacao" for="field_licitacao">Licitacao</label>
+            <input type="text" class="form-control" name="licitacao" id="field_licitacao"
+                    ng-model="vm.edital.licitacao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.edital.localrelatorio" for="field_localrelatorio">Localrelatorio</label>
+            <input type="text" class="form-control" name="localrelatorio" id="field_localrelatorio"
+                    ng-model="vm.edital.localrelatorio"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.edital.modalidade" for="field_modalidade">Modalidade</label>
+            <input type="text" class="form-control" name="modalidade" id="field_modalidade"
+                    ng-model="vm.edital.modalidade"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.edital.naturezaservico" for="field_naturezaservico">Naturezaservico</label>
+            <input type="text" class="form-control" name="naturezaservico" id="field_naturezaservico"
+                    ng-model="vm.edital.naturezaservico"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.edital.numeroconvite" for="field_numeroconvite">Numeroconvite</label>
+            <input type="text" class="form-control" name="numeroconvite" id="field_numeroconvite"
+                    ng-model="vm.edital.numeroconvite"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.edital.numeroedital" for="field_numeroedital">Numeroedital</label>
+            <input type="number" class="form-control" name="numeroedital" id="field_numeroedital"
+                    ng-model="vm.edital.numeroedital"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.edital.numeromanifestacao" for="field_numeromanifestacao">Numeromanifestacao</label>
+            <input type="text" class="form-control" name="numeromanifestacao" id="field_numeromanifestacao"
+                    ng-model="vm.edital.numeromanifestacao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.edital.numeroprojeto" for="field_numeroprojeto">Numeroprojeto</label>
+            <input type="text" class="form-control" name="numeroprojeto" id="field_numeroprojeto"
+                    ng-model="vm.edital.numeroprojeto"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.edital.precoglobal" for="field_precoglobal">Precoglobal</label>
+            <input type="number" class="form-control" name="precoglobal" id="field_precoglobal"
+                    ng-model="vm.edital.precoglobal"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.edital.tipoaquisicao" for="field_tipoaquisicao">Tipoaquisicao</label>
+            <input type="text" class="form-control" name="tipoaquisicao" id="field_tipoaquisicao"
+                    ng-model="vm.edital.tipoaquisicao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.edital.tipolicitacao" for="field_tipolicitacao">Tipolicitacao</label>
+            <input type="text" class="form-control" name="tipolicitacao" id="field_tipolicitacao"
+                    ng-model="vm.edital.tipolicitacao"
+                    />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

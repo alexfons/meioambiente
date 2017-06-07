@@ -305,34 +305,288 @@ entity Desapropriacao{
 	valorus BigDecimal
 }
 entity Documento{
-	id Integer
+	data ZonedDateTime,
+	descricao String,
+	documento String,
+	id Integer,
+	link String,
+	thumb String
+}
+entity Edital{
+	comissaojulgamento String,
+	dataaprovacao ZonedDateTime,
+	dataenvio ZonedDateTime,
+	datahoraabertura ZonedDateTime,
+	datalicitacao ZonedDateTime,
+	datanumeromanifestacao ZonedDateTime,
+	datapublicacao ZonedDateTime,
+	datarelatorio ZonedDateTime,
+	licitacao String,
+	localrelatorio String,
+	modalidade String,
+	naturezaservico String,
+	numeroconvite String,
+	numeroedital Integer,
+	numeromanifestacao String,
+	numeroprojeto String,
+	precoglobal BigDecimal,
+	tipoaquisicao String,
+	tipolicitacao String
+}
+entity Editallote{
+	dataprovacaolote ZonedDateTime,
+	datarelatoriolote ZonedDateTime,
+	idlote Integer,
+	lote String,
+	objeto String,
+	prazo String,
+	valororcado BigDecimal
 }
 entity Empresa{
-	id Integer
+	bairro String,
+	cidade String,
+	cnpj String,
+	contato String,
+	email String,
+	endereco String,
+	idempresa Integer,
+	nomeempresa String,
+	numero String,
+	pais String,
+	telefonecontato String,
+	uf String
 }
 entity Empresacontrato{
-	id Integer
+	id Integer,
+	tipo String
+}
+entity Fatura{
+	ajustecambio Boolean,
+	dataop ZonedDateTime,
+	despesasexeanteriores String,
+	nfatura Integer,
+	nprocesso Integer,
+	nsolicitacao Integer,
+	parcela Integer,
+	nob Integer,
+	nop Integer,
+	nummedicao Integer,
+	restosapagar String,
+	tipomedicao String,
+	valorpi BigDecimal,
+	valorreajuste BigDecimal,
+	valorus BigDecimal,
+	vreajuste BigDecimal
+}
+entity Faturacontrato{
+	dataop ZonedDateTime,
+	despesasexeanteriores String,
+	idfaturacontrato Integer,
+	nfatura Integer,
+	nprocesso Integer,
+	nsolicitacao Integer,
+	parcela Integer,
+	nobancaria Integer,
+	nop Integer,
+	nummedicao Integer,
+	restosapagar String,
+	tipomedicao String,
+	valorpi BigDecimal,
+	valorreajuste BigDecimal,
+	valorus BigDecimal,
+	vreajuste BigDecimal,
+	aportelocal BigDecimal,
+	aporteagente BigDecimal
 }
 entity Fiscal{
-	id Integer
+	email String,
+	funcao String,
+	id Integer,
+	localtrabalho String,
+	matricula String,
+	nome String,
+	superintendencia String,
+	telefone Long,
+	telefonecomercial Long
+}
+entity Fisico{
+	extensao Double,
+	id Integer,
+	tipo String,
+	tituloFim String,
+	tituloInicio String
+}
+entity Fisicografico{
+	atacada Boolean,
+	extensao Double,
+	fim Double,
+	id Integer,
+	inicio Double,
+	npontos Integer,
+	pontofim Integer,
+	pontoinicio Integer
 }
 entity Fonte{
-	id Integer
+	descricao String,
+	fonte Integer,
+	indiceagente BigDecimal,
+	indicelocal BigDecimal
 }
 entity Foto{
-	id Integer
+	coordenadaa String,
+	coordenadae String,
+	coordenadan String,
+	data ZonedDateTime,
+	descricaoString String,
+	foto String,
+	id Integer,
+	lado String,
+	link String,
+	numero Integer,
+	picasaId String,
+	ponto Integer,
+	thumb String
+}
+entity Funcionario{
+	funcao String,
+	idfuncionarios Integer,
+	nomefuncionario String
 }
 entity Historico{
+	data ZonedDateTime,
+	descricao String,
 	id Integer
+}
+entity Informe{
+	data ZonedDateTime,
+	datainspecao ZonedDateTime,
+	id Integer,
+	notificacao Boolean,
+	numero Integer,
+	obs String
 }
 entity Informecertificadoirregularidade{
 	id Integer
 }
 entity Inspetor{
-	id Integer
+	email String,
+	funcao String,
+	id Integer,
+	localtrabalho String,
+	matricula String,
+	nome String,
+	superintendencia String,
+	telefone Long,
+	telefonecomercial Long
+}
+entity Lancamentos{
+	datalan ZonedDateTime,
+	historico String,
+	recurso String,
+	tipomedicao String,
+	idlancamentos Integer,
+	nummedicao Integer,
+	valorrdebito BigDecimal,
+	valorusdebito BigDecimal,
+	valorrcredito BigDecimal,
+	valoruscredito BigDecimal
+}
+entity Licenca{
+	album String,
+	andamento String,
+	compensacaoambiental Boolean,
+	dataemissao ZonedDateTime,
+	dataentregadocs ZonedDateTime,
+	dataexpedicaoprorrogacao1 ZonedDateTime,
+	dataexpedicaoprorrogacao2 ZonedDateTime,
+	dataexpedicaoprorrogacao3 ZonedDateTime,
+	dataoficiolocalpedido ZonedDateTime,
+	dataoficiolocalrecebimento ZonedDateTime,
+	dataoficioreoficialpedido ZonedDateTime,
+	dataoficioreoficialrecebimento ZonedDateTime,
+	datapedidoprorrogacao1 ZonedDateTime,
+	datapedidoprorrogacao2 ZonedDateTime,
+	datapedidoprorrogacao3 ZonedDateTime,
+	datavalidadeprorrogacao1 ZonedDateTime,
+	datavalidadeprorrogacao2 ZonedDateTime,
+	datavalidadeprorrogacao3 ZonedDateTime,
+	datavencimento ZonedDateTime,
+	datavencimentoatual ZonedDateTime,
+	descricao String,
+	dispensalai Boolean,
+	docsentregues String,
+	eiarima Boolean,
+	fcei String,
+	fceidatapagamento ZonedDateTime,
+	fceidataprotocolo ZonedDateTime,
+	fceivalor BigDecimal,
+	folder String,
+	id Integer,
+	inativo Boolean,
+	inventarioflorestal Boolean,
+	numero String,
+	numerolap String,
+	numerooficioconcessaoprorrogacao1 String,
+	numerooficioconcessaoprorrogacao2 String,
+	numerooficioconcessaoprorrogacao3 String,
+	numerooficiolocalpedido String,
+	numerooficiolocalrecebimento String,
+	numerooficiooficialpedido String,
+	numerooficiooficialrecebimento String,
+	numerooficioprorrogacao1 String,
+	numerooficioprorrogacao2 String,
+	numerooficioprorrogacao3 String,
+	numeroparecertecnico String,
+	numeroprocesso String,
+	observacao String,
+	pendente String,
+	prazomes Boolean,
+	prazovalidade Integer,
+	reciboentregadocs String,
+	usosolo Boolean,
+	usosoloobs String
 }
 entity Linha{
-	id Integer
+	id Integer,
+	sequencia Integer,
+	valor String
+}
+entity Listamovimentacao{
+	id Integer,
+	tipolancamento String,
+	historico String,
+	valoruscredito BigDecimal,
+	valorrcredito BigDecimal,
+	valorusdebito BigDecimal,
+	valorrdebito BigDecimal
+}
+entity Log{
+	data ZonedDateTime,
+	descricao String,
+	id Integer,
+	metodo String
+}
+entity Manifestacao{
+	dataaviso ZonedDateTime,
+	dataentrega ZonedDateTime,
+	id Integer,
+	numero Integer
+}
+entity Medicao{
+	ajustecambio Boolean,
+	conferido String,
+	idmedicao Integer,
+	mes ZonedDateTime,
+	nummedicao Integer,
+	tipomedicao String,
+	valormedicao BigDecimal,
+	valormedicaoreajuste BigDecimal,
+	valorusmedicao BigDecimal
+}
+entity Movimentacao{
+	data ZonedDateTime,
+	id Integer,
+	tipomovimentacao String
 }
 entity Natureza{
 	id Integer
@@ -348,10 +602,31 @@ entity Obra{
 	track String,
 	certificadoMes String
 }
+entity Obraatividade{
+	id Integer
+}
+entity Ocorrencia{
+	album String,
+	caracterizacao String,
+	coordenadaa String,
+	coordenadae String,
+	coordenadan String,
+	data ZonedDateTime,
+	distanciaeixo Float,
+	feature String,
+	id Integer,
+	kmfim Integer,
+	kminicio Integer,
+	lado String,
+	numero Integer
+}
 entity Ocorrenciaapresentacao{
 	id Integer
 }
 entity Ocorrenciacertificadoirregularidade{
+	id Integer
+}
+entity Ocorrenciainforme{
 	id Integer
 }
 entity Orgaoemissor{
@@ -372,6 +647,12 @@ entity Proposta{
 entity Referencia{
 	id Integer
 }
+entity Referenciacontrato{
+	id Integer
+}
+entity Registro{
+	id Integer
+}
 entity Residente{
 	id Integer
 }
@@ -379,6 +660,12 @@ entity Rodovia{
 	id Integer
 }
 entity Responsavel{
+	id Integer
+}
+entity Status{
+	id Integer
+}
+entity Tabela{
 	id Integer
 }
 entity TipoObra{
@@ -396,20 +683,29 @@ entity Tipoautorizacao{
 entity Tipocertificadoconformidade{
 	id Integer
 }
+entity Tipolicenca{
+	id Integer
+}
+entity Tipoocorrencia{
+	id Integer
+}
 entity Trecho{
 	id Integer
 }
+entity Usuario{
+	id Integer
+}
 relationship ManyToMany{
-	Obra{contratosobra} to Contratoobra, Contrato{aditivocontratos} to Aditivocontrato, Contrato{contratosobra} to Contratoobra, Contrato{empresascontrato} to Empresacontrato, Certificadoconformidade{informescertificadoirregularidade} to Informecertificadoirregularidade, Certificadoconformidade{notificacaoscertificadoirregularidade} to Notificacaocertificadoirregularidade, Certificadoconformidade{ocorrenciascertificadoirregularidade} to Ocorrenciacertificadoirregularidade, Obra{historicos} to Historico, Administrativo{fotos} to Foto, Autorizacao{fotos} to Foto, Administrativo{docs} to Documento, Administrativo{participantes} to Participante, Apresentacao{ocorrenciasapresentacao}	  to Ocorrenciaapresentacao, Apresentacao{fotos}	 to Foto, Auc{condicionantes} to Condicionante, Auc{fotos} to Foto, Auc{ docs} to Documento, Autorizacao{ docs} to Documento
+	Obra{contratosobra} to Contratoobra , Ocorrencia{fotos} to Foto , Ocorrencia{historicos} to Historico , Ocorrencia{registros} to Registro , Informe{fotos} to Foto , Informe{ocorrenciasinforme} to Ocorrenciainforme , Licenca{condicionantes} to Condicionante , Licenca{docs} to Documento , Licenca{fotos} to Foto , Fisico{obraatividades} to Obraatividade , Contrato{aditivocontratos} to Aditivocontrato , Contrato{contratosobra} to Contratoobra , Contrato{empresascontrato} to Empresacontrato , Certificadoconformidade{informescertificadoirregularidade} to Informecertificadoirregularidade , Certificadoconformidade{notificacaoscertificadoirregularidade} to Notificacaocertificadoirregularidade , Certificadoconformidade{ocorrenciascertificadoirregularidade} to Ocorrenciacertificadoirregularidade , Obra{historicos} to Historico , Administrativo{fotos} to Foto , Autorizacao{fotos} to Foto , Administrativo{docs} to Documento , Administrativo{participantes} to Participante , Apresentacao{ocorrenciasapresentacao}	  to Ocorrenciaapresentacao , Apresentacao{fotos}	 to Foto , Auc{condicionantes} to Condicionante , Auc{fotos} to Foto , Auc{ docs} to Documento , Autorizacao{ docs} to Documento
 }
 relationship ManyToOne{
-	Autorizacao{atividadelicenca} to Atividadelicenca, Desapropriacao{contacontabilC1} to Planocontas, Desapropriacao{contacontabilC2} to Planocontas, Desapropriacao{contacontabilD1} to Planocontas, Desapropriacao{contacontabilD2} to Planocontas, Desapropriacao{divcontacontabilC1} to Planocontas, Desapropriacao{divcontacontabilD1} to Planocontas, Desapropriacao{juscontacontabilC1} to Planocontas, Desapropriacao{juscontacontabilD1} to Planocontas, Desapropriacao{fonte} to Fonte, Desapropriacao{idcategoriainversao} to Categoriainversao, Desapropriacao{idcontabancaria} to Contabancaria, Desapropriacao{idreferencia} to Referencia, Desapropriacao{rodovia} to Rodovia, Custosconcorrentes{contacontabilC1} to Planocontas, Custosconcorrentes{contacontabilC2} to Planocontas, Custosconcorrentes{contacontabilD1} to Planocontas, Custosconcorrentes{contacontabilD2} to Planocontas, Custosconcorrentes{divcontacontabilC1} to Planocontas, Custosconcorrentes{divcontacontabilD1} to Planocontas, Custosconcorrentes{juscontacontabilC1} to Planocontas, Custosconcorrentes{juscontacontabilD1} to Planocontas, Custosconcorrentes{fonte} to Fonte, Custosconcorrentes{idcategoriainversao} to Categoriainversao, Contratoprojeto{contrato} to Contrato, Contratoprojeto{responsavel} to Responsavel, Clausulascontratuais{idcontratoagente} to Contratoagente, Contratoobra{contrato} to Contrato, Contratoobra{residente} to Residente, Contratoobra{responsavel} to Responsavel, Contabancaria{idplanocontas} to Planocontas, Contrato{contacontabilC2} to Planocontas, Contrato{contacontabilD1} to Planocontas, Contrato{contacontabilD2} to Planocontas, Contrato{divcontacontabilC1} to Planocontas, Contrato{divcontacontabilD1} to Planocontas, Contrato{juscontacontabilC1} to Planocontas, Contrato{juscontacontabilD1} to Planocontas, Contrato{idnatureza} to Natureza, Contrato{proposta} to Proposta, Contrato{idcategoriainversao} to Categoriainversao, Certificadoconformidade{obra} to Obra, Certificadoconformidade{tipo} to Tipocertificadoconformidade, Certificadoconformidade{tipocertificadoconformidade} to Tipocertificadoconformidade, Categoriainversao{idcontratoagente} to Contratoagente, Autorizacao{empresa} to Empresa, Autorizacao{obra} to Obra, Autorizacao{orgaoemissor} to Orgaoemissor, Autorizacao{projeto} to Projeto, Autorizacao{tipoautorizacao} to Tipoautorizacao, Atividadeexecutadamensal{atividade} to Atividade, Administrativo{obra} to Obra, Obra{tipoobra} to TipoObra, Obra{inspetor} to Inspetor, Obra{fiscal} to Fiscal, Obra{trecho} to Trecho, Apresentacao{ obra} to Obra, Auc{atividadelicenca} to Atividadelicenca, Auc{orgaoemissor} to Orgaoemissor, Auc{obra} to Obra, Auc{projeto} to Projeto, Auc{empresa} to Empresa
+	Fisico{obra} to Obra , Ocorrencia{atividade} to Atividade , Ocorrencia{obra} to Obra , Ocorrencia{servico} to Tabela , Ocorrencia{tabela} to Tabela , Ocorrencia{tipo} to Tipoocorrencia , Ocorrencia{tipoocorrencia} to Tipoocorrencia , Historico{status} to Status , Informe{obra} to Obra , Informecertificadoirregularidade{informe} to Informe , Lancamentos{fonte} to Fonte , Lancamentos{idplanocontas} to Planocontas , Licenca{atividadelicenca} to Atividadelicenca , Licenca{empresa} to Empresa , Licenca{projeto} to Projeto , Licenca{tipo} to Tipolicenca , Licenca{obra} to Obra , Licenca{orgaoemissor} to Orgaoemissor , Licenca{tipolicenca} to Tipolicenca , Listamovimentacao{idplanocontas} to Planocontas , Log{usuario} to Usuario , Medicao{idcontrato} to Contrato , Movimentacao{contabancaria} to Contabancaria , Movimentacao{fonte} to Fonte , Fisicografico{atividade} to Atividade , Fonte{idcontabancaria} to Contabancaria , Autorizacao{atividadelicenca} to Atividadelicenca , Empresacontrato{empresa} to Empresa , Fatura{fonte} to Fonte , Fatura{idcontabancaria} to Contabancaria , Fatura{idcontrato} to Contrato , Fatura{idreferencia} to Referencia , Fatura{medicao} to Medicao , Faturacontrato{fonte} to Fonte , Faturacontrato{idcontrato} to Contrato , Faturacontrato{idreferenciacontrato} to Referenciacontrato , Editallote{numeroedital} to Edital , Desapropriacao{contacontabilC1} to Planocontas , Desapropriacao{contacontabilC2} to Planocontas , Desapropriacao{contacontabilD1} to Planocontas , Desapropriacao{contacontabilD2} to Planocontas , Desapropriacao{divcontacontabilC1} to Planocontas , Desapropriacao{divcontacontabilD1} to Planocontas , Desapropriacao{juscontacontabilC1} to Planocontas , Desapropriacao{juscontacontabilD1} to Planocontas , Desapropriacao{fonte} to Fonte , Desapropriacao{idcategoriainversao} to Categoriainversao , Desapropriacao{idcontabancaria} to Contabancaria , Desapropriacao{idreferencia} to Referencia , Desapropriacao{rodovia} to Rodovia , Custosconcorrentes{contacontabilC1} to Planocontas , Custosconcorrentes{contacontabilC2} to Planocontas , Custosconcorrentes{contacontabilD1} to Planocontas , Custosconcorrentes{contacontabilD2} to Planocontas , Custosconcorrentes{divcontacontabilC1} to Planocontas , Custosconcorrentes{divcontacontabilD1} to Planocontas , Custosconcorrentes{juscontacontabilC1} to Planocontas , Custosconcorrentes{juscontacontabilD1} to Planocontas , Custosconcorrentes{fonte} to Fonte , Custosconcorrentes{idcategoriainversao} to Categoriainversao , Contratoprojeto{contrato} to Contrato , Contratoprojeto{responsavel} to Responsavel , Clausulascontratuais{idcontratoagente} to Contratoagente , Contratoobra{contrato} to Contrato , Contratoobra{residente} to Residente , Contratoobra{responsavel} to Responsavel , Contabancaria{idplanocontas} to Planocontas , Contrato{contacontabilC2} to Planocontas , Contrato{contacontabilD1} to Planocontas , Contrato{contacontabilD2} to Planocontas , Contrato{divcontacontabilC1} to Planocontas , Contrato{divcontacontabilD1} to Planocontas , Contrato{juscontacontabilC1} to Planocontas , Contrato{juscontacontabilD1} to Planocontas , Contrato{idnatureza} to Natureza , Contrato{proposta} to Proposta , Contrato{idcategoriainversao} to Categoriainversao , Certificadoconformidade{obra} to Obra , Certificadoconformidade{tipo} to Tipocertificadoconformidade , Certificadoconformidade{tipocertificadoconformidade} to Tipocertificadoconformidade , Categoriainversao{idcontratoagente} to Contratoagente , Autorizacao{empresa} to Empresa , Autorizacao{obra} to Obra , Autorizacao{orgaoemissor} to Orgaoemissor , Autorizacao{projeto} to Projeto , Autorizacao{tipoautorizacao} to Tipoautorizacao , Atividadeexecutadamensal{atividade} to Atividade , Administrativo{obra} to Obra , Obra{tipoobra} to TipoObra , Obra{inspetor} to Inspetor , Obra{fiscal} to Fiscal , Obra{trecho} to Trecho , Apresentacao{ obra} to Obra , Auc{atividadelicenca} to Atividadelicenca , Auc{orgaoemissor} to Orgaoemissor , Auc{obra} to Obra , Auc{projeto} to Projeto , Auc{empresa} to Empresa
 }
 relationship OneToOne{
-	Administrativo{tipo} to Tipoadministrativo, Contrato{idempresa} to Empresa
+	Administrativo{tipo} to Tipoadministrativo , Contrato{idempresa} to Empresa
 }
 relationship OneToMany{
-	Coluna{opcoes} to Linha
+	Coluna{opcoes} to Linha , Movimentacao{listamovimentacao} to Listamovimentacao
 }
 paginate Obra, Auc with infinite-scroll
 paginate Foto with pagination

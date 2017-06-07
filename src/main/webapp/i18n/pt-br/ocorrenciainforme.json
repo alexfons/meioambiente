@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "ocorrenciainforme" : {
+            "home": {
+                "title": "Ocorrenciainformes",
+                "createLabel": "Criar novo Ocorrenciainforme",
+                "createOrEditLabel": "Criar ou editar Ocorrenciainforme"
+            },
+            "created": "Um novo Ocorrenciainforme é criado com o identificador {{ param }}",
+            "updated": "Um Ocorrenciainforme é atualizado com o identificador {{ param }}",
+            "deleted": "Um Ocorrenciainforme é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Ocorrenciainforme {{ id }}?"
+            },
+            "detail": {
+                "title": "Ocorrenciainforme"
+            }
+        }
+    }
+}

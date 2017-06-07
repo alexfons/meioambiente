@@ -68,7 +68,7 @@ class FonteGatlingTest extends Simulation {
             .exec(http("Create new fonte")
             .post("/api/fontes")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null}""")).asJSON
+            .body(StringBody("""{"id":null, "descricao":"SAMPLE_TEXT", "fonte":"0", "indiceagente":null, "indicelocal":null}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_fonte_url"))).exitHereIfFailed
             .pause(10)

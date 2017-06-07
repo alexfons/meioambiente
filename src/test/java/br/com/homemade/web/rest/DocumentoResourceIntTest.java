@@ -23,8 +23,13 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import java.time.Instant;
+import java.time.ZonedDateTime;
+import java.time.ZoneOffset;
+import java.time.ZoneId;
 import java.util.List;
 
+import static br.com.homemade.web.rest.TestUtil.sameInstant;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -38,6 +43,21 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = MeioambienteApp.class)
 public class DocumentoResourceIntTest {
+
+    private static final ZonedDateTime DEFAULT_DATA = ZonedDateTime.ofInstant(Instant.ofEpochMilli(0L), ZoneOffset.UTC);
+    private static final ZonedDateTime UPDATED_DATA = ZonedDateTime.now(ZoneId.systemDefault()).withNano(0);
+
+    private static final String DEFAULT_DESCRICAO = "AAAAAAAAAA";
+    private static final String UPDATED_DESCRICAO = "BBBBBBBBBB";
+
+    private static final String DEFAULT_DOCUMENTO = "AAAAAAAAAA";
+    private static final String UPDATED_DOCUMENTO = "BBBBBBBBBB";
+
+    private static final String DEFAULT_LINK = "AAAAAAAAAA";
+    private static final String UPDATED_LINK = "BBBBBBBBBB";
+
+    private static final String DEFAULT_THUMB = "AAAAAAAAAA";
+    private static final String UPDATED_THUMB = "BBBBBBBBBB";
 
     @Autowired
     private DocumentoRepository documentoRepository;
@@ -78,7 +98,12 @@ public class DocumentoResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Documento createEntity(EntityManager em) {
-        Documento documento = new Documento();
+        Documento documento = new Documento()
+            .data(DEFAULT_DATA)
+            .descricao(DEFAULT_DESCRICAO)
+            .documento(DEFAULT_DOCUMENTO)
+            .link(DEFAULT_LINK)
+            .thumb(DEFAULT_THUMB);
         return documento;
     }
 
@@ -103,6 +128,11 @@ public class DocumentoResourceIntTest {
         List<Documento> documentoList = documentoRepository.findAll();
         assertThat(documentoList).hasSize(databaseSizeBeforeCreate + 1);
         Documento testDocumento = documentoList.get(documentoList.size() - 1);
+        assertThat(testDocumento.getData()).isEqualTo(DEFAULT_DATA);
+        assertThat(testDocumento.getDescricao()).isEqualTo(DEFAULT_DESCRICAO);
+        assertThat(testDocumento.getDocumento()).isEqualTo(DEFAULT_DOCUMENTO);
+        assertThat(testDocumento.getLink()).isEqualTo(DEFAULT_LINK);
+        assertThat(testDocumento.getThumb()).isEqualTo(DEFAULT_THUMB);
     }
 
     @Test
@@ -135,7 +165,12 @@ public class DocumentoResourceIntTest {
         restDocumentoMockMvc.perform(get("/api/documentos?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(documento.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(documento.getId().intValue())))
+            .andExpect(jsonPath("$.[*].data").value(hasItem(sameInstant(DEFAULT_DATA))))
+            .andExpect(jsonPath("$.[*].descricao").value(hasItem(DEFAULT_DESCRICAO.toString())))
+            .andExpect(jsonPath("$.[*].documento").value(hasItem(DEFAULT_DOCUMENTO.toString())))
+            .andExpect(jsonPath("$.[*].link").value(hasItem(DEFAULT_LINK.toString())))
+            .andExpect(jsonPath("$.[*].thumb").value(hasItem(DEFAULT_THUMB.toString())));
     }
 
     @Test
@@ -148,7 +183,12 @@ public class DocumentoResourceIntTest {
         restDocumentoMockMvc.perform(get("/api/documentos/{id}", documento.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(documento.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(documento.getId().intValue()))
+            .andExpect(jsonPath("$.data").value(sameInstant(DEFAULT_DATA)))
+            .andExpect(jsonPath("$.descricao").value(DEFAULT_DESCRICAO.toString()))
+            .andExpect(jsonPath("$.documento").value(DEFAULT_DOCUMENTO.toString()))
+            .andExpect(jsonPath("$.link").value(DEFAULT_LINK.toString()))
+            .andExpect(jsonPath("$.thumb").value(DEFAULT_THUMB.toString()));
     }
 
     @Test
@@ -168,6 +208,12 @@ public class DocumentoResourceIntTest {
 
         // Update the documento
         Documento updatedDocumento = documentoRepository.findOne(documento.getId());
+        updatedDocumento
+            .data(UPDATED_DATA)
+            .descricao(UPDATED_DESCRICAO)
+            .documento(UPDATED_DOCUMENTO)
+            .link(UPDATED_LINK)
+            .thumb(UPDATED_THUMB);
         DocumentoDTO documentoDTO = documentoMapper.toDto(updatedDocumento);
 
         restDocumentoMockMvc.perform(put("/api/documentos")
@@ -179,6 +225,11 @@ public class DocumentoResourceIntTest {
         List<Documento> documentoList = documentoRepository.findAll();
         assertThat(documentoList).hasSize(databaseSizeBeforeUpdate);
         Documento testDocumento = documentoList.get(documentoList.size() - 1);
+        assertThat(testDocumento.getData()).isEqualTo(UPDATED_DATA);
+        assertThat(testDocumento.getDescricao()).isEqualTo(UPDATED_DESCRICAO);
+        assertThat(testDocumento.getDocumento()).isEqualTo(UPDATED_DOCUMENTO);
+        assertThat(testDocumento.getLink()).isEqualTo(UPDATED_LINK);
+        assertThat(testDocumento.getThumb()).isEqualTo(UPDATED_THUMB);
     }
 
     @Test

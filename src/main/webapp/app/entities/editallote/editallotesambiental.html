@@ -1,0 +1,72 @@
+<div>
+    <h2 data-translate="meioambienteApp.editallote.home.title">Editallotes</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="editallote-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.editallote.home.createLabel">
+                        Create new Editallote
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.editallote.dataprovacaolote">Dataprovacaolote</span></th>
+                    <th><span data-translate="meioambienteApp.editallote.datarelatoriolote">Datarelatoriolote</span></th>
+                    <th><span data-translate="meioambienteApp.editallote.idlote">Idlote</span></th>
+                    <th><span data-translate="meioambienteApp.editallote.lote">Lote</span></th>
+                    <th><span data-translate="meioambienteApp.editallote.objeto">Objeto</span></th>
+                    <th><span data-translate="meioambienteApp.editallote.prazo">Prazo</span></th>
+                    <th><span data-translate="meioambienteApp.editallote.valororcado">Valororcado</span></th>
+                    <th><span data-translate="meioambienteApp.editallote.numeroedital">Numeroedital</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="editallote in vm.editallotes track by editallote.id">
+                    <td><a ui-sref="editallote-ambiental-detail({id:editallote.id})">{{editallote.id}}</a></td>
+                    <td>{{editallote.dataprovacaolote | date:'medium'}}</td>
+                    <td>{{editallote.datarelatoriolote | date:'medium'}}</td>
+                    <td>{{editallote.idlote}}</td>
+                    <td>{{editallote.lote}}</td>
+                    <td>{{editallote.objeto}}</td>
+                    <td>{{editallote.prazo}}</td>
+                    <td>{{editallote.valororcado}}</td>
+                    <td>
+                        <a ui-sref="edital-ambiental-detail({id:editallote.numeroeditalId})">{{editallote.numeroeditalId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="editallote-ambiental-detail({id:editallote.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="editallote-ambiental.edit({id:editallote.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="editallote-ambiental.delete({id:editallote.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

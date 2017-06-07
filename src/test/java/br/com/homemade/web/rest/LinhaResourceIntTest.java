@@ -39,6 +39,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = MeioambienteApp.class)
 public class LinhaResourceIntTest {
 
+    private static final Integer DEFAULT_SEQUENCIA = 1;
+    private static final Integer UPDATED_SEQUENCIA = 2;
+
+    private static final String DEFAULT_VALOR = "AAAAAAAAAA";
+    private static final String UPDATED_VALOR = "BBBBBBBBBB";
+
     @Autowired
     private LinhaRepository linhaRepository;
 
@@ -78,7 +84,9 @@ public class LinhaResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Linha createEntity(EntityManager em) {
-        Linha linha = new Linha();
+        Linha linha = new Linha()
+            .sequencia(DEFAULT_SEQUENCIA)
+            .valor(DEFAULT_VALOR);
         return linha;
     }
 
@@ -103,6 +111,8 @@ public class LinhaResourceIntTest {
         List<Linha> linhaList = linhaRepository.findAll();
         assertThat(linhaList).hasSize(databaseSizeBeforeCreate + 1);
         Linha testLinha = linhaList.get(linhaList.size() - 1);
+        assertThat(testLinha.getSequencia()).isEqualTo(DEFAULT_SEQUENCIA);
+        assertThat(testLinha.getValor()).isEqualTo(DEFAULT_VALOR);
     }
 
     @Test
@@ -135,7 +145,9 @@ public class LinhaResourceIntTest {
         restLinhaMockMvc.perform(get("/api/linhas?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(linha.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(linha.getId().intValue())))
+            .andExpect(jsonPath("$.[*].sequencia").value(hasItem(DEFAULT_SEQUENCIA)))
+            .andExpect(jsonPath("$.[*].valor").value(hasItem(DEFAULT_VALOR.toString())));
     }
 
     @Test
@@ -148,7 +160,9 @@ public class LinhaResourceIntTest {
         restLinhaMockMvc.perform(get("/api/linhas/{id}", linha.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(linha.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(linha.getId().intValue()))
+            .andExpect(jsonPath("$.sequencia").value(DEFAULT_SEQUENCIA))
+            .andExpect(jsonPath("$.valor").value(DEFAULT_VALOR.toString()));
     }
 
     @Test
@@ -168,6 +182,9 @@ public class LinhaResourceIntTest {
 
         // Update the linha
         Linha updatedLinha = linhaRepository.findOne(linha.getId());
+        updatedLinha
+            .sequencia(UPDATED_SEQUENCIA)
+            .valor(UPDATED_VALOR);
         LinhaDTO linhaDTO = linhaMapper.toDto(updatedLinha);
 
         restLinhaMockMvc.perform(put("/api/linhas")
@@ -179,6 +196,8 @@ public class LinhaResourceIntTest {
         List<Linha> linhaList = linhaRepository.findAll();
         assertThat(linhaList).hasSize(databaseSizeBeforeUpdate);
         Linha testLinha = linhaList.get(linhaList.size() - 1);
+        assertThat(testLinha.getSequencia()).isEqualTo(UPDATED_SEQUENCIA);
+        assertThat(testLinha.getValor()).isEqualTo(UPDATED_VALOR);
     }
 
     @Test

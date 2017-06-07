@@ -14,7 +14,12 @@
             },
             "detail": {
                 "title": "Documento"
-            }
+            },
+            "data": "Data",
+            "descricao": "Descricao",
+            "documento": "Documento",
+            "link": "Link",
+            "thumb": "Thumb"
         }
     }
 }

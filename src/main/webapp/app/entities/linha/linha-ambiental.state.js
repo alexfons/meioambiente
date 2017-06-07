@@ -104,6 +104,8 @@
                     resolve: {
                         entity: function () {
                             return {
+                                sequencia: null,
+                                valor: null,
                                 id: null
                             };
                         }

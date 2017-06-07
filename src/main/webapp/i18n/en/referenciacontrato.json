@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "referenciacontrato" : {
+            "home": {
+                "title": "Referenciacontratoes",
+                "createLabel": "Create a new Referenciacontrato",
+                "createOrEditLabel": "Create or edit a Referenciacontrato"
+            },
+            "created": "A new Referenciacontrato is created with identifier {{ param }}",
+            "updated": "A Referenciacontrato is updated with identifier {{ param }}",
+            "deleted": "A Referenciacontrato is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Referenciacontrato {{ id }}?"
+            },
+            "detail": {
+                "title": "Referenciacontrato"
+            }
+        }
+    }
+}

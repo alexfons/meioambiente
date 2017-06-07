@@ -1,0 +1,67 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.lancamentos.detail.title">Lancamentos</span> {{vm.lancamentos.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.lancamentos.datalan">Datalan</span></dt>
+        <dd>
+            <span>{{vm.lancamentos.datalan | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.lancamentos.historico">Historico</span></dt>
+        <dd>
+            <span>{{vm.lancamentos.historico}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.lancamentos.recurso">Recurso</span></dt>
+        <dd>
+            <span>{{vm.lancamentos.recurso}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.lancamentos.tipomedicao">Tipomedicao</span></dt>
+        <dd>
+            <span>{{vm.lancamentos.tipomedicao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.lancamentos.idlancamentos">Idlancamentos</span></dt>
+        <dd>
+            <span>{{vm.lancamentos.idlancamentos}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.lancamentos.nummedicao">Nummedicao</span></dt>
+        <dd>
+            <span>{{vm.lancamentos.nummedicao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.lancamentos.valorrdebito">Valorrdebito</span></dt>
+        <dd>
+            <span>{{vm.lancamentos.valorrdebito}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.lancamentos.valorusdebito">Valorusdebito</span></dt>
+        <dd>
+            <span>{{vm.lancamentos.valorusdebito}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.lancamentos.valorrcredito">Valorrcredito</span></dt>
+        <dd>
+            <span>{{vm.lancamentos.valorrcredito}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.lancamentos.valoruscredito">Valoruscredito</span></dt>
+        <dd>
+            <span>{{vm.lancamentos.valoruscredito}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.lancamentos.fonte">Fonte</span></dt>
+        <dd>
+            <a ui-sref="fonte-ambiental-detail({id:vm.lancamentos.fonteId})">{{vm.lancamentos.fonteId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.lancamentos.idplanocontas">Idplanocontas</span></dt>
+        <dd>
+            <a ui-sref="planocontas-ambiental-detail({id:vm.lancamentos.idplanocontasId})">{{vm.lancamentos.idplanocontasId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="lancamentos-ambiental-detail.edit({id:vm.lancamentos.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

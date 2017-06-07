@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "obraatividade" : {
+            "home": {
+                "title": "Obraatividades",
+                "createLabel": "Criar novo Obraatividade",
+                "createOrEditLabel": "Criar ou editar Obraatividade"
+            },
+            "created": "Um novo Obraatividade é criado com o identificador {{ param }}",
+            "updated": "Um Obraatividade é atualizado com o identificador {{ param }}",
+            "deleted": "Um Obraatividade é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Obraatividade {{ id }}?"
+            },
+            "detail": {
+                "title": "Obraatividade"
+            }
+        }
+    }
+}

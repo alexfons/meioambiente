@@ -4,6 +4,18 @@
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.historico.data">Data</span></dt>
+        <dd>
+            <span>{{vm.historico.data | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.historico.descricao">Descricao</span></dt>
+        <dd>
+            <span>{{vm.historico.descricao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.historico.status">Status</span></dt>
+        <dd>
+            <a ui-sref="status-ambiental-detail({id:vm.historico.statusId})">{{vm.historico.statusId}}</a>
+        </dd>
     </dl>
 
     <button type="submit"

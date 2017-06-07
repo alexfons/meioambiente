@@ -4,6 +4,14 @@
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.linha.sequencia">Sequencia</span></dt>
+        <dd>
+            <span>{{vm.linha.sequencia}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.linha.valor">Valor</span></dt>
+        <dd>
+            <span>{{vm.linha.valor}}</span>
+        </dd>
         <dt><span data-translate="meioambienteApp.linha.coluna">Coluna</span></dt>
         <dd>
             <a ui-sref="coluna-ambiental-detail({id:vm.linha.colunaId})">{{vm.linha.colunaId}}</a>

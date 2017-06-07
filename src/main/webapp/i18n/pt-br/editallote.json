@@ -1,0 +1,28 @@
+{
+    "meioambienteApp": {
+        "editallote" : {
+            "home": {
+                "title": "Editallotes",
+                "createLabel": "Criar novo Editallote",
+                "createOrEditLabel": "Criar ou editar Editallote"
+            },
+            "created": "Um novo Editallote é criado com o identificador {{ param }}",
+            "updated": "Um Editallote é atualizado com o identificador {{ param }}",
+            "deleted": "Um Editallote é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Editallote {{ id }}?"
+            },
+            "detail": {
+                "title": "Editallote"
+            },
+            "dataprovacaolote": "Dataprovacaolote",
+            "datarelatoriolote": "Datarelatoriolote",
+            "idlote": "Idlote",
+            "lote": "Lote",
+            "objeto": "Objeto",
+            "prazo": "Prazo",
+            "valororcado": "Valororcado",
+            "numeroedital": "Numeroedital"
+        }
+    }
+}

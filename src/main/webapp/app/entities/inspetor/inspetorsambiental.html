@@ -19,12 +19,28 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.inspetor.email">Email</span></th>
+                    <th><span data-translate="meioambienteApp.inspetor.funcao">Funcao</span></th>
+                    <th><span data-translate="meioambienteApp.inspetor.localtrabalho">Localtrabalho</span></th>
+                    <th><span data-translate="meioambienteApp.inspetor.matricula">Matricula</span></th>
+                    <th><span data-translate="meioambienteApp.inspetor.nome">Nome</span></th>
+                    <th><span data-translate="meioambienteApp.inspetor.superintendencia">Superintendencia</span></th>
+                    <th><span data-translate="meioambienteApp.inspetor.telefone">Telefone</span></th>
+                    <th><span data-translate="meioambienteApp.inspetor.telefonecomercial">Telefonecomercial</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="inspetor in vm.inspetors track by inspetor.id">
                     <td><a ui-sref="inspetor-ambiental-detail({id:inspetor.id})">{{inspetor.id}}</a></td>
+                    <td>{{inspetor.email}}</td>
+                    <td>{{inspetor.funcao}}</td>
+                    <td>{{inspetor.localtrabalho}}</td>
+                    <td>{{inspetor.matricula}}</td>
+                    <td>{{inspetor.nome}}</td>
+                    <td>{{inspetor.superintendencia}}</td>
+                    <td>{{inspetor.telefone}}</td>
+                    <td>{{inspetor.telefonecomercial}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

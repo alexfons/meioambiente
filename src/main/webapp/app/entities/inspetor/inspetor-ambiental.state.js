@@ -104,6 +104,14 @@
                     resolve: {
                         entity: function () {
                             return {
+                                email: null,
+                                funcao: null,
+                                localtrabalho: null,
+                                matricula: null,
+                                nome: null,
+                                superintendencia: null,
+                                telefone: null,
+                                telefonecomercial: null,
                                 id: null
                             };
                         }

@@ -19,12 +19,36 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.empresa.bairro">Bairro</span></th>
+                    <th><span data-translate="meioambienteApp.empresa.cidade">Cidade</span></th>
+                    <th><span data-translate="meioambienteApp.empresa.cnpj">Cnpj</span></th>
+                    <th><span data-translate="meioambienteApp.empresa.contato">Contato</span></th>
+                    <th><span data-translate="meioambienteApp.empresa.email">Email</span></th>
+                    <th><span data-translate="meioambienteApp.empresa.endereco">Endereco</span></th>
+                    <th><span data-translate="meioambienteApp.empresa.idempresa">Idempresa</span></th>
+                    <th><span data-translate="meioambienteApp.empresa.nomeempresa">Nomeempresa</span></th>
+                    <th><span data-translate="meioambienteApp.empresa.numero">Numero</span></th>
+                    <th><span data-translate="meioambienteApp.empresa.pais">Pais</span></th>
+                    <th><span data-translate="meioambienteApp.empresa.telefonecontato">Telefonecontato</span></th>
+                    <th><span data-translate="meioambienteApp.empresa.uf">Uf</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="empresa in vm.empresas track by empresa.id">
                     <td><a ui-sref="empresa-ambiental-detail({id:empresa.id})">{{empresa.id}}</a></td>
+                    <td>{{empresa.bairro}}</td>
+                    <td>{{empresa.cidade}}</td>
+                    <td>{{empresa.cnpj}}</td>
+                    <td>{{empresa.contato}}</td>
+                    <td>{{empresa.email}}</td>
+                    <td>{{empresa.endereco}}</td>
+                    <td>{{empresa.idempresa}}</td>
+                    <td>{{empresa.nomeempresa}}</td>
+                    <td>{{empresa.numero}}</td>
+                    <td>{{empresa.pais}}</td>
+                    <td>{{empresa.telefonecontato}}</td>
+                    <td>{{empresa.uf}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

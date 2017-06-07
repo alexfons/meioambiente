@@ -23,8 +23,13 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import java.time.Instant;
+import java.time.ZonedDateTime;
+import java.time.ZoneOffset;
+import java.time.ZoneId;
 import java.util.List;
 
+import static br.com.homemade.web.rest.TestUtil.sameInstant;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -38,6 +43,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = MeioambienteApp.class)
 public class HistoricoResourceIntTest {
+
+    private static final ZonedDateTime DEFAULT_DATA = ZonedDateTime.ofInstant(Instant.ofEpochMilli(0L), ZoneOffset.UTC);
+    private static final ZonedDateTime UPDATED_DATA = ZonedDateTime.now(ZoneId.systemDefault()).withNano(0);
+
+    private static final String DEFAULT_DESCRICAO = "AAAAAAAAAA";
+    private static final String UPDATED_DESCRICAO = "BBBBBBBBBB";
 
     @Autowired
     private HistoricoRepository historicoRepository;
@@ -78,7 +89,9 @@ public class HistoricoResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Historico createEntity(EntityManager em) {
-        Historico historico = new Historico();
+        Historico historico = new Historico()
+            .data(DEFAULT_DATA)
+            .descricao(DEFAULT_DESCRICAO);
         return historico;
     }
 
@@ -103,6 +116,8 @@ public class HistoricoResourceIntTest {
         List<Historico> historicoList = historicoRepository.findAll();
         assertThat(historicoList).hasSize(databaseSizeBeforeCreate + 1);
         Historico testHistorico = historicoList.get(historicoList.size() - 1);
+        assertThat(testHistorico.getData()).isEqualTo(DEFAULT_DATA);
+        assertThat(testHistorico.getDescricao()).isEqualTo(DEFAULT_DESCRICAO);
     }
 
     @Test
@@ -135,7 +150,9 @@ public class HistoricoResourceIntTest {
         restHistoricoMockMvc.perform(get("/api/historicos?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(historico.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(historico.getId().intValue())))
+            .andExpect(jsonPath("$.[*].data").value(hasItem(sameInstant(DEFAULT_DATA))))
+            .andExpect(jsonPath("$.[*].descricao").value(hasItem(DEFAULT_DESCRICAO.toString())));
     }
 
     @Test
@@ -148,7 +165,9 @@ public class HistoricoResourceIntTest {
         restHistoricoMockMvc.perform(get("/api/historicos/{id}", historico.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(historico.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(historico.getId().intValue()))
+            .andExpect(jsonPath("$.data").value(sameInstant(DEFAULT_DATA)))
+            .andExpect(jsonPath("$.descricao").value(DEFAULT_DESCRICAO.toString()));
     }
 
     @Test
@@ -168,6 +187,9 @@ public class HistoricoResourceIntTest {
 
         // Update the historico
         Historico updatedHistorico = historicoRepository.findOne(historico.getId());
+        updatedHistorico
+            .data(UPDATED_DATA)
+            .descricao(UPDATED_DESCRICAO);
         HistoricoDTO historicoDTO = historicoMapper.toDto(updatedHistorico);
 
         restHistoricoMockMvc.perform(put("/api/historicos")
@@ -179,6 +201,8 @@ public class HistoricoResourceIntTest {
         List<Historico> historicoList = historicoRepository.findAll();
         assertThat(historicoList).hasSize(databaseSizeBeforeUpdate);
         Historico testHistorico = historicoList.get(historicoList.size() - 1);
+        assertThat(testHistorico.getData()).isEqualTo(UPDATED_DATA);
+        assertThat(testHistorico.getDescricao()).isEqualTo(UPDATED_DESCRICAO);
     }
 
     @Test

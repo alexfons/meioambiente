@@ -68,7 +68,7 @@ class EmpresacontratoGatlingTest extends Simulation {
             .exec(http("Create new empresacontrato")
             .post("/api/empresacontratoes")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null}""")).asJSON
+            .body(StringBody("""{"id":null, "tipo":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_empresacontrato_url"))).exitHereIfFailed
             .pause(10)

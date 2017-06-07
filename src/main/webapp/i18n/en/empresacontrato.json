@@ -14,7 +14,9 @@
             },
             "detail": {
                 "title": "Empresacontrato"
-            }
+            },
+            "tipo": "Tipo",
+            "empresa": "Empresa"
         }
     }
 }

@@ -1,0 +1,39 @@
+{
+    "meioambienteApp": {
+        "edital" : {
+            "home": {
+                "title": "Editals",
+                "createLabel": "Criar novo Edital",
+                "createOrEditLabel": "Criar ou editar Edital"
+            },
+            "created": "Um novo Edital é criado com o identificador {{ param }}",
+            "updated": "Um Edital é atualizado com o identificador {{ param }}",
+            "deleted": "Um Edital é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Edital {{ id }}?"
+            },
+            "detail": {
+                "title": "Edital"
+            },
+            "comissaojulgamento": "Comissaojulgamento",
+            "dataaprovacao": "Dataaprovacao",
+            "dataenvio": "Dataenvio",
+            "datahoraabertura": "Datahoraabertura",
+            "datalicitacao": "Datalicitacao",
+            "datanumeromanifestacao": "Datanumeromanifestacao",
+            "datapublicacao": "Datapublicacao",
+            "datarelatorio": "Datarelatorio",
+            "licitacao": "Licitacao",
+            "localrelatorio": "Localrelatorio",
+            "modalidade": "Modalidade",
+            "naturezaservico": "Naturezaservico",
+            "numeroconvite": "Numeroconvite",
+            "numeroedital": "Numeroedital",
+            "numeromanifestacao": "Numeromanifestacao",
+            "numeroprojeto": "Numeroprojeto",
+            "precoglobal": "Precoglobal",
+            "tipoaquisicao": "Tipoaquisicao",
+            "tipolicitacao": "Tipolicitacao"
+        }
+    }
+}

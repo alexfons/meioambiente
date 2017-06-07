@@ -8,7 +8,16 @@
             "otherEntityField": "id"
         }
     ],
-    "fields": [],
+    "fields": [
+        {
+            "fieldName": "sequencia",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "valor",
+            "fieldType": "String"
+        }
+    ],
     "changelogDate": "20170607001856",
     "entityTableName": "linha",
     "dto": "mapstruct",

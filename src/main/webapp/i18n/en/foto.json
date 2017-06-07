@@ -14,7 +14,19 @@
             },
             "detail": {
                 "title": "Foto"
-            }
+            },
+            "coordenadaa": "Coordenadaa",
+            "coordenadae": "Coordenadae",
+            "coordenadan": "Coordenadan",
+            "data": "Data",
+            "descricaoString": "Descricao String",
+            "foto": "Foto",
+            "lado": "Lado",
+            "link": "Link",
+            "numero": "Numero",
+            "picasaId": "Picasa Id",
+            "ponto": "Ponto",
+            "thumb": "Thumb"
         }
     }
 }

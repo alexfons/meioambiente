@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "tipolicenca" : {
+            "home": {
+                "title": "Tipolicencas",
+                "createLabel": "Criar novo Tipolicenca",
+                "createOrEditLabel": "Criar ou editar Tipolicenca"
+            },
+            "created": "Um novo Tipolicenca é criado com o identificador {{ param }}",
+            "updated": "Um Tipolicenca é atualizado com o identificador {{ param }}",
+            "deleted": "Um Tipolicenca é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Tipolicenca {{ id }}?"
+            },
+            "detail": {
+                "title": "Tipolicenca"
+            }
+        }
+    }
+}

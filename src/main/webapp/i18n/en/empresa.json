@@ -14,7 +14,19 @@
             },
             "detail": {
                 "title": "Empresa"
-            }
+            },
+            "bairro": "Bairro",
+            "cidade": "Cidade",
+            "cnpj": "Cnpj",
+            "contato": "Contato",
+            "email": "Email",
+            "endereco": "Endereco",
+            "idempresa": "Idempresa",
+            "nomeempresa": "Nomeempresa",
+            "numero": "Numero",
+            "pais": "Pais",
+            "telefonecontato": "Telefonecontato",
+            "uf": "Uf"
         }
     }
 }

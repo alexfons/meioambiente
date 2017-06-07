@@ -1,0 +1,45 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.fisico.detail.title">Fisico</span> {{vm.fisico.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.fisico.extensao">Extensao</span></dt>
+        <dd>
+            <span>{{vm.fisico.extensao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fisico.tipo">Tipo</span></dt>
+        <dd>
+            <span>{{vm.fisico.tipo}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fisico.tituloFim">Titulo Fim</span></dt>
+        <dd>
+            <span>{{vm.fisico.tituloFim}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fisico.tituloInicio">Titulo Inicio</span></dt>
+        <dd>
+            <span>{{vm.fisico.tituloInicio}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fisico.obra">Obra</span></dt>
+        <dd>
+            <a ui-sref="obra-ambiental-detail({id:vm.fisico.obraId})">{{vm.fisico.obraId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fisico.obraatividades">Obraatividades</span></dt>
+        <dd>
+            <span ng-repeat="obraatividades in vm.fisico.obraatividades">
+                <a ui-sref="obraatividade-ambiental-detail({id: obraatividades.id})">{{obraatividades.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="fisico-ambiental-detail.edit({id:vm.fisico.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

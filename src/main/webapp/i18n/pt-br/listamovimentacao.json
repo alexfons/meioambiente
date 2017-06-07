@@ -1,0 +1,28 @@
+{
+    "meioambienteApp": {
+        "listamovimentacao" : {
+            "home": {
+                "title": "Listamovimentacaos",
+                "createLabel": "Criar novo Listamovimentacao",
+                "createOrEditLabel": "Criar ou editar Listamovimentacao"
+            },
+            "created": "Um novo Listamovimentacao é criado com o identificador {{ param }}",
+            "updated": "Um Listamovimentacao é atualizado com o identificador {{ param }}",
+            "deleted": "Um Listamovimentacao é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Listamovimentacao {{ id }}?"
+            },
+            "detail": {
+                "title": "Listamovimentacao"
+            },
+            "tipolancamento": "Tipolancamento",
+            "historico": "Historico",
+            "valoruscredito": "Valoruscredito",
+            "valorrcredito": "Valorrcredito",
+            "valorusdebito": "Valorusdebito",
+            "valorrdebito": "Valorrdebito",
+            "idplanocontas": "Idplanocontas",
+            "movimentacao": "Movimentacao"
+        }
+    }
+}

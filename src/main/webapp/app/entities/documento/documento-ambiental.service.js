@@ -4,9 +4,9 @@
         .module('meioambienteApp')
         .factory('Documento', Documento);
 
-    Documento.$inject = ['$resource'];
+    Documento.$inject = ['$resource', 'DateUtils'];
 
-    function Documento ($resource) {
+    function Documento ($resource, DateUtils) {
         var resourceUrl =  'api/documentos/:id';
 
         return $resource(resourceUrl, {}, {
@@ -16,6 +16,7 @@
                 transformResponse: function (data) {
                     if (data) {
                         data = angular.fromJson(data);
+                        data.data = DateUtils.convertDateTimeFromServer(data.data);
                     }
                     return data;
                 }

@@ -1,0 +1,26 @@
+{
+    "meioambienteApp": {
+        "fisico" : {
+            "home": {
+                "title": "Fisicos",
+                "createLabel": "Criar novo Fisico",
+                "createOrEditLabel": "Criar ou editar Fisico"
+            },
+            "created": "Um novo Fisico é criado com o identificador {{ param }}",
+            "updated": "Um Fisico é atualizado com o identificador {{ param }}",
+            "deleted": "Um Fisico é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Fisico {{ id }}?"
+            },
+            "detail": {
+                "title": "Fisico"
+            },
+            "extensao": "Extensao",
+            "tipo": "Tipo",
+            "tituloFim": "Titulo Fim",
+            "tituloInicio": "Titulo Inicio",
+            "obra": "Obra",
+            "obraatividades": "Obraatividades"
+        }
+    }
+}

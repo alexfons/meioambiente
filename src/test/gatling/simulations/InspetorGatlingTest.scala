@@ -68,7 +68,7 @@ class InspetorGatlingTest extends Simulation {
             .exec(http("Create new inspetor")
             .post("/api/inspetors")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null}""")).asJSON
+            .body(StringBody("""{"id":null, "email":"SAMPLE_TEXT", "funcao":"SAMPLE_TEXT", "localtrabalho":"SAMPLE_TEXT", "matricula":"SAMPLE_TEXT", "nome":"SAMPLE_TEXT", "superintendencia":"SAMPLE_TEXT", "telefone":null, "telefonecomercial":null}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_inspetor_url"))).exitHereIfFailed
             .pause(10)

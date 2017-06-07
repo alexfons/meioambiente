@@ -1,0 +1,273 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.licenca.detail.title">Licenca</span> {{vm.licenca.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.licenca.album">Album</span></dt>
+        <dd>
+            <span>{{vm.licenca.album}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.andamento">Andamento</span></dt>
+        <dd>
+            <span>{{vm.licenca.andamento}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.compensacaoambiental">Compensacaoambiental</span></dt>
+        <dd>
+            <span>{{vm.licenca.compensacaoambiental}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.dataemissao">Dataemissao</span></dt>
+        <dd>
+            <span>{{vm.licenca.dataemissao | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.dataentregadocs">Dataentregadocs</span></dt>
+        <dd>
+            <span>{{vm.licenca.dataentregadocs | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.dataexpedicaoprorrogacao1">Dataexpedicaoprorrogacao 1</span></dt>
+        <dd>
+            <span>{{vm.licenca.dataexpedicaoprorrogacao1 | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.dataexpedicaoprorrogacao2">Dataexpedicaoprorrogacao 2</span></dt>
+        <dd>
+            <span>{{vm.licenca.dataexpedicaoprorrogacao2 | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.dataexpedicaoprorrogacao3">Dataexpedicaoprorrogacao 3</span></dt>
+        <dd>
+            <span>{{vm.licenca.dataexpedicaoprorrogacao3 | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.dataoficiolocalpedido">Dataoficiolocalpedido</span></dt>
+        <dd>
+            <span>{{vm.licenca.dataoficiolocalpedido | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.dataoficiolocalrecebimento">Dataoficiolocalrecebimento</span></dt>
+        <dd>
+            <span>{{vm.licenca.dataoficiolocalrecebimento | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.dataoficioreoficialpedido">Dataoficioreoficialpedido</span></dt>
+        <dd>
+            <span>{{vm.licenca.dataoficioreoficialpedido | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.dataoficioreoficialrecebimento">Dataoficioreoficialrecebimento</span></dt>
+        <dd>
+            <span>{{vm.licenca.dataoficioreoficialrecebimento | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.datapedidoprorrogacao1">Datapedidoprorrogacao 1</span></dt>
+        <dd>
+            <span>{{vm.licenca.datapedidoprorrogacao1 | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.datapedidoprorrogacao2">Datapedidoprorrogacao 2</span></dt>
+        <dd>
+            <span>{{vm.licenca.datapedidoprorrogacao2 | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.datapedidoprorrogacao3">Datapedidoprorrogacao 3</span></dt>
+        <dd>
+            <span>{{vm.licenca.datapedidoprorrogacao3 | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.datavalidadeprorrogacao1">Datavalidadeprorrogacao 1</span></dt>
+        <dd>
+            <span>{{vm.licenca.datavalidadeprorrogacao1 | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.datavalidadeprorrogacao2">Datavalidadeprorrogacao 2</span></dt>
+        <dd>
+            <span>{{vm.licenca.datavalidadeprorrogacao2 | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.datavalidadeprorrogacao3">Datavalidadeprorrogacao 3</span></dt>
+        <dd>
+            <span>{{vm.licenca.datavalidadeprorrogacao3 | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.datavencimento">Datavencimento</span></dt>
+        <dd>
+            <span>{{vm.licenca.datavencimento | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.datavencimentoatual">Datavencimentoatual</span></dt>
+        <dd>
+            <span>{{vm.licenca.datavencimentoatual | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.descricao">Descricao</span></dt>
+        <dd>
+            <span>{{vm.licenca.descricao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.dispensalai">Dispensalai</span></dt>
+        <dd>
+            <span>{{vm.licenca.dispensalai}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.docsentregues">Docsentregues</span></dt>
+        <dd>
+            <span>{{vm.licenca.docsentregues}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.eiarima">Eiarima</span></dt>
+        <dd>
+            <span>{{vm.licenca.eiarima}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.fcei">Fcei</span></dt>
+        <dd>
+            <span>{{vm.licenca.fcei}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.fceidatapagamento">Fceidatapagamento</span></dt>
+        <dd>
+            <span>{{vm.licenca.fceidatapagamento | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.fceidataprotocolo">Fceidataprotocolo</span></dt>
+        <dd>
+            <span>{{vm.licenca.fceidataprotocolo | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.fceivalor">Fceivalor</span></dt>
+        <dd>
+            <span>{{vm.licenca.fceivalor}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.folder">Folder</span></dt>
+        <dd>
+            <span>{{vm.licenca.folder}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.inativo">Inativo</span></dt>
+        <dd>
+            <span>{{vm.licenca.inativo}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.inventarioflorestal">Inventarioflorestal</span></dt>
+        <dd>
+            <span>{{vm.licenca.inventarioflorestal}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.numero">Numero</span></dt>
+        <dd>
+            <span>{{vm.licenca.numero}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.numerolap">Numerolap</span></dt>
+        <dd>
+            <span>{{vm.licenca.numerolap}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.numerooficioconcessaoprorrogacao1">Numerooficioconcessaoprorrogacao 1</span></dt>
+        <dd>
+            <span>{{vm.licenca.numerooficioconcessaoprorrogacao1}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.numerooficioconcessaoprorrogacao2">Numerooficioconcessaoprorrogacao 2</span></dt>
+        <dd>
+            <span>{{vm.licenca.numerooficioconcessaoprorrogacao2}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.numerooficioconcessaoprorrogacao3">Numerooficioconcessaoprorrogacao 3</span></dt>
+        <dd>
+            <span>{{vm.licenca.numerooficioconcessaoprorrogacao3}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.numerooficiolocalpedido">Numerooficiolocalpedido</span></dt>
+        <dd>
+            <span>{{vm.licenca.numerooficiolocalpedido}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.numerooficiolocalrecebimento">Numerooficiolocalrecebimento</span></dt>
+        <dd>
+            <span>{{vm.licenca.numerooficiolocalrecebimento}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.numerooficiooficialpedido">Numerooficiooficialpedido</span></dt>
+        <dd>
+            <span>{{vm.licenca.numerooficiooficialpedido}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.numerooficiooficialrecebimento">Numerooficiooficialrecebimento</span></dt>
+        <dd>
+            <span>{{vm.licenca.numerooficiooficialrecebimento}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.numerooficioprorrogacao1">Numerooficioprorrogacao 1</span></dt>
+        <dd>
+            <span>{{vm.licenca.numerooficioprorrogacao1}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.numerooficioprorrogacao2">Numerooficioprorrogacao 2</span></dt>
+        <dd>
+            <span>{{vm.licenca.numerooficioprorrogacao2}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.numerooficioprorrogacao3">Numerooficioprorrogacao 3</span></dt>
+        <dd>
+            <span>{{vm.licenca.numerooficioprorrogacao3}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.numeroparecertecnico">Numeroparecertecnico</span></dt>
+        <dd>
+            <span>{{vm.licenca.numeroparecertecnico}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.numeroprocesso">Numeroprocesso</span></dt>
+        <dd>
+            <span>{{vm.licenca.numeroprocesso}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.observacao">Observacao</span></dt>
+        <dd>
+            <span>{{vm.licenca.observacao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.pendente">Pendente</span></dt>
+        <dd>
+            <span>{{vm.licenca.pendente}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.prazomes">Prazomes</span></dt>
+        <dd>
+            <span>{{vm.licenca.prazomes}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.prazovalidade">Prazovalidade</span></dt>
+        <dd>
+            <span>{{vm.licenca.prazovalidade}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.reciboentregadocs">Reciboentregadocs</span></dt>
+        <dd>
+            <span>{{vm.licenca.reciboentregadocs}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.usosolo">Usosolo</span></dt>
+        <dd>
+            <span>{{vm.licenca.usosolo}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.usosoloobs">Usosoloobs</span></dt>
+        <dd>
+            <span>{{vm.licenca.usosoloobs}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.atividadelicenca">Atividadelicenca</span></dt>
+        <dd>
+            <a ui-sref="atividadelicenca-ambiental-detail({id:vm.licenca.atividadelicencaId})">{{vm.licenca.atividadelicencaId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.empresa">Empresa</span></dt>
+        <dd>
+            <a ui-sref="empresa-ambiental-detail({id:vm.licenca.empresaId})">{{vm.licenca.empresaId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.projeto">Projeto</span></dt>
+        <dd>
+            <a ui-sref="projeto-ambiental-detail({id:vm.licenca.projetoId})">{{vm.licenca.projetoId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.tipo">Tipo</span></dt>
+        <dd>
+            <a ui-sref="tipolicenca-ambiental-detail({id:vm.licenca.tipoId})">{{vm.licenca.tipoId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.obra">Obra</span></dt>
+        <dd>
+            <a ui-sref="obra-ambiental-detail({id:vm.licenca.obraId})">{{vm.licenca.obraId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.orgaoemissor">Orgaoemissor</span></dt>
+        <dd>
+            <a ui-sref="orgaoemissor-ambiental-detail({id:vm.licenca.orgaoemissorId})">{{vm.licenca.orgaoemissorId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.tipolicenca">Tipolicenca</span></dt>
+        <dd>
+            <a ui-sref="tipolicenca-ambiental-detail({id:vm.licenca.tipolicencaId})">{{vm.licenca.tipolicencaId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.condicionantes">Condicionantes</span></dt>
+        <dd>
+            <span ng-repeat="condicionantes in vm.licenca.condicionantes">
+                <a ui-sref="condicionante-ambiental-detail({id: condicionantes.id})">{{condicionantes.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.docs">Docs</span></dt>
+        <dd>
+            <span ng-repeat="docs in vm.licenca.docs">
+                <a ui-sref="documento-ambiental-detail({id: docs.id})">{{docs.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.licenca.fotos">Fotos</span></dt>
+        <dd>
+            <span ng-repeat="fotos in vm.licenca.fotos">
+                <a ui-sref="foto-ambiental-detail({id: fotos.id})">{{fotos.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="licenca-ambiental-detail.edit({id:vm.licenca.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

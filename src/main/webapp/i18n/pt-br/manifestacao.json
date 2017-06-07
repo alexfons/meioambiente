@@ -1,0 +1,23 @@
+{
+    "meioambienteApp": {
+        "manifestacao" : {
+            "home": {
+                "title": "Manifestacaos",
+                "createLabel": "Criar novo Manifestacao",
+                "createOrEditLabel": "Criar ou editar Manifestacao"
+            },
+            "created": "Um novo Manifestacao é criado com o identificador {{ param }}",
+            "updated": "Um Manifestacao é atualizado com o identificador {{ param }}",
+            "deleted": "Um Manifestacao é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Manifestacao {{ id }}?"
+            },
+            "detail": {
+                "title": "Manifestacao"
+            },
+            "dataaviso": "Dataaviso",
+            "dataentrega": "Dataentrega",
+            "numero": "Numero"
+        }
+    }
+}

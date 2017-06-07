@@ -23,8 +23,13 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import java.time.Instant;
+import java.time.ZonedDateTime;
+import java.time.ZoneOffset;
+import java.time.ZoneId;
 import java.util.List;
 
+import static br.com.homemade.web.rest.TestUtil.sameInstant;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -38,6 +43,42 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = MeioambienteApp.class)
 public class FotoResourceIntTest {
+
+    private static final String DEFAULT_COORDENADAA = "AAAAAAAAAA";
+    private static final String UPDATED_COORDENADAA = "BBBBBBBBBB";
+
+    private static final String DEFAULT_COORDENADAE = "AAAAAAAAAA";
+    private static final String UPDATED_COORDENADAE = "BBBBBBBBBB";
+
+    private static final String DEFAULT_COORDENADAN = "AAAAAAAAAA";
+    private static final String UPDATED_COORDENADAN = "BBBBBBBBBB";
+
+    private static final ZonedDateTime DEFAULT_DATA = ZonedDateTime.ofInstant(Instant.ofEpochMilli(0L), ZoneOffset.UTC);
+    private static final ZonedDateTime UPDATED_DATA = ZonedDateTime.now(ZoneId.systemDefault()).withNano(0);
+
+    private static final String DEFAULT_DESCRICAO_STRING = "AAAAAAAAAA";
+    private static final String UPDATED_DESCRICAO_STRING = "BBBBBBBBBB";
+
+    private static final String DEFAULT_FOTO = "AAAAAAAAAA";
+    private static final String UPDATED_FOTO = "BBBBBBBBBB";
+
+    private static final String DEFAULT_LADO = "AAAAAAAAAA";
+    private static final String UPDATED_LADO = "BBBBBBBBBB";
+
+    private static final String DEFAULT_LINK = "AAAAAAAAAA";
+    private static final String UPDATED_LINK = "BBBBBBBBBB";
+
+    private static final Integer DEFAULT_NUMERO = 1;
+    private static final Integer UPDATED_NUMERO = 2;
+
+    private static final String DEFAULT_PICASA_ID = "AAAAAAAAAA";
+    private static final String UPDATED_PICASA_ID = "BBBBBBBBBB";
+
+    private static final Integer DEFAULT_PONTO = 1;
+    private static final Integer UPDATED_PONTO = 2;
+
+    private static final String DEFAULT_THUMB = "AAAAAAAAAA";
+    private static final String UPDATED_THUMB = "BBBBBBBBBB";
 
     @Autowired
     private FotoRepository fotoRepository;
@@ -78,7 +119,19 @@ public class FotoResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Foto createEntity(EntityManager em) {
-        Foto foto = new Foto();
+        Foto foto = new Foto()
+            .coordenadaa(DEFAULT_COORDENADAA)
+            .coordenadae(DEFAULT_COORDENADAE)
+            .coordenadan(DEFAULT_COORDENADAN)
+            .data(DEFAULT_DATA)
+            .descricaoString(DEFAULT_DESCRICAO_STRING)
+            .foto(DEFAULT_FOTO)
+            .lado(DEFAULT_LADO)
+            .link(DEFAULT_LINK)
+            .numero(DEFAULT_NUMERO)
+            .picasaId(DEFAULT_PICASA_ID)
+            .ponto(DEFAULT_PONTO)
+            .thumb(DEFAULT_THUMB);
         return foto;
     }
 
@@ -103,6 +156,18 @@ public class FotoResourceIntTest {
         List<Foto> fotoList = fotoRepository.findAll();
         assertThat(fotoList).hasSize(databaseSizeBeforeCreate + 1);
         Foto testFoto = fotoList.get(fotoList.size() - 1);
+        assertThat(testFoto.getCoordenadaa()).isEqualTo(DEFAULT_COORDENADAA);
+        assertThat(testFoto.getCoordenadae()).isEqualTo(DEFAULT_COORDENADAE);
+        assertThat(testFoto.getCoordenadan()).isEqualTo(DEFAULT_COORDENADAN);
+        assertThat(testFoto.getData()).isEqualTo(DEFAULT_DATA);
+        assertThat(testFoto.getDescricaoString()).isEqualTo(DEFAULT_DESCRICAO_STRING);
+        assertThat(testFoto.getFoto()).isEqualTo(DEFAULT_FOTO);
+        assertThat(testFoto.getLado()).isEqualTo(DEFAULT_LADO);
+        assertThat(testFoto.getLink()).isEqualTo(DEFAULT_LINK);
+        assertThat(testFoto.getNumero()).isEqualTo(DEFAULT_NUMERO);
+        assertThat(testFoto.getPicasaId()).isEqualTo(DEFAULT_PICASA_ID);
+        assertThat(testFoto.getPonto()).isEqualTo(DEFAULT_PONTO);
+        assertThat(testFoto.getThumb()).isEqualTo(DEFAULT_THUMB);
     }
 
     @Test
@@ -135,7 +200,19 @@ public class FotoResourceIntTest {
         restFotoMockMvc.perform(get("/api/fotos?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(foto.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(foto.getId().intValue())))
+            .andExpect(jsonPath("$.[*].coordenadaa").value(hasItem(DEFAULT_COORDENADAA.toString())))
+            .andExpect(jsonPath("$.[*].coordenadae").value(hasItem(DEFAULT_COORDENADAE.toString())))
+            .andExpect(jsonPath("$.[*].coordenadan").value(hasItem(DEFAULT_COORDENADAN.toString())))
+            .andExpect(jsonPath("$.[*].data").value(hasItem(sameInstant(DEFAULT_DATA))))
+            .andExpect(jsonPath("$.[*].descricaoString").value(hasItem(DEFAULT_DESCRICAO_STRING.toString())))
+            .andExpect(jsonPath("$.[*].foto").value(hasItem(DEFAULT_FOTO.toString())))
+            .andExpect(jsonPath("$.[*].lado").value(hasItem(DEFAULT_LADO.toString())))
+            .andExpect(jsonPath("$.[*].link").value(hasItem(DEFAULT_LINK.toString())))
+            .andExpect(jsonPath("$.[*].numero").value(hasItem(DEFAULT_NUMERO)))
+            .andExpect(jsonPath("$.[*].picasaId").value(hasItem(DEFAULT_PICASA_ID.toString())))
+            .andExpect(jsonPath("$.[*].ponto").value(hasItem(DEFAULT_PONTO)))
+            .andExpect(jsonPath("$.[*].thumb").value(hasItem(DEFAULT_THUMB.toString())));
     }
 
     @Test
@@ -148,7 +225,19 @@ public class FotoResourceIntTest {
         restFotoMockMvc.perform(get("/api/fotos/{id}", foto.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(foto.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(foto.getId().intValue()))
+            .andExpect(jsonPath("$.coordenadaa").value(DEFAULT_COORDENADAA.toString()))
+            .andExpect(jsonPath("$.coordenadae").value(DEFAULT_COORDENADAE.toString()))
+            .andExpect(jsonPath("$.coordenadan").value(DEFAULT_COORDENADAN.toString()))
+            .andExpect(jsonPath("$.data").value(sameInstant(DEFAULT_DATA)))
+            .andExpect(jsonPath("$.descricaoString").value(DEFAULT_DESCRICAO_STRING.toString()))
+            .andExpect(jsonPath("$.foto").value(DEFAULT_FOTO.toString()))
+            .andExpect(jsonPath("$.lado").value(DEFAULT_LADO.toString()))
+            .andExpect(jsonPath("$.link").value(DEFAULT_LINK.toString()))
+            .andExpect(jsonPath("$.numero").value(DEFAULT_NUMERO))
+            .andExpect(jsonPath("$.picasaId").value(DEFAULT_PICASA_ID.toString()))
+            .andExpect(jsonPath("$.ponto").value(DEFAULT_PONTO))
+            .andExpect(jsonPath("$.thumb").value(DEFAULT_THUMB.toString()));
     }
 
     @Test
@@ -168,6 +257,19 @@ public class FotoResourceIntTest {
 
         // Update the foto
         Foto updatedFoto = fotoRepository.findOne(foto.getId());
+        updatedFoto
+            .coordenadaa(UPDATED_COORDENADAA)
+            .coordenadae(UPDATED_COORDENADAE)
+            .coordenadan(UPDATED_COORDENADAN)
+            .data(UPDATED_DATA)
+            .descricaoString(UPDATED_DESCRICAO_STRING)
+            .foto(UPDATED_FOTO)
+            .lado(UPDATED_LADO)
+            .link(UPDATED_LINK)
+            .numero(UPDATED_NUMERO)
+            .picasaId(UPDATED_PICASA_ID)
+            .ponto(UPDATED_PONTO)
+            .thumb(UPDATED_THUMB);
         FotoDTO fotoDTO = fotoMapper.toDto(updatedFoto);
 
         restFotoMockMvc.perform(put("/api/fotos")
@@ -179,6 +281,18 @@ public class FotoResourceIntTest {
         List<Foto> fotoList = fotoRepository.findAll();
         assertThat(fotoList).hasSize(databaseSizeBeforeUpdate);
         Foto testFoto = fotoList.get(fotoList.size() - 1);
+        assertThat(testFoto.getCoordenadaa()).isEqualTo(UPDATED_COORDENADAA);
+        assertThat(testFoto.getCoordenadae()).isEqualTo(UPDATED_COORDENADAE);
+        assertThat(testFoto.getCoordenadan()).isEqualTo(UPDATED_COORDENADAN);
+        assertThat(testFoto.getData()).isEqualTo(UPDATED_DATA);
+        assertThat(testFoto.getDescricaoString()).isEqualTo(UPDATED_DESCRICAO_STRING);
+        assertThat(testFoto.getFoto()).isEqualTo(UPDATED_FOTO);
+        assertThat(testFoto.getLado()).isEqualTo(UPDATED_LADO);
+        assertThat(testFoto.getLink()).isEqualTo(UPDATED_LINK);
+        assertThat(testFoto.getNumero()).isEqualTo(UPDATED_NUMERO);
+        assertThat(testFoto.getPicasaId()).isEqualTo(UPDATED_PICASA_ID);
+        assertThat(testFoto.getPonto()).isEqualTo(UPDATED_PONTO);
+        assertThat(testFoto.getThumb()).isEqualTo(UPDATED_THUMB);
     }
 
     @Test

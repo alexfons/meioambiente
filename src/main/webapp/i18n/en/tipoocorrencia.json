@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "tipoocorrencia" : {
+            "home": {
+                "title": "Tipoocorrencias",
+                "createLabel": "Create a new Tipoocorrencia",
+                "createOrEditLabel": "Create or edit a Tipoocorrencia"
+            },
+            "created": "A new Tipoocorrencia is created with identifier {{ param }}",
+            "updated": "A Tipoocorrencia is updated with identifier {{ param }}",
+            "deleted": "A Tipoocorrencia is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tipoocorrencia {{ id }}?"
+            },
+            "detail": {
+                "title": "Tipoocorrencia"
+            }
+        }
+    }
+}

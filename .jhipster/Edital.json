@@ -1,0 +1,88 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "comissaojulgamento",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataaprovacao",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataenvio",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "datahoraabertura",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "datalicitacao",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "datanumeromanifestacao",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "datapublicacao",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "datarelatorio",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "licitacao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "localrelatorio",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "modalidade",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "naturezaservico",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numeroconvite",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numeroedital",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "numeromanifestacao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numeroprojeto",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "precoglobal",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "tipoaquisicao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tipolicitacao",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170607011332",
+    "entityTableName": "edital",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "ambiental"
+}

@@ -4,9 +4,9 @@
         .module('meioambienteApp')
         .factory('Foto', Foto);
 
-    Foto.$inject = ['$resource'];
+    Foto.$inject = ['$resource', 'DateUtils'];
 
-    function Foto ($resource) {
+    function Foto ($resource, DateUtils) {
         var resourceUrl =  'api/fotos/:id';
 
         return $resource(resourceUrl, {}, {
@@ -16,6 +16,7 @@
                 transformResponse: function (data) {
                     if (data) {
                         data = angular.fromJson(data);
+                        data.data = DateUtils.convertDateTimeFromServer(data.data);
                     }
                     return data;
                 }

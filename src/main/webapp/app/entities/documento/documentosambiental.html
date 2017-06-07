@@ -19,12 +19,22 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.documento.data">Data</span></th>
+                    <th><span data-translate="meioambienteApp.documento.descricao">Descricao</span></th>
+                    <th><span data-translate="meioambienteApp.documento.documento">Documento</span></th>
+                    <th><span data-translate="meioambienteApp.documento.link">Link</span></th>
+                    <th><span data-translate="meioambienteApp.documento.thumb">Thumb</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="documento in vm.documentos track by documento.id">
                     <td><a ui-sref="documento-ambiental-detail({id:documento.id})">{{documento.id}}</a></td>
+                    <td>{{documento.data | date:'medium'}}</td>
+                    <td>{{documento.descricao}}</td>
+                    <td>{{documento.documento}}</td>
+                    <td>{{documento.link}}</td>
+                    <td>{{documento.thumb}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

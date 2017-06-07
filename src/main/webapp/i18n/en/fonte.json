@@ -14,7 +14,12 @@
             },
             "detail": {
                 "title": "Fonte"
-            }
+            },
+            "descricao": "Descricao",
+            "fonte": "Fonte",
+            "indiceagente": "Indiceagente",
+            "indicelocal": "Indicelocal",
+            "idcontabancaria": "Idcontabancaria"
         }
     }
 }

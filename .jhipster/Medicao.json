@@ -1,0 +1,55 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "idcontrato",
+            "otherEntityName": "contrato",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "ajustecambio",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "conferido",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idmedicao",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "mes",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "nummedicao",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tipomedicao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "valormedicao",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "valormedicaoreajuste",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "valorusmedicao",
+            "fieldType": "BigDecimal"
+        }
+    ],
+    "changelogDate": "20170607011347",
+    "entityTableName": "medicao",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "ambiental"
+}

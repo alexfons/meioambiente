@@ -1,0 +1,121 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "atividade",
+            "otherEntityName": "atividade",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "obra",
+            "otherEntityName": "obra",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "servico",
+            "otherEntityName": "tabela",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "tabela",
+            "otherEntityName": "tabela",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "tipo",
+            "otherEntityName": "tipoocorrencia",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "tipoocorrencia",
+            "otherEntityName": "tipoocorrencia",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "fotos",
+            "otherEntityName": "foto",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "historicos",
+            "otherEntityName": "historico",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "registros",
+            "otherEntityName": "registro",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "album",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "caracterizacao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "coordenadaa",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "coordenadae",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "coordenadan",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "data",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "distanciaeixo",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "feature",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "kmfim",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "kminicio",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "lado",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numero",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170607015449",
+    "entityTableName": "ocorrencia",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "ambiental"
+}

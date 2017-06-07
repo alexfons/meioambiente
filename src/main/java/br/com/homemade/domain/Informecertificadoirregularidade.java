@@ -11,7 +11,7 @@ import java.util.Objects;
  * A Informecertificadoirregularidade.
  */
 @Entity
-@Table(name = "informecertificadoirregularidade")
+@Table(name = "informecertirreg")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Informecertificadoirregularidade implements Serializable {
 
@@ -22,12 +22,28 @@ public class Informecertificadoirregularidade implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
+    @ManyToOne
+    private Informe informe;
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Informe getInforme() {
+        return informe;
+    }
+
+    public Informecertificadoirregularidade informe(Informe informe) {
+        this.informe = informe;
+        return this;
+    }
+
+    public void setInforme(Informe informe) {
+        this.informe = informe;
     }
 
     @Override

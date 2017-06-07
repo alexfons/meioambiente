@@ -1,0 +1,43 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "obra",
+            "otherEntityName": "obra",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "obraatividades",
+            "otherEntityName": "obraatividade",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "extensao",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "tipo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tituloFim",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tituloInicio",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170607011339",
+    "entityTableName": "fisico",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "ambiental"
+}

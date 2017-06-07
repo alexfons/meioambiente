@@ -1,0 +1,65 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "fonte",
+            "otherEntityName": "fonte",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "idplanocontas",
+            "otherEntityName": "planocontas",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "datalan",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "historico",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "recurso",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tipomedicao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idlancamentos",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nummedicao",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "valorrdebito",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "valorusdebito",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "valorrcredito",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "valoruscredito",
+            "fieldType": "BigDecimal"
+        }
+    ],
+    "changelogDate": "20170607015437",
+    "entityTableName": "lancamentos",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "ambiental"
+}

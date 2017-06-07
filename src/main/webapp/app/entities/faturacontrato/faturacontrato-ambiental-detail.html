@@ -1,0 +1,103 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.faturacontrato.detail.title">Faturacontrato</span> {{vm.faturacontrato.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.faturacontrato.dataop">Dataop</span></dt>
+        <dd>
+            <span>{{vm.faturacontrato.dataop | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.faturacontrato.despesasexeanteriores">Despesasexeanteriores</span></dt>
+        <dd>
+            <span>{{vm.faturacontrato.despesasexeanteriores}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.faturacontrato.idfaturacontrato">Idfaturacontrato</span></dt>
+        <dd>
+            <span>{{vm.faturacontrato.idfaturacontrato}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.faturacontrato.nfatura">Nfatura</span></dt>
+        <dd>
+            <span>{{vm.faturacontrato.nfatura}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.faturacontrato.nprocesso">Nprocesso</span></dt>
+        <dd>
+            <span>{{vm.faturacontrato.nprocesso}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.faturacontrato.nsolicitacao">Nsolicitacao</span></dt>
+        <dd>
+            <span>{{vm.faturacontrato.nsolicitacao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.faturacontrato.parcela">Parcela</span></dt>
+        <dd>
+            <span>{{vm.faturacontrato.parcela}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.faturacontrato.nobancaria">Nobancaria</span></dt>
+        <dd>
+            <span>{{vm.faturacontrato.nobancaria}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.faturacontrato.nop">Nop</span></dt>
+        <dd>
+            <span>{{vm.faturacontrato.nop}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.faturacontrato.nummedicao">Nummedicao</span></dt>
+        <dd>
+            <span>{{vm.faturacontrato.nummedicao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.faturacontrato.restosapagar">Restosapagar</span></dt>
+        <dd>
+            <span>{{vm.faturacontrato.restosapagar}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.faturacontrato.tipomedicao">Tipomedicao</span></dt>
+        <dd>
+            <span>{{vm.faturacontrato.tipomedicao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.faturacontrato.valorpi">Valorpi</span></dt>
+        <dd>
+            <span>{{vm.faturacontrato.valorpi}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.faturacontrato.valorreajuste">Valorreajuste</span></dt>
+        <dd>
+            <span>{{vm.faturacontrato.valorreajuste}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.faturacontrato.valorus">Valorus</span></dt>
+        <dd>
+            <span>{{vm.faturacontrato.valorus}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.faturacontrato.vreajuste">Vreajuste</span></dt>
+        <dd>
+            <span>{{vm.faturacontrato.vreajuste}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.faturacontrato.aportelocal">Aportelocal</span></dt>
+        <dd>
+            <span>{{vm.faturacontrato.aportelocal}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.faturacontrato.aporteagente">Aporteagente</span></dt>
+        <dd>
+            <span>{{vm.faturacontrato.aporteagente}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.faturacontrato.fonte">Fonte</span></dt>
+        <dd>
+            <a ui-sref="fonte-ambiental-detail({id:vm.faturacontrato.fonteId})">{{vm.faturacontrato.fonteId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.faturacontrato.idcontrato">Idcontrato</span></dt>
+        <dd>
+            <a ui-sref="contrato-ambiental-detail({id:vm.faturacontrato.idcontratoId})">{{vm.faturacontrato.idcontratoId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.faturacontrato.idreferenciacontrato">Idreferenciacontrato</span></dt>
+        <dd>
+            <a ui-sref="referenciacontrato-ambiental-detail({id:vm.faturacontrato.idreferenciacontratoId})">{{vm.faturacontrato.idreferenciacontratoId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="faturacontrato-ambiental-detail.edit({id:vm.faturacontrato.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

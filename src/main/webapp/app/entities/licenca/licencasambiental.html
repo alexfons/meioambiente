@@ -1,0 +1,204 @@
+<div>
+    <h2 data-translate="meioambienteApp.licenca.home.title">Licencas</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="licenca-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.licenca.home.createLabel">
+                        Create new Licenca
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.album">Album</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.andamento">Andamento</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.compensacaoambiental">Compensacaoambiental</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.dataemissao">Dataemissao</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.dataentregadocs">Dataentregadocs</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.dataexpedicaoprorrogacao1">Dataexpedicaoprorrogacao 1</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.dataexpedicaoprorrogacao2">Dataexpedicaoprorrogacao 2</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.dataexpedicaoprorrogacao3">Dataexpedicaoprorrogacao 3</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.dataoficiolocalpedido">Dataoficiolocalpedido</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.dataoficiolocalrecebimento">Dataoficiolocalrecebimento</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.dataoficioreoficialpedido">Dataoficioreoficialpedido</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.dataoficioreoficialrecebimento">Dataoficioreoficialrecebimento</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.datapedidoprorrogacao1">Datapedidoprorrogacao 1</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.datapedidoprorrogacao2">Datapedidoprorrogacao 2</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.datapedidoprorrogacao3">Datapedidoprorrogacao 3</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.datavalidadeprorrogacao1">Datavalidadeprorrogacao 1</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.datavalidadeprorrogacao2">Datavalidadeprorrogacao 2</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.datavalidadeprorrogacao3">Datavalidadeprorrogacao 3</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.datavencimento">Datavencimento</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.datavencimentoatual">Datavencimentoatual</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.descricao">Descricao</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.dispensalai">Dispensalai</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.docsentregues">Docsentregues</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.eiarima">Eiarima</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.fcei">Fcei</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.fceidatapagamento">Fceidatapagamento</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.fceidataprotocolo">Fceidataprotocolo</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.fceivalor">Fceivalor</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.folder">Folder</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.inativo">Inativo</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.inventarioflorestal">Inventarioflorestal</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.numero">Numero</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.numerolap">Numerolap</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.numerooficioconcessaoprorrogacao1">Numerooficioconcessaoprorrogacao 1</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.numerooficioconcessaoprorrogacao2">Numerooficioconcessaoprorrogacao 2</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.numerooficioconcessaoprorrogacao3">Numerooficioconcessaoprorrogacao 3</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.numerooficiolocalpedido">Numerooficiolocalpedido</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.numerooficiolocalrecebimento">Numerooficiolocalrecebimento</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.numerooficiooficialpedido">Numerooficiooficialpedido</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.numerooficiooficialrecebimento">Numerooficiooficialrecebimento</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.numerooficioprorrogacao1">Numerooficioprorrogacao 1</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.numerooficioprorrogacao2">Numerooficioprorrogacao 2</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.numerooficioprorrogacao3">Numerooficioprorrogacao 3</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.numeroparecertecnico">Numeroparecertecnico</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.numeroprocesso">Numeroprocesso</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.observacao">Observacao</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.pendente">Pendente</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.prazomes">Prazomes</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.prazovalidade">Prazovalidade</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.reciboentregadocs">Reciboentregadocs</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.usosolo">Usosolo</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.usosoloobs">Usosoloobs</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.atividadelicenca">Atividadelicenca</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.empresa">Empresa</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.projeto">Projeto</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.tipo">Tipo</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.obra">Obra</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.orgaoemissor">Orgaoemissor</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.tipolicenca">Tipolicenca</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.condicionantes">Condicionantes</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.docs">Docs</span></th>
+                    <th><span data-translate="meioambienteApp.licenca.fotos">Fotos</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="licenca in vm.licencas track by licenca.id">
+                    <td><a ui-sref="licenca-ambiental-detail({id:licenca.id})">{{licenca.id}}</a></td>
+                    <td>{{licenca.album}}</td>
+                    <td>{{licenca.andamento}}</td>
+                    <td>{{licenca.compensacaoambiental}}</td>
+                    <td>{{licenca.dataemissao | date:'medium'}}</td>
+                    <td>{{licenca.dataentregadocs | date:'medium'}}</td>
+                    <td>{{licenca.dataexpedicaoprorrogacao1 | date:'medium'}}</td>
+                    <td>{{licenca.dataexpedicaoprorrogacao2 | date:'medium'}}</td>
+                    <td>{{licenca.dataexpedicaoprorrogacao3 | date:'medium'}}</td>
+                    <td>{{licenca.dataoficiolocalpedido | date:'medium'}}</td>
+                    <td>{{licenca.dataoficiolocalrecebimento | date:'medium'}}</td>
+                    <td>{{licenca.dataoficioreoficialpedido | date:'medium'}}</td>
+                    <td>{{licenca.dataoficioreoficialrecebimento | date:'medium'}}</td>
+                    <td>{{licenca.datapedidoprorrogacao1 | date:'medium'}}</td>
+                    <td>{{licenca.datapedidoprorrogacao2 | date:'medium'}}</td>
+                    <td>{{licenca.datapedidoprorrogacao3 | date:'medium'}}</td>
+                    <td>{{licenca.datavalidadeprorrogacao1 | date:'medium'}}</td>
+                    <td>{{licenca.datavalidadeprorrogacao2 | date:'medium'}}</td>
+                    <td>{{licenca.datavalidadeprorrogacao3 | date:'medium'}}</td>
+                    <td>{{licenca.datavencimento | date:'medium'}}</td>
+                    <td>{{licenca.datavencimentoatual | date:'medium'}}</td>
+                    <td>{{licenca.descricao}}</td>
+                    <td>{{licenca.dispensalai}}</td>
+                    <td>{{licenca.docsentregues}}</td>
+                    <td>{{licenca.eiarima}}</td>
+                    <td>{{licenca.fcei}}</td>
+                    <td>{{licenca.fceidatapagamento | date:'medium'}}</td>
+                    <td>{{licenca.fceidataprotocolo | date:'medium'}}</td>
+                    <td>{{licenca.fceivalor}}</td>
+                    <td>{{licenca.folder}}</td>
+                    <td>{{licenca.inativo}}</td>
+                    <td>{{licenca.inventarioflorestal}}</td>
+                    <td>{{licenca.numero}}</td>
+                    <td>{{licenca.numerolap}}</td>
+                    <td>{{licenca.numerooficioconcessaoprorrogacao1}}</td>
+                    <td>{{licenca.numerooficioconcessaoprorrogacao2}}</td>
+                    <td>{{licenca.numerooficioconcessaoprorrogacao3}}</td>
+                    <td>{{licenca.numerooficiolocalpedido}}</td>
+                    <td>{{licenca.numerooficiolocalrecebimento}}</td>
+                    <td>{{licenca.numerooficiooficialpedido}}</td>
+                    <td>{{licenca.numerooficiooficialrecebimento}}</td>
+                    <td>{{licenca.numerooficioprorrogacao1}}</td>
+                    <td>{{licenca.numerooficioprorrogacao2}}</td>
+                    <td>{{licenca.numerooficioprorrogacao3}}</td>
+                    <td>{{licenca.numeroparecertecnico}}</td>
+                    <td>{{licenca.numeroprocesso}}</td>
+                    <td>{{licenca.observacao}}</td>
+                    <td>{{licenca.pendente}}</td>
+                    <td>{{licenca.prazomes}}</td>
+                    <td>{{licenca.prazovalidade}}</td>
+                    <td>{{licenca.reciboentregadocs}}</td>
+                    <td>{{licenca.usosolo}}</td>
+                    <td>{{licenca.usosoloobs}}</td>
+                    <td>
+                        <a ui-sref="atividadelicenca-ambiental-detail({id:licenca.atividadelicencaId})">{{licenca.atividadelicencaId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="empresa-ambiental-detail({id:licenca.empresaId})">{{licenca.empresaId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="projeto-ambiental-detail({id:licenca.projetoId})">{{licenca.projetoId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="tipolicenca-ambiental-detail({id:licenca.tipoId})">{{licenca.tipoId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="obra-ambiental-detail({id:licenca.obraId})">{{licenca.obraId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="orgaoemissor-ambiental-detail({id:licenca.orgaoemissorId})">{{licenca.orgaoemissorId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="tipolicenca-ambiental-detail({id:licenca.tipolicencaId})">{{licenca.tipolicencaId}}</a>
+                    </td>
+                    <td>
+                        <span ng-repeat="condicionantes in licenca.condicionantes">
+                            <a class="form-control-static" ui-sref="condicionante-ambiental-detail({id: condicionantes.id})">{{condicionantes.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td>
+                        <span ng-repeat="docs in licenca.docs">
+                            <a class="form-control-static" ui-sref="documento-ambiental-detail({id: docs.id})">{{docs.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td>
+                        <span ng-repeat="fotos in licenca.fotos">
+                            <a class="form-control-static" ui-sref="foto-ambiental-detail({id: fotos.id})">{{fotos.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="licenca-ambiental-detail({id:licenca.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="licenca-ambiental.edit({id:licenca.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="licenca-ambiental.delete({id:licenca.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

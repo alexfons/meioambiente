@@ -1,0 +1,55 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.informe.detail.title">Informe</span> {{vm.informe.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.informe.data">Data</span></dt>
+        <dd>
+            <span>{{vm.informe.data | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.informe.datainspecao">Datainspecao</span></dt>
+        <dd>
+            <span>{{vm.informe.datainspecao | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.informe.notificacao">Notificacao</span></dt>
+        <dd>
+            <span>{{vm.informe.notificacao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.informe.numero">Numero</span></dt>
+        <dd>
+            <span>{{vm.informe.numero}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.informe.obs">Obs</span></dt>
+        <dd>
+            <span>{{vm.informe.obs}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.informe.obra">Obra</span></dt>
+        <dd>
+            <a ui-sref="obra-ambiental-detail({id:vm.informe.obraId})">{{vm.informe.obraId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.informe.fotos">Fotos</span></dt>
+        <dd>
+            <span ng-repeat="fotos in vm.informe.fotos">
+                <a ui-sref="foto-ambiental-detail({id: fotos.id})">{{fotos.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.informe.ocorrenciasinforme">Ocorrenciasinforme</span></dt>
+        <dd>
+            <span ng-repeat="ocorrenciasinforme in vm.informe.ocorrenciasinformes">
+                <a ui-sref="ocorrenciainforme-ambiental-detail({id: ocorrenciasinforme.id})">{{ocorrenciasinforme.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="informe-ambiental-detail.edit({id:vm.informe.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,7 +1,56 @@
 {
     "fluentMethods": true,
     "relationships": [],
-    "fields": [],
+    "fields": [
+        {
+            "fieldName": "bairro",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cidade",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cnpj",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contato",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "endereco",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idempresa",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nomeempresa",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numero",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pais",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telefonecontato",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "uf",
+            "fieldType": "String"
+        }
+    ],
     "changelogDate": "20170515105933",
     "entityTableName": "empresa",
     "dto": "mapstruct",

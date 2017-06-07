@@ -1,0 +1,39 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "listamovimentacao",
+            "otherEntityName": "listamovimentacao",
+            "otherEntityRelationshipName": "movimentacao"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "contabancaria",
+            "otherEntityName": "contabancaria",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "fonte",
+            "otherEntityName": "fonte",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "data",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "tipomovimentacao",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170607015444",
+    "entityTableName": "movimentacao",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "ambiental"
+}

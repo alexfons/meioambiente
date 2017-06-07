@@ -1,0 +1,32 @@
+{
+    "meioambienteApp": {
+        "lancamentos" : {
+            "home": {
+                "title": "Lancamentos",
+                "createLabel": "Create a new Lancamentos",
+                "createOrEditLabel": "Create or edit a Lancamentos"
+            },
+            "created": "A new Lancamentos is created with identifier {{ param }}",
+            "updated": "A Lancamentos is updated with identifier {{ param }}",
+            "deleted": "A Lancamentos is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Lancamentos {{ id }}?"
+            },
+            "detail": {
+                "title": "Lancamentos"
+            },
+            "datalan": "Datalan",
+            "historico": "Historico",
+            "recurso": "Recurso",
+            "tipomedicao": "Tipomedicao",
+            "idlancamentos": "Idlancamentos",
+            "nummedicao": "Nummedicao",
+            "valorrdebito": "Valorrdebito",
+            "valorusdebito": "Valorusdebito",
+            "valorrcredito": "Valorrcredito",
+            "valoruscredito": "Valoruscredito",
+            "fonte": "Fonte",
+            "idplanocontas": "Idplanocontas"
+        }
+    }
+}

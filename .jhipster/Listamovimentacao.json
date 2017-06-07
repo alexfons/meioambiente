@@ -1,0 +1,49 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "idplanocontas",
+            "otherEntityName": "planocontas",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "movimentacao",
+            "otherEntityName": "movimentacao",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "tipolancamento",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "historico",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "valoruscredito",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "valorrcredito",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "valorusdebito",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "valorrdebito",
+            "fieldType": "BigDecimal"
+        }
+    ],
+    "changelogDate": "20170607015440",
+    "entityTableName": "listamovimentacao",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "ambiental"
+}

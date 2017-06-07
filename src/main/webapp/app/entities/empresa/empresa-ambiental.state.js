@@ -104,6 +104,18 @@
                     resolve: {
                         entity: function () {
                             return {
+                                bairro: null,
+                                cidade: null,
+                                cnpj: null,
+                                contato: null,
+                                email: null,
+                                endereco: null,
+                                idempresa: null,
+                                nomeempresa: null,
+                                numero: null,
+                                pais: null,
+                                telefonecontato: null,
+                                uf: null,
                                 id: null
                             };
                         }

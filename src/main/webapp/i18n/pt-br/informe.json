@@ -1,0 +1,28 @@
+{
+    "meioambienteApp": {
+        "informe" : {
+            "home": {
+                "title": "Informes",
+                "createLabel": "Criar novo Informe",
+                "createOrEditLabel": "Criar ou editar Informe"
+            },
+            "created": "Um novo Informe é criado com o identificador {{ param }}",
+            "updated": "Um Informe é atualizado com o identificador {{ param }}",
+            "deleted": "Um Informe é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Informe {{ id }}?"
+            },
+            "detail": {
+                "title": "Informe"
+            },
+            "data": "Data",
+            "datainspecao": "Datainspecao",
+            "notificacao": "Notificacao",
+            "numero": "Numero",
+            "obs": "Obs",
+            "obra": "Obra",
+            "fotos": "Fotos",
+            "ocorrenciasinforme": "Ocorrenciasinforme"
+        }
+    }
+}

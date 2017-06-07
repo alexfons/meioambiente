@@ -1,0 +1,59 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.medicao.detail.title">Medicao</span> {{vm.medicao.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.medicao.ajustecambio">Ajustecambio</span></dt>
+        <dd>
+            <span>{{vm.medicao.ajustecambio}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.medicao.conferido">Conferido</span></dt>
+        <dd>
+            <span>{{vm.medicao.conferido}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.medicao.idmedicao">Idmedicao</span></dt>
+        <dd>
+            <span>{{vm.medicao.idmedicao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.medicao.mes">Mes</span></dt>
+        <dd>
+            <span>{{vm.medicao.mes | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.medicao.nummedicao">Nummedicao</span></dt>
+        <dd>
+            <span>{{vm.medicao.nummedicao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.medicao.tipomedicao">Tipomedicao</span></dt>
+        <dd>
+            <span>{{vm.medicao.tipomedicao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.medicao.valormedicao">Valormedicao</span></dt>
+        <dd>
+            <span>{{vm.medicao.valormedicao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.medicao.valormedicaoreajuste">Valormedicaoreajuste</span></dt>
+        <dd>
+            <span>{{vm.medicao.valormedicaoreajuste}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.medicao.valorusmedicao">Valorusmedicao</span></dt>
+        <dd>
+            <span>{{vm.medicao.valorusmedicao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.medicao.idcontrato">Idcontrato</span></dt>
+        <dd>
+            <a ui-sref="contrato-ambiental-detail({id:vm.medicao.idcontratoId})">{{vm.medicao.idcontratoId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="medicao-ambiental-detail.edit({id:vm.medicao.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

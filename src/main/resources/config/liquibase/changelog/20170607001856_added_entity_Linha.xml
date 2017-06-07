@@ -21,6 +21,14 @@
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="sequencia" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="valor" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
             <column name="coluna_id" type="bigint">
                 <constraints nullable="true" />
             </column>

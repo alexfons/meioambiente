@@ -1,0 +1,47 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "atividade",
+            "otherEntityName": "atividade",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "atacada",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "extensao",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "fim",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "inicio",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "npontos",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "pontofim",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "pontoinicio",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170607011340",
+    "entityTableName": "fisicografico",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "ambiental"
+}

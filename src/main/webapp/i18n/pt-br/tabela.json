@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "tabela" : {
+            "home": {
+                "title": "Tabelas",
+                "createLabel": "Criar novo Tabela",
+                "createOrEditLabel": "Criar ou editar Tabela"
+            },
+            "created": "Um novo Tabela é criado com o identificador {{ param }}",
+            "updated": "Um Tabela é atualizado com o identificador {{ param }}",
+            "deleted": "Um Tabela é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Tabela {{ id }}?"
+            },
+            "detail": {
+                "title": "Tabela"
+            }
+        }
+    }
+}

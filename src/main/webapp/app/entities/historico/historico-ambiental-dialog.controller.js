@@ -5,14 +5,17 @@
         .module('meioambienteApp')
         .controller('HistoricoAmbientalDialogController', HistoricoAmbientalDialogController);
 
-    HistoricoAmbientalDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Historico'];
+    HistoricoAmbientalDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Historico', 'Status'];
 
-    function HistoricoAmbientalDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Historico) {
+    function HistoricoAmbientalDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Historico, Status) {
         var vm = this;
 
         vm.historico = entity;
         vm.clear = clear;
+        vm.datePickerOpenStatus = {};
+        vm.openCalendar = openCalendar;
         vm.save = save;
+        vm.statuses = Status.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();
@@ -41,6 +44,10 @@
             vm.isSaving = false;
         }
 
+        vm.datePickerOpenStatus.data = false;
 
+        function openCalendar (date) {
+            vm.datePickerOpenStatus[date] = true;
+        }
     }
 })();

@@ -1,0 +1,82 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myEditalloteLabel" data-translate="meioambienteApp.editallote.home.createOrEditLabel">Create or edit a Editallote</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.editallote.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.editallote.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.editallote.dataprovacaolote" for="field_dataprovacaolote">Dataprovacaolote</label>
+                <div class="input-group">
+                    <input id="field_dataprovacaolote" type="text" class="form-control" name="dataprovacaolote" datetime-picker="{{dateformat}}" ng-model="vm.editallote.dataprovacaolote" is-open="vm.datePickerOpenStatus.dataprovacaolote"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataprovacaolote')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.editallote.datarelatoriolote" for="field_datarelatoriolote">Datarelatoriolote</label>
+                <div class="input-group">
+                    <input id="field_datarelatoriolote" type="text" class="form-control" name="datarelatoriolote" datetime-picker="{{dateformat}}" ng-model="vm.editallote.datarelatoriolote" is-open="vm.datePickerOpenStatus.datarelatoriolote"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datarelatoriolote')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.editallote.idlote" for="field_idlote">Idlote</label>
+            <input type="number" class="form-control" name="idlote" id="field_idlote"
+                    ng-model="vm.editallote.idlote"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.editallote.lote" for="field_lote">Lote</label>
+            <input type="text" class="form-control" name="lote" id="field_lote"
+                    ng-model="vm.editallote.lote"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.editallote.objeto" for="field_objeto">Objeto</label>
+            <input type="text" class="form-control" name="objeto" id="field_objeto"
+                    ng-model="vm.editallote.objeto"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.editallote.prazo" for="field_prazo">Prazo</label>
+            <input type="text" class="form-control" name="prazo" id="field_prazo"
+                    ng-model="vm.editallote.prazo"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.editallote.valororcado" for="field_valororcado">Valororcado</label>
+            <input type="number" class="form-control" name="valororcado" id="field_valororcado"
+                    ng-model="vm.editallote.valororcado"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="meioambienteApp.editallote.numeroedital" for="field_numeroedital">Numeroedital</label>
+            <select class="form-control" id="field_numeroedital" name="numeroedital" ng-model="vm.editallote.numeroeditalId" ng-options="edital.id as edital.id for edital in vm.editals"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

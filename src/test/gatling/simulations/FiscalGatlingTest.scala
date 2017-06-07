@@ -68,7 +68,7 @@ class FiscalGatlingTest extends Simulation {
             .exec(http("Create new fiscal")
             .post("/api/fiscals")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null}""")).asJSON
+            .body(StringBody("""{"id":null, "email":"SAMPLE_TEXT", "funcao":"SAMPLE_TEXT", "localtrabalho":"SAMPLE_TEXT", "matricula":"SAMPLE_TEXT", "nome":"SAMPLE_TEXT", "superintendencia":"SAMPLE_TEXT", "telefone":null, "telefonecomercial":null}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_fiscal_url"))).exitHereIfFailed
             .pause(10)

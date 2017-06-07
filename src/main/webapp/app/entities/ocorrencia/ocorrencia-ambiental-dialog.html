@@ -1,0 +1,150 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myOcorrenciaLabel" data-translate="meioambienteApp.ocorrencia.home.createOrEditLabel">Create or edit a Ocorrencia</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.ocorrencia.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.ocorrencia.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.ocorrencia.album" for="field_album">Album</label>
+            <input type="text" class="form-control" name="album" id="field_album"
+                    ng-model="vm.ocorrencia.album"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.ocorrencia.caracterizacao" for="field_caracterizacao">Caracterizacao</label>
+            <input type="text" class="form-control" name="caracterizacao" id="field_caracterizacao"
+                    ng-model="vm.ocorrencia.caracterizacao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.ocorrencia.coordenadaa" for="field_coordenadaa">Coordenadaa</label>
+            <input type="text" class="form-control" name="coordenadaa" id="field_coordenadaa"
+                    ng-model="vm.ocorrencia.coordenadaa"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.ocorrencia.coordenadae" for="field_coordenadae">Coordenadae</label>
+            <input type="text" class="form-control" name="coordenadae" id="field_coordenadae"
+                    ng-model="vm.ocorrencia.coordenadae"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.ocorrencia.coordenadan" for="field_coordenadan">Coordenadan</label>
+            <input type="text" class="form-control" name="coordenadan" id="field_coordenadan"
+                    ng-model="vm.ocorrencia.coordenadan"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.ocorrencia.data" for="field_data">Data</label>
+                <div class="input-group">
+                    <input id="field_data" type="text" class="form-control" name="data" datetime-picker="{{dateformat}}" ng-model="vm.ocorrencia.data" is-open="vm.datePickerOpenStatus.data"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('data')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.ocorrencia.distanciaeixo" for="field_distanciaeixo">Distanciaeixo</label>
+            <input type="number" class="form-control" name="distanciaeixo" id="field_distanciaeixo"
+                    ng-model="vm.ocorrencia.distanciaeixo"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.ocorrencia.feature" for="field_feature">Feature</label>
+            <input type="text" class="form-control" name="feature" id="field_feature"
+                    ng-model="vm.ocorrencia.feature"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.ocorrencia.kmfim" for="field_kmfim">Kmfim</label>
+            <input type="number" class="form-control" name="kmfim" id="field_kmfim"
+                    ng-model="vm.ocorrencia.kmfim"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.ocorrencia.kminicio" for="field_kminicio">Kminicio</label>
+            <input type="number" class="form-control" name="kminicio" id="field_kminicio"
+                    ng-model="vm.ocorrencia.kminicio"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.ocorrencia.lado" for="field_lado">Lado</label>
+            <input type="text" class="form-control" name="lado" id="field_lado"
+                    ng-model="vm.ocorrencia.lado"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.ocorrencia.numero" for="field_numero">Numero</label>
+            <input type="number" class="form-control" name="numero" id="field_numero"
+                    ng-model="vm.ocorrencia.numero"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="meioambienteApp.ocorrencia.atividade" for="field_atividade">Atividade</label>
+            <select class="form-control" id="field_atividade" name="atividade" ng-model="vm.ocorrencia.atividadeId" ng-options="atividade.id as atividade.id for atividade in vm.atividades"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.ocorrencia.obra" for="field_obra">Obra</label>
+            <select class="form-control" id="field_obra" name="obra" ng-model="vm.ocorrencia.obraId" ng-options="obra.id as obra.id for obra in vm.obras"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.ocorrencia.servico" for="field_servico">Servico</label>
+            <select class="form-control" id="field_servico" name="servico" ng-model="vm.ocorrencia.servicoId" ng-options="tabela.id as tabela.id for tabela in vm.tabelas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.ocorrencia.tabela" for="field_tabela">Tabela</label>
+            <select class="form-control" id="field_tabela" name="tabela" ng-model="vm.ocorrencia.tabelaId" ng-options="tabela.id as tabela.id for tabela in vm.tabelas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.ocorrencia.tipo" for="field_tipo">Tipo</label>
+            <select class="form-control" id="field_tipo" name="tipo" ng-model="vm.ocorrencia.tipoId" ng-options="tipoocorrencia.id as tipoocorrencia.id for tipoocorrencia in vm.tipoocorrencias"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.ocorrencia.tipoocorrencia" for="field_tipoocorrencia">Tipoocorrencia</label>
+            <select class="form-control" id="field_tipoocorrencia" name="tipoocorrencia" ng-model="vm.ocorrencia.tipoocorrenciaId" ng-options="tipoocorrencia.id as tipoocorrencia.id for tipoocorrencia in vm.tipoocorrencias"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.ocorrencia.fotos" for="field_fotos">Fotos</label>
+            <select class="form-control" id="field_fotos" multiple name="fotos" ng-model="vm.ocorrencia.fotos" ng-options="foto as foto.id for foto in vm.fotos track by foto.id"></select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.ocorrencia.historicos" for="field_historicos">Historicos</label>
+            <select class="form-control" id="field_historicos" multiple name="historicos" ng-model="vm.ocorrencia.historicos" ng-options="historico as historico.id for historico in vm.historicos track by historico.id"></select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.ocorrencia.registros" for="field_registros">Registros</label>
+            <select class="form-control" id="field_registros" multiple name="registros" ng-model="vm.ocorrencia.registros" ng-options="registro as registro.id for registro in vm.registros track by registro.id"></select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

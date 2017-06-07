@@ -4,6 +4,14 @@
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.empresacontrato.tipo">Tipo</span></dt>
+        <dd>
+            <span>{{vm.empresacontrato.tipo}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.empresacontrato.empresa">Empresa</span></dt>
+        <dd>
+            <a ui-sref="empresa-ambiental-detail({id:vm.empresacontrato.empresaId})">{{vm.empresacontrato.empresaId}}</a>
+        </dd>
     </dl>
 
     <button type="submit"

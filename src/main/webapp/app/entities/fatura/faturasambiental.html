@@ -1,0 +1,106 @@
+<div>
+    <h2 data-translate="meioambienteApp.fatura.home.title">Faturas</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="fatura-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.fatura.home.createLabel">
+                        Create new Fatura
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.fatura.ajustecambio">Ajustecambio</span></th>
+                    <th><span data-translate="meioambienteApp.fatura.dataop">Dataop</span></th>
+                    <th><span data-translate="meioambienteApp.fatura.despesasexeanteriores">Despesasexeanteriores</span></th>
+                    <th><span data-translate="meioambienteApp.fatura.nfatura">Nfatura</span></th>
+                    <th><span data-translate="meioambienteApp.fatura.nprocesso">Nprocesso</span></th>
+                    <th><span data-translate="meioambienteApp.fatura.nsolicitacao">Nsolicitacao</span></th>
+                    <th><span data-translate="meioambienteApp.fatura.parcela">Parcela</span></th>
+                    <th><span data-translate="meioambienteApp.fatura.nob">Nob</span></th>
+                    <th><span data-translate="meioambienteApp.fatura.nop">Nop</span></th>
+                    <th><span data-translate="meioambienteApp.fatura.nummedicao">Nummedicao</span></th>
+                    <th><span data-translate="meioambienteApp.fatura.restosapagar">Restosapagar</span></th>
+                    <th><span data-translate="meioambienteApp.fatura.tipomedicao">Tipomedicao</span></th>
+                    <th><span data-translate="meioambienteApp.fatura.valorpi">Valorpi</span></th>
+                    <th><span data-translate="meioambienteApp.fatura.valorreajuste">Valorreajuste</span></th>
+                    <th><span data-translate="meioambienteApp.fatura.valorus">Valorus</span></th>
+                    <th><span data-translate="meioambienteApp.fatura.vreajuste">Vreajuste</span></th>
+                    <th><span data-translate="meioambienteApp.fatura.fonte">Fonte</span></th>
+                    <th><span data-translate="meioambienteApp.fatura.idcontabancaria">Idcontabancaria</span></th>
+                    <th><span data-translate="meioambienteApp.fatura.idcontrato">Idcontrato</span></th>
+                    <th><span data-translate="meioambienteApp.fatura.idreferencia">Idreferencia</span></th>
+                    <th><span data-translate="meioambienteApp.fatura.medicao">Medicao</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="fatura in vm.faturas track by fatura.id">
+                    <td><a ui-sref="fatura-ambiental-detail({id:fatura.id})">{{fatura.id}}</a></td>
+                    <td>{{fatura.ajustecambio}}</td>
+                    <td>{{fatura.dataop | date:'medium'}}</td>
+                    <td>{{fatura.despesasexeanteriores}}</td>
+                    <td>{{fatura.nfatura}}</td>
+                    <td>{{fatura.nprocesso}}</td>
+                    <td>{{fatura.nsolicitacao}}</td>
+                    <td>{{fatura.parcela}}</td>
+                    <td>{{fatura.nob}}</td>
+                    <td>{{fatura.nop}}</td>
+                    <td>{{fatura.nummedicao}}</td>
+                    <td>{{fatura.restosapagar}}</td>
+                    <td>{{fatura.tipomedicao}}</td>
+                    <td>{{fatura.valorpi}}</td>
+                    <td>{{fatura.valorreajuste}}</td>
+                    <td>{{fatura.valorus}}</td>
+                    <td>{{fatura.vreajuste}}</td>
+                    <td>
+                        <a ui-sref="fonte-ambiental-detail({id:fatura.fonteId})">{{fatura.fonteId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="contabancaria-ambiental-detail({id:fatura.idcontabancariaId})">{{fatura.idcontabancariaId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="contrato-ambiental-detail({id:fatura.idcontratoId})">{{fatura.idcontratoId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="referencia-ambiental-detail({id:fatura.idreferenciaId})">{{fatura.idreferenciaId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="medicao-ambiental-detail({id:fatura.medicaoId})">{{fatura.medicaoId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="fatura-ambiental-detail({id:fatura.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="fatura-ambiental.edit({id:fatura.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="fatura-ambiental.delete({id:fatura.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

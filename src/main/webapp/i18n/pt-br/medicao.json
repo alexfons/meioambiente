@@ -1,0 +1,30 @@
+{
+    "meioambienteApp": {
+        "medicao" : {
+            "home": {
+                "title": "Medicaos",
+                "createLabel": "Criar novo Medicao",
+                "createOrEditLabel": "Criar ou editar Medicao"
+            },
+            "created": "Um novo Medicao é criado com o identificador {{ param }}",
+            "updated": "Um Medicao é atualizado com o identificador {{ param }}",
+            "deleted": "Um Medicao é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Medicao {{ id }}?"
+            },
+            "detail": {
+                "title": "Medicao"
+            },
+            "ajustecambio": "Ajustecambio",
+            "conferido": "Conferido",
+            "idmedicao": "Idmedicao",
+            "mes": "Mes",
+            "nummedicao": "Nummedicao",
+            "tipomedicao": "Tipomedicao",
+            "valormedicao": "Valormedicao",
+            "valormedicaoreajuste": "Valormedicaoreajuste",
+            "valorusmedicao": "Valorusmedicao",
+            "idcontrato": "Idcontrato"
+        }
+    }
+}

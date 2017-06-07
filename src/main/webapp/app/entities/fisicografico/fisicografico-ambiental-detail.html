@@ -1,0 +1,51 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.fisicografico.detail.title">Fisicografico</span> {{vm.fisicografico.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.fisicografico.atacada">Atacada</span></dt>
+        <dd>
+            <span>{{vm.fisicografico.atacada}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fisicografico.extensao">Extensao</span></dt>
+        <dd>
+            <span>{{vm.fisicografico.extensao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fisicografico.fim">Fim</span></dt>
+        <dd>
+            <span>{{vm.fisicografico.fim}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fisicografico.inicio">Inicio</span></dt>
+        <dd>
+            <span>{{vm.fisicografico.inicio}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fisicografico.npontos">Npontos</span></dt>
+        <dd>
+            <span>{{vm.fisicografico.npontos}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fisicografico.pontofim">Pontofim</span></dt>
+        <dd>
+            <span>{{vm.fisicografico.pontofim}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fisicografico.pontoinicio">Pontoinicio</span></dt>
+        <dd>
+            <span>{{vm.fisicografico.pontoinicio}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.fisicografico.atividade">Atividade</span></dt>
+        <dd>
+            <a ui-sref="atividade-ambiental-detail({id:vm.fisicografico.atividadeId})">{{vm.fisicografico.atividadeId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="fisicografico-ambiental-detail.edit({id:vm.fisicografico.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

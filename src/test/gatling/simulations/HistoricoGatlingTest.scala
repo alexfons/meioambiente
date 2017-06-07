@@ -68,7 +68,7 @@ class HistoricoGatlingTest extends Simulation {
             .exec(http("Create new historico")
             .post("/api/historicos")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null}""")).asJSON
+            .body(StringBody("""{"id":null, "data":"2020-01-01T00:00:00.000Z", "descricao":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_historico_url"))).exitHereIfFailed
             .pause(10)

@@ -1,7 +1,56 @@
 {
     "fluentMethods": true,
     "relationships": [],
-    "fields": [],
+    "fields": [
+        {
+            "fieldName": "coordenadaa",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "coordenadae",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "coordenadan",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "data",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "descricaoString",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "foto",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lado",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "link",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numero",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "picasaId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ponto",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "thumb",
+            "fieldType": "String"
+        }
+    ],
     "changelogDate": "20170515105929",
     "entityTableName": "foto",
     "dto": "mapstruct",

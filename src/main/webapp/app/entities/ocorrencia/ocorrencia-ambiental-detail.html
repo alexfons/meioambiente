@@ -1,0 +1,109 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.ocorrencia.detail.title">Ocorrencia</span> {{vm.ocorrencia.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.ocorrencia.album">Album</span></dt>
+        <dd>
+            <span>{{vm.ocorrencia.album}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.ocorrencia.caracterizacao">Caracterizacao</span></dt>
+        <dd>
+            <span>{{vm.ocorrencia.caracterizacao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.ocorrencia.coordenadaa">Coordenadaa</span></dt>
+        <dd>
+            <span>{{vm.ocorrencia.coordenadaa}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.ocorrencia.coordenadae">Coordenadae</span></dt>
+        <dd>
+            <span>{{vm.ocorrencia.coordenadae}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.ocorrencia.coordenadan">Coordenadan</span></dt>
+        <dd>
+            <span>{{vm.ocorrencia.coordenadan}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.ocorrencia.data">Data</span></dt>
+        <dd>
+            <span>{{vm.ocorrencia.data | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.ocorrencia.distanciaeixo">Distanciaeixo</span></dt>
+        <dd>
+            <span>{{vm.ocorrencia.distanciaeixo}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.ocorrencia.feature">Feature</span></dt>
+        <dd>
+            <span>{{vm.ocorrencia.feature}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.ocorrencia.kmfim">Kmfim</span></dt>
+        <dd>
+            <span>{{vm.ocorrencia.kmfim}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.ocorrencia.kminicio">Kminicio</span></dt>
+        <dd>
+            <span>{{vm.ocorrencia.kminicio}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.ocorrencia.lado">Lado</span></dt>
+        <dd>
+            <span>{{vm.ocorrencia.lado}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.ocorrencia.numero">Numero</span></dt>
+        <dd>
+            <span>{{vm.ocorrencia.numero}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.ocorrencia.atividade">Atividade</span></dt>
+        <dd>
+            <a ui-sref="atividade-ambiental-detail({id:vm.ocorrencia.atividadeId})">{{vm.ocorrencia.atividadeId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.ocorrencia.obra">Obra</span></dt>
+        <dd>
+            <a ui-sref="obra-ambiental-detail({id:vm.ocorrencia.obraId})">{{vm.ocorrencia.obraId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.ocorrencia.servico">Servico</span></dt>
+        <dd>
+            <a ui-sref="tabela-ambiental-detail({id:vm.ocorrencia.servicoId})">{{vm.ocorrencia.servicoId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.ocorrencia.tabela">Tabela</span></dt>
+        <dd>
+            <a ui-sref="tabela-ambiental-detail({id:vm.ocorrencia.tabelaId})">{{vm.ocorrencia.tabelaId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.ocorrencia.tipo">Tipo</span></dt>
+        <dd>
+            <a ui-sref="tipoocorrencia-ambiental-detail({id:vm.ocorrencia.tipoId})">{{vm.ocorrencia.tipoId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.ocorrencia.tipoocorrencia">Tipoocorrencia</span></dt>
+        <dd>
+            <a ui-sref="tipoocorrencia-ambiental-detail({id:vm.ocorrencia.tipoocorrenciaId})">{{vm.ocorrencia.tipoocorrenciaId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.ocorrencia.fotos">Fotos</span></dt>
+        <dd>
+            <span ng-repeat="fotos in vm.ocorrencia.fotos">
+                <a ui-sref="foto-ambiental-detail({id: fotos.id})">{{fotos.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.ocorrencia.historicos">Historicos</span></dt>
+        <dd>
+            <span ng-repeat="historicos in vm.ocorrencia.historicos">
+                <a ui-sref="historico-ambiental-detail({id: historicos.id})">{{historicos.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.ocorrencia.registros">Registros</span></dt>
+        <dd>
+            <span ng-repeat="registros in vm.ocorrencia.registros">
+                <a ui-sref="registro-ambiental-detail({id: registros.id})">{{registros.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="ocorrencia-ambiental-detail.edit({id:vm.ocorrencia.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

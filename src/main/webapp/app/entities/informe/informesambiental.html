@@ -1,0 +1,80 @@
+<div>
+    <h2 data-translate="meioambienteApp.informe.home.title">Informes</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="informe-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.informe.home.createLabel">
+                        Create new Informe
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.informe.data">Data</span></th>
+                    <th><span data-translate="meioambienteApp.informe.datainspecao">Datainspecao</span></th>
+                    <th><span data-translate="meioambienteApp.informe.notificacao">Notificacao</span></th>
+                    <th><span data-translate="meioambienteApp.informe.numero">Numero</span></th>
+                    <th><span data-translate="meioambienteApp.informe.obs">Obs</span></th>
+                    <th><span data-translate="meioambienteApp.informe.obra">Obra</span></th>
+                    <th><span data-translate="meioambienteApp.informe.fotos">Fotos</span></th>
+                    <th><span data-translate="meioambienteApp.informe.ocorrenciasinforme">Ocorrenciasinforme</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="informe in vm.informes track by informe.id">
+                    <td><a ui-sref="informe-ambiental-detail({id:informe.id})">{{informe.id}}</a></td>
+                    <td>{{informe.data | date:'medium'}}</td>
+                    <td>{{informe.datainspecao | date:'medium'}}</td>
+                    <td>{{informe.notificacao}}</td>
+                    <td>{{informe.numero}}</td>
+                    <td>{{informe.obs}}</td>
+                    <td>
+                        <a ui-sref="obra-ambiental-detail({id:informe.obraId})">{{informe.obraId}}</a>
+                    </td>
+                    <td>
+                        <span ng-repeat="fotos in informe.fotos">
+                            <a class="form-control-static" ui-sref="foto-ambiental-detail({id: fotos.id})">{{fotos.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td>
+                        <span ng-repeat="ocorrenciasinforme in informe.ocorrenciasinformes">
+                            <a class="form-control-static" ui-sref="ocorrenciainforme-ambiental-detail({id: ocorrenciasinforme.id})">{{ocorrenciasinforme.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="informe-ambiental-detail({id:informe.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="informe-ambiental.edit({id:informe.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="informe-ambiental.delete({id:informe.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

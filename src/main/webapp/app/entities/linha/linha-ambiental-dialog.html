@@ -13,6 +13,18 @@
             <input type="text" class="form-control" id="id" name="id"
                     ng-model="vm.linha.id" readonly />
         </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.linha.sequencia" for="field_sequencia">Sequencia</label>
+            <input type="number" class="form-control" name="sequencia" id="field_sequencia"
+                    ng-model="vm.linha.sequencia"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.linha.valor" for="field_valor">Valor</label>
+            <input type="text" class="form-control" name="valor" id="field_valor"
+                    ng-model="vm.linha.valor"
+                    />
+        </div>
 
         <div class="form-group">
             <label data-translate="meioambienteApp.linha.coluna" for="field_coluna">Coluna</label>

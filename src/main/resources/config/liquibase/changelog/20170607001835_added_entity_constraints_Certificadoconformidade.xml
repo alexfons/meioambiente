@@ -10,52 +10,52 @@
         
         <addForeignKeyConstraint baseColumnNames="obra_id"
                                  baseTableName="certificadoconformidade"
-                                 constraintName="fk_certificadoconformidade_obra_id"
+                                 constraintName="fk_cert_conf_obra_id"
                                  referencedColumnNames="id"
                                  referencedTableName="obra"/>
 
         <addForeignKeyConstraint baseColumnNames="tipo_id"
                                  baseTableName="certificadoconformidade"
-                                 constraintName="fk_certificadoconformidade_tipo_id"
+                                 constraintName="fk_cert_conf_tipo_id"
                                  referencedColumnNames="id"
                                  referencedTableName="tipocertificadoconformidade"/>
 
         <addForeignKeyConstraint baseColumnNames="tipocertificadoconformidade_id"
                                  baseTableName="certificadoconformidade"
-                                 constraintName="fk_certificadoconformidade_tipocertificadoconformidade_id"
+                                 constraintName="fk_cert_conf_tipocertificadoconformidade_id"
                                  referencedColumnNames="id"
                                  referencedTableName="tipocertificadoconformidade"/>
 
         <addForeignKeyConstraint baseColumnNames="certificadoconformidades_id"
                                  baseTableName="certificadoconformidade_informescertificadoirregularidade"
-                                 constraintName="fk_certificadoconformidade_informescertificadoirregularidade_certificadoconformidades_id"
+                                 constraintName="fk_cert_conf_informescert_irreg_cert_confs_id"
                                  referencedColumnNames="id"
                                  referencedTableName="certificadoconformidade"/>
         <addForeignKeyConstraint baseColumnNames="informescertificadoirregularidades_id"
                                  baseTableName="certificadoconformidade_informescertificadoirregularidade"
-                                 constraintName="fk_certificadoconformidade_informescertificadoirregularidade_informescertificadoirregularidades_id"
+                                 constraintName="fk_cert_conf_informescert_irreg_informescert_irreg_s_id"
                                  referencedColumnNames="id"
                                  referencedTableName="informecertificadoirregularidade"/>
         
         <addForeignKeyConstraint baseColumnNames="certificadoconformidades_id"
                                  baseTableName="certificadoconformidade_notificacaoscertificadoirregularidade"
-                                 constraintName="fk_certificadoconformidade_notificacaoscertificadoirregularidade_certificadoconformidades_id"
+                                 constraintName="fk_cert_conf_notificacaoscert_irreg_cert_confs_id"
                                  referencedColumnNames="id"
                                  referencedTableName="certificadoconformidade"/>
         <addForeignKeyConstraint baseColumnNames="notificacaoscertificadoirregularidades_id"
                                  baseTableName="certificadoconformidade_notificacaoscertificadoirregularidade"
-                                 constraintName="fk_certificadoconformidade_notificacaoscertificadoirregularidade_notificacaoscertificadoirregularidades_id"
+                                 constraintName="fk_cert_conf_notificacaoscert_irreg_notificacaoscert_irreg_s_id"
                                  referencedColumnNames="id"
                                  referencedTableName="notificacaocertificadoirregularidade"/>
         
         <addForeignKeyConstraint baseColumnNames="certificadoconformidades_id"
                                  baseTableName="certificadoconformidade_ocorrenciascertificadoirregularidade"
-                                 constraintName="fk_certificadoconformidade_ocorrenciascertificadoirregularidade_certificadoconformidades_id"
+                                 constraintName="fk_cert_conf_ocorrenciascert_irreg_cert_confs_id"
                                  referencedColumnNames="id"
                                  referencedTableName="certificadoconformidade"/>
         <addForeignKeyConstraint baseColumnNames="ocorrenciascertificadoirregularidades_id"
                                  baseTableName="certificadoconformidade_ocorrenciascertificadoirregularidade"
-                                 constraintName="fk_certificadoconformidade_ocorrenciascertificadoirregularidade_ocorrenciascertificadoirregularidades_id"
+                                 constraintName="fk_cert_conf_ocorrenciascert_irreg_ocorrenciascert_irreg_s_id"
                                  referencedColumnNames="id"
                                  referencedTableName="ocorrenciacertificadoirregularidade"/>
         
