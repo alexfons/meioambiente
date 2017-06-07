@@ -10,6 +10,6 @@ import java.util.List;
  * Spring Data JPA repository for the Tipoobra entity.
  */
 @SuppressWarnings("unused")
-public interface TipoobraRepository2 extends JpaRepository<Tipoobra,Long> {
+public interface TipoobraRepository extends JpaRepository<Tipoobra,Long> {
 
 }

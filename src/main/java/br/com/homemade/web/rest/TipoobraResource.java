@@ -3,7 +3,7 @@ package br.com.homemade.web.rest;
 import com.codahale.metrics.annotation.Timed;
 import br.com.homemade.domain.Tipoobra;
 
-import br.com.homemade.repository.TipoobraRepository2;
+import br.com.homemade.repository.TipoobraRepository;
 import br.com.homemade.web.rest.util.HeaderUtil;
 import br.com.homemade.service.dto.TipoobraDTO;
 import br.com.homemade.service.mapper.TipoobraMapper;
@@ -25,17 +25,17 @@ import java.util.stream.Collectors;
  */
 @RestController
 @RequestMapping("/api")
-public class TipoobraResource2 {
+public class TipoobraResource {
 
     private final Logger log = LoggerFactory.getLogger(TipoobraResource.class);
 
     private static final String ENTITY_NAME = "tipoobra";
         
-    private final TipoobraRepository2 tipoobraRepository;
+    private final TipoobraRepository tipoobraRepository;
 
     private final TipoobraMapper tipoobraMapper;
 
-    public TipoobraResource2(TipoobraRepository2 tipoobraRepository, TipoobraMapper tipoobraMapper) {
+    public TipoobraResource(TipoobraRepository tipoobraRepository, TipoobraMapper tipoobraMapper) {
         this.tipoobraRepository = tipoobraRepository;
         this.tipoobraMapper = tipoobraMapper;
     }
