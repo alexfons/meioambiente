@@ -5,7 +5,7 @@ import br.com.homemade.domain.Tipoobra;
 
 import br.com.homemade.repository.TipoobraRepository;
 import br.com.homemade.web.rest.util.HeaderUtil;
-import br.com.homemade.service.dto.TipoobraDTO2;
+import br.com.homemade.service.dto.TipoobraDTO;
 import br.com.homemade.service.mapper.TipoobraMapper;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
@@ -49,14 +49,14 @@ public class TipoobraResource {
      */
     @PostMapping("/tipoobras")
     @Timed
-    public ResponseEntity<TipoobraDTO2> createTipoobra(@RequestBody TipoobraDTO2 tipoobraDTO) throws URISyntaxException {
+    public ResponseEntity<TipoobraDTO> createTipoobra(@RequestBody TipoobraDTO tipoobraDTO) throws URISyntaxException {
         log.debug("REST request to save Tipoobra : {}", tipoobraDTO);
         if (tipoobraDTO.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert(ENTITY_NAME, "idexists", "A new tipoobra cannot already have an ID")).body(null);
         }
         Tipoobra tipoobra = tipoobraMapper.toEntity(tipoobraDTO);
         tipoobra = tipoobraRepository.save(tipoobra);
-        TipoobraDTO2 result = tipoobraMapper.toDto(tipoobra);
+        TipoobraDTO result = tipoobraMapper.toDto(tipoobra);
         return ResponseEntity.created(new URI("/api/tipoobras/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
@@ -73,14 +73,14 @@ public class TipoobraResource {
      */
     @PutMapping("/tipoobras")
     @Timed
-    public ResponseEntity<TipoobraDTO2> updateTipoobra(@RequestBody TipoobraDTO2 tipoobraDTO) throws URISyntaxException {
+    public ResponseEntity<TipoobraDTO> updateTipoobra(@RequestBody TipoobraDTO tipoobraDTO) throws URISyntaxException {
         log.debug("REST request to update Tipoobra : {}", tipoobraDTO);
         if (tipoobraDTO.getId() == null) {
             return createTipoobra(tipoobraDTO);
         }
         Tipoobra tipoobra = tipoobraMapper.toEntity(tipoobraDTO);
         tipoobra = tipoobraRepository.save(tipoobra);
-        TipoobraDTO2 result = tipoobraMapper.toDto(tipoobra);
+        TipoobraDTO result = tipoobraMapper.toDto(tipoobra);
         return ResponseEntity.ok()
             .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, tipoobraDTO.getId().toString()))
             .body(result);
@@ -93,7 +93,7 @@ public class TipoobraResource {
      */
     @GetMapping("/tipoobras")
     @Timed
-    public List<TipoobraDTO2> getAllTipoobras() {
+    public List<TipoobraDTO> getAllTipoobras() {
         log.debug("REST request to get all Tipoobras");
         List<Tipoobra> tipoobras = tipoobraRepository.findAll();
         return tipoobraMapper.toDto(tipoobras);
@@ -107,10 +107,10 @@ public class TipoobraResource {
      */
     @GetMapping("/tipoobras/{id}")
     @Timed
-    public ResponseEntity<TipoobraDTO2> getTipoobra(@PathVariable Long id) {
+    public ResponseEntity<TipoobraDTO> getTipoobra(@PathVariable Long id) {
         log.debug("REST request to get Tipoobra : {}", id);
         Tipoobra tipoobra = tipoobraRepository.findOne(id);
-        TipoobraDTO2 tipoobraDTO = tipoobraMapper.toDto(tipoobra);
+        TipoobraDTO tipoobraDTO = tipoobraMapper.toDto(tipoobra);
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(tipoobraDTO));
     }
 
