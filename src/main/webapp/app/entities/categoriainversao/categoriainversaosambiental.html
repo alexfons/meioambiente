@@ -1,0 +1,86 @@
+<div>
+    <h2 data-translate="meioambienteApp.categoriainversao.home.title">Categoriainversaos</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="categoriainversao-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.categoriainversao.home.createLabel">
+                        Create new Categoriainversao
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.categoriainversao.codcategoria">Codcategoria</span></th>
+                    <th><span data-translate="meioambienteApp.categoriainversao.descricaocategoria">Descricaocategoria</span></th>
+                    <th><span data-translate="meioambienteApp.categoriainversao.descricaoitem">Descricaoitem</span></th>
+                    <th><span data-translate="meioambienteApp.categoriainversao.descricaosubcategoria">Descricaosubcategoria</span></th>
+                    <th><span data-translate="meioambienteApp.categoriainversao.descricaosubitem">Descricaosubitem</span></th>
+                    <th><span data-translate="meioambienteApp.categoriainversao.idcategoriainversao">Idcategoriainversao</span></th>
+                    <th><span data-translate="meioambienteApp.categoriainversao.item">Item</span></th>
+                    <th><span data-translate="meioambienteApp.categoriainversao.percentualcatagente">Percentualcatagente</span></th>
+                    <th><span data-translate="meioambienteApp.categoriainversao.percentualcatlocal">Percentualcatlocal</span></th>
+                    <th><span data-translate="meioambienteApp.categoriainversao.subcategoria">Subcategoria</span></th>
+                    <th><span data-translate="meioambienteApp.categoriainversao.subitem">Subitem</span></th>
+                    <th><span data-translate="meioambienteApp.categoriainversao.valorcatagente">Valorcatagente</span></th>
+                    <th><span data-translate="meioambienteApp.categoriainversao.valorcatlocal">Valorcatlocal</span></th>
+                    <th><span data-translate="meioambienteApp.categoriainversao.valorporcategoria">Valorporcategoria</span></th>
+                    <th><span data-translate="meioambienteApp.categoriainversao.idcontratoagente">Idcontratoagente</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="categoriainversao in vm.categoriainversaos track by categoriainversao.id">
+                    <td><a ui-sref="categoriainversao-ambiental-detail({id:categoriainversao.id})">{{categoriainversao.id}}</a></td>
+                    <td>{{categoriainversao.codcategoria}}</td>
+                    <td>{{categoriainversao.descricaocategoria}}</td>
+                    <td>{{categoriainversao.descricaoitem}}</td>
+                    <td>{{categoriainversao.descricaosubcategoria}}</td>
+                    <td>{{categoriainversao.descricaosubitem}}</td>
+                    <td>{{categoriainversao.idcategoriainversao}}</td>
+                    <td>{{categoriainversao.item}}</td>
+                    <td>{{categoriainversao.percentualcatagente}}</td>
+                    <td>{{categoriainversao.percentualcatlocal}}</td>
+                    <td>{{categoriainversao.subcategoria}}</td>
+                    <td>{{categoriainversao.subitem}}</td>
+                    <td>{{categoriainversao.valorcatagente}}</td>
+                    <td>{{categoriainversao.valorcatlocal}}</td>
+                    <td>{{categoriainversao.valorporcategoria}}</td>
+                    <td>
+                        <a ui-sref="contratoagente-ambiental-detail({id:categoriainversao.idcontratoagenteId})">{{categoriainversao.idcontratoagenteId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="categoriainversao-ambiental-detail({id:categoriainversao.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="categoriainversao-ambiental.edit({id:categoriainversao.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="categoriainversao-ambiental.delete({id:categoriainversao.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

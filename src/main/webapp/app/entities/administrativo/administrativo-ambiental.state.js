@@ -104,13 +104,13 @@
                     resolve: {
                         entity: function () {
                             return {
-                                descricao: null,
-                                assunto: null,
-                                local: null,
                                 album: null,
-                                folder: null,
+                                assunto: null,
                                 consideracao: null,
                                 data: null,
+                                descricao: null,
+                                folder: null,
+                                local: null,
                                 id: null
                             };
                         }

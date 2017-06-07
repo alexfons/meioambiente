@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "ocorrenciacertificadoirregularidade" : {
+            "home": {
+                "title": "Ocorrenciacertificadoirregularidades",
+                "createLabel": "Create a new Ocorrenciacertificadoirregularidade",
+                "createOrEditLabel": "Create or edit a Ocorrenciacertificadoirregularidade"
+            },
+            "created": "A new Ocorrenciacertificadoirregularidade is created with identifier {{ param }}",
+            "updated": "A Ocorrenciacertificadoirregularidade is updated with identifier {{ param }}",
+            "deleted": "A Ocorrenciacertificadoirregularidade is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Ocorrenciacertificadoirregularidade {{ id }}?"
+            },
+            "detail": {
+                "title": "Ocorrenciacertificadoirregularidade"
+            }
+        }
+    }
+}

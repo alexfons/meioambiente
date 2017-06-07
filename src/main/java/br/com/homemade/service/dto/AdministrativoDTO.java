@@ -14,19 +14,19 @@ public class AdministrativoDTO implements Serializable {
 
     private Long id;
 
-    private String descricao;
-
-    private String assunto;
-
-    private String local;
-
     private String album;
 
-    private String folder;
+    private String assunto;
 
     private String consideracao;
 
     private ZonedDateTime data;
+
+    private String descricao;
+
+    private String folder;
+
+    private String local;
 
     private Long tipoId;
 
@@ -46,30 +46,6 @@ public class AdministrativoDTO implements Serializable {
         this.id = id;
     }
 
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    public String getAssunto() {
-        return assunto;
-    }
-
-    public void setAssunto(String assunto) {
-        this.assunto = assunto;
-    }
-
-    public String getLocal() {
-        return local;
-    }
-
-    public void setLocal(String local) {
-        this.local = local;
-    }
-
     public String getAlbum() {
         return album;
     }
@@ -78,12 +54,12 @@ public class AdministrativoDTO implements Serializable {
         this.album = album;
     }
 
-    public String getFolder() {
-        return folder;
+    public String getAssunto() {
+        return assunto;
     }
 
-    public void setFolder(String folder) {
-        this.folder = folder;
+    public void setAssunto(String assunto) {
+        this.assunto = assunto;
     }
 
     public String getConsideracao() {
@@ -100,6 +76,30 @@ public class AdministrativoDTO implements Serializable {
 
     public void setData(ZonedDateTime data) {
         this.data = data;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public String getFolder() {
+        return folder;
+    }
+
+    public void setFolder(String folder) {
+        this.folder = folder;
+    }
+
+    public String getLocal() {
+        return local;
+    }
+
+    public void setLocal(String local) {
+        this.local = local;
     }
 
     public Long getTipoId() {
@@ -167,13 +167,13 @@ public class AdministrativoDTO implements Serializable {
     public String toString() {
         return "AdministrativoDTO{" +
             "id=" + getId() +
-            ", descricao='" + getDescricao() + "'" +
-            ", assunto='" + getAssunto() + "'" +
-            ", local='" + getLocal() + "'" +
             ", album='" + getAlbum() + "'" +
-            ", folder='" + getFolder() + "'" +
+            ", assunto='" + getAssunto() + "'" +
             ", consideracao='" + getConsideracao() + "'" +
             ", data='" + getData() + "'" +
+            ", descricao='" + getDescricao() + "'" +
+            ", folder='" + getFolder() + "'" +
+            ", local='" + getLocal() + "'" +
             "}";
     }
 }

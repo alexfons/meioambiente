@@ -1,0 +1,39 @@
+{
+    "meioambienteApp": {
+        "banco" : {
+            "home": {
+                "title": "Bancos",
+                "createLabel": "Create a new Banco",
+                "createOrEditLabel": "Create or edit a Banco"
+            },
+            "created": "A new Banco is created with identifier {{ param }}",
+            "updated": "A Banco is updated with identifier {{ param }}",
+            "deleted": "A Banco is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Banco {{ id }}?"
+            },
+            "detail": {
+                "title": "Banco"
+            },
+            "cidadedep": "Cidadedep",
+            "cidadeint": "Cidadeint",
+            "codswifdep": "Codswifdep",
+            "codswifint": "Codswifint",
+            "contafeddep": "Contafeddep",
+            "contafedint": "Contafedint",
+            "enderecodep": "Enderecodep",
+            "enderecoint": "Enderecoint",
+            "idbanco": "Idbanco",
+            "instrucoesespeciaisdep": "Instrucoesespeciaisdep",
+            "instrucoesespeciaisint": "Instrucoesespeciaisint",
+            "nabadep": "Nabadep",
+            "nabaint": "Nabaint",
+            "ncontadep": "Ncontadep",
+            "ncontaint": "Ncontaint",
+            "nomebancodep": "Nomebancodep",
+            "nomebancoint": "Nomebancoint",
+            "paisdep": "Paisdep",
+            "paisint": "Paisint"
+        }
+    }
+}

@@ -19,13 +19,13 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
-                    <th><span data-translate="meioambienteApp.administrativo.descricao">Descricao</span></th>
-                    <th><span data-translate="meioambienteApp.administrativo.assunto">Assunto</span></th>
-                    <th><span data-translate="meioambienteApp.administrativo.local">Local</span></th>
                     <th><span data-translate="meioambienteApp.administrativo.album">Album</span></th>
-                    <th><span data-translate="meioambienteApp.administrativo.folder">Folder</span></th>
+                    <th><span data-translate="meioambienteApp.administrativo.assunto">Assunto</span></th>
                     <th><span data-translate="meioambienteApp.administrativo.consideracao">Consideracao</span></th>
                     <th><span data-translate="meioambienteApp.administrativo.data">Data</span></th>
+                    <th><span data-translate="meioambienteApp.administrativo.descricao">Descricao</span></th>
+                    <th><span data-translate="meioambienteApp.administrativo.folder">Folder</span></th>
+                    <th><span data-translate="meioambienteApp.administrativo.local">Local</span></th>
                     <th><span data-translate="meioambienteApp.administrativo.tipo">Tipo</span></th>
                     <th><span data-translate="meioambienteApp.administrativo.obra">Obra</span></th>
                     <th><span data-translate="meioambienteApp.administrativo.fotos">Fotos</span></th>
@@ -37,13 +37,13 @@
             <tbody>
                 <tr ng-repeat="administrativo in vm.administrativos track by administrativo.id">
                     <td><a ui-sref="administrativo-ambiental-detail({id:administrativo.id})">{{administrativo.id}}</a></td>
-                    <td>{{administrativo.descricao}}</td>
-                    <td>{{administrativo.assunto}}</td>
-                    <td>{{administrativo.local}}</td>
                     <td>{{administrativo.album}}</td>
-                    <td>{{administrativo.folder}}</td>
+                    <td>{{administrativo.assunto}}</td>
                     <td>{{administrativo.consideracao}}</td>
                     <td>{{administrativo.data | date:'medium'}}</td>
+                    <td>{{administrativo.descricao}}</td>
+                    <td>{{administrativo.folder}}</td>
+                    <td>{{administrativo.local}}</td>
                     <td>
                         <a ui-sref="tipoadministrativo-ambiental-detail({id:administrativo.tipoId})">{{administrativo.tipoId}}</a>
                     </td>

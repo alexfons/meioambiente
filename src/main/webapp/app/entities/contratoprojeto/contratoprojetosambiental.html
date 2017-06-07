@@ -1,0 +1,64 @@
+<div>
+    <h2 data-translate="meioambienteApp.contratoprojeto.home.title">Contratoprojetos</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="contratoprojeto-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.contratoprojeto.home.createLabel">
+                        Create new Contratoprojeto
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.contratoprojeto.tipo">Tipo</span></th>
+                    <th><span data-translate="meioambienteApp.contratoprojeto.contrato">Contrato</span></th>
+                    <th><span data-translate="meioambienteApp.contratoprojeto.responsavel">Responsavel</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="contratoprojeto in vm.contratoprojetos track by contratoprojeto.id">
+                    <td><a ui-sref="contratoprojeto-ambiental-detail({id:contratoprojeto.id})">{{contratoprojeto.id}}</a></td>
+                    <td>{{contratoprojeto.tipo}}</td>
+                    <td>
+                        <a ui-sref="contrato-ambiental-detail({id:contratoprojeto.contratoId})">{{contratoprojeto.contratoId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="responsavel-ambiental-detail({id:contratoprojeto.responsavelId})">{{contratoprojeto.responsavelId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="contratoprojeto-ambiental-detail({id:contratoprojeto.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="contratoprojeto-ambiental.edit({id:contratoprojeto.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="contratoprojeto-ambiental.delete({id:contratoprojeto.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,229 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "atividadelicenca",
+            "otherEntityName": "atividadelicenca",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "empresa",
+            "otherEntityName": "empresa",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "obra",
+            "otherEntityName": "obra",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "orgaoemissor",
+            "otherEntityName": "orgaoemissor",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "projeto",
+            "otherEntityName": "projeto",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "tipoautorizacao",
+            "otherEntityName": "tipoautorizacao",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "fotos",
+            "otherEntityName": "foto",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "docs",
+            "otherEntityName": "documento",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "album",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "andamento",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "data",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataentregadocs",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataexpedicaoprorrogacao1",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataexpedicaoprorrogacao2",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataexpedicaoprorrogacao3",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "datapedidoprorrogacao1",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "datapedidoprorrogacao2",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "datapedidoprorrogacao3",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "datavalidadeprorrogacao1",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "datavalidadeprorrogacao2",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "datavalidadeprorrogacao3",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "datavencimento",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "datavencimentoatual",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "docsentregues",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fcei",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fceidatapagamento",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "fceidataprotocolo",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "fceivalor",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "folder",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "inativo",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "kmfim",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "kminicio",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "lado",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "naoria",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "numero",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numerooficioconcessaoprorrogacao1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numerooficioconcessaoprorrogacao2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numerooficioconcessaoprorrogacao3",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numerooficioprorrogacao1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numerooficioprorrogacao2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numerooficioprorrogacao3",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "numeroprocesso",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "observacao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pendente",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prazomes",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "prazovalidade",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "proprietario",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "reciboentregadocs",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170607001831",
+    "entityTableName": "autorizacao",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "ambiental"
+}

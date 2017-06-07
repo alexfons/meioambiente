@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.balanco.detail.title">Balanco</span> {{vm.balanco.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.balanco.datafim">Datafim</span></dt>
+        <dd>
+            <span>{{vm.balanco.datafim | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.balanco.datainicio">Datainicio</span></dt>
+        <dd>
+            <span>{{vm.balanco.datainicio | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.balanco.descricao">Descricao</span></dt>
+        <dd>
+            <span>{{vm.balanco.descricao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.balanco.taxa">Taxa</span></dt>
+        <dd>
+            <span>{{vm.balanco.taxa}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="balanco-ambiental-detail.edit({id:vm.balanco.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

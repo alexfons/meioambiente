@@ -5,14 +5,17 @@
         .module('meioambienteApp')
         .controller('ContratoobraAmbientalDialogController', ContratoobraAmbientalDialogController);
 
-    ContratoobraAmbientalDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Contratoobra'];
+    ContratoobraAmbientalDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Contratoobra', 'Contrato', 'Residente', 'Responsavel'];
 
-    function ContratoobraAmbientalDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Contratoobra) {
+    function ContratoobraAmbientalDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Contratoobra, Contrato, Residente, Responsavel) {
         var vm = this;
 
         vm.contratoobra = entity;
         vm.clear = clear;
         vm.save = save;
+        vm.contratoes = Contrato.query();
+        vm.residentes = Residente.query();
+        vm.responsavels = Responsavel.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

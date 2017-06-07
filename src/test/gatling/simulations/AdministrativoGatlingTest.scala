@@ -68,7 +68,7 @@ class AdministrativoGatlingTest extends Simulation {
             .exec(http("Create new administrativo")
             .post("/api/administrativos")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "descricao":"SAMPLE_TEXT", "assunto":"SAMPLE_TEXT", "local":"SAMPLE_TEXT", "album":"SAMPLE_TEXT", "folder":"SAMPLE_TEXT", "consideracao":"SAMPLE_TEXT", "data":"2020-01-01T00:00:00.000Z"}""")).asJSON
+            .body(StringBody("""{"id":null, "album":"SAMPLE_TEXT", "assunto":"SAMPLE_TEXT", "consideracao":"SAMPLE_TEXT", "data":"2020-01-01T00:00:00.000Z", "descricao":"SAMPLE_TEXT", "folder":"SAMPLE_TEXT", "local":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_administrativo_url"))).exitHereIfFailed
             .pause(10)

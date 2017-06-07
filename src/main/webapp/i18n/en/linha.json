@@ -1,0 +1,21 @@
+{
+    "meioambienteApp": {
+        "linha" : {
+            "home": {
+                "title": "Linhas",
+                "createLabel": "Create a new Linha",
+                "createOrEditLabel": "Create or edit a Linha"
+            },
+            "created": "A new Linha is created with identifier {{ param }}",
+            "updated": "A Linha is updated with identifier {{ param }}",
+            "deleted": "A Linha is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Linha {{ id }}?"
+            },
+            "detail": {
+                "title": "Linha"
+            },
+            "coluna": "Coluna"
+        }
+    }
+}

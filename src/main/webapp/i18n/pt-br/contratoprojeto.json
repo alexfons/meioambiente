@@ -1,0 +1,23 @@
+{
+    "meioambienteApp": {
+        "contratoprojeto" : {
+            "home": {
+                "title": "Contratoprojetos",
+                "createLabel": "Criar novo Contratoprojeto",
+                "createOrEditLabel": "Criar ou editar Contratoprojeto"
+            },
+            "created": "Um novo Contratoprojeto é criado com o identificador {{ param }}",
+            "updated": "Um Contratoprojeto é atualizado com o identificador {{ param }}",
+            "deleted": "Um Contratoprojeto é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Contratoprojeto {{ id }}?"
+            },
+            "detail": {
+                "title": "Contratoprojeto"
+            },
+            "tipo": "Tipo",
+            "contrato": "Contrato",
+            "responsavel": "Responsavel"
+        }
+    }
+}

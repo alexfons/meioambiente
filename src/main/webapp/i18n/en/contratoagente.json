@@ -1,0 +1,37 @@
+{
+    "meioambienteApp": {
+        "contratoagente" : {
+            "home": {
+                "title": "Contratoagentes",
+                "createLabel": "Create a new Contratoagente",
+                "createOrEditLabel": "Create or edit a Contratoagente"
+            },
+            "created": "A new Contratoagente is created with identifier {{ param }}",
+            "updated": "A Contratoagente is updated with identifier {{ param }}",
+            "deleted": "A Contratoagente is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Contratoagente {{ id }}?"
+            },
+            "detail": {
+                "title": "Contratoagente"
+            },
+            "dataaprovacao": "Dataaprovacao",
+            "dataassinatura": "Dataassinatura",
+            "dataconclusao": "Dataconclusao",
+            "datainicio": "Datainicio",
+            "idcontratoagente": "Idcontratoagente",
+            "nomecontratoagente": "Nomecontratoagente",
+            "referenciabid": "Referenciabid",
+            "acordocredito": "Acordocredito",
+            "mutuario": "Mutuario",
+            "executor": "Executor",
+            "clausulascontratuais": "Clausulascontratuais",
+            "descricao": "Descricao",
+            "moeda": "Moeda",
+            "percentuallocal": "Percentuallocal",
+            "percentualagente": "Percentualagente",
+            "valorcontrato": "Valorcontrato",
+            "valor": "Valor"
+        }
+    }
+}

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Categoriainversao.
+    -->
+    <changeSet id="20170607001834-1" author="jhipster">
+        <createTable tableName="categoriainversao">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="codcategoria" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="descricaocategoria" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="descricaoitem" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="descricaosubcategoria" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="descricaosubitem" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="idcategoriainversao" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="item" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="percentualcatagente" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="percentualcatlocal" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="subcategoria" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="subitem" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="valorcatagente" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="valorcatlocal" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="valorporcategoria" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="idcontratoagente_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Contrato.
+    -->
+    <changeSet id="20170607001840-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="idempresa_id"
+                                 baseTableName="contrato"
+                                 constraintName="fk_contrato_idempresa_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="empresa"/>
+
+        <addForeignKeyConstraint baseColumnNames="contacontabilc2_id"
+                                 baseTableName="contrato"
+                                 constraintName="fk_contrato_contacontabilc2_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="planocontas"/>
+
+        <addForeignKeyConstraint baseColumnNames="contacontabild1_id"
+                                 baseTableName="contrato"
+                                 constraintName="fk_contrato_contacontabild1_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="planocontas"/>
+
+        <addForeignKeyConstraint baseColumnNames="contacontabild2_id"
+                                 baseTableName="contrato"
+                                 constraintName="fk_contrato_contacontabild2_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="planocontas"/>
+
+        <addForeignKeyConstraint baseColumnNames="divcontacontabilc1_id"
+                                 baseTableName="contrato"
+                                 constraintName="fk_contrato_divcontacontabilc1_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="planocontas"/>
+
+        <addForeignKeyConstraint baseColumnNames="divcontacontabild1_id"
+                                 baseTableName="contrato"
+                                 constraintName="fk_contrato_divcontacontabild1_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="planocontas"/>
+
+        <addForeignKeyConstraint baseColumnNames="juscontacontabilc1_id"
+                                 baseTableName="contrato"
+                                 constraintName="fk_contrato_juscontacontabilc1_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="planocontas"/>
+
+        <addForeignKeyConstraint baseColumnNames="juscontacontabild1_id"
+                                 baseTableName="contrato"
+                                 constraintName="fk_contrato_juscontacontabild1_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="planocontas"/>
+
+        <addForeignKeyConstraint baseColumnNames="idnatureza_id"
+                                 baseTableName="contrato"
+                                 constraintName="fk_contrato_idnatureza_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="natureza"/>
+
+        <addForeignKeyConstraint baseColumnNames="proposta_id"
+                                 baseTableName="contrato"
+                                 constraintName="fk_contrato_proposta_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="proposta"/>
+
+        <addForeignKeyConstraint baseColumnNames="idcategoriainversao_id"
+                                 baseTableName="contrato"
+                                 constraintName="fk_contrato_idcategoriainversao_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="categoriainversao"/>
+
+        <addForeignKeyConstraint baseColumnNames="contratoes_id"
+                                 baseTableName="contrato_aditivocontratos"
+                                 constraintName="fk_contrato_aditivocontratos_contratoes_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="contrato"/>
+        <addForeignKeyConstraint baseColumnNames="aditivocontratos_id"
+                                 baseTableName="contrato_aditivocontratos"
+                                 constraintName="fk_contrato_aditivocontratos_aditivocontratos_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="aditivocontrato"/>
+        
+        <addForeignKeyConstraint baseColumnNames="contratoes_id"
+                                 baseTableName="contrato_contratosobra"
+                                 constraintName="fk_contrato_contratosobra_contratoes_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="contrato"/>
+        <addForeignKeyConstraint baseColumnNames="contratosobras_id"
+                                 baseTableName="contrato_contratosobra"
+                                 constraintName="fk_contrato_contratosobra_contratosobras_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="contratoobra"/>
+        
+        <addForeignKeyConstraint baseColumnNames="contratoes_id"
+                                 baseTableName="contrato_empresascontrato"
+                                 constraintName="fk_contrato_empresascontrato_contratoes_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="contrato"/>
+        <addForeignKeyConstraint baseColumnNames="empresascontratoes_id"
+                                 baseTableName="contrato_empresascontrato"
+                                 constraintName="fk_contrato_empresascontrato_empresascontratoes_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="empresacontrato"/>
+        
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,88 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "cidadedep",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cidadeint",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codswifdep",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "codswifint",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contafeddep",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "contafedint",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "enderecodep",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "enderecoint",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idbanco",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "instrucoesespeciaisdep",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "instrucoesespeciaisint",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nabadep",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nabaint",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "ncontadep",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "ncontaint",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nomebancodep",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nomebancoint",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paisdep",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "paisint",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170607001833",
+    "entityTableName": "banco",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "ambiental"
+}

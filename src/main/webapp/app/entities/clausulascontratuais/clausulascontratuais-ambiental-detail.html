@@ -1,0 +1,55 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.clausulascontratuais.detail.title">Clausulascontratuais</span> {{vm.clausulascontratuais.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.clausulascontratuais.artigo">Artigo</span></dt>
+        <dd>
+            <span>{{vm.clausulascontratuais.artigo}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.clausulascontratuais.descricao">Descricao</span></dt>
+        <dd>
+            <span>{{vm.clausulascontratuais.descricao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.clausulascontratuais.noficioenviado">Noficioenviado</span></dt>
+        <dd>
+            <span>{{vm.clausulascontratuais.noficioenviado}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.clausulascontratuais.noficioaprovado">Noficioaprovado</span></dt>
+        <dd>
+            <span>{{vm.clausulascontratuais.noficioaprovado}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.clausulascontratuais.dataaprovacao">Dataaprovacao</span></dt>
+        <dd>
+            <span>{{vm.clausulascontratuais.dataaprovacao | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.clausulascontratuais.dataenvio">Dataenvio</span></dt>
+        <dd>
+            <span>{{vm.clausulascontratuais.dataenvio | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.clausulascontratuais.datavigente">Datavigente</span></dt>
+        <dd>
+            <span>{{vm.clausulascontratuais.datavigente | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.clausulascontratuais.idclausulascontratuais">Idclausulascontratuais</span></dt>
+        <dd>
+            <span>{{vm.clausulascontratuais.idclausulascontratuais}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.clausulascontratuais.idcontratoagente">Idcontratoagente</span></dt>
+        <dd>
+            <a ui-sref="contratoagente-ambiental-detail({id:vm.clausulascontratuais.idcontratoagenteId})">{{vm.clausulascontratuais.idcontratoagenteId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="clausulascontratuais-ambiental-detail.edit({id:vm.clausulascontratuais.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

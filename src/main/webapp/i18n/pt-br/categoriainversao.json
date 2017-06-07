@@ -1,0 +1,35 @@
+{
+    "meioambienteApp": {
+        "categoriainversao" : {
+            "home": {
+                "title": "Categoriainversaos",
+                "createLabel": "Criar novo Categoriainversao",
+                "createOrEditLabel": "Criar ou editar Categoriainversao"
+            },
+            "created": "Um novo Categoriainversao é criado com o identificador {{ param }}",
+            "updated": "Um Categoriainversao é atualizado com o identificador {{ param }}",
+            "deleted": "Um Categoriainversao é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Categoriainversao {{ id }}?"
+            },
+            "detail": {
+                "title": "Categoriainversao"
+            },
+            "codcategoria": "Codcategoria",
+            "descricaocategoria": "Descricaocategoria",
+            "descricaoitem": "Descricaoitem",
+            "descricaosubcategoria": "Descricaosubcategoria",
+            "descricaosubitem": "Descricaosubitem",
+            "idcategoriainversao": "Idcategoriainversao",
+            "item": "Item",
+            "percentualcatagente": "Percentualcatagente",
+            "percentualcatlocal": "Percentualcatlocal",
+            "subcategoria": "Subcategoria",
+            "subitem": "Subitem",
+            "valorcatagente": "Valorcatagente",
+            "valorcatlocal": "Valorcatlocal",
+            "valorporcategoria": "Valorporcategoria",
+            "idcontratoagente": "Idcontratoagente"
+        }
+    }
+}

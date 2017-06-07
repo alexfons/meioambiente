@@ -1,0 +1,104 @@
+<div>
+    <h2 data-translate="meioambienteApp.custosconcorrentes.home.title">Custosconcorrentes</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="custosconcorrentes-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.custosconcorrentes.home.createLabel">
+                        Create new Custosconcorrentes
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.custosconcorrentes.datainicio">Datainicio</span></th>
+                    <th><span data-translate="meioambienteApp.custosconcorrentes.nsolicitacao">Nsolicitacao</span></th>
+                    <th><span data-translate="meioambienteApp.custosconcorrentes.valorus">Valorus</span></th>
+                    <th><span data-translate="meioambienteApp.custosconcorrentes.valorpagoreais">Valorpagoreais</span></th>
+                    <th><span data-translate="meioambienteApp.custosconcorrentes.taxa">Taxa</span></th>
+                    <th><span data-translate="meioambienteApp.custosconcorrentes.contacontabilC1">Contacontabil C 1</span></th>
+                    <th><span data-translate="meioambienteApp.custosconcorrentes.contacontabilC2">Contacontabil C 2</span></th>
+                    <th><span data-translate="meioambienteApp.custosconcorrentes.contacontabilD1">Contacontabil D 1</span></th>
+                    <th><span data-translate="meioambienteApp.custosconcorrentes.contacontabilD2">Contacontabil D 2</span></th>
+                    <th><span data-translate="meioambienteApp.custosconcorrentes.divcontacontabilC1">Divcontacontabil C 1</span></th>
+                    <th><span data-translate="meioambienteApp.custosconcorrentes.divcontacontabilD1">Divcontacontabil D 1</span></th>
+                    <th><span data-translate="meioambienteApp.custosconcorrentes.juscontacontabilC1">Juscontacontabil C 1</span></th>
+                    <th><span data-translate="meioambienteApp.custosconcorrentes.juscontacontabilD1">Juscontacontabil D 1</span></th>
+                    <th><span data-translate="meioambienteApp.custosconcorrentes.fonte">Fonte</span></th>
+                    <th><span data-translate="meioambienteApp.custosconcorrentes.idcategoriainversao">Idcategoriainversao</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="custosconcorrentes in vm.custosconcorrentes track by custosconcorrentes.id">
+                    <td><a ui-sref="custosconcorrentes-ambiental-detail({id:custosconcorrentes.id})">{{custosconcorrentes.id}}</a></td>
+                    <td>{{custosconcorrentes.datainicio | date:'medium'}}</td>
+                    <td>{{custosconcorrentes.nsolicitacao}}</td>
+                    <td>{{custosconcorrentes.valorus}}</td>
+                    <td>{{custosconcorrentes.valorpagoreais}}</td>
+                    <td>{{custosconcorrentes.taxa}}</td>
+                    <td>
+                        <a ui-sref="planocontas-ambiental-detail({id:custosconcorrentes.contacontabilC1Id})">{{custosconcorrentes.contacontabilC1Id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="planocontas-ambiental-detail({id:custosconcorrentes.contacontabilC2Id})">{{custosconcorrentes.contacontabilC2Id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="planocontas-ambiental-detail({id:custosconcorrentes.contacontabilD1Id})">{{custosconcorrentes.contacontabilD1Id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="planocontas-ambiental-detail({id:custosconcorrentes.contacontabilD2Id})">{{custosconcorrentes.contacontabilD2Id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="planocontas-ambiental-detail({id:custosconcorrentes.divcontacontabilC1Id})">{{custosconcorrentes.divcontacontabilC1Id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="planocontas-ambiental-detail({id:custosconcorrentes.divcontacontabilD1Id})">{{custosconcorrentes.divcontacontabilD1Id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="planocontas-ambiental-detail({id:custosconcorrentes.juscontacontabilC1Id})">{{custosconcorrentes.juscontacontabilC1Id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="planocontas-ambiental-detail({id:custosconcorrentes.juscontacontabilD1Id})">{{custosconcorrentes.juscontacontabilD1Id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="fonte-ambiental-detail({id:custosconcorrentes.fonteId})">{{custosconcorrentes.fonteId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="categoriainversao-ambiental-detail({id:custosconcorrentes.idcategoriainversaoId})">{{custosconcorrentes.idcategoriainversaoId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="custosconcorrentes-ambiental-detail({id:custosconcorrentes.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="custosconcorrentes-ambiental.edit({id:custosconcorrentes.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="custosconcorrentes-ambiental.delete({id:custosconcorrentes.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

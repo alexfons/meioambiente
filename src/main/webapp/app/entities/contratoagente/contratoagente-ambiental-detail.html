@@ -1,0 +1,87 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.contratoagente.detail.title">Contratoagente</span> {{vm.contratoagente.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.contratoagente.dataaprovacao">Dataaprovacao</span></dt>
+        <dd>
+            <span>{{vm.contratoagente.dataaprovacao | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.contratoagente.dataassinatura">Dataassinatura</span></dt>
+        <dd>
+            <span>{{vm.contratoagente.dataassinatura | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.contratoagente.dataconclusao">Dataconclusao</span></dt>
+        <dd>
+            <span>{{vm.contratoagente.dataconclusao | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.contratoagente.datainicio">Datainicio</span></dt>
+        <dd>
+            <span>{{vm.contratoagente.datainicio | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.contratoagente.idcontratoagente">Idcontratoagente</span></dt>
+        <dd>
+            <span>{{vm.contratoagente.idcontratoagente}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.contratoagente.nomecontratoagente">Nomecontratoagente</span></dt>
+        <dd>
+            <span>{{vm.contratoagente.nomecontratoagente}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.contratoagente.referenciabid">Referenciabid</span></dt>
+        <dd>
+            <span>{{vm.contratoagente.referenciabid}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.contratoagente.acordocredito">Acordocredito</span></dt>
+        <dd>
+            <span>{{vm.contratoagente.acordocredito}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.contratoagente.mutuario">Mutuario</span></dt>
+        <dd>
+            <span>{{vm.contratoagente.mutuario}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.contratoagente.executor">Executor</span></dt>
+        <dd>
+            <span>{{vm.contratoagente.executor}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.contratoagente.clausulascontratuais">Clausulascontratuais</span></dt>
+        <dd>
+            <span>{{vm.contratoagente.clausulascontratuais}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.contratoagente.descricao">Descricao</span></dt>
+        <dd>
+            <span>{{vm.contratoagente.descricao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.contratoagente.moeda">Moeda</span></dt>
+        <dd>
+            <span>{{vm.contratoagente.moeda}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.contratoagente.percentuallocal">Percentuallocal</span></dt>
+        <dd>
+            <span>{{vm.contratoagente.percentuallocal}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.contratoagente.percentualagente">Percentualagente</span></dt>
+        <dd>
+            <span>{{vm.contratoagente.percentualagente}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.contratoagente.valorcontrato">Valorcontrato</span></dt>
+        <dd>
+            <span>{{vm.contratoagente.valorcontrato}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.contratoagente.valor">Valor</span></dt>
+        <dd>
+            <span>{{vm.contratoagente.valor}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="contratoagente-ambiental-detail.edit({id:vm.contratoagente.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -24,17 +24,17 @@ public class Aditivocontrato implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
-    @Column(name = "numaditivo")
-    private Integer numaditivo;
-
-    @Column(name = "tipoaditivo")
-    private String tipoaditivo;
-
     @Column(name = "data")
     private ZonedDateTime data;
 
+    @Column(name = "numaditivo")
+    private Integer numaditivo;
+
     @Column(name = "prazoaditivo")
     private Integer prazoaditivo;
+
+    @Column(name = "tipoaditivo")
+    private String tipoaditivo;
 
     @Column(name = "valor", precision=10, scale=2)
     private BigDecimal valor;
@@ -45,32 +45,6 @@ public class Aditivocontrato implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Integer getNumaditivo() {
-        return numaditivo;
-    }
-
-    public Aditivocontrato numaditivo(Integer numaditivo) {
-        this.numaditivo = numaditivo;
-        return this;
-    }
-
-    public void setNumaditivo(Integer numaditivo) {
-        this.numaditivo = numaditivo;
-    }
-
-    public String getTipoaditivo() {
-        return tipoaditivo;
-    }
-
-    public Aditivocontrato tipoaditivo(String tipoaditivo) {
-        this.tipoaditivo = tipoaditivo;
-        return this;
-    }
-
-    public void setTipoaditivo(String tipoaditivo) {
-        this.tipoaditivo = tipoaditivo;
     }
 
     public ZonedDateTime getData() {
@@ -86,6 +60,19 @@ public class Aditivocontrato implements Serializable {
         this.data = data;
     }
 
+    public Integer getNumaditivo() {
+        return numaditivo;
+    }
+
+    public Aditivocontrato numaditivo(Integer numaditivo) {
+        this.numaditivo = numaditivo;
+        return this;
+    }
+
+    public void setNumaditivo(Integer numaditivo) {
+        this.numaditivo = numaditivo;
+    }
+
     public Integer getPrazoaditivo() {
         return prazoaditivo;
     }
@@ -97,6 +84,19 @@ public class Aditivocontrato implements Serializable {
 
     public void setPrazoaditivo(Integer prazoaditivo) {
         this.prazoaditivo = prazoaditivo;
+    }
+
+    public String getTipoaditivo() {
+        return tipoaditivo;
+    }
+
+    public Aditivocontrato tipoaditivo(String tipoaditivo) {
+        this.tipoaditivo = tipoaditivo;
+        return this;
+    }
+
+    public void setTipoaditivo(String tipoaditivo) {
+        this.tipoaditivo = tipoaditivo;
     }
 
     public BigDecimal getValor() {
@@ -136,10 +136,10 @@ public class Aditivocontrato implements Serializable {
     public String toString() {
         return "Aditivocontrato{" +
             "id=" + getId() +
-            ", numaditivo='" + getNumaditivo() + "'" +
-            ", tipoaditivo='" + getTipoaditivo() + "'" +
             ", data='" + getData() + "'" +
+            ", numaditivo='" + getNumaditivo() + "'" +
             ", prazoaditivo='" + getPrazoaditivo() + "'" +
+            ", tipoaditivo='" + getTipoaditivo() + "'" +
             ", valor='" + getValor() + "'" +
             "}";
     }

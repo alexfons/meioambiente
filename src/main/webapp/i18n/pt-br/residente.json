@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "residente" : {
+            "home": {
+                "title": "Residentes",
+                "createLabel": "Criar novo Residente",
+                "createOrEditLabel": "Criar ou editar Residente"
+            },
+            "created": "Um novo Residente é criado com o identificador {{ param }}",
+            "updated": "Um Residente é atualizado com o identificador {{ param }}",
+            "deleted": "Um Residente é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Residente {{ id }}?"
+            },
+            "detail": {
+                "title": "Residente"
+            }
+        }
+    }
+}

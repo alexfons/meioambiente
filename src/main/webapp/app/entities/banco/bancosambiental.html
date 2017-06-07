@@ -1,0 +1,92 @@
+<div>
+    <h2 data-translate="meioambienteApp.banco.home.title">Bancos</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="banco-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.banco.home.createLabel">
+                        Create new Banco
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.banco.cidadedep">Cidadedep</span></th>
+                    <th><span data-translate="meioambienteApp.banco.cidadeint">Cidadeint</span></th>
+                    <th><span data-translate="meioambienteApp.banco.codswifdep">Codswifdep</span></th>
+                    <th><span data-translate="meioambienteApp.banco.codswifint">Codswifint</span></th>
+                    <th><span data-translate="meioambienteApp.banco.contafeddep">Contafeddep</span></th>
+                    <th><span data-translate="meioambienteApp.banco.contafedint">Contafedint</span></th>
+                    <th><span data-translate="meioambienteApp.banco.enderecodep">Enderecodep</span></th>
+                    <th><span data-translate="meioambienteApp.banco.enderecoint">Enderecoint</span></th>
+                    <th><span data-translate="meioambienteApp.banco.idbanco">Idbanco</span></th>
+                    <th><span data-translate="meioambienteApp.banco.instrucoesespeciaisdep">Instrucoesespeciaisdep</span></th>
+                    <th><span data-translate="meioambienteApp.banco.instrucoesespeciaisint">Instrucoesespeciaisint</span></th>
+                    <th><span data-translate="meioambienteApp.banco.nabadep">Nabadep</span></th>
+                    <th><span data-translate="meioambienteApp.banco.nabaint">Nabaint</span></th>
+                    <th><span data-translate="meioambienteApp.banco.ncontadep">Ncontadep</span></th>
+                    <th><span data-translate="meioambienteApp.banco.ncontaint">Ncontaint</span></th>
+                    <th><span data-translate="meioambienteApp.banco.nomebancodep">Nomebancodep</span></th>
+                    <th><span data-translate="meioambienteApp.banco.nomebancoint">Nomebancoint</span></th>
+                    <th><span data-translate="meioambienteApp.banco.paisdep">Paisdep</span></th>
+                    <th><span data-translate="meioambienteApp.banco.paisint">Paisint</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="banco in vm.bancos track by banco.id">
+                    <td><a ui-sref="banco-ambiental-detail({id:banco.id})">{{banco.id}}</a></td>
+                    <td>{{banco.cidadedep}}</td>
+                    <td>{{banco.cidadeint}}</td>
+                    <td>{{banco.codswifdep}}</td>
+                    <td>{{banco.codswifint}}</td>
+                    <td>{{banco.contafeddep}}</td>
+                    <td>{{banco.contafedint}}</td>
+                    <td>{{banco.enderecodep}}</td>
+                    <td>{{banco.enderecoint}}</td>
+                    <td>{{banco.idbanco}}</td>
+                    <td>{{banco.instrucoesespeciaisdep}}</td>
+                    <td>{{banco.instrucoesespeciaisint}}</td>
+                    <td>{{banco.nabadep}}</td>
+                    <td>{{banco.nabaint}}</td>
+                    <td>{{banco.ncontadep}}</td>
+                    <td>{{banco.ncontaint}}</td>
+                    <td>{{banco.nomebancodep}}</td>
+                    <td>{{banco.nomebancoint}}</td>
+                    <td>{{banco.paisdep}}</td>
+                    <td>{{banco.paisint}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="banco-ambiental-detail({id:banco.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="banco-ambiental.edit({id:banco.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="banco-ambiental.delete({id:banco.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

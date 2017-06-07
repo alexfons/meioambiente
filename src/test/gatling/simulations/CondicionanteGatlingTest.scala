@@ -68,7 +68,7 @@ class CondicionanteGatlingTest extends Simulation {
             .exec(http("Create new condicionante")
             .post("/api/condicionantes")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null}""")).asJSON
+            .body(StringBody("""{"id":null, "ativo":null, "conteudo":"SAMPLE_TEXT", "data":"2020-01-01T00:00:00.000Z", "descricao":"SAMPLE_TEXT", "observacao":"SAMPLE_TEXT", "situacao":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_condicionante_url"))).exitHereIfFailed
             .pause(10)

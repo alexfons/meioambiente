@@ -104,10 +104,10 @@
                     resolve: {
                         entity: function () {
                             return {
-                                numaditivo: null,
-                                tipoaditivo: null,
                                 data: null,
+                                numaditivo: null,
                                 prazoaditivo: null,
+                                tipoaditivo: null,
                                 valor: null,
                                 id: null
                             };

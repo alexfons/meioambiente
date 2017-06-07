@@ -1,0 +1,75 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "idcontratoagente",
+            "otherEntityName": "contratoagente",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "codcategoria",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descricaocategoria",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descricaoitem",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descricaosubcategoria",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descricaosubitem",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idcategoriainversao",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "item",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "percentualcatagente",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "percentualcatlocal",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "subcategoria",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "subitem",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "valorcatagente",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "valorcatlocal",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "valorporcategoria",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20170607001834",
+    "entityTableName": "categoriainversao",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "ambiental"
+}

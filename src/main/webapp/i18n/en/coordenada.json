@@ -1,0 +1,24 @@
+{
+    "meioambienteApp": {
+        "coordenada" : {
+            "home": {
+                "title": "Coordenadas",
+                "createLabel": "Create a new Coordenada",
+                "createOrEditLabel": "Create or edit a Coordenada"
+            },
+            "created": "A new Coordenada is created with identifier {{ param }}",
+            "updated": "A Coordenada is updated with identifier {{ param }}",
+            "deleted": "A Coordenada is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Coordenada {{ id }}?"
+            },
+            "detail": {
+                "title": "Coordenada"
+            },
+            "a": "A",
+            "km": "Km",
+            "n": "N",
+            "s": "S"
+        }
+    }
+}

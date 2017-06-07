@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "responsavel" : {
+            "home": {
+                "title": "Responsavels",
+                "createLabel": "Criar novo Responsavel",
+                "createOrEditLabel": "Criar ou editar Responsavel"
+            },
+            "created": "Um novo Responsavel é criado com o identificador {{ param }}",
+            "updated": "Um Responsavel é atualizado com o identificador {{ param }}",
+            "deleted": "Um Responsavel é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Responsavel {{ id }}?"
+            },
+            "detail": {
+                "title": "Responsavel"
+            }
+        }
+    }
+}

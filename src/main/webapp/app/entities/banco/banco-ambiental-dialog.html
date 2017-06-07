@@ -1,0 +1,138 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myBancoLabel" data-translate="meioambienteApp.banco.home.createOrEditLabel">Create or edit a Banco</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.banco.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.banco.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.banco.cidadedep" for="field_cidadedep">Cidadedep</label>
+            <input type="text" class="form-control" name="cidadedep" id="field_cidadedep"
+                    ng-model="vm.banco.cidadedep"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.banco.cidadeint" for="field_cidadeint">Cidadeint</label>
+            <input type="text" class="form-control" name="cidadeint" id="field_cidadeint"
+                    ng-model="vm.banco.cidadeint"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.banco.codswifdep" for="field_codswifdep">Codswifdep</label>
+            <input type="text" class="form-control" name="codswifdep" id="field_codswifdep"
+                    ng-model="vm.banco.codswifdep"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.banco.codswifint" for="field_codswifint">Codswifint</label>
+            <input type="text" class="form-control" name="codswifint" id="field_codswifint"
+                    ng-model="vm.banco.codswifint"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.banco.contafeddep" for="field_contafeddep">Contafeddep</label>
+                <input type="checkbox" name="contafeddep" id="field_contafeddep"
+                          ng-model="vm.banco.contafeddep"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.banco.contafedint" for="field_contafedint">Contafedint</label>
+                <input type="checkbox" name="contafedint" id="field_contafedint"
+                          ng-model="vm.banco.contafedint"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.banco.enderecodep" for="field_enderecodep">Enderecodep</label>
+            <input type="text" class="form-control" name="enderecodep" id="field_enderecodep"
+                    ng-model="vm.banco.enderecodep"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.banco.enderecoint" for="field_enderecoint">Enderecoint</label>
+            <input type="text" class="form-control" name="enderecoint" id="field_enderecoint"
+                    ng-model="vm.banco.enderecoint"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.banco.idbanco" for="field_idbanco">Idbanco</label>
+            <input type="number" class="form-control" name="idbanco" id="field_idbanco"
+                    ng-model="vm.banco.idbanco"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.banco.instrucoesespeciaisdep" for="field_instrucoesespeciaisdep">Instrucoesespeciaisdep</label>
+            <input type="text" class="form-control" name="instrucoesespeciaisdep" id="field_instrucoesespeciaisdep"
+                    ng-model="vm.banco.instrucoesespeciaisdep"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.banco.instrucoesespeciaisint" for="field_instrucoesespeciaisint">Instrucoesespeciaisint</label>
+            <input type="text" class="form-control" name="instrucoesespeciaisint" id="field_instrucoesespeciaisint"
+                    ng-model="vm.banco.instrucoesespeciaisint"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.banco.nabadep" for="field_nabadep">Nabadep</label>
+            <input type="number" class="form-control" name="nabadep" id="field_nabadep"
+                    ng-model="vm.banco.nabadep"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.banco.nabaint" for="field_nabaint">Nabaint</label>
+            <input type="number" class="form-control" name="nabaint" id="field_nabaint"
+                    ng-model="vm.banco.nabaint"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.banco.ncontadep" for="field_ncontadep">Ncontadep</label>
+            <input type="number" class="form-control" name="ncontadep" id="field_ncontadep"
+                    ng-model="vm.banco.ncontadep"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.banco.ncontaint" for="field_ncontaint">Ncontaint</label>
+            <input type="number" class="form-control" name="ncontaint" id="field_ncontaint"
+                    ng-model="vm.banco.ncontaint"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.banco.nomebancodep" for="field_nomebancodep">Nomebancodep</label>
+            <input type="text" class="form-control" name="nomebancodep" id="field_nomebancodep"
+                    ng-model="vm.banco.nomebancodep"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.banco.nomebancoint" for="field_nomebancoint">Nomebancoint</label>
+            <input type="text" class="form-control" name="nomebancoint" id="field_nomebancoint"
+                    ng-model="vm.banco.nomebancoint"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.banco.paisdep" for="field_paisdep">Paisdep</label>
+            <input type="text" class="form-control" name="paisdep" id="field_paisdep"
+                    ng-model="vm.banco.paisdep"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.banco.paisint" for="field_paisint">Paisint</label>
+            <input type="text" class="form-control" name="paisint" id="field_paisint"
+                    ng-model="vm.banco.paisint"
+                    />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

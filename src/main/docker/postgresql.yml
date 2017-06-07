@@ -1,12 +1,12 @@
 version: '2'
 services:
     meioambiente-postgresql:
-        image: postgres:9.5.7
+        image: postgres:9.6.2
         # volumes:
         #     - ~/volumes/jhipster/meioambiente/postgresql/:/var/lib/postgresql/
         environment:
             - POSTGRES_DB=meioambiente
-            - POSTGRES_USER=meioambiente
-            - POSTGRES_PASSWORD=meioambiente
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=postgres
         ports:
             - 5432:5432

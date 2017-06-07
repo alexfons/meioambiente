@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.contabancaria.detail.title">Contabancaria</span> {{vm.contabancaria.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.contabancaria.idcontabancaria">Idcontabancaria</span></dt>
+        <dd>
+            <span>{{vm.contabancaria.idcontabancaria}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.contabancaria.nconta">Nconta</span></dt>
+        <dd>
+            <span>{{vm.contabancaria.nconta}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.contabancaria.nbanco">Nbanco</span></dt>
+        <dd>
+            <span>{{vm.contabancaria.nbanco}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.contabancaria.descricao">Descricao</span></dt>
+        <dd>
+            <span>{{vm.contabancaria.descricao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.contabancaria.idplanocontas">Idplanocontas</span></dt>
+        <dd>
+            <a ui-sref="planocontas-ambiental-detail({id:vm.contabancaria.idplanocontasId})">{{vm.contabancaria.idplanocontasId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="contabancaria-ambiental-detail.edit({id:vm.contabancaria.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

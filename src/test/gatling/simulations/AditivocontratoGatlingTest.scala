@@ -68,7 +68,7 @@ class AditivocontratoGatlingTest extends Simulation {
             .exec(http("Create new aditivocontrato")
             .post("/api/aditivocontratoes")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "numaditivo":"0", "tipoaditivo":"SAMPLE_TEXT", "data":"2020-01-01T00:00:00.000Z", "prazoaditivo":"0", "valor":null}""")).asJSON
+            .body(StringBody("""{"id":null, "data":"2020-01-01T00:00:00.000Z", "numaditivo":"0", "prazoaditivo":"0", "tipoaditivo":"SAMPLE_TEXT", "valor":null}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_aditivocontrato_url"))).exitHereIfFailed
             .pause(10)

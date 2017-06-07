@@ -1,0 +1,41 @@
+{
+    "meioambienteApp": {
+        "desapropriacao" : {
+            "home": {
+                "title": "Desapropriacaos",
+                "createLabel": "Criar novo Desapropriacao",
+                "createOrEditLabel": "Criar ou editar Desapropriacao"
+            },
+            "created": "Um novo Desapropriacao é criado com o identificador {{ param }}",
+            "updated": "Um Desapropriacao é atualizado com o identificador {{ param }}",
+            "deleted": "Um Desapropriacao é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Desapropriacao {{ id }}?"
+            },
+            "detail": {
+                "title": "Desapropriacao"
+            },
+            "dataop": "Dataop",
+            "iddesapropria": "Iddesapropria",
+            "nprocesso": "Nprocesso",
+            "nomedesapropriado": "Nomedesapropriado",
+            "local": "Local",
+            "nsolicitacao": "Nsolicitacao",
+            "valorpago": "Valorpago",
+            "valorus": "Valorus",
+            "contacontabilC1": "Contacontabil C 1",
+            "contacontabilC2": "Contacontabil C 2",
+            "contacontabilD1": "Contacontabil D 1",
+            "contacontabilD2": "Contacontabil D 2",
+            "divcontacontabilC1": "Divcontacontabil C 1",
+            "divcontacontabilD1": "Divcontacontabil D 1",
+            "juscontacontabilC1": "Juscontacontabil C 1",
+            "juscontacontabilD1": "Juscontacontabil D 1",
+            "fonte": "Fonte",
+            "idcategoriainversao": "Idcategoriainversao",
+            "idcontabancaria": "Idcontabancaria",
+            "idreferencia": "Idreferencia",
+            "rodovia": "Rodovia"
+        }
+    }
+}

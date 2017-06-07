@@ -1,7 +1,31 @@
 {
     "fluentMethods": true,
-    "relationships": [],
-    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "contrato",
+            "otherEntityName": "contrato",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "residente",
+            "otherEntityName": "residente",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "responsavel",
+            "otherEntityName": "responsavel",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "tipo",
+            "fieldType": "String"
+        }
+    ],
     "changelogDate": "20170515105938",
     "entityTableName": "contratoobra",
     "dto": "mapstruct",

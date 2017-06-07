@@ -1,0 +1,23 @@
+{
+    "meioambienteApp": {
+        "contratoprojeto" : {
+            "home": {
+                "title": "Contratoprojetos",
+                "createLabel": "Create a new Contratoprojeto",
+                "createOrEditLabel": "Create or edit a Contratoprojeto"
+            },
+            "created": "A new Contratoprojeto is created with identifier {{ param }}",
+            "updated": "A Contratoprojeto is updated with identifier {{ param }}",
+            "deleted": "A Contratoprojeto is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Contratoprojeto {{ id }}?"
+            },
+            "detail": {
+                "title": "Contratoprojeto"
+            },
+            "tipo": "Tipo",
+            "contrato": "Contrato",
+            "responsavel": "Responsavel"
+        }
+    }
+}

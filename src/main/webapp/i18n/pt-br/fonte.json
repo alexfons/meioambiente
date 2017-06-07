@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "fonte" : {
+            "home": {
+                "title": "Fontes",
+                "createLabel": "Criar novo Fonte",
+                "createOrEditLabel": "Criar ou editar Fonte"
+            },
+            "created": "Um novo Fonte é criado com o identificador {{ param }}",
+            "updated": "Um Fonte é atualizado com o identificador {{ param }}",
+            "deleted": "Um Fonte é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Fonte {{ id }}?"
+            },
+            "detail": {
+                "title": "Fonte"
+            }
+        }
+    }
+}

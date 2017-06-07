@@ -44,26 +44,26 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = MeioambienteApp.class)
 public class AdministrativoResourceIntTest {
 
-    private static final String DEFAULT_DESCRICAO = "AAAAAAAAAA";
-    private static final String UPDATED_DESCRICAO = "BBBBBBBBBB";
-
-    private static final String DEFAULT_ASSUNTO = "AAAAAAAAAA";
-    private static final String UPDATED_ASSUNTO = "BBBBBBBBBB";
-
-    private static final String DEFAULT_LOCAL = "AAAAAAAAAA";
-    private static final String UPDATED_LOCAL = "BBBBBBBBBB";
-
     private static final String DEFAULT_ALBUM = "AAAAAAAAAA";
     private static final String UPDATED_ALBUM = "BBBBBBBBBB";
 
-    private static final String DEFAULT_FOLDER = "AAAAAAAAAA";
-    private static final String UPDATED_FOLDER = "BBBBBBBBBB";
+    private static final String DEFAULT_ASSUNTO = "AAAAAAAAAA";
+    private static final String UPDATED_ASSUNTO = "BBBBBBBBBB";
 
     private static final String DEFAULT_CONSIDERACAO = "AAAAAAAAAA";
     private static final String UPDATED_CONSIDERACAO = "BBBBBBBBBB";
 
     private static final ZonedDateTime DEFAULT_DATA = ZonedDateTime.ofInstant(Instant.ofEpochMilli(0L), ZoneOffset.UTC);
     private static final ZonedDateTime UPDATED_DATA = ZonedDateTime.now(ZoneId.systemDefault()).withNano(0);
+
+    private static final String DEFAULT_DESCRICAO = "AAAAAAAAAA";
+    private static final String UPDATED_DESCRICAO = "BBBBBBBBBB";
+
+    private static final String DEFAULT_FOLDER = "AAAAAAAAAA";
+    private static final String UPDATED_FOLDER = "BBBBBBBBBB";
+
+    private static final String DEFAULT_LOCAL = "AAAAAAAAAA";
+    private static final String UPDATED_LOCAL = "BBBBBBBBBB";
 
     @Autowired
     private AdministrativoRepository administrativoRepository;
@@ -105,13 +105,13 @@ public class AdministrativoResourceIntTest {
      */
     public static Administrativo createEntity(EntityManager em) {
         Administrativo administrativo = new Administrativo()
-            .descricao(DEFAULT_DESCRICAO)
-            .assunto(DEFAULT_ASSUNTO)
-            .local(DEFAULT_LOCAL)
             .album(DEFAULT_ALBUM)
-            .folder(DEFAULT_FOLDER)
+            .assunto(DEFAULT_ASSUNTO)
             .consideracao(DEFAULT_CONSIDERACAO)
-            .data(DEFAULT_DATA);
+            .data(DEFAULT_DATA)
+            .descricao(DEFAULT_DESCRICAO)
+            .folder(DEFAULT_FOLDER)
+            .local(DEFAULT_LOCAL);
         return administrativo;
     }
 
@@ -136,13 +136,13 @@ public class AdministrativoResourceIntTest {
         List<Administrativo> administrativoList = administrativoRepository.findAll();
         assertThat(administrativoList).hasSize(databaseSizeBeforeCreate + 1);
         Administrativo testAdministrativo = administrativoList.get(administrativoList.size() - 1);
-        assertThat(testAdministrativo.getDescricao()).isEqualTo(DEFAULT_DESCRICAO);
-        assertThat(testAdministrativo.getAssunto()).isEqualTo(DEFAULT_ASSUNTO);
-        assertThat(testAdministrativo.getLocal()).isEqualTo(DEFAULT_LOCAL);
         assertThat(testAdministrativo.getAlbum()).isEqualTo(DEFAULT_ALBUM);
-        assertThat(testAdministrativo.getFolder()).isEqualTo(DEFAULT_FOLDER);
+        assertThat(testAdministrativo.getAssunto()).isEqualTo(DEFAULT_ASSUNTO);
         assertThat(testAdministrativo.getConsideracao()).isEqualTo(DEFAULT_CONSIDERACAO);
         assertThat(testAdministrativo.getData()).isEqualTo(DEFAULT_DATA);
+        assertThat(testAdministrativo.getDescricao()).isEqualTo(DEFAULT_DESCRICAO);
+        assertThat(testAdministrativo.getFolder()).isEqualTo(DEFAULT_FOLDER);
+        assertThat(testAdministrativo.getLocal()).isEqualTo(DEFAULT_LOCAL);
     }
 
     @Test
@@ -176,13 +176,13 @@ public class AdministrativoResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(administrativo.getId().intValue())))
-            .andExpect(jsonPath("$.[*].descricao").value(hasItem(DEFAULT_DESCRICAO.toString())))
-            .andExpect(jsonPath("$.[*].assunto").value(hasItem(DEFAULT_ASSUNTO.toString())))
-            .andExpect(jsonPath("$.[*].local").value(hasItem(DEFAULT_LOCAL.toString())))
             .andExpect(jsonPath("$.[*].album").value(hasItem(DEFAULT_ALBUM.toString())))
-            .andExpect(jsonPath("$.[*].folder").value(hasItem(DEFAULT_FOLDER.toString())))
+            .andExpect(jsonPath("$.[*].assunto").value(hasItem(DEFAULT_ASSUNTO.toString())))
             .andExpect(jsonPath("$.[*].consideracao").value(hasItem(DEFAULT_CONSIDERACAO.toString())))
-            .andExpect(jsonPath("$.[*].data").value(hasItem(sameInstant(DEFAULT_DATA))));
+            .andExpect(jsonPath("$.[*].data").value(hasItem(sameInstant(DEFAULT_DATA))))
+            .andExpect(jsonPath("$.[*].descricao").value(hasItem(DEFAULT_DESCRICAO.toString())))
+            .andExpect(jsonPath("$.[*].folder").value(hasItem(DEFAULT_FOLDER.toString())))
+            .andExpect(jsonPath("$.[*].local").value(hasItem(DEFAULT_LOCAL.toString())));
     }
 
     @Test
@@ -196,13 +196,13 @@ public class AdministrativoResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(administrativo.getId().intValue()))
-            .andExpect(jsonPath("$.descricao").value(DEFAULT_DESCRICAO.toString()))
-            .andExpect(jsonPath("$.assunto").value(DEFAULT_ASSUNTO.toString()))
-            .andExpect(jsonPath("$.local").value(DEFAULT_LOCAL.toString()))
             .andExpect(jsonPath("$.album").value(DEFAULT_ALBUM.toString()))
-            .andExpect(jsonPath("$.folder").value(DEFAULT_FOLDER.toString()))
+            .andExpect(jsonPath("$.assunto").value(DEFAULT_ASSUNTO.toString()))
             .andExpect(jsonPath("$.consideracao").value(DEFAULT_CONSIDERACAO.toString()))
-            .andExpect(jsonPath("$.data").value(sameInstant(DEFAULT_DATA)));
+            .andExpect(jsonPath("$.data").value(sameInstant(DEFAULT_DATA)))
+            .andExpect(jsonPath("$.descricao").value(DEFAULT_DESCRICAO.toString()))
+            .andExpect(jsonPath("$.folder").value(DEFAULT_FOLDER.toString()))
+            .andExpect(jsonPath("$.local").value(DEFAULT_LOCAL.toString()));
     }
 
     @Test
@@ -223,13 +223,13 @@ public class AdministrativoResourceIntTest {
         // Update the administrativo
         Administrativo updatedAdministrativo = administrativoRepository.findOne(administrativo.getId());
         updatedAdministrativo
-            .descricao(UPDATED_DESCRICAO)
-            .assunto(UPDATED_ASSUNTO)
-            .local(UPDATED_LOCAL)
             .album(UPDATED_ALBUM)
-            .folder(UPDATED_FOLDER)
+            .assunto(UPDATED_ASSUNTO)
             .consideracao(UPDATED_CONSIDERACAO)
-            .data(UPDATED_DATA);
+            .data(UPDATED_DATA)
+            .descricao(UPDATED_DESCRICAO)
+            .folder(UPDATED_FOLDER)
+            .local(UPDATED_LOCAL);
         AdministrativoDTO administrativoDTO = administrativoMapper.toDto(updatedAdministrativo);
 
         restAdministrativoMockMvc.perform(put("/api/administrativos")
@@ -241,13 +241,13 @@ public class AdministrativoResourceIntTest {
         List<Administrativo> administrativoList = administrativoRepository.findAll();
         assertThat(administrativoList).hasSize(databaseSizeBeforeUpdate);
         Administrativo testAdministrativo = administrativoList.get(administrativoList.size() - 1);
-        assertThat(testAdministrativo.getDescricao()).isEqualTo(UPDATED_DESCRICAO);
-        assertThat(testAdministrativo.getAssunto()).isEqualTo(UPDATED_ASSUNTO);
-        assertThat(testAdministrativo.getLocal()).isEqualTo(UPDATED_LOCAL);
         assertThat(testAdministrativo.getAlbum()).isEqualTo(UPDATED_ALBUM);
-        assertThat(testAdministrativo.getFolder()).isEqualTo(UPDATED_FOLDER);
+        assertThat(testAdministrativo.getAssunto()).isEqualTo(UPDATED_ASSUNTO);
         assertThat(testAdministrativo.getConsideracao()).isEqualTo(UPDATED_CONSIDERACAO);
         assertThat(testAdministrativo.getData()).isEqualTo(UPDATED_DATA);
+        assertThat(testAdministrativo.getDescricao()).isEqualTo(UPDATED_DESCRICAO);
+        assertThat(testAdministrativo.getFolder()).isEqualTo(UPDATED_FOLDER);
+        assertThat(testAdministrativo.getLocal()).isEqualTo(UPDATED_LOCAL);
     }
 
     @Test

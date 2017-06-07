@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "referencia" : {
+            "home": {
+                "title": "Referencias",
+                "createLabel": "Criar novo Referencia",
+                "createOrEditLabel": "Criar ou editar Referencia"
+            },
+            "created": "Um novo Referencia é criado com o identificador {{ param }}",
+            "updated": "Um Referencia é atualizado com o identificador {{ param }}",
+            "deleted": "Um Referencia é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Referencia {{ id }}?"
+            },
+            "detail": {
+                "title": "Referencia"
+            }
+        }
+    }
+}

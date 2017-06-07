@@ -3,20 +3,20 @@
     "relationships": [],
     "fields": [
         {
+            "fieldName": "data",
+            "fieldType": "ZonedDateTime"
+        },
+        {
             "fieldName": "numaditivo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "prazoaditivo",
             "fieldType": "Integer"
         },
         {
             "fieldName": "tipoaditivo",
             "fieldType": "String"
-        },
-        {
-            "fieldName": "data",
-            "fieldType": "ZonedDateTime"
-        },
-        {
-            "fieldName": "prazoaditivo",
-            "fieldType": "Integer"
         },
         {
             "fieldName": "valor",

@@ -4,9 +4,9 @@
         .module('meioambienteApp')
         .factory('Condicionante', Condicionante);
 
-    Condicionante.$inject = ['$resource'];
+    Condicionante.$inject = ['$resource', 'DateUtils'];
 
-    function Condicionante ($resource) {
+    function Condicionante ($resource, DateUtils) {
         var resourceUrl =  'api/condicionantes/:id';
 
         return $resource(resourceUrl, {}, {
@@ -16,6 +16,7 @@
                 transformResponse: function (data) {
                     if (data) {
                         data = angular.fromJson(data);
+                        data.data = DateUtils.convertDateTimeFromServer(data.data);
                     }
                     return data;
                 }

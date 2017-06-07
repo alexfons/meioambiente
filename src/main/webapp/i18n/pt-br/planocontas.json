@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "planocontas" : {
+            "home": {
+                "title": "Planocontas",
+                "createLabel": "Criar novo Planocontas",
+                "createOrEditLabel": "Criar ou editar Planocontas"
+            },
+            "created": "Um novo Planocontas é criado com o identificador {{ param }}",
+            "updated": "Um Planocontas é atualizado com o identificador {{ param }}",
+            "deleted": "Um Planocontas é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Planocontas {{ id }}?"
+            },
+            "detail": {
+                "title": "Planocontas"
+            }
+        }
+    }
+}

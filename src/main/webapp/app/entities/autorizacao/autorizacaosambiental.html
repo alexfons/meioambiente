@@ -1,0 +1,172 @@
+<div>
+    <h2 data-translate="meioambienteApp.autorizacao.home.title">Autorizacaos</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="autorizacao-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.autorizacao.home.createLabel">
+                        Create new Autorizacao
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.album">Album</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.andamento">Andamento</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.data">Data</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.dataentregadocs">Dataentregadocs</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.dataexpedicaoprorrogacao1">Dataexpedicaoprorrogacao 1</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.dataexpedicaoprorrogacao2">Dataexpedicaoprorrogacao 2</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.dataexpedicaoprorrogacao3">Dataexpedicaoprorrogacao 3</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.datapedidoprorrogacao1">Datapedidoprorrogacao 1</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.datapedidoprorrogacao2">Datapedidoprorrogacao 2</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.datapedidoprorrogacao3">Datapedidoprorrogacao 3</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.datavalidadeprorrogacao1">Datavalidadeprorrogacao 1</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.datavalidadeprorrogacao2">Datavalidadeprorrogacao 2</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.datavalidadeprorrogacao3">Datavalidadeprorrogacao 3</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.datavencimento">Datavencimento</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.datavencimentoatual">Datavencimentoatual</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.descricao">Descricao</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.docsentregues">Docsentregues</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.fcei">Fcei</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.fceidatapagamento">Fceidatapagamento</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.fceidataprotocolo">Fceidataprotocolo</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.fceivalor">Fceivalor</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.folder">Folder</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.inativo">Inativo</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.kmfim">Kmfim</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.kminicio">Kminicio</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.lado">Lado</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.naoria">Naoria</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.numero">Numero</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.numerooficioconcessaoprorrogacao1">Numerooficioconcessaoprorrogacao 1</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.numerooficioconcessaoprorrogacao2">Numerooficioconcessaoprorrogacao 2</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.numerooficioconcessaoprorrogacao3">Numerooficioconcessaoprorrogacao 3</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.numerooficioprorrogacao1">Numerooficioprorrogacao 1</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.numerooficioprorrogacao2">Numerooficioprorrogacao 2</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.numerooficioprorrogacao3">Numerooficioprorrogacao 3</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.numeroprocesso">Numeroprocesso</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.observacao">Observacao</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.pendente">Pendente</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.prazomes">Prazomes</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.prazovalidade">Prazovalidade</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.proprietario">Proprietario</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.reciboentregadocs">Reciboentregadocs</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.atividadelicenca">Atividadelicenca</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.empresa">Empresa</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.obra">Obra</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.orgaoemissor">Orgaoemissor</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.projeto">Projeto</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.tipoautorizacao">Tipoautorizacao</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.fotos">Fotos</span></th>
+                    <th><span data-translate="meioambienteApp.autorizacao.docs">Docs</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="autorizacao in vm.autorizacaos track by autorizacao.id">
+                    <td><a ui-sref="autorizacao-ambiental-detail({id:autorizacao.id})">{{autorizacao.id}}</a></td>
+                    <td>{{autorizacao.album}}</td>
+                    <td>{{autorizacao.andamento}}</td>
+                    <td>{{autorizacao.data | date:'medium'}}</td>
+                    <td>{{autorizacao.dataentregadocs | date:'medium'}}</td>
+                    <td>{{autorizacao.dataexpedicaoprorrogacao1 | date:'medium'}}</td>
+                    <td>{{autorizacao.dataexpedicaoprorrogacao2 | date:'medium'}}</td>
+                    <td>{{autorizacao.dataexpedicaoprorrogacao3 | date:'medium'}}</td>
+                    <td>{{autorizacao.datapedidoprorrogacao1 | date:'medium'}}</td>
+                    <td>{{autorizacao.datapedidoprorrogacao2 | date:'medium'}}</td>
+                    <td>{{autorizacao.datapedidoprorrogacao3 | date:'medium'}}</td>
+                    <td>{{autorizacao.datavalidadeprorrogacao1 | date:'medium'}}</td>
+                    <td>{{autorizacao.datavalidadeprorrogacao2 | date:'medium'}}</td>
+                    <td>{{autorizacao.datavalidadeprorrogacao3 | date:'medium'}}</td>
+                    <td>{{autorizacao.datavencimento | date:'medium'}}</td>
+                    <td>{{autorizacao.datavencimentoatual | date:'medium'}}</td>
+                    <td>{{autorizacao.descricao}}</td>
+                    <td>{{autorizacao.docsentregues}}</td>
+                    <td>{{autorizacao.fcei}}</td>
+                    <td>{{autorizacao.fceidatapagamento | date:'medium'}}</td>
+                    <td>{{autorizacao.fceidataprotocolo | date:'medium'}}</td>
+                    <td>{{autorizacao.fceivalor}}</td>
+                    <td>{{autorizacao.folder}}</td>
+                    <td>{{autorizacao.inativo}}</td>
+                    <td>{{autorizacao.kmfim}}</td>
+                    <td>{{autorizacao.kminicio}}</td>
+                    <td>{{autorizacao.lado}}</td>
+                    <td>{{autorizacao.naoria}}</td>
+                    <td>{{autorizacao.numero}}</td>
+                    <td>{{autorizacao.numerooficioconcessaoprorrogacao1}}</td>
+                    <td>{{autorizacao.numerooficioconcessaoprorrogacao2}}</td>
+                    <td>{{autorizacao.numerooficioconcessaoprorrogacao3}}</td>
+                    <td>{{autorizacao.numerooficioprorrogacao1}}</td>
+                    <td>{{autorizacao.numerooficioprorrogacao2}}</td>
+                    <td>{{autorizacao.numerooficioprorrogacao3}}</td>
+                    <td>{{autorizacao.numeroprocesso}}</td>
+                    <td>{{autorizacao.observacao}}</td>
+                    <td>{{autorizacao.pendente}}</td>
+                    <td>{{autorizacao.prazomes}}</td>
+                    <td>{{autorizacao.prazovalidade}}</td>
+                    <td>{{autorizacao.proprietario}}</td>
+                    <td>{{autorizacao.reciboentregadocs}}</td>
+                    <td>
+                        <a ui-sref="atividadelicenca-ambiental-detail({id:autorizacao.atividadelicencaId})">{{autorizacao.atividadelicencaId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="empresa-ambiental-detail({id:autorizacao.empresaId})">{{autorizacao.empresaId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="obra-ambiental-detail({id:autorizacao.obraId})">{{autorizacao.obraId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="orgaoemissor-ambiental-detail({id:autorizacao.orgaoemissorId})">{{autorizacao.orgaoemissorId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="projeto-ambiental-detail({id:autorizacao.projetoId})">{{autorizacao.projetoId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="tipoautorizacao-ambiental-detail({id:autorizacao.tipoautorizacaoId})">{{autorizacao.tipoautorizacaoId}}</a>
+                    </td>
+                    <td>
+                        <span ng-repeat="fotos in autorizacao.fotos">
+                            <a class="form-control-static" ui-sref="foto-ambiental-detail({id: fotos.id})">{{fotos.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td>
+                        <span ng-repeat="docs in autorizacao.docs">
+                            <a class="form-control-static" ui-sref="documento-ambiental-detail({id: docs.id})">{{docs.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="autorizacao-ambiental-detail({id:autorizacao.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="autorizacao-ambiental.edit({id:autorizacao.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="autorizacao-ambiental.delete({id:autorizacao.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

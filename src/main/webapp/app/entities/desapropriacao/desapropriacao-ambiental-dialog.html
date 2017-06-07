@@ -1,0 +1,156 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myDesapropriacaoLabel" data-translate="meioambienteApp.desapropriacao.home.createOrEditLabel">Create or edit a Desapropriacao</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.desapropriacao.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.desapropriacao.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.desapropriacao.dataop" for="field_dataop">Dataop</label>
+                <div class="input-group">
+                    <input id="field_dataop" type="text" class="form-control" name="dataop" datetime-picker="{{dateformat}}" ng-model="vm.desapropriacao.dataop" is-open="vm.datePickerOpenStatus.dataop"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataop')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.desapropriacao.iddesapropria" for="field_iddesapropria">Iddesapropria</label>
+            <input type="number" class="form-control" name="iddesapropria" id="field_iddesapropria"
+                    ng-model="vm.desapropriacao.iddesapropria"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.desapropriacao.nprocesso" for="field_nprocesso">Nprocesso</label>
+            <input type="text" class="form-control" name="nprocesso" id="field_nprocesso"
+                    ng-model="vm.desapropriacao.nprocesso"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.desapropriacao.nomedesapropriado" for="field_nomedesapropriado">Nomedesapropriado</label>
+            <input type="text" class="form-control" name="nomedesapropriado" id="field_nomedesapropriado"
+                    ng-model="vm.desapropriacao.nomedesapropriado"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.desapropriacao.local" for="field_local">Local</label>
+            <input type="text" class="form-control" name="local" id="field_local"
+                    ng-model="vm.desapropriacao.local"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.desapropriacao.nsolicitacao" for="field_nsolicitacao">Nsolicitacao</label>
+            <input type="number" class="form-control" name="nsolicitacao" id="field_nsolicitacao"
+                    ng-model="vm.desapropriacao.nsolicitacao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.desapropriacao.valorpago" for="field_valorpago">Valorpago</label>
+            <input type="number" class="form-control" name="valorpago" id="field_valorpago"
+                    ng-model="vm.desapropriacao.valorpago"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.desapropriacao.valorus" for="field_valorus">Valorus</label>
+            <input type="number" class="form-control" name="valorus" id="field_valorus"
+                    ng-model="vm.desapropriacao.valorus"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="meioambienteApp.desapropriacao.contacontabilC1" for="field_contacontabilC1">Contacontabil C 1</label>
+            <select class="form-control" id="field_contacontabilC1" name="contacontabilC1" ng-model="vm.desapropriacao.contacontabilC1Id" ng-options="planocontas.id as planocontas.id for planocontas in vm.planocontas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.desapropriacao.contacontabilC2" for="field_contacontabilC2">Contacontabil C 2</label>
+            <select class="form-control" id="field_contacontabilC2" name="contacontabilC2" ng-model="vm.desapropriacao.contacontabilC2Id" ng-options="planocontas.id as planocontas.id for planocontas in vm.planocontas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.desapropriacao.contacontabilD1" for="field_contacontabilD1">Contacontabil D 1</label>
+            <select class="form-control" id="field_contacontabilD1" name="contacontabilD1" ng-model="vm.desapropriacao.contacontabilD1Id" ng-options="planocontas.id as planocontas.id for planocontas in vm.planocontas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.desapropriacao.contacontabilD2" for="field_contacontabilD2">Contacontabil D 2</label>
+            <select class="form-control" id="field_contacontabilD2" name="contacontabilD2" ng-model="vm.desapropriacao.contacontabilD2Id" ng-options="planocontas.id as planocontas.id for planocontas in vm.planocontas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.desapropriacao.divcontacontabilC1" for="field_divcontacontabilC1">Divcontacontabil C 1</label>
+            <select class="form-control" id="field_divcontacontabilC1" name="divcontacontabilC1" ng-model="vm.desapropriacao.divcontacontabilC1Id" ng-options="planocontas.id as planocontas.id for planocontas in vm.planocontas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.desapropriacao.divcontacontabilD1" for="field_divcontacontabilD1">Divcontacontabil D 1</label>
+            <select class="form-control" id="field_divcontacontabilD1" name="divcontacontabilD1" ng-model="vm.desapropriacao.divcontacontabilD1Id" ng-options="planocontas.id as planocontas.id for planocontas in vm.planocontas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.desapropriacao.juscontacontabilC1" for="field_juscontacontabilC1">Juscontacontabil C 1</label>
+            <select class="form-control" id="field_juscontacontabilC1" name="juscontacontabilC1" ng-model="vm.desapropriacao.juscontacontabilC1Id" ng-options="planocontas.id as planocontas.id for planocontas in vm.planocontas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.desapropriacao.juscontacontabilD1" for="field_juscontacontabilD1">Juscontacontabil D 1</label>
+            <select class="form-control" id="field_juscontacontabilD1" name="juscontacontabilD1" ng-model="vm.desapropriacao.juscontacontabilD1Id" ng-options="planocontas.id as planocontas.id for planocontas in vm.planocontas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.desapropriacao.fonte" for="field_fonte">Fonte</label>
+            <select class="form-control" id="field_fonte" name="fonte" ng-model="vm.desapropriacao.fonteId" ng-options="fonte.id as fonte.id for fonte in vm.fontes"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.desapropriacao.idcategoriainversao" for="field_idcategoriainversao">Idcategoriainversao</label>
+            <select class="form-control" id="field_idcategoriainversao" name="idcategoriainversao" ng-model="vm.desapropriacao.idcategoriainversaoId" ng-options="categoriainversao.id as categoriainversao.id for categoriainversao in vm.categoriainversaos"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.desapropriacao.idcontabancaria" for="field_idcontabancaria">Idcontabancaria</label>
+            <select class="form-control" id="field_idcontabancaria" name="idcontabancaria" ng-model="vm.desapropriacao.idcontabancariaId" ng-options="contabancaria.id as contabancaria.id for contabancaria in vm.contabancarias"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.desapropriacao.idreferencia" for="field_idreferencia">Idreferencia</label>
+            <select class="form-control" id="field_idreferencia" name="idreferencia" ng-model="vm.desapropriacao.idreferenciaId" ng-options="referencia.id as referencia.id for referencia in vm.referencias"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.desapropriacao.rodovia" for="field_rodovia">Rodovia</label>
+            <select class="form-control" id="field_rodovia" name="rodovia" ng-model="vm.desapropriacao.rodoviaId" ng-options="rodovia.id as rodovia.id for rodovia in vm.rodovias"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

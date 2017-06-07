@@ -1,0 +1,116 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myCategoriainversaoLabel" data-translate="meioambienteApp.categoriainversao.home.createOrEditLabel">Create or edit a Categoriainversao</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.categoriainversao.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.categoriainversao.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.categoriainversao.codcategoria" for="field_codcategoria">Codcategoria</label>
+            <input type="text" class="form-control" name="codcategoria" id="field_codcategoria"
+                    ng-model="vm.categoriainversao.codcategoria"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.categoriainversao.descricaocategoria" for="field_descricaocategoria">Descricaocategoria</label>
+            <input type="text" class="form-control" name="descricaocategoria" id="field_descricaocategoria"
+                    ng-model="vm.categoriainversao.descricaocategoria"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.categoriainversao.descricaoitem" for="field_descricaoitem">Descricaoitem</label>
+            <input type="text" class="form-control" name="descricaoitem" id="field_descricaoitem"
+                    ng-model="vm.categoriainversao.descricaoitem"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.categoriainversao.descricaosubcategoria" for="field_descricaosubcategoria">Descricaosubcategoria</label>
+            <input type="text" class="form-control" name="descricaosubcategoria" id="field_descricaosubcategoria"
+                    ng-model="vm.categoriainversao.descricaosubcategoria"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.categoriainversao.descricaosubitem" for="field_descricaosubitem">Descricaosubitem</label>
+            <input type="text" class="form-control" name="descricaosubitem" id="field_descricaosubitem"
+                    ng-model="vm.categoriainversao.descricaosubitem"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.categoriainversao.idcategoriainversao" for="field_idcategoriainversao">Idcategoriainversao</label>
+            <input type="number" class="form-control" name="idcategoriainversao" id="field_idcategoriainversao"
+                    ng-model="vm.categoriainversao.idcategoriainversao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.categoriainversao.item" for="field_item">Item</label>
+            <input type="text" class="form-control" name="item" id="field_item"
+                    ng-model="vm.categoriainversao.item"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.categoriainversao.percentualcatagente" for="field_percentualcatagente">Percentualcatagente</label>
+            <input type="number" class="form-control" name="percentualcatagente" id="field_percentualcatagente"
+                    ng-model="vm.categoriainversao.percentualcatagente"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.categoriainversao.percentualcatlocal" for="field_percentualcatlocal">Percentualcatlocal</label>
+            <input type="number" class="form-control" name="percentualcatlocal" id="field_percentualcatlocal"
+                    ng-model="vm.categoriainversao.percentualcatlocal"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.categoriainversao.subcategoria" for="field_subcategoria">Subcategoria</label>
+            <input type="text" class="form-control" name="subcategoria" id="field_subcategoria"
+                    ng-model="vm.categoriainversao.subcategoria"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.categoriainversao.subitem" for="field_subitem">Subitem</label>
+            <input type="text" class="form-control" name="subitem" id="field_subitem"
+                    ng-model="vm.categoriainversao.subitem"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.categoriainversao.valorcatagente" for="field_valorcatagente">Valorcatagente</label>
+            <input type="number" class="form-control" name="valorcatagente" id="field_valorcatagente"
+                    ng-model="vm.categoriainversao.valorcatagente"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.categoriainversao.valorcatlocal" for="field_valorcatlocal">Valorcatlocal</label>
+            <input type="number" class="form-control" name="valorcatlocal" id="field_valorcatlocal"
+                    ng-model="vm.categoriainversao.valorcatlocal"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.categoriainversao.valorporcategoria" for="field_valorporcategoria">Valorporcategoria</label>
+            <input type="number" class="form-control" name="valorporcategoria" id="field_valorporcategoria"
+                    ng-model="vm.categoriainversao.valorporcategoria"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="meioambienteApp.categoriainversao.idcontratoagente" for="field_idcontratoagente">Idcontratoagente</label>
+            <select class="form-control" id="field_idcontratoagente" name="idcontratoagente" ng-model="vm.categoriainversao.idcontratoagenteId" ng-options="contratoagente.id as contratoagente.id for contratoagente in vm.contratoagentes"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

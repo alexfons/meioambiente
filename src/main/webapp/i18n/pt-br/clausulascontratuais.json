@@ -1,0 +1,29 @@
+{
+    "meioambienteApp": {
+        "clausulascontratuais" : {
+            "home": {
+                "title": "Clausulascontratuais",
+                "createLabel": "Criar novo Clausulascontratuais",
+                "createOrEditLabel": "Criar ou editar Clausulascontratuais"
+            },
+            "created": "Um novo Clausulascontratuais é criado com o identificador {{ param }}",
+            "updated": "Um Clausulascontratuais é atualizado com o identificador {{ param }}",
+            "deleted": "Um Clausulascontratuais é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Clausulascontratuais {{ id }}?"
+            },
+            "detail": {
+                "title": "Clausulascontratuais"
+            },
+            "artigo": "Artigo",
+            "descricao": "Descricao",
+            "noficioenviado": "Noficioenviado",
+            "noficioaprovado": "Noficioaprovado",
+            "dataaprovacao": "Dataaprovacao",
+            "dataenvio": "Dataenvio",
+            "datavigente": "Datavigente",
+            "idclausulascontratuais": "Idclausulascontratuais",
+            "idcontratoagente": "Idcontratoagente"
+        }
+    }
+}

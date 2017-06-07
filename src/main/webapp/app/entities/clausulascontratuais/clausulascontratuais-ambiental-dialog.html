@@ -1,0 +1,92 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myClausulascontratuaisLabel" data-translate="meioambienteApp.clausulascontratuais.home.createOrEditLabel">Create or edit a Clausulascontratuais</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.clausulascontratuais.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.clausulascontratuais.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.clausulascontratuais.artigo" for="field_artigo">Artigo</label>
+            <input type="text" class="form-control" name="artigo" id="field_artigo"
+                    ng-model="vm.clausulascontratuais.artigo"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.clausulascontratuais.descricao" for="field_descricao">Descricao</label>
+            <input type="text" class="form-control" name="descricao" id="field_descricao"
+                    ng-model="vm.clausulascontratuais.descricao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.clausulascontratuais.noficioenviado" for="field_noficioenviado">Noficioenviado</label>
+            <input type="text" class="form-control" name="noficioenviado" id="field_noficioenviado"
+                    ng-model="vm.clausulascontratuais.noficioenviado"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.clausulascontratuais.noficioaprovado" for="field_noficioaprovado">Noficioaprovado</label>
+            <input type="text" class="form-control" name="noficioaprovado" id="field_noficioaprovado"
+                    ng-model="vm.clausulascontratuais.noficioaprovado"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.clausulascontratuais.dataaprovacao" for="field_dataaprovacao">Dataaprovacao</label>
+                <div class="input-group">
+                    <input id="field_dataaprovacao" type="text" class="form-control" name="dataaprovacao" datetime-picker="{{dateformat}}" ng-model="vm.clausulascontratuais.dataaprovacao" is-open="vm.datePickerOpenStatus.dataaprovacao"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataaprovacao')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.clausulascontratuais.dataenvio" for="field_dataenvio">Dataenvio</label>
+                <div class="input-group">
+                    <input id="field_dataenvio" type="text" class="form-control" name="dataenvio" datetime-picker="{{dateformat}}" ng-model="vm.clausulascontratuais.dataenvio" is-open="vm.datePickerOpenStatus.dataenvio"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataenvio')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.clausulascontratuais.datavigente" for="field_datavigente">Datavigente</label>
+                <div class="input-group">
+                    <input id="field_datavigente" type="text" class="form-control" name="datavigente" datetime-picker="{{dateformat}}" ng-model="vm.clausulascontratuais.datavigente" is-open="vm.datePickerOpenStatus.datavigente"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datavigente')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.clausulascontratuais.idclausulascontratuais" for="field_idclausulascontratuais">Idclausulascontratuais</label>
+            <input type="number" class="form-control" name="idclausulascontratuais" id="field_idclausulascontratuais"
+                    ng-model="vm.clausulascontratuais.idclausulascontratuais"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="meioambienteApp.clausulascontratuais.idcontratoagente" for="field_idcontratoagente">Idcontratoagente</label>
+            <select class="form-control" id="field_idcontratoagente" name="idcontratoagente" ng-model="vm.clausulascontratuais.idcontratoagenteId" ng-options="contratoagente.id as contratoagente.id for contratoagente in vm.contratoagentes"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

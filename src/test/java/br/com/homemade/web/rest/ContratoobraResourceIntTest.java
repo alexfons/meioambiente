@@ -39,6 +39,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = MeioambienteApp.class)
 public class ContratoobraResourceIntTest {
 
+    private static final String DEFAULT_TIPO = "AAAAAAAAAA";
+    private static final String UPDATED_TIPO = "BBBBBBBBBB";
+
     @Autowired
     private ContratoobraRepository contratoobraRepository;
 
@@ -78,7 +81,8 @@ public class ContratoobraResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Contratoobra createEntity(EntityManager em) {
-        Contratoobra contratoobra = new Contratoobra();
+        Contratoobra contratoobra = new Contratoobra()
+            .tipo(DEFAULT_TIPO);
         return contratoobra;
     }
 
@@ -103,6 +107,7 @@ public class ContratoobraResourceIntTest {
         List<Contratoobra> contratoobraList = contratoobraRepository.findAll();
         assertThat(contratoobraList).hasSize(databaseSizeBeforeCreate + 1);
         Contratoobra testContratoobra = contratoobraList.get(contratoobraList.size() - 1);
+        assertThat(testContratoobra.getTipo()).isEqualTo(DEFAULT_TIPO);
     }
 
     @Test
@@ -135,7 +140,8 @@ public class ContratoobraResourceIntTest {
         restContratoobraMockMvc.perform(get("/api/contratoobras?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(contratoobra.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(contratoobra.getId().intValue())))
+            .andExpect(jsonPath("$.[*].tipo").value(hasItem(DEFAULT_TIPO.toString())));
     }
 
     @Test
@@ -148,7 +154,8 @@ public class ContratoobraResourceIntTest {
         restContratoobraMockMvc.perform(get("/api/contratoobras/{id}", contratoobra.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(contratoobra.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(contratoobra.getId().intValue()))
+            .andExpect(jsonPath("$.tipo").value(DEFAULT_TIPO.toString()));
     }
 
     @Test
@@ -168,6 +175,8 @@ public class ContratoobraResourceIntTest {
 
         // Update the contratoobra
         Contratoobra updatedContratoobra = contratoobraRepository.findOne(contratoobra.getId());
+        updatedContratoobra
+            .tipo(UPDATED_TIPO);
         ContratoobraDTO contratoobraDTO = contratoobraMapper.toDto(updatedContratoobra);
 
         restContratoobraMockMvc.perform(put("/api/contratoobras")
@@ -179,6 +188,7 @@ public class ContratoobraResourceIntTest {
         List<Contratoobra> contratoobraList = contratoobraRepository.findAll();
         assertThat(contratoobraList).hasSize(databaseSizeBeforeUpdate);
         Contratoobra testContratoobra = contratoobraList.get(contratoobraList.size() - 1);
+        assertThat(testContratoobra.getTipo()).isEqualTo(UPDATED_TIPO);
     }
 
     @Test

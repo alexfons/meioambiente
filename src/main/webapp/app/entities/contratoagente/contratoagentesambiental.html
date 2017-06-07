@@ -1,0 +1,88 @@
+<div>
+    <h2 data-translate="meioambienteApp.contratoagente.home.title">Contratoagentes</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="contratoagente-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.contratoagente.home.createLabel">
+                        Create new Contratoagente
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.contratoagente.dataaprovacao">Dataaprovacao</span></th>
+                    <th><span data-translate="meioambienteApp.contratoagente.dataassinatura">Dataassinatura</span></th>
+                    <th><span data-translate="meioambienteApp.contratoagente.dataconclusao">Dataconclusao</span></th>
+                    <th><span data-translate="meioambienteApp.contratoagente.datainicio">Datainicio</span></th>
+                    <th><span data-translate="meioambienteApp.contratoagente.idcontratoagente">Idcontratoagente</span></th>
+                    <th><span data-translate="meioambienteApp.contratoagente.nomecontratoagente">Nomecontratoagente</span></th>
+                    <th><span data-translate="meioambienteApp.contratoagente.referenciabid">Referenciabid</span></th>
+                    <th><span data-translate="meioambienteApp.contratoagente.acordocredito">Acordocredito</span></th>
+                    <th><span data-translate="meioambienteApp.contratoagente.mutuario">Mutuario</span></th>
+                    <th><span data-translate="meioambienteApp.contratoagente.executor">Executor</span></th>
+                    <th><span data-translate="meioambienteApp.contratoagente.clausulascontratuais">Clausulascontratuais</span></th>
+                    <th><span data-translate="meioambienteApp.contratoagente.descricao">Descricao</span></th>
+                    <th><span data-translate="meioambienteApp.contratoagente.moeda">Moeda</span></th>
+                    <th><span data-translate="meioambienteApp.contratoagente.percentuallocal">Percentuallocal</span></th>
+                    <th><span data-translate="meioambienteApp.contratoagente.percentualagente">Percentualagente</span></th>
+                    <th><span data-translate="meioambienteApp.contratoagente.valorcontrato">Valorcontrato</span></th>
+                    <th><span data-translate="meioambienteApp.contratoagente.valor">Valor</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="contratoagente in vm.contratoagentes track by contratoagente.id">
+                    <td><a ui-sref="contratoagente-ambiental-detail({id:contratoagente.id})">{{contratoagente.id}}</a></td>
+                    <td>{{contratoagente.dataaprovacao | date:'medium'}}</td>
+                    <td>{{contratoagente.dataassinatura | date:'medium'}}</td>
+                    <td>{{contratoagente.dataconclusao | date:'medium'}}</td>
+                    <td>{{contratoagente.datainicio | date:'medium'}}</td>
+                    <td>{{contratoagente.idcontratoagente}}</td>
+                    <td>{{contratoagente.nomecontratoagente}}</td>
+                    <td>{{contratoagente.referenciabid}}</td>
+                    <td>{{contratoagente.acordocredito}}</td>
+                    <td>{{contratoagente.mutuario}}</td>
+                    <td>{{contratoagente.executor}}</td>
+                    <td>{{contratoagente.clausulascontratuais}}</td>
+                    <td>{{contratoagente.descricao}}</td>
+                    <td>{{contratoagente.moeda}}</td>
+                    <td>{{contratoagente.percentuallocal}}</td>
+                    <td>{{contratoagente.percentualagente}}</td>
+                    <td>{{contratoagente.valorcontrato}}</td>
+                    <td>{{contratoagente.valor}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="contratoagente-ambiental-detail({id:contratoagente.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="contratoagente-ambiental.edit({id:contratoagente.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="contratoagente-ambiental.delete({id:contratoagente.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "proposta" : {
+            "home": {
+                "title": "Propostas",
+                "createLabel": "Criar novo Proposta",
+                "createOrEditLabel": "Criar ou editar Proposta"
+            },
+            "created": "Um novo Proposta é criado com o identificador {{ param }}",
+            "updated": "Um Proposta é atualizado com o identificador {{ param }}",
+            "deleted": "Um Proposta é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Proposta {{ id }}?"
+            },
+            "detail": {
+                "title": "Proposta"
+            }
+        }
+    }
+}

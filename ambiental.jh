@@ -1,217 +1,417 @@
-entity Aditivocontrato  {
-	id Integer, 
+entity Aditivocontrato{
+	data ZonedDateTime,
+	id Integer,
 	numaditivo Integer,
-	tipoaditivo String ,
-	data ZonedDateTime ,
-    prazoaditivo Integer,
+	prazoaditivo Integer,
+	tipoaditivo String,
 	valor BigDecimal
 }
-entity Participante  {
-	id  Integer }
-    
-entity Tipoadministrativo  {
-	id  Integer }
-    
-entity Ocorrenciaapresentacao  {
-	id  Integer }
-    
-entity Foto  {
-	id  Integer }
-    
-entity Inspetor  {
-	id  Integer }
-    
-entity Fiscal  {
-	id  Integer }
-    
-entity Trecho  {
-	id  Integer }
-    
-entity Empresa  {
-	id  Integer }
-entity Projeto  {
-	id  Integer }
-entity Orgaoemissor  {
-	id  Integer }
-entity Condicionante  {
-	id  Integer }
-entity Documento  {
-	id  Integer }
-    
-entity Contratoobra  {
-	id  Integer }
-    
-entity Historico  {
-	id  Integer }
-entity Administrativo  {
-	id  Integer ,
-	descricao String ,
-	assunto  String,
-	local String ,     
+entity Administrativo{
 	album String,
-	folder String ,
-	consideracao String ,
+	assunto String,
+	consideracao String,
+	data ZonedDateTime,
+	descricao String,
+	folder String,
+	id Integer,
+	local String
+}
+entity Apresentacao{
+	id Integer,
+	numero Integer,
+	obs String,
+	notificacao Boolean,
 	data ZonedDateTime
 }
-entity Obra  {
+entity Atividade{
+	id Integer,
+	codigo String,
+	descricao String
+}
+entity Atividadeexecutadamensal{
+	percentualatacado Float
+	fim Float,
+	id Integer,
+	inicio Double,
+	lado String,
+	percentualconcluido Float
+}
+entity Atividadelicenca{
+	id Integer,
+	codigo String,
+	descricao String
+}
+entity Auc{
+	id Integer,
+	fceivalor BigDecimal,
+	inativo Boolean,
+	prazomes Boolean,
+	reposicaoflorestal Boolean,
+	compensacaoambiental Boolean,
+	prazovalidade Integer,
+	fcei String,
+	reciboentregadocs String,
+	numero String,
+	numeroprocesso String,
+	numerooficiolocalpedido String,
+	numerooficiooficialpedido String,
+	numerooficiolocalrecebimento String,
+	numerooficiooficialrecebimento String,
+	numeroparecertecnico String,
+	numerooficioprorrogacao1 String,
+	numerooficioconcessaoprorrogacao1 String,
+	numerooficioprorrogacao2 String,
+	numerooficioconcessaoprorrogacao2 String,
+	numerooficioprorrogacao3 String,
+	numerooficioconcessaoprorrogacao3 String,
+	album String,
+	folder String,
+	pendente String,
+	andamento String,
+	descricao String,
+	observacao String,
+	docsentregues String,
+	reposicaoflorestalobs String,
+	compensacaoambientalobs String,
+	fceidataprotocolo ZonedDateTime,
+	fceidatapagamento ZonedDateTime,
+	dataentregadocs ZonedDateTime,
+	dataoficiolocalpedido ZonedDateTime,
+	dataoficioreoficialpedido ZonedDateTime,
+	dataoficiolocalrecebimento ZonedDateTime,
+	dataoficioreoficialrecebimento ZonedDateTime,
+	dataemissao ZonedDateTime,
+	datapedidoprorrogacao1 ZonedDateTime,
+	dataexpedicaoprorrogacao1 ZonedDateTime,
+	datavalidadeprorrogacao1 ZonedDateTime,
+	datapedidoprorrogacao2 ZonedDateTime,
+	dataexpedicaoprorrogacao2 ZonedDateTime,
+	datavalidadeprorrogacao2 ZonedDateTime,
+	datapedidoprorrogacao3 ZonedDateTime,
+	dataexpedicaoprorrogacao3 ZonedDateTime,
+	datavalidadeprorrogacao3 ZonedDateTime,
+	datavencimento ZonedDateTime,
+	datavencimentoatual ZonedDateTime
+}
+entity Autorizacao{
+	album String,
+	andamento String,
+	data ZonedDateTime,
+	dataentregadocs ZonedDateTime,
+	dataexpedicaoprorrogacao1 ZonedDateTime,
+	dataexpedicaoprorrogacao2 ZonedDateTime,
+	dataexpedicaoprorrogacao3 ZonedDateTime,
+	datapedidoprorrogacao1 ZonedDateTime,
+	datapedidoprorrogacao2 ZonedDateTime,
+	datapedidoprorrogacao3 ZonedDateTime,
+	datavalidadeprorrogacao1 ZonedDateTime,
+	datavalidadeprorrogacao2 ZonedDateTime,
+	datavalidadeprorrogacao3 ZonedDateTime,
+	datavencimento ZonedDateTime,
+	datavencimentoatual ZonedDateTime,
+	descricao String,
+	docsentregues String,
+	fcei String,
+	fceidatapagamento ZonedDateTime,
+	fceidataprotocolo ZonedDateTime,
+	fceivalor Double,
+	folder String,
+	id Integer,
+	inativo Boolean,
+	kmfim Integer,
+	kminicio Integer,
+	lado String,
+	naoria Boolean,
+	numero String,
+	numerooficioconcessaoprorrogacao1 String,
+	numerooficioconcessaoprorrogacao2 String,
+	numerooficioconcessaoprorrogacao3 String,
+	numerooficioprorrogacao1 String,
+	numerooficioprorrogacao2 String,
+	numerooficioprorrogacao3 String,
+	numeroprocesso String,
+	observacao String,
+	pendente String,
+	prazomes Boolean,
+	prazovalidade Integer,
+	proprietario String,
+	reciboentregadocs String
+}
+entity Balanco{
+	datafim ZonedDateTime,
+	datainicio ZonedDateTime,
+	descricao String,
+	id Integer,
+	taxa Double
+}
+entity Banco{
+	cidadedep String,
+	cidadeint String,
+	codswifdep String,
+	codswifint String,
+	contafeddep Boolean,
+	contafedint Boolean,
+	enderecodep String,
+	enderecoint String,
+	idbanco Integer,
+	instrucoesespeciaisdep String,
+	instrucoesespeciaisint String,
+	nabadep Integer,
+	nabaint Integer,
+	ncontadep Integer,
+	ncontaint Integer,
+	nomebancodep String,
+	nomebancoint String,
+	paisdep String,
+	paisint String
+}
+entity Categoriainversao{
+	codcategoria String,
+	descricaocategoria String,
+	descricaoitem String,
+	descricaosubcategoria String,
+	descricaosubitem String,
+	idcategoriainversao Integer,
+	item String,
+	percentualcatagente Double,
+	percentualcatlocal Double,
+	subcategoria String,
+	subitem String,
+	valorcatagente Double,
+	valorcatlocal Double,
+	valorporcategoria Double
+}
+entity Certificadoconformidade{
+	data ZonedDateTime,
+	dataliberacao ZonedDateTime,
+	dataparalisacao ZonedDateTime,
+	datareinicio ZonedDateTime,
+	edital String,
+	id Integer,
+	item String,
+	liberacao String,
+	liberacaoadministrativamente Boolean,
+	periodo String,
+	texto String,
+	texto2 String
+}
+entity Clausulascontratuais{
+	artigo String,
+	descricao String,
+	noficioenviado String,
+	noficioaprovado String,
+	dataaprovacao ZonedDateTime,
+	dataenvio ZonedDateTime,
+	datavigente ZonedDateTime,
+	idclausulascontratuais Integer
+}
+entity Coluna{
+	descricao String,
+	id Integer,
+	lista Boolean,
+	sequencia Integer
+}
+entity Condicionante{
+	ativo Boolean,
+	conteudo String,
+	data ZonedDateTime,
+	descricao String,
+	id Integer,
+	observacao String,
+	situacao String
+}
+entity Contabancaria{
+	idcontabancaria Integer,
+	nconta String,
+	nbanco String,
+	descricao String
+}
+entity Contrato{
+	codigobid String,
+	dataatual ZonedDateTime,
+	databasecontrato ZonedDateTime,
+	datacontratacao ZonedDateTime,
+	dataterminocaucao ZonedDateTime,
+	extatualcontrato BigDecimal,
+	extinicialcontrato BigDecimal,
+	id Integer,
+	ncontrato String,
+	ordemservico String,
+	prazoatual Integer,
+	prazoinicial Integer,
+	rodoviacontrato String,
+	saldocontratual BigDecimal,
+	situacao String,
+	taxaatual BigDecimal,
+	taxaoriginal BigDecimal,
+	tipocontrato String,
+	titulocontrato String,
+	trechocontrato String,
+	valoratual BigDecimal,
+	valorcaucao BigDecimal,
+	valorpi BigDecimal,
+	valorreajuste BigDecimal
+}
+entity Contratoagente{
+	dataaprovacao ZonedDateTime,
+	dataassinatura ZonedDateTime,
+	dataconclusao ZonedDateTime,
+	datainicio ZonedDateTime,
+	idcontratoagente Integer,
+	nomecontratoagente String,
+	referenciabid String,
+	acordocredito String,
+	mutuario String,
+	executor String,
+	clausulascontratuais String,
+	descricao String,
+	moeda String,
+	percentuallocal Double,
+	percentualagente Double,
+	valorcontrato Double,
+	valor Double
+}
+entity Contratoobra{
+	id Integer,
+	tipo String
+}
+entity Contratoprojeto{
+	id Integer,
+	tipo String
+}
+entity Coordenada{
+	a Float,
+	id Integer,
+	km Float,
+	n Float,
+	s Float
+}
+entity Custosconcorrentes{
+	datainicio ZonedDateTime,
+	id Integer,
+	nsolicitacao Integer,
+	valorus BigDecimal,
+	valorpagoreais BigDecimal,
+	taxa BigDecimal
+}
+entity Desapropriacao{
+	dataop ZonedDateTime,
+	iddesapropria Integer,
+	nprocesso String,
+	nomedesapropriado String,
+	local String,
+	nsolicitacao Integer,
+	valorpago BigDecimal,
+	valorus BigDecimal
+}
+entity Documento{
+	id Integer
+}
+entity Empresa{
+	id Integer
+}
+entity Empresacontrato{
+	id Integer
+}
+entity Fiscal{
+	id Integer
+}
+entity Fonte{
+	id Integer
+}
+entity Foto{
+	id Integer
+}
+entity Historico{
+	id Integer
+}
+entity Informecertificadoirregularidade{
+	id Integer
+}
+entity Inspetor{
+	id Integer
+}
+entity Linha{
+	id Integer
+}
+entity Natureza{
+	id Integer
+}
+entity Notificacaocertificadoirregularidade{
+	id Integer
+}
+entity Obra{
 	id Integer,
 	pendente String,
 	map String,
-	user String ,
-	track String ,
+	user String,
+	track String,
 	certificadoMes String
 }
-entity TipoObra {
-	id Integer ,
-	descricao String ,
-	categoria String ,
-	subcategoria String 
+entity Ocorrenciaapresentacao{
+	id Integer
 }
-entity Apresentacao  {
+entity Ocorrenciacertificadoirregularidade{
+	id Integer
+}
+entity Orgaoemissor{
+	id Integer
+}
+entity Participante{
+	id Integer
+}
+entity Planocontas{
+	id Integer
+}
+entity Projeto{
+	id Integer
+}
+entity Proposta{
+	id Integer
+}
+entity Referencia{
+	id Integer
+}
+entity Residente{
+	id Integer
+}
+entity Rodovia{
+	id Integer
+}
+entity Responsavel{
+	id Integer
+}
+entity TipoObra{
 	id Integer,
-	numero Integer ,
-	obs String ,
-	notificacao Boolean ,
-	data ZonedDateTime
+	descricao String,
+	categoria String,
+	subcategoria String
 }
-entity Atividade  {
-	id Integer,
-	codigo String ,
-	descricao String 
+entity Tipoadministrativo{
+	id Integer
 }
-entity Atividadeexecutadamensal  {
-	percentualatacado Float
-	fim Float ,
-	id Integer ,
-	inicio Double ,
-	lado String,
-	percentualconcluido Float 
+entity Tipoautorizacao{
+	id Integer
 }
-entity Atividadelicenca  {
-	id Integer,
-	codigo String ,	  
-	descricao String
+entity Tipocertificadoconformidade{
+	id Integer
 }
-entity Auc   {
-	 id Integer,
-	fceivalor BigDecimal ,
-	inativo Boolean ,
-	prazomes Boolean ,
-	reposicaoflorestal Boolean ,
-	compensacaoambiental Boolean ,
-	prazovalidade Integer ,
-	fcei String ,
-	reciboentregadocs String ,
-	numero String ,
-	numeroprocesso String ,
-	numerooficiolocalpedido String ,
-	numerooficiooficialpedido String ,
-	numerooficiolocalrecebimento String ,
-	numerooficiooficialrecebimento String ,
-	 numeroparecertecnico String, 
-	numerooficioprorrogacao1 String ,
-	numerooficioconcessaoprorrogacao1 String ,
-	numerooficioprorrogacao2 String ,
-	numerooficioconcessaoprorrogacao2 String ,
-	numerooficioprorrogacao3 String ,
-	numerooficioconcessaoprorrogacao3 String ,
-	album String ,
-	folder String ,
-	pendente String , 
-	andamento String ,
-	
-	descricao String ,
-	
-	 observacao String,
-	
-	 docsentregues String,
-	
-	 reposicaoflorestalobs String,
-	
-	 compensacaoambientalobs String,
-	
-	 fceidataprotocolo ZonedDateTime,
-	
-	 fceidatapagamento ZonedDateTime,
-	
-	 dataentregadocs ZonedDateTime,
-	
-	 dataoficiolocalpedido ZonedDateTime,
-	
-	 dataoficioreoficialpedido ZonedDateTime,
-	
-	 dataoficiolocalrecebimento ZonedDateTime,
-	
-	 dataoficioreoficialrecebimento ZonedDateTime,
-	
-	 dataemissao ZonedDateTime,
-	
-	 datapedidoprorrogacao1 ZonedDateTime,
-	
-	 dataexpedicaoprorrogacao1 ZonedDateTime,
-	
-	 datavalidadeprorrogacao1 ZonedDateTime,
-	
-	 datapedidoprorrogacao2 ZonedDateTime,
-	
-	 dataexpedicaoprorrogacao2 ZonedDateTime,
-	
-	 datavalidadeprorrogacao2 ZonedDateTime,
-	
-	 datapedidoprorrogacao3 ZonedDateTime,
-	
-	 dataexpedicaoprorrogacao3 ZonedDateTime,
-	
-	 datavalidadeprorrogacao3 ZonedDateTime,
-	
-	 datavencimento ZonedDateTime,
-	
-	 datavencimentoatual ZonedDateTime,
-	
+entity Trecho{
+	id Integer
 }
-/*enum Language {*/
-/*    FRENCH, ENGLISH, SPANISH*/
-/*}*/
-relationship ManyToMany {
-	Obra{contratosobra} to Contratoobra,
-	Obra{historicos} to Historico,
-	Administrativo{fotos} to Foto,
-	Administrativo{docs} to Documento,
-	Administrativo{participantes} to Participante,
-	Apresentacao{ocorrenciasapresentacao}	  to Ocorrenciaapresentacao,
-	Apresentacao{fotos}	 to Foto ,
-   Auc{condicionantes} to Condicionante ,
-	Auc{fotos} to Foto,
-	Auc{ docs} to Documento
+relationship ManyToMany{
+	Obra{contratosobra} to Contratoobra, Contrato{aditivocontratos} to Aditivocontrato, Contrato{contratosobra} to Contratoobra, Contrato{empresascontrato} to Empresacontrato, Certificadoconformidade{informescertificadoirregularidade} to Informecertificadoirregularidade, Certificadoconformidade{notificacaoscertificadoirregularidade} to Notificacaocertificadoirregularidade, Certificadoconformidade{ocorrenciascertificadoirregularidade} to Ocorrenciacertificadoirregularidade, Obra{historicos} to Historico, Administrativo{fotos} to Foto, Autorizacao{fotos} to Foto, Administrativo{docs} to Documento, Administrativo{participantes} to Participante, Apresentacao{ocorrenciasapresentacao}	  to Ocorrenciaapresentacao, Apresentacao{fotos}	 to Foto, Auc{condicionantes} to Condicionante, Auc{fotos} to Foto, Auc{ docs} to Documento, Autorizacao{ docs} to Documento
 }
-/*relationship OneToMany {*/
-/*}*/
-relationship ManyToOne {
-	Atividadeexecutadamensal {atividade} to Atividade,
-	
-	Administrativo{obra} to Obra,
-	Obra{tipoobra} to TipoObra,
-	Obra{inspetor} to Inspetor,
-	Obra{fiscal} to Fiscal,
-	Obra{trecho} to Trecho,
-	Apresentacao { obra} to Obra,
-    
-    Auc{atividadelicenca} to Atividadelicenca ,
-	Auc{orgaoemissor} to Orgaoemissor ,
-	Auc{obra} to Obra ,
-	Auc{projeto} to Projeto ,
-	Auc{empresa} to Empresa 
-	
+relationship ManyToOne{
+	Autorizacao{atividadelicenca} to Atividadelicenca, Desapropriacao{contacontabilC1} to Planocontas, Desapropriacao{contacontabilC2} to Planocontas, Desapropriacao{contacontabilD1} to Planocontas, Desapropriacao{contacontabilD2} to Planocontas, Desapropriacao{divcontacontabilC1} to Planocontas, Desapropriacao{divcontacontabilD1} to Planocontas, Desapropriacao{juscontacontabilC1} to Planocontas, Desapropriacao{juscontacontabilD1} to Planocontas, Desapropriacao{fonte} to Fonte, Desapropriacao{idcategoriainversao} to Categoriainversao, Desapropriacao{idcontabancaria} to Contabancaria, Desapropriacao{idreferencia} to Referencia, Desapropriacao{rodovia} to Rodovia, Custosconcorrentes{contacontabilC1} to Planocontas, Custosconcorrentes{contacontabilC2} to Planocontas, Custosconcorrentes{contacontabilD1} to Planocontas, Custosconcorrentes{contacontabilD2} to Planocontas, Custosconcorrentes{divcontacontabilC1} to Planocontas, Custosconcorrentes{divcontacontabilD1} to Planocontas, Custosconcorrentes{juscontacontabilC1} to Planocontas, Custosconcorrentes{juscontacontabilD1} to Planocontas, Custosconcorrentes{fonte} to Fonte, Custosconcorrentes{idcategoriainversao} to Categoriainversao, Contratoprojeto{contrato} to Contrato, Contratoprojeto{responsavel} to Responsavel, Clausulascontratuais{idcontratoagente} to Contratoagente, Contratoobra{contrato} to Contrato, Contratoobra{residente} to Residente, Contratoobra{responsavel} to Responsavel, Contabancaria{idplanocontas} to Planocontas, Contrato{contacontabilC2} to Planocontas, Contrato{contacontabilD1} to Planocontas, Contrato{contacontabilD2} to Planocontas, Contrato{divcontacontabilC1} to Planocontas, Contrato{divcontacontabilD1} to Planocontas, Contrato{juscontacontabilC1} to Planocontas, Contrato{juscontacontabilD1} to Planocontas, Contrato{idnatureza} to Natureza, Contrato{proposta} to Proposta, Contrato{idcategoriainversao} to Categoriainversao, Certificadoconformidade{obra} to Obra, Certificadoconformidade{tipo} to Tipocertificadoconformidade, Certificadoconformidade{tipocertificadoconformidade} to Tipocertificadoconformidade, Categoriainversao{idcontratoagente} to Contratoagente, Autorizacao{empresa} to Empresa, Autorizacao{obra} to Obra, Autorizacao{orgaoemissor} to Orgaoemissor, Autorizacao{projeto} to Projeto, Autorizacao{tipoautorizacao} to Tipoautorizacao, Atividadeexecutadamensal{atividade} to Atividade, Administrativo{obra} to Obra, Obra{tipoobra} to TipoObra, Obra{inspetor} to Inspetor, Obra{fiscal} to Fiscal, Obra{trecho} to Trecho, Apresentacao{ obra} to Obra, Auc{atividadelicenca} to Atividadelicenca, Auc{orgaoemissor} to Orgaoemissor, Auc{obra} to Obra, Auc{projeto} to Projeto, Auc{empresa} to Empresa
 }
-/* defining multiple oneToOne relationships*/
-relationship OneToOne {
-	 Administrativo{tipo} to Tipoadministrativo
+relationship OneToOne{
+	Administrativo{tipo} to Tipoadministrativo, Contrato{idempresa} to Empresa
 }
-/* Set pagination options*/
+relationship OneToMany{
+	Coluna{opcoes} to Linha
+}
 paginate Obra, Auc with infinite-scroll
 paginate Foto with pagination
 dto * with mapstruct
-/* Set service options to all except few*/
-/*service all with serviceImpl except Employee, Job*/
-/* Set an angular suffix*/
 angularSuffix * with ambiental

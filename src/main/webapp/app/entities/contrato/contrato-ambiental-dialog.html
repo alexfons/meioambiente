@@ -1,0 +1,258 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myContratoLabel" data-translate="meioambienteApp.contrato.home.createOrEditLabel">Create or edit a Contrato</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.contrato.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.contrato.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.contrato.codigobid" for="field_codigobid">Codigobid</label>
+            <input type="text" class="form-control" name="codigobid" id="field_codigobid"
+                    ng-model="vm.contrato.codigobid"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.contrato.dataatual" for="field_dataatual">Dataatual</label>
+                <div class="input-group">
+                    <input id="field_dataatual" type="text" class="form-control" name="dataatual" datetime-picker="{{dateformat}}" ng-model="vm.contrato.dataatual" is-open="vm.datePickerOpenStatus.dataatual"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataatual')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.contrato.databasecontrato" for="field_databasecontrato">Databasecontrato</label>
+                <div class="input-group">
+                    <input id="field_databasecontrato" type="text" class="form-control" name="databasecontrato" datetime-picker="{{dateformat}}" ng-model="vm.contrato.databasecontrato" is-open="vm.datePickerOpenStatus.databasecontrato"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('databasecontrato')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.contrato.datacontratacao" for="field_datacontratacao">Datacontratacao</label>
+                <div class="input-group">
+                    <input id="field_datacontratacao" type="text" class="form-control" name="datacontratacao" datetime-picker="{{dateformat}}" ng-model="vm.contrato.datacontratacao" is-open="vm.datePickerOpenStatus.datacontratacao"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datacontratacao')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.contrato.dataterminocaucao" for="field_dataterminocaucao">Dataterminocaucao</label>
+                <div class="input-group">
+                    <input id="field_dataterminocaucao" type="text" class="form-control" name="dataterminocaucao" datetime-picker="{{dateformat}}" ng-model="vm.contrato.dataterminocaucao" is-open="vm.datePickerOpenStatus.dataterminocaucao"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataterminocaucao')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.contrato.extatualcontrato" for="field_extatualcontrato">Extatualcontrato</label>
+            <input type="number" class="form-control" name="extatualcontrato" id="field_extatualcontrato"
+                    ng-model="vm.contrato.extatualcontrato"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.contrato.extinicialcontrato" for="field_extinicialcontrato">Extinicialcontrato</label>
+            <input type="number" class="form-control" name="extinicialcontrato" id="field_extinicialcontrato"
+                    ng-model="vm.contrato.extinicialcontrato"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.contrato.ncontrato" for="field_ncontrato">Ncontrato</label>
+            <input type="text" class="form-control" name="ncontrato" id="field_ncontrato"
+                    ng-model="vm.contrato.ncontrato"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.contrato.ordemservico" for="field_ordemservico">Ordemservico</label>
+            <input type="text" class="form-control" name="ordemservico" id="field_ordemservico"
+                    ng-model="vm.contrato.ordemservico"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.contrato.prazoatual" for="field_prazoatual">Prazoatual</label>
+            <input type="number" class="form-control" name="prazoatual" id="field_prazoatual"
+                    ng-model="vm.contrato.prazoatual"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.contrato.prazoinicial" for="field_prazoinicial">Prazoinicial</label>
+            <input type="number" class="form-control" name="prazoinicial" id="field_prazoinicial"
+                    ng-model="vm.contrato.prazoinicial"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.contrato.rodoviacontrato" for="field_rodoviacontrato">Rodoviacontrato</label>
+            <input type="text" class="form-control" name="rodoviacontrato" id="field_rodoviacontrato"
+                    ng-model="vm.contrato.rodoviacontrato"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.contrato.saldocontratual" for="field_saldocontratual">Saldocontratual</label>
+            <input type="number" class="form-control" name="saldocontratual" id="field_saldocontratual"
+                    ng-model="vm.contrato.saldocontratual"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.contrato.situacao" for="field_situacao">Situacao</label>
+            <input type="text" class="form-control" name="situacao" id="field_situacao"
+                    ng-model="vm.contrato.situacao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.contrato.taxaatual" for="field_taxaatual">Taxaatual</label>
+            <input type="number" class="form-control" name="taxaatual" id="field_taxaatual"
+                    ng-model="vm.contrato.taxaatual"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.contrato.taxaoriginal" for="field_taxaoriginal">Taxaoriginal</label>
+            <input type="number" class="form-control" name="taxaoriginal" id="field_taxaoriginal"
+                    ng-model="vm.contrato.taxaoriginal"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.contrato.tipocontrato" for="field_tipocontrato">Tipocontrato</label>
+            <input type="text" class="form-control" name="tipocontrato" id="field_tipocontrato"
+                    ng-model="vm.contrato.tipocontrato"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.contrato.titulocontrato" for="field_titulocontrato">Titulocontrato</label>
+            <input type="text" class="form-control" name="titulocontrato" id="field_titulocontrato"
+                    ng-model="vm.contrato.titulocontrato"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.contrato.trechocontrato" for="field_trechocontrato">Trechocontrato</label>
+            <input type="text" class="form-control" name="trechocontrato" id="field_trechocontrato"
+                    ng-model="vm.contrato.trechocontrato"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.contrato.valoratual" for="field_valoratual">Valoratual</label>
+            <input type="number" class="form-control" name="valoratual" id="field_valoratual"
+                    ng-model="vm.contrato.valoratual"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.contrato.valorcaucao" for="field_valorcaucao">Valorcaucao</label>
+            <input type="number" class="form-control" name="valorcaucao" id="field_valorcaucao"
+                    ng-model="vm.contrato.valorcaucao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.contrato.valorpi" for="field_valorpi">Valorpi</label>
+            <input type="number" class="form-control" name="valorpi" id="field_valorpi"
+                    ng-model="vm.contrato.valorpi"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.contrato.valorreajuste" for="field_valorreajuste">Valorreajuste</label>
+            <input type="number" class="form-control" name="valorreajuste" id="field_valorreajuste"
+                    ng-model="vm.contrato.valorreajuste"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="meioambienteApp.contrato.idempresa" for="field_idempresa">Idempresa</label>
+            <select class="form-control" id="field_idempresa" name="idempresa" ng-model="vm.contrato.idempresaId" ng-options="empresa.id as empresa.id for empresa in vm.idempresas | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.contrato.contacontabilC2" for="field_contacontabilC2">Contacontabil C 2</label>
+            <select class="form-control" id="field_contacontabilC2" name="contacontabilC2" ng-model="vm.contrato.contacontabilC2Id" ng-options="planocontas.id as planocontas.id for planocontas in vm.planocontas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.contrato.contacontabilD1" for="field_contacontabilD1">Contacontabil D 1</label>
+            <select class="form-control" id="field_contacontabilD1" name="contacontabilD1" ng-model="vm.contrato.contacontabilD1Id" ng-options="planocontas.id as planocontas.id for planocontas in vm.planocontas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.contrato.contacontabilD2" for="field_contacontabilD2">Contacontabil D 2</label>
+            <select class="form-control" id="field_contacontabilD2" name="contacontabilD2" ng-model="vm.contrato.contacontabilD2Id" ng-options="planocontas.id as planocontas.id for planocontas in vm.planocontas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.contrato.divcontacontabilC1" for="field_divcontacontabilC1">Divcontacontabil C 1</label>
+            <select class="form-control" id="field_divcontacontabilC1" name="divcontacontabilC1" ng-model="vm.contrato.divcontacontabilC1Id" ng-options="planocontas.id as planocontas.id for planocontas in vm.planocontas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.contrato.divcontacontabilD1" for="field_divcontacontabilD1">Divcontacontabil D 1</label>
+            <select class="form-control" id="field_divcontacontabilD1" name="divcontacontabilD1" ng-model="vm.contrato.divcontacontabilD1Id" ng-options="planocontas.id as planocontas.id for planocontas in vm.planocontas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.contrato.juscontacontabilC1" for="field_juscontacontabilC1">Juscontacontabil C 1</label>
+            <select class="form-control" id="field_juscontacontabilC1" name="juscontacontabilC1" ng-model="vm.contrato.juscontacontabilC1Id" ng-options="planocontas.id as planocontas.id for planocontas in vm.planocontas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.contrato.juscontacontabilD1" for="field_juscontacontabilD1">Juscontacontabil D 1</label>
+            <select class="form-control" id="field_juscontacontabilD1" name="juscontacontabilD1" ng-model="vm.contrato.juscontacontabilD1Id" ng-options="planocontas.id as planocontas.id for planocontas in vm.planocontas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.contrato.idnatureza" for="field_idnatureza">Idnatureza</label>
+            <select class="form-control" id="field_idnatureza" name="idnatureza" ng-model="vm.contrato.idnaturezaId" ng-options="natureza.id as natureza.id for natureza in vm.naturezas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.contrato.proposta" for="field_proposta">Proposta</label>
+            <select class="form-control" id="field_proposta" name="proposta" ng-model="vm.contrato.propostaId" ng-options="proposta.id as proposta.id for proposta in vm.propostas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.contrato.idcategoriainversao" for="field_idcategoriainversao">Idcategoriainversao</label>
+            <select class="form-control" id="field_idcategoriainversao" name="idcategoriainversao" ng-model="vm.contrato.idcategoriainversaoId" ng-options="categoriainversao.id as categoriainversao.id for categoriainversao in vm.categoriainversaos"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.contrato.aditivocontratos" for="field_aditivocontratos">Aditivocontratos</label>
+            <select class="form-control" id="field_aditivocontratos" multiple name="aditivocontratos" ng-model="vm.contrato.aditivocontratos" ng-options="aditivocontrato as aditivocontrato.id for aditivocontrato in vm.aditivocontratoes track by aditivocontrato.id"></select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.contrato.contratosobra" for="field_contratosobra">Contratosobra</label>
+            <select class="form-control" id="field_contratosobra" multiple name="contratosobra" ng-model="vm.contrato.contratosobras" ng-options="contratoobra as contratoobra.id for contratoobra in vm.contratoobras track by contratoobra.id"></select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.contrato.empresascontrato" for="field_empresascontrato">Empresascontrato</label>
+            <select class="form-control" id="field_empresascontrato" multiple name="empresascontrato" ng-model="vm.contrato.empresascontratoes" ng-options="empresacontrato as empresacontrato.id for empresacontrato in vm.empresacontratoes track by empresacontrato.id"></select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

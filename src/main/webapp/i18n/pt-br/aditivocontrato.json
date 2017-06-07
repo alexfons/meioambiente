@@ -15,10 +15,10 @@
             "detail": {
                 "title": "Aditivocontrato"
             },
-            "numaditivo": "Numaditivo",
-            "tipoaditivo": "Tipoaditivo",
             "data": "Data",
+            "numaditivo": "Numaditivo",
             "prazoaditivo": "Prazoaditivo",
+            "tipoaditivo": "Tipoaditivo",
             "valor": "Valor"
         }
     }

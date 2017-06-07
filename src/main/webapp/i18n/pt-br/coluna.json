@@ -1,0 +1,24 @@
+{
+    "meioambienteApp": {
+        "coluna" : {
+            "home": {
+                "title": "Colunas",
+                "createLabel": "Criar novo Coluna",
+                "createOrEditLabel": "Criar ou editar Coluna"
+            },
+            "created": "Um novo Coluna é criado com o identificador {{ param }}",
+            "updated": "Um Coluna é atualizado com o identificador {{ param }}",
+            "deleted": "Um Coluna é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Coluna {{ id }}?"
+            },
+            "detail": {
+                "title": "Coluna"
+            },
+            "descricao": "Descricao",
+            "lista": "Lista",
+            "sequencia": "Sequencia",
+            "opcoes": "Opcoes"
+        }
+    }
+}

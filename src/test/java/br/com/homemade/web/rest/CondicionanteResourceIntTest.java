@@ -23,8 +23,13 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import java.time.Instant;
+import java.time.ZonedDateTime;
+import java.time.ZoneOffset;
+import java.time.ZoneId;
 import java.util.List;
 
+import static br.com.homemade.web.rest.TestUtil.sameInstant;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -38,6 +43,24 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = MeioambienteApp.class)
 public class CondicionanteResourceIntTest {
+
+    private static final Boolean DEFAULT_ATIVO = false;
+    private static final Boolean UPDATED_ATIVO = true;
+
+    private static final String DEFAULT_CONTEUDO = "AAAAAAAAAA";
+    private static final String UPDATED_CONTEUDO = "BBBBBBBBBB";
+
+    private static final ZonedDateTime DEFAULT_DATA = ZonedDateTime.ofInstant(Instant.ofEpochMilli(0L), ZoneOffset.UTC);
+    private static final ZonedDateTime UPDATED_DATA = ZonedDateTime.now(ZoneId.systemDefault()).withNano(0);
+
+    private static final String DEFAULT_DESCRICAO = "AAAAAAAAAA";
+    private static final String UPDATED_DESCRICAO = "BBBBBBBBBB";
+
+    private static final String DEFAULT_OBSERVACAO = "AAAAAAAAAA";
+    private static final String UPDATED_OBSERVACAO = "BBBBBBBBBB";
+
+    private static final String DEFAULT_SITUACAO = "AAAAAAAAAA";
+    private static final String UPDATED_SITUACAO = "BBBBBBBBBB";
 
     @Autowired
     private CondicionanteRepository condicionanteRepository;
@@ -78,7 +101,13 @@ public class CondicionanteResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Condicionante createEntity(EntityManager em) {
-        Condicionante condicionante = new Condicionante();
+        Condicionante condicionante = new Condicionante()
+            .ativo(DEFAULT_ATIVO)
+            .conteudo(DEFAULT_CONTEUDO)
+            .data(DEFAULT_DATA)
+            .descricao(DEFAULT_DESCRICAO)
+            .observacao(DEFAULT_OBSERVACAO)
+            .situacao(DEFAULT_SITUACAO);
         return condicionante;
     }
 
@@ -103,6 +132,12 @@ public class CondicionanteResourceIntTest {
         List<Condicionante> condicionanteList = condicionanteRepository.findAll();
         assertThat(condicionanteList).hasSize(databaseSizeBeforeCreate + 1);
         Condicionante testCondicionante = condicionanteList.get(condicionanteList.size() - 1);
+        assertThat(testCondicionante.isAtivo()).isEqualTo(DEFAULT_ATIVO);
+        assertThat(testCondicionante.getConteudo()).isEqualTo(DEFAULT_CONTEUDO);
+        assertThat(testCondicionante.getData()).isEqualTo(DEFAULT_DATA);
+        assertThat(testCondicionante.getDescricao()).isEqualTo(DEFAULT_DESCRICAO);
+        assertThat(testCondicionante.getObservacao()).isEqualTo(DEFAULT_OBSERVACAO);
+        assertThat(testCondicionante.getSituacao()).isEqualTo(DEFAULT_SITUACAO);
     }
 
     @Test
@@ -135,7 +170,13 @@ public class CondicionanteResourceIntTest {
         restCondicionanteMockMvc.perform(get("/api/condicionantes?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(condicionante.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(condicionante.getId().intValue())))
+            .andExpect(jsonPath("$.[*].ativo").value(hasItem(DEFAULT_ATIVO.booleanValue())))
+            .andExpect(jsonPath("$.[*].conteudo").value(hasItem(DEFAULT_CONTEUDO.toString())))
+            .andExpect(jsonPath("$.[*].data").value(hasItem(sameInstant(DEFAULT_DATA))))
+            .andExpect(jsonPath("$.[*].descricao").value(hasItem(DEFAULT_DESCRICAO.toString())))
+            .andExpect(jsonPath("$.[*].observacao").value(hasItem(DEFAULT_OBSERVACAO.toString())))
+            .andExpect(jsonPath("$.[*].situacao").value(hasItem(DEFAULT_SITUACAO.toString())));
     }
 
     @Test
@@ -148,7 +189,13 @@ public class CondicionanteResourceIntTest {
         restCondicionanteMockMvc.perform(get("/api/condicionantes/{id}", condicionante.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(condicionante.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(condicionante.getId().intValue()))
+            .andExpect(jsonPath("$.ativo").value(DEFAULT_ATIVO.booleanValue()))
+            .andExpect(jsonPath("$.conteudo").value(DEFAULT_CONTEUDO.toString()))
+            .andExpect(jsonPath("$.data").value(sameInstant(DEFAULT_DATA)))
+            .andExpect(jsonPath("$.descricao").value(DEFAULT_DESCRICAO.toString()))
+            .andExpect(jsonPath("$.observacao").value(DEFAULT_OBSERVACAO.toString()))
+            .andExpect(jsonPath("$.situacao").value(DEFAULT_SITUACAO.toString()));
     }
 
     @Test
@@ -168,6 +215,13 @@ public class CondicionanteResourceIntTest {
 
         // Update the condicionante
         Condicionante updatedCondicionante = condicionanteRepository.findOne(condicionante.getId());
+        updatedCondicionante
+            .ativo(UPDATED_ATIVO)
+            .conteudo(UPDATED_CONTEUDO)
+            .data(UPDATED_DATA)
+            .descricao(UPDATED_DESCRICAO)
+            .observacao(UPDATED_OBSERVACAO)
+            .situacao(UPDATED_SITUACAO);
         CondicionanteDTO condicionanteDTO = condicionanteMapper.toDto(updatedCondicionante);
 
         restCondicionanteMockMvc.perform(put("/api/condicionantes")
@@ -179,6 +233,12 @@ public class CondicionanteResourceIntTest {
         List<Condicionante> condicionanteList = condicionanteRepository.findAll();
         assertThat(condicionanteList).hasSize(databaseSizeBeforeUpdate);
         Condicionante testCondicionante = condicionanteList.get(condicionanteList.size() - 1);
+        assertThat(testCondicionante.isAtivo()).isEqualTo(UPDATED_ATIVO);
+        assertThat(testCondicionante.getConteudo()).isEqualTo(UPDATED_CONTEUDO);
+        assertThat(testCondicionante.getData()).isEqualTo(UPDATED_DATA);
+        assertThat(testCondicionante.getDescricao()).isEqualTo(UPDATED_DESCRICAO);
+        assertThat(testCondicionante.getObservacao()).isEqualTo(UPDATED_OBSERVACAO);
+        assertThat(testCondicionante.getSituacao()).isEqualTo(UPDATED_SITUACAO);
     }
 
     @Test

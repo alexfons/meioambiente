@@ -25,26 +25,26 @@ public class Administrativo implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
-    @Column(name = "descricao")
-    private String descricao;
-
-    @Column(name = "assunto")
-    private String assunto;
-
-    @Column(name = "jhi_local")
-    private String local;
-
     @Column(name = "album")
     private String album;
 
-    @Column(name = "folder")
-    private String folder;
+    @Column(name = "assunto")
+    private String assunto;
 
     @Column(name = "consideracao")
     private String consideracao;
 
     @Column(name = "data")
     private ZonedDateTime data;
+
+    @Column(name = "descricao")
+    private String descricao;
+
+    @Column(name = "folder")
+    private String folder;
+
+    @Column(name = "jhi_local")
+    private String local;
 
     @OneToOne
     @JoinColumn(unique = true)
@@ -82,45 +82,6 @@ public class Administrativo implements Serializable {
         this.id = id;
     }
 
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public Administrativo descricao(String descricao) {
-        this.descricao = descricao;
-        return this;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    public String getAssunto() {
-        return assunto;
-    }
-
-    public Administrativo assunto(String assunto) {
-        this.assunto = assunto;
-        return this;
-    }
-
-    public void setAssunto(String assunto) {
-        this.assunto = assunto;
-    }
-
-    public String getLocal() {
-        return local;
-    }
-
-    public Administrativo local(String local) {
-        this.local = local;
-        return this;
-    }
-
-    public void setLocal(String local) {
-        this.local = local;
-    }
-
     public String getAlbum() {
         return album;
     }
@@ -134,17 +95,17 @@ public class Administrativo implements Serializable {
         this.album = album;
     }
 
-    public String getFolder() {
-        return folder;
+    public String getAssunto() {
+        return assunto;
     }
 
-    public Administrativo folder(String folder) {
-        this.folder = folder;
+    public Administrativo assunto(String assunto) {
+        this.assunto = assunto;
         return this;
     }
 
-    public void setFolder(String folder) {
-        this.folder = folder;
+    public void setAssunto(String assunto) {
+        this.assunto = assunto;
     }
 
     public String getConsideracao() {
@@ -171,6 +132,45 @@ public class Administrativo implements Serializable {
 
     public void setData(ZonedDateTime data) {
         this.data = data;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public Administrativo descricao(String descricao) {
+        this.descricao = descricao;
+        return this;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public String getFolder() {
+        return folder;
+    }
+
+    public Administrativo folder(String folder) {
+        this.folder = folder;
+        return this;
+    }
+
+    public void setFolder(String folder) {
+        this.folder = folder;
+    }
+
+    public String getLocal() {
+        return local;
+    }
+
+    public Administrativo local(String local) {
+        this.local = local;
+        return this;
+    }
+
+    public void setLocal(String local) {
+        this.local = local;
     }
 
     public Tipoadministrativo getTipo() {
@@ -292,13 +292,13 @@ public class Administrativo implements Serializable {
     public String toString() {
         return "Administrativo{" +
             "id=" + getId() +
-            ", descricao='" + getDescricao() + "'" +
-            ", assunto='" + getAssunto() + "'" +
-            ", local='" + getLocal() + "'" +
             ", album='" + getAlbum() + "'" +
-            ", folder='" + getFolder() + "'" +
+            ", assunto='" + getAssunto() + "'" +
             ", consideracao='" + getConsideracao() + "'" +
             ", data='" + getData() + "'" +
+            ", descricao='" + getDescricao() + "'" +
+            ", folder='" + getFolder() + "'" +
+            ", local='" + getLocal() + "'" +
             "}";
     }
 }

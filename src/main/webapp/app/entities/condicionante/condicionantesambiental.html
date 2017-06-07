@@ -19,12 +19,24 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.condicionante.ativo">Ativo</span></th>
+                    <th><span data-translate="meioambienteApp.condicionante.conteudo">Conteudo</span></th>
+                    <th><span data-translate="meioambienteApp.condicionante.data">Data</span></th>
+                    <th><span data-translate="meioambienteApp.condicionante.descricao">Descricao</span></th>
+                    <th><span data-translate="meioambienteApp.condicionante.observacao">Observacao</span></th>
+                    <th><span data-translate="meioambienteApp.condicionante.situacao">Situacao</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="condicionante in vm.condicionantes track by condicionante.id">
                     <td><a ui-sref="condicionante-ambiental-detail({id:condicionante.id})">{{condicionante.id}}</a></td>
+                    <td>{{condicionante.ativo}}</td>
+                    <td>{{condicionante.conteudo}}</td>
+                    <td>{{condicionante.data | date:'medium'}}</td>
+                    <td>{{condicionante.descricao}}</td>
+                    <td>{{condicionante.observacao}}</td>
+                    <td>{{condicionante.situacao}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

@@ -1,0 +1,25 @@
+{
+    "meioambienteApp": {
+        "contabancaria" : {
+            "home": {
+                "title": "Contabancarias",
+                "createLabel": "Create a new Contabancaria",
+                "createOrEditLabel": "Create or edit a Contabancaria"
+            },
+            "created": "A new Contabancaria is created with identifier {{ param }}",
+            "updated": "A Contabancaria is updated with identifier {{ param }}",
+            "deleted": "A Contabancaria is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Contabancaria {{ id }}?"
+            },
+            "detail": {
+                "title": "Contabancaria"
+            },
+            "idcontabancaria": "Idcontabancaria",
+            "nconta": "Nconta",
+            "nbanco": "Nbanco",
+            "descricao": "Descricao",
+            "idplanocontas": "Idplanocontas"
+        }
+    }
+}

@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.coordenada.detail.title">Coordenada</span> {{vm.coordenada.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.coordenada.a">A</span></dt>
+        <dd>
+            <span>{{vm.coordenada.a}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.coordenada.km">Km</span></dt>
+        <dd>
+            <span>{{vm.coordenada.km}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.coordenada.n">N</span></dt>
+        <dd>
+            <span>{{vm.coordenada.n}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.coordenada.s">S</span></dt>
+        <dd>
+            <span>{{vm.coordenada.s}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="coordenada-ambiental-detail.edit({id:vm.coordenada.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

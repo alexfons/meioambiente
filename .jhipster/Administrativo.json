@@ -42,23 +42,11 @@
     ],
     "fields": [
         {
-            "fieldName": "descricao",
-            "fieldType": "String"
-        },
-        {
-            "fieldName": "assunto",
-            "fieldType": "String"
-        },
-        {
-            "fieldName": "local",
-            "fieldType": "String"
-        },
-        {
             "fieldName": "album",
             "fieldType": "String"
         },
         {
-            "fieldName": "folder",
+            "fieldName": "assunto",
             "fieldType": "String"
         },
         {
@@ -68,6 +56,18 @@
         {
             "fieldName": "data",
             "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "folder",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "local",
+            "fieldType": "String"
         }
     ],
     "changelogDate": "20170515105940",

@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "planocontas" : {
+            "home": {
+                "title": "Planocontas",
+                "createLabel": "Create a new Planocontas",
+                "createOrEditLabel": "Create or edit a Planocontas"
+            },
+            "created": "A new Planocontas is created with identifier {{ param }}",
+            "updated": "A Planocontas is updated with identifier {{ param }}",
+            "deleted": "A Planocontas is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Planocontas {{ id }}?"
+            },
+            "detail": {
+                "title": "Planocontas"
+            }
+        }
+    }
+}

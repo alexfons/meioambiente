@@ -1,0 +1,79 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.custosconcorrentes.detail.title">Custosconcorrentes</span> {{vm.custosconcorrentes.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.custosconcorrentes.datainicio">Datainicio</span></dt>
+        <dd>
+            <span>{{vm.custosconcorrentes.datainicio | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.custosconcorrentes.nsolicitacao">Nsolicitacao</span></dt>
+        <dd>
+            <span>{{vm.custosconcorrentes.nsolicitacao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.custosconcorrentes.valorus">Valorus</span></dt>
+        <dd>
+            <span>{{vm.custosconcorrentes.valorus}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.custosconcorrentes.valorpagoreais">Valorpagoreais</span></dt>
+        <dd>
+            <span>{{vm.custosconcorrentes.valorpagoreais}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.custosconcorrentes.taxa">Taxa</span></dt>
+        <dd>
+            <span>{{vm.custosconcorrentes.taxa}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.custosconcorrentes.contacontabilC1">Contacontabil C 1</span></dt>
+        <dd>
+            <a ui-sref="planocontas-ambiental-detail({id:vm.custosconcorrentes.contacontabilC1Id})">{{vm.custosconcorrentes.contacontabilC1Id}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.custosconcorrentes.contacontabilC2">Contacontabil C 2</span></dt>
+        <dd>
+            <a ui-sref="planocontas-ambiental-detail({id:vm.custosconcorrentes.contacontabilC2Id})">{{vm.custosconcorrentes.contacontabilC2Id}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.custosconcorrentes.contacontabilD1">Contacontabil D 1</span></dt>
+        <dd>
+            <a ui-sref="planocontas-ambiental-detail({id:vm.custosconcorrentes.contacontabilD1Id})">{{vm.custosconcorrentes.contacontabilD1Id}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.custosconcorrentes.contacontabilD2">Contacontabil D 2</span></dt>
+        <dd>
+            <a ui-sref="planocontas-ambiental-detail({id:vm.custosconcorrentes.contacontabilD2Id})">{{vm.custosconcorrentes.contacontabilD2Id}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.custosconcorrentes.divcontacontabilC1">Divcontacontabil C 1</span></dt>
+        <dd>
+            <a ui-sref="planocontas-ambiental-detail({id:vm.custosconcorrentes.divcontacontabilC1Id})">{{vm.custosconcorrentes.divcontacontabilC1Id}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.custosconcorrentes.divcontacontabilD1">Divcontacontabil D 1</span></dt>
+        <dd>
+            <a ui-sref="planocontas-ambiental-detail({id:vm.custosconcorrentes.divcontacontabilD1Id})">{{vm.custosconcorrentes.divcontacontabilD1Id}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.custosconcorrentes.juscontacontabilC1">Juscontacontabil C 1</span></dt>
+        <dd>
+            <a ui-sref="planocontas-ambiental-detail({id:vm.custosconcorrentes.juscontacontabilC1Id})">{{vm.custosconcorrentes.juscontacontabilC1Id}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.custosconcorrentes.juscontacontabilD1">Juscontacontabil D 1</span></dt>
+        <dd>
+            <a ui-sref="planocontas-ambiental-detail({id:vm.custosconcorrentes.juscontacontabilD1Id})">{{vm.custosconcorrentes.juscontacontabilD1Id}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.custosconcorrentes.fonte">Fonte</span></dt>
+        <dd>
+            <a ui-sref="fonte-ambiental-detail({id:vm.custosconcorrentes.fonteId})">{{vm.custosconcorrentes.fonteId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.custosconcorrentes.idcategoriainversao">Idcategoriainversao</span></dt>
+        <dd>
+            <a ui-sref="categoriainversao-ambiental-detail({id:vm.custosconcorrentes.idcategoriainversaoId})">{{vm.custosconcorrentes.idcategoriainversaoId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="custosconcorrentes-ambiental-detail.edit({id:vm.custosconcorrentes.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "tipoautorizacao" : {
+            "home": {
+                "title": "Tipoautorizacaos",
+                "createLabel": "Create a new Tipoautorizacao",
+                "createOrEditLabel": "Create or edit a Tipoautorizacao"
+            },
+            "created": "A new Tipoautorizacao is created with identifier {{ param }}",
+            "updated": "A Tipoautorizacao is updated with identifier {{ param }}",
+            "deleted": "A Tipoautorizacao is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tipoautorizacao {{ id }}?"
+            },
+            "detail": {
+                "title": "Tipoautorizacao"
+            }
+        }
+    }
+}

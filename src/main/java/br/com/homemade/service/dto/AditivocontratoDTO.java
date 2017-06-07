@@ -13,13 +13,13 @@ public class AditivocontratoDTO implements Serializable {
 
     private Long id;
 
-    private Integer numaditivo;
-
-    private String tipoaditivo;
-
     private ZonedDateTime data;
 
+    private Integer numaditivo;
+
     private Integer prazoaditivo;
+
+    private String tipoaditivo;
 
     private BigDecimal valor;
 
@@ -31,22 +31,6 @@ public class AditivocontratoDTO implements Serializable {
         this.id = id;
     }
 
-    public Integer getNumaditivo() {
-        return numaditivo;
-    }
-
-    public void setNumaditivo(Integer numaditivo) {
-        this.numaditivo = numaditivo;
-    }
-
-    public String getTipoaditivo() {
-        return tipoaditivo;
-    }
-
-    public void setTipoaditivo(String tipoaditivo) {
-        this.tipoaditivo = tipoaditivo;
-    }
-
     public ZonedDateTime getData() {
         return data;
     }
@@ -55,12 +39,28 @@ public class AditivocontratoDTO implements Serializable {
         this.data = data;
     }
 
+    public Integer getNumaditivo() {
+        return numaditivo;
+    }
+
+    public void setNumaditivo(Integer numaditivo) {
+        this.numaditivo = numaditivo;
+    }
+
     public Integer getPrazoaditivo() {
         return prazoaditivo;
     }
 
     public void setPrazoaditivo(Integer prazoaditivo) {
         this.prazoaditivo = prazoaditivo;
+    }
+
+    public String getTipoaditivo() {
+        return tipoaditivo;
+    }
+
+    public void setTipoaditivo(String tipoaditivo) {
+        this.tipoaditivo = tipoaditivo;
     }
 
     public BigDecimal getValor() {
@@ -96,10 +96,10 @@ public class AditivocontratoDTO implements Serializable {
     public String toString() {
         return "AditivocontratoDTO{" +
             "id=" + getId() +
-            ", numaditivo='" + getNumaditivo() + "'" +
-            ", tipoaditivo='" + getTipoaditivo() + "'" +
             ", data='" + getData() + "'" +
+            ", numaditivo='" + getNumaditivo() + "'" +
             ", prazoaditivo='" + getPrazoaditivo() + "'" +
+            ", tipoaditivo='" + getTipoaditivo() + "'" +
             ", valor='" + getValor() + "'" +
             "}";
     }

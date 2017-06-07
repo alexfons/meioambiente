@@ -1,0 +1,122 @@
+<div>
+    <h2 data-translate="meioambienteApp.desapropriacao.home.title">Desapropriacaos</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="desapropriacao-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.desapropriacao.home.createLabel">
+                        Create new Desapropriacao
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.desapropriacao.dataop">Dataop</span></th>
+                    <th><span data-translate="meioambienteApp.desapropriacao.iddesapropria">Iddesapropria</span></th>
+                    <th><span data-translate="meioambienteApp.desapropriacao.nprocesso">Nprocesso</span></th>
+                    <th><span data-translate="meioambienteApp.desapropriacao.nomedesapropriado">Nomedesapropriado</span></th>
+                    <th><span data-translate="meioambienteApp.desapropriacao.local">Local</span></th>
+                    <th><span data-translate="meioambienteApp.desapropriacao.nsolicitacao">Nsolicitacao</span></th>
+                    <th><span data-translate="meioambienteApp.desapropriacao.valorpago">Valorpago</span></th>
+                    <th><span data-translate="meioambienteApp.desapropriacao.valorus">Valorus</span></th>
+                    <th><span data-translate="meioambienteApp.desapropriacao.contacontabilC1">Contacontabil C 1</span></th>
+                    <th><span data-translate="meioambienteApp.desapropriacao.contacontabilC2">Contacontabil C 2</span></th>
+                    <th><span data-translate="meioambienteApp.desapropriacao.contacontabilD1">Contacontabil D 1</span></th>
+                    <th><span data-translate="meioambienteApp.desapropriacao.contacontabilD2">Contacontabil D 2</span></th>
+                    <th><span data-translate="meioambienteApp.desapropriacao.divcontacontabilC1">Divcontacontabil C 1</span></th>
+                    <th><span data-translate="meioambienteApp.desapropriacao.divcontacontabilD1">Divcontacontabil D 1</span></th>
+                    <th><span data-translate="meioambienteApp.desapropriacao.juscontacontabilC1">Juscontacontabil C 1</span></th>
+                    <th><span data-translate="meioambienteApp.desapropriacao.juscontacontabilD1">Juscontacontabil D 1</span></th>
+                    <th><span data-translate="meioambienteApp.desapropriacao.fonte">Fonte</span></th>
+                    <th><span data-translate="meioambienteApp.desapropriacao.idcategoriainversao">Idcategoriainversao</span></th>
+                    <th><span data-translate="meioambienteApp.desapropriacao.idcontabancaria">Idcontabancaria</span></th>
+                    <th><span data-translate="meioambienteApp.desapropriacao.idreferencia">Idreferencia</span></th>
+                    <th><span data-translate="meioambienteApp.desapropriacao.rodovia">Rodovia</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="desapropriacao in vm.desapropriacaos track by desapropriacao.id">
+                    <td><a ui-sref="desapropriacao-ambiental-detail({id:desapropriacao.id})">{{desapropriacao.id}}</a></td>
+                    <td>{{desapropriacao.dataop | date:'medium'}}</td>
+                    <td>{{desapropriacao.iddesapropria}}</td>
+                    <td>{{desapropriacao.nprocesso}}</td>
+                    <td>{{desapropriacao.nomedesapropriado}}</td>
+                    <td>{{desapropriacao.local}}</td>
+                    <td>{{desapropriacao.nsolicitacao}}</td>
+                    <td>{{desapropriacao.valorpago}}</td>
+                    <td>{{desapropriacao.valorus}}</td>
+                    <td>
+                        <a ui-sref="planocontas-ambiental-detail({id:desapropriacao.contacontabilC1Id})">{{desapropriacao.contacontabilC1Id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="planocontas-ambiental-detail({id:desapropriacao.contacontabilC2Id})">{{desapropriacao.contacontabilC2Id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="planocontas-ambiental-detail({id:desapropriacao.contacontabilD1Id})">{{desapropriacao.contacontabilD1Id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="planocontas-ambiental-detail({id:desapropriacao.contacontabilD2Id})">{{desapropriacao.contacontabilD2Id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="planocontas-ambiental-detail({id:desapropriacao.divcontacontabilC1Id})">{{desapropriacao.divcontacontabilC1Id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="planocontas-ambiental-detail({id:desapropriacao.divcontacontabilD1Id})">{{desapropriacao.divcontacontabilD1Id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="planocontas-ambiental-detail({id:desapropriacao.juscontacontabilC1Id})">{{desapropriacao.juscontacontabilC1Id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="planocontas-ambiental-detail({id:desapropriacao.juscontacontabilD1Id})">{{desapropriacao.juscontacontabilD1Id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="fonte-ambiental-detail({id:desapropriacao.fonteId})">{{desapropriacao.fonteId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="categoriainversao-ambiental-detail({id:desapropriacao.idcategoriainversaoId})">{{desapropriacao.idcategoriainversaoId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="contabancaria-ambiental-detail({id:desapropriacao.idcontabancariaId})">{{desapropriacao.idcontabancariaId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="referencia-ambiental-detail({id:desapropriacao.idreferenciaId})">{{desapropriacao.idreferenciaId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="rodovia-ambiental-detail({id:desapropriacao.rodoviaId})">{{desapropriacao.rodoviaId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="desapropriacao-ambiental-detail({id:desapropriacao.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="desapropriacao-ambiental.edit({id:desapropriacao.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="desapropriacao-ambiental.delete({id:desapropriacao.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

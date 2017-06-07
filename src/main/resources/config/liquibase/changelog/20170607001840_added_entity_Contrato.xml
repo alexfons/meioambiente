@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Contrato.
+    -->
+    <changeSet id="20170607001840-1" author="jhipster">
+        <createTable tableName="contrato">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="codigobid" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="dataatual" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="databasecontrato" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="datacontratacao" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="dataterminocaucao" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="extatualcontrato" type="decimal(10,2)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="extinicialcontrato" type="decimal(10,2)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="ncontrato" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="ordemservico" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="prazoatual" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="prazoinicial" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="rodoviacontrato" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="saldocontratual" type="decimal(10,2)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="situacao" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="taxaatual" type="decimal(10,2)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="taxaoriginal" type="decimal(10,2)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="tipocontrato" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="titulocontrato" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="trechocontrato" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="valoratual" type="decimal(10,2)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="valorcaucao" type="decimal(10,2)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="valorpi" type="decimal(10,2)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="valorreajuste" type="decimal(10,2)">
+                <constraints nullable="true" />
+            </column>
+            <column name="idempresa_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>
+            <column name="contacontabilc2_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contacontabild1_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contacontabild2_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="divcontacontabilc1_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="divcontacontabild1_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="juscontacontabilc1_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="juscontacontabild1_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="idnatureza_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="proposta_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="idcategoriainversao_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="contrato" columnName="dataatual" columnDataType="datetime"/>
+        <dropDefaultValue tableName="contrato" columnName="databasecontrato" columnDataType="datetime"/>
+        <dropDefaultValue tableName="contrato" columnName="datacontratacao" columnDataType="datetime"/>
+        <dropDefaultValue tableName="contrato" columnName="dataterminocaucao" columnDataType="datetime"/>
+        
+        <createTable tableName="contrato_aditivocontratos">
+            <column name="aditivocontratos_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="contratoes_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="contratoes_id, aditivocontratos_id" tableName="contrato_aditivocontratos"/>
+        
+        <createTable tableName="contrato_contratosobra">
+            <column name="contratosobras_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="contratoes_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="contratoes_id, contratosobras_id" tableName="contrato_contratosobra"/>
+        
+        <createTable tableName="contrato_empresascontrato">
+            <column name="empresascontratoes_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="contratoes_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="contratoes_id, empresascontratoes_id" tableName="contrato_empresascontrato"/>
+        
+    </changeSet>
+</databaseChangeLog>

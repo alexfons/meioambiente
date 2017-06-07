@@ -19,12 +19,26 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.contratoobra.tipo">Tipo</span></th>
+                    <th><span data-translate="meioambienteApp.contratoobra.contrato">Contrato</span></th>
+                    <th><span data-translate="meioambienteApp.contratoobra.residente">Residente</span></th>
+                    <th><span data-translate="meioambienteApp.contratoobra.responsavel">Responsavel</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="contratoobra in vm.contratoobras track by contratoobra.id">
                     <td><a ui-sref="contratoobra-ambiental-detail({id:contratoobra.id})">{{contratoobra.id}}</a></td>
+                    <td>{{contratoobra.tipo}}</td>
+                    <td>
+                        <a ui-sref="contrato-ambiental-detail({id:contratoobra.contratoId})">{{contratoobra.contratoId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="residente-ambiental-detail({id:contratoobra.residenteId})">{{contratoobra.residenteId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="responsavel-ambiental-detail({id:contratoobra.responsavelId})">{{contratoobra.responsavelId}}</a>
+                    </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

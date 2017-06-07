@@ -1,0 +1,28 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "a",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "km",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "n",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "s",
+            "fieldType": "Float"
+        }
+    ],
+    "changelogDate": "20170607001844",
+    "entityTableName": "coordenada",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "ambiental"
+}

@@ -1,0 +1,24 @@
+{
+    "meioambienteApp": {
+        "balanco" : {
+            "home": {
+                "title": "Balancos",
+                "createLabel": "Create a new Balanco",
+                "createOrEditLabel": "Create or edit a Balanco"
+            },
+            "created": "A new Balanco is created with identifier {{ param }}",
+            "updated": "A Balanco is updated with identifier {{ param }}",
+            "deleted": "A Balanco is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Balanco {{ id }}?"
+            },
+            "detail": {
+                "title": "Balanco"
+            },
+            "datafim": "Datafim",
+            "datainicio": "Datainicio",
+            "descricao": "Descricao",
+            "taxa": "Taxa"
+        }
+    }
+}

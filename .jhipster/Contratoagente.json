@@ -1,0 +1,80 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "dataaprovacao",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataassinatura",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataconclusao",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "datainicio",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "idcontratoagente",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nomecontratoagente",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "referenciabid",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "acordocredito",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mutuario",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "executor",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "clausulascontratuais",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "moeda",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "percentuallocal",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "percentualagente",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "valorcontrato",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "valor",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20170607001841",
+    "entityTableName": "contratoagente",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "ambiental"
+}

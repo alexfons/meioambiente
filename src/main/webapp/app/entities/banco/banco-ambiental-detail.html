@@ -1,0 +1,95 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.banco.detail.title">Banco</span> {{vm.banco.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.banco.cidadedep">Cidadedep</span></dt>
+        <dd>
+            <span>{{vm.banco.cidadedep}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.banco.cidadeint">Cidadeint</span></dt>
+        <dd>
+            <span>{{vm.banco.cidadeint}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.banco.codswifdep">Codswifdep</span></dt>
+        <dd>
+            <span>{{vm.banco.codswifdep}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.banco.codswifint">Codswifint</span></dt>
+        <dd>
+            <span>{{vm.banco.codswifint}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.banco.contafeddep">Contafeddep</span></dt>
+        <dd>
+            <span>{{vm.banco.contafeddep}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.banco.contafedint">Contafedint</span></dt>
+        <dd>
+            <span>{{vm.banco.contafedint}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.banco.enderecodep">Enderecodep</span></dt>
+        <dd>
+            <span>{{vm.banco.enderecodep}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.banco.enderecoint">Enderecoint</span></dt>
+        <dd>
+            <span>{{vm.banco.enderecoint}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.banco.idbanco">Idbanco</span></dt>
+        <dd>
+            <span>{{vm.banco.idbanco}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.banco.instrucoesespeciaisdep">Instrucoesespeciaisdep</span></dt>
+        <dd>
+            <span>{{vm.banco.instrucoesespeciaisdep}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.banco.instrucoesespeciaisint">Instrucoesespeciaisint</span></dt>
+        <dd>
+            <span>{{vm.banco.instrucoesespeciaisint}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.banco.nabadep">Nabadep</span></dt>
+        <dd>
+            <span>{{vm.banco.nabadep}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.banco.nabaint">Nabaint</span></dt>
+        <dd>
+            <span>{{vm.banco.nabaint}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.banco.ncontadep">Ncontadep</span></dt>
+        <dd>
+            <span>{{vm.banco.ncontadep}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.banco.ncontaint">Ncontaint</span></dt>
+        <dd>
+            <span>{{vm.banco.ncontaint}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.banco.nomebancodep">Nomebancodep</span></dt>
+        <dd>
+            <span>{{vm.banco.nomebancodep}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.banco.nomebancoint">Nomebancoint</span></dt>
+        <dd>
+            <span>{{vm.banco.nomebancoint}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.banco.paisdep">Paisdep</span></dt>
+        <dd>
+            <span>{{vm.banco.paisdep}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.banco.paisint">Paisint</span></dt>
+        <dd>
+            <span>{{vm.banco.paisint}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="banco-ambiental-detail.edit({id:vm.banco.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

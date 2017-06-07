@@ -1,0 +1,35 @@
+{
+    "meioambienteApp": {
+        "custosconcorrentes" : {
+            "home": {
+                "title": "Custosconcorrentes",
+                "createLabel": "Create a new Custosconcorrentes",
+                "createOrEditLabel": "Create or edit a Custosconcorrentes"
+            },
+            "created": "A new Custosconcorrentes is created with identifier {{ param }}",
+            "updated": "A Custosconcorrentes is updated with identifier {{ param }}",
+            "deleted": "A Custosconcorrentes is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Custosconcorrentes {{ id }}?"
+            },
+            "detail": {
+                "title": "Custosconcorrentes"
+            },
+            "datainicio": "Datainicio",
+            "nsolicitacao": "Nsolicitacao",
+            "valorus": "Valorus",
+            "valorpagoreais": "Valorpagoreais",
+            "taxa": "Taxa",
+            "contacontabilC1": "Contacontabil C 1",
+            "contacontabilC2": "Contacontabil C 2",
+            "contacontabilD1": "Contacontabil D 1",
+            "contacontabilD2": "Contacontabil D 2",
+            "divcontacontabilC1": "Divcontacontabil C 1",
+            "divcontacontabilD1": "Divcontacontabil D 1",
+            "juscontacontabilC1": "Juscontacontabil C 1",
+            "juscontacontabilD1": "Juscontacontabil D 1",
+            "fonte": "Fonte",
+            "idcategoriainversao": "Idcategoriainversao"
+        }
+    }
+}

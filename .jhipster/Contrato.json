@@ -1,0 +1,197 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "idempresa",
+            "otherEntityName": "empresa",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "contrato"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "contacontabilC2",
+            "otherEntityName": "planocontas",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "contacontabilD1",
+            "otherEntityName": "planocontas",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "contacontabilD2",
+            "otherEntityName": "planocontas",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "divcontacontabilC1",
+            "otherEntityName": "planocontas",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "divcontacontabilD1",
+            "otherEntityName": "planocontas",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "juscontacontabilC1",
+            "otherEntityName": "planocontas",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "juscontacontabilD1",
+            "otherEntityName": "planocontas",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "idnatureza",
+            "otherEntityName": "natureza",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "proposta",
+            "otherEntityName": "proposta",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "idcategoriainversao",
+            "otherEntityName": "categoriainversao",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "aditivocontratos",
+            "otherEntityName": "aditivocontrato",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "contratosobra",
+            "otherEntityName": "contratoobra",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "empresascontrato",
+            "otherEntityName": "empresacontrato",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "codigobid",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataatual",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "databasecontrato",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "datacontratacao",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataterminocaucao",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "extatualcontrato",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "extinicialcontrato",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "ncontrato",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ordemservico",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prazoatual",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "prazoinicial",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "rodoviacontrato",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "saldocontratual",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "situacao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "taxaatual",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "taxaoriginal",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "tipocontrato",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titulocontrato",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "trechocontrato",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "valoratual",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "valorcaucao",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "valorpi",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "valorreajuste",
+            "fieldType": "BigDecimal"
+        }
+    ],
+    "changelogDate": "20170607001840",
+    "entityTableName": "contrato",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "ambiental"
+}

@@ -1,0 +1,74 @@
+<div>
+    <h2 data-translate="meioambienteApp.clausulascontratuais.home.title">Clausulascontratuais</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="clausulascontratuais-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.clausulascontratuais.home.createLabel">
+                        Create new Clausulascontratuais
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.clausulascontratuais.artigo">Artigo</span></th>
+                    <th><span data-translate="meioambienteApp.clausulascontratuais.descricao">Descricao</span></th>
+                    <th><span data-translate="meioambienteApp.clausulascontratuais.noficioenviado">Noficioenviado</span></th>
+                    <th><span data-translate="meioambienteApp.clausulascontratuais.noficioaprovado">Noficioaprovado</span></th>
+                    <th><span data-translate="meioambienteApp.clausulascontratuais.dataaprovacao">Dataaprovacao</span></th>
+                    <th><span data-translate="meioambienteApp.clausulascontratuais.dataenvio">Dataenvio</span></th>
+                    <th><span data-translate="meioambienteApp.clausulascontratuais.datavigente">Datavigente</span></th>
+                    <th><span data-translate="meioambienteApp.clausulascontratuais.idclausulascontratuais">Idclausulascontratuais</span></th>
+                    <th><span data-translate="meioambienteApp.clausulascontratuais.idcontratoagente">Idcontratoagente</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="clausulascontratuais in vm.clausulascontratuais track by clausulascontratuais.id">
+                    <td><a ui-sref="clausulascontratuais-ambiental-detail({id:clausulascontratuais.id})">{{clausulascontratuais.id}}</a></td>
+                    <td>{{clausulascontratuais.artigo}}</td>
+                    <td>{{clausulascontratuais.descricao}}</td>
+                    <td>{{clausulascontratuais.noficioenviado}}</td>
+                    <td>{{clausulascontratuais.noficioaprovado}}</td>
+                    <td>{{clausulascontratuais.dataaprovacao | date:'medium'}}</td>
+                    <td>{{clausulascontratuais.dataenvio | date:'medium'}}</td>
+                    <td>{{clausulascontratuais.datavigente | date:'medium'}}</td>
+                    <td>{{clausulascontratuais.idclausulascontratuais}}</td>
+                    <td>
+                        <a ui-sref="contratoagente-ambiental-detail({id:clausulascontratuais.idcontratoagenteId})">{{clausulascontratuais.idcontratoagenteId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="clausulascontratuais-ambiental-detail({id:clausulascontratuais.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="clausulascontratuais-ambiental.edit({id:clausulascontratuais.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="clausulascontratuais-ambiental.delete({id:clausulascontratuais.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

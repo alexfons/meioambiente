@@ -13,6 +13,45 @@
             <input type="text" class="form-control" id="id" name="id"
                     ng-model="vm.condicionante.id" readonly />
         </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.condicionante.ativo" for="field_ativo">Ativo</label>
+                <input type="checkbox" name="ativo" id="field_ativo"
+                          ng-model="vm.condicionante.ativo"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.condicionante.conteudo" for="field_conteudo">Conteudo</label>
+            <input type="text" class="form-control" name="conteudo" id="field_conteudo"
+                    ng-model="vm.condicionante.conteudo"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.condicionante.data" for="field_data">Data</label>
+                <div class="input-group">
+                    <input id="field_data" type="text" class="form-control" name="data" datetime-picker="{{dateformat}}" ng-model="vm.condicionante.data" is-open="vm.datePickerOpenStatus.data"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('data')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.condicionante.descricao" for="field_descricao">Descricao</label>
+            <input type="text" class="form-control" name="descricao" id="field_descricao"
+                    ng-model="vm.condicionante.descricao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.condicionante.observacao" for="field_observacao">Observacao</label>
+            <input type="text" class="form-control" name="observacao" id="field_observacao"
+                    ng-model="vm.condicionante.observacao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.condicionante.situacao" for="field_situacao">Situacao</label>
+            <input type="text" class="form-control" name="situacao" id="field_situacao"
+                    ng-model="vm.condicionante.situacao"
+                    />
+        </div>
 
     </div>
     <div class="modal-footer">

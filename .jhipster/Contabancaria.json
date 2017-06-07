@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "idplanocontas",
+            "otherEntityName": "planocontas",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "idcontabancaria",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nconta",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nbanco",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170607001839",
+    "entityTableName": "contabancaria",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "ambiental"
+}

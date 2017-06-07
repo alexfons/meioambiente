@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "natureza" : {
+            "home": {
+                "title": "Naturezas",
+                "createLabel": "Create a new Natureza",
+                "createOrEditLabel": "Create or edit a Natureza"
+            },
+            "created": "A new Natureza is created with identifier {{ param }}",
+            "updated": "A Natureza is updated with identifier {{ param }}",
+            "deleted": "A Natureza is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Natureza {{ id }}?"
+            },
+            "detail": {
+                "title": "Natureza"
+            }
+        }
+    }
+}

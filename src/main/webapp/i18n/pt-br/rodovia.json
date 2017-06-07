@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "rodovia" : {
+            "home": {
+                "title": "Rodovias",
+                "createLabel": "Criar novo Rodovia",
+                "createOrEditLabel": "Criar ou editar Rodovia"
+            },
+            "created": "Um novo Rodovia é criado com o identificador {{ param }}",
+            "updated": "Um Rodovia é atualizado com o identificador {{ param }}",
+            "deleted": "Um Rodovia é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Rodovia {{ id }}?"
+            },
+            "detail": {
+                "title": "Rodovia"
+            }
+        }
+    }
+}

@@ -45,17 +45,17 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = MeioambienteApp.class)
 public class AditivocontratoResourceIntTest {
 
-    private static final Integer DEFAULT_NUMADITIVO = 1;
-    private static final Integer UPDATED_NUMADITIVO = 2;
-
-    private static final String DEFAULT_TIPOADITIVO = "AAAAAAAAAA";
-    private static final String UPDATED_TIPOADITIVO = "BBBBBBBBBB";
-
     private static final ZonedDateTime DEFAULT_DATA = ZonedDateTime.ofInstant(Instant.ofEpochMilli(0L), ZoneOffset.UTC);
     private static final ZonedDateTime UPDATED_DATA = ZonedDateTime.now(ZoneId.systemDefault()).withNano(0);
 
+    private static final Integer DEFAULT_NUMADITIVO = 1;
+    private static final Integer UPDATED_NUMADITIVO = 2;
+
     private static final Integer DEFAULT_PRAZOADITIVO = 1;
     private static final Integer UPDATED_PRAZOADITIVO = 2;
+
+    private static final String DEFAULT_TIPOADITIVO = "AAAAAAAAAA";
+    private static final String UPDATED_TIPOADITIVO = "BBBBBBBBBB";
 
     private static final BigDecimal DEFAULT_VALOR = new BigDecimal(1);
     private static final BigDecimal UPDATED_VALOR = new BigDecimal(2);
@@ -100,10 +100,10 @@ public class AditivocontratoResourceIntTest {
      */
     public static Aditivocontrato createEntity(EntityManager em) {
         Aditivocontrato aditivocontrato = new Aditivocontrato()
-            .numaditivo(DEFAULT_NUMADITIVO)
-            .tipoaditivo(DEFAULT_TIPOADITIVO)
             .data(DEFAULT_DATA)
+            .numaditivo(DEFAULT_NUMADITIVO)
             .prazoaditivo(DEFAULT_PRAZOADITIVO)
+            .tipoaditivo(DEFAULT_TIPOADITIVO)
             .valor(DEFAULT_VALOR);
         return aditivocontrato;
     }
@@ -129,10 +129,10 @@ public class AditivocontratoResourceIntTest {
         List<Aditivocontrato> aditivocontratoList = aditivocontratoRepository.findAll();
         assertThat(aditivocontratoList).hasSize(databaseSizeBeforeCreate + 1);
         Aditivocontrato testAditivocontrato = aditivocontratoList.get(aditivocontratoList.size() - 1);
-        assertThat(testAditivocontrato.getNumaditivo()).isEqualTo(DEFAULT_NUMADITIVO);
-        assertThat(testAditivocontrato.getTipoaditivo()).isEqualTo(DEFAULT_TIPOADITIVO);
         assertThat(testAditivocontrato.getData()).isEqualTo(DEFAULT_DATA);
+        assertThat(testAditivocontrato.getNumaditivo()).isEqualTo(DEFAULT_NUMADITIVO);
         assertThat(testAditivocontrato.getPrazoaditivo()).isEqualTo(DEFAULT_PRAZOADITIVO);
+        assertThat(testAditivocontrato.getTipoaditivo()).isEqualTo(DEFAULT_TIPOADITIVO);
         assertThat(testAditivocontrato.getValor()).isEqualTo(DEFAULT_VALOR);
     }
 
@@ -167,10 +167,10 @@ public class AditivocontratoResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(aditivocontrato.getId().intValue())))
-            .andExpect(jsonPath("$.[*].numaditivo").value(hasItem(DEFAULT_NUMADITIVO)))
-            .andExpect(jsonPath("$.[*].tipoaditivo").value(hasItem(DEFAULT_TIPOADITIVO.toString())))
             .andExpect(jsonPath("$.[*].data").value(hasItem(sameInstant(DEFAULT_DATA))))
+            .andExpect(jsonPath("$.[*].numaditivo").value(hasItem(DEFAULT_NUMADITIVO)))
             .andExpect(jsonPath("$.[*].prazoaditivo").value(hasItem(DEFAULT_PRAZOADITIVO)))
+            .andExpect(jsonPath("$.[*].tipoaditivo").value(hasItem(DEFAULT_TIPOADITIVO.toString())))
             .andExpect(jsonPath("$.[*].valor").value(hasItem(DEFAULT_VALOR.intValue())));
     }
 
@@ -185,10 +185,10 @@ public class AditivocontratoResourceIntTest {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(aditivocontrato.getId().intValue()))
-            .andExpect(jsonPath("$.numaditivo").value(DEFAULT_NUMADITIVO))
-            .andExpect(jsonPath("$.tipoaditivo").value(DEFAULT_TIPOADITIVO.toString()))
             .andExpect(jsonPath("$.data").value(sameInstant(DEFAULT_DATA)))
+            .andExpect(jsonPath("$.numaditivo").value(DEFAULT_NUMADITIVO))
             .andExpect(jsonPath("$.prazoaditivo").value(DEFAULT_PRAZOADITIVO))
+            .andExpect(jsonPath("$.tipoaditivo").value(DEFAULT_TIPOADITIVO.toString()))
             .andExpect(jsonPath("$.valor").value(DEFAULT_VALOR.intValue()));
     }
 
@@ -210,10 +210,10 @@ public class AditivocontratoResourceIntTest {
         // Update the aditivocontrato
         Aditivocontrato updatedAditivocontrato = aditivocontratoRepository.findOne(aditivocontrato.getId());
         updatedAditivocontrato
-            .numaditivo(UPDATED_NUMADITIVO)
-            .tipoaditivo(UPDATED_TIPOADITIVO)
             .data(UPDATED_DATA)
+            .numaditivo(UPDATED_NUMADITIVO)
             .prazoaditivo(UPDATED_PRAZOADITIVO)
+            .tipoaditivo(UPDATED_TIPOADITIVO)
             .valor(UPDATED_VALOR);
         AditivocontratoDTO aditivocontratoDTO = aditivocontratoMapper.toDto(updatedAditivocontrato);
 
@@ -226,10 +226,10 @@ public class AditivocontratoResourceIntTest {
         List<Aditivocontrato> aditivocontratoList = aditivocontratoRepository.findAll();
         assertThat(aditivocontratoList).hasSize(databaseSizeBeforeUpdate);
         Aditivocontrato testAditivocontrato = aditivocontratoList.get(aditivocontratoList.size() - 1);
-        assertThat(testAditivocontrato.getNumaditivo()).isEqualTo(UPDATED_NUMADITIVO);
-        assertThat(testAditivocontrato.getTipoaditivo()).isEqualTo(UPDATED_TIPOADITIVO);
         assertThat(testAditivocontrato.getData()).isEqualTo(UPDATED_DATA);
+        assertThat(testAditivocontrato.getNumaditivo()).isEqualTo(UPDATED_NUMADITIVO);
         assertThat(testAditivocontrato.getPrazoaditivo()).isEqualTo(UPDATED_PRAZOADITIVO);
+        assertThat(testAditivocontrato.getTipoaditivo()).isEqualTo(UPDATED_TIPOADITIVO);
         assertThat(testAditivocontrato.getValor()).isEqualTo(UPDATED_VALOR);
     }
 

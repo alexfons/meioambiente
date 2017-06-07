@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "empresacontrato" : {
+            "home": {
+                "title": "Empresacontratoes",
+                "createLabel": "Criar novo Empresacontrato",
+                "createOrEditLabel": "Criar ou editar Empresacontrato"
+            },
+            "created": "Um novo Empresacontrato é criado com o identificador {{ param }}",
+            "updated": "Um Empresacontrato é atualizado com o identificador {{ param }}",
+            "deleted": "Um Empresacontrato é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Empresacontrato {{ id }}?"
+            },
+            "detail": {
+                "title": "Empresacontrato"
+            }
+        }
+    }
+}

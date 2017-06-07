@@ -22,12 +22,76 @@ public class Contratoobra implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
+    @Column(name = "tipo")
+    private String tipo;
+
+    @ManyToOne
+    private Contrato contrato;
+
+    @ManyToOne
+    private Residente residente;
+
+    @ManyToOne
+    private Responsavel responsavel;
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public Contratoobra tipo(String tipo) {
+        this.tipo = tipo;
+        return this;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public Contrato getContrato() {
+        return contrato;
+    }
+
+    public Contratoobra contrato(Contrato contrato) {
+        this.contrato = contrato;
+        return this;
+    }
+
+    public void setContrato(Contrato contrato) {
+        this.contrato = contrato;
+    }
+
+    public Residente getResidente() {
+        return residente;
+    }
+
+    public Contratoobra residente(Residente residente) {
+        this.residente = residente;
+        return this;
+    }
+
+    public void setResidente(Residente residente) {
+        this.residente = residente;
+    }
+
+    public Responsavel getResponsavel() {
+        return responsavel;
+    }
+
+    public Contratoobra responsavel(Responsavel responsavel) {
+        this.responsavel = responsavel;
+        return this;
+    }
+
+    public void setResponsavel(Responsavel responsavel) {
+        this.responsavel = responsavel;
     }
 
     @Override
@@ -54,6 +118,7 @@ public class Contratoobra implements Serializable {
     public String toString() {
         return "Contratoobra{" +
             "id=" + getId() +
+            ", tipo='" + getTipo() + "'" +
             "}";
     }
 }

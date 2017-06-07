@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "tipocertificadoconformidade" : {
+            "home": {
+                "title": "Tipocertificadoconformidades",
+                "createLabel": "Criar novo Tipocertificadoconformidade",
+                "createOrEditLabel": "Criar ou editar Tipocertificadoconformidade"
+            },
+            "created": "Um novo Tipocertificadoconformidade é criado com o identificador {{ param }}",
+            "updated": "Um Tipocertificadoconformidade é atualizado com o identificador {{ param }}",
+            "deleted": "Um Tipocertificadoconformidade é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Tipocertificadoconformidade {{ id }}?"
+            },
+            "detail": {
+                "title": "Tipocertificadoconformidade"
+            }
+        }
+    }
+}

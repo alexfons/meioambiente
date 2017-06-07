@@ -14,7 +14,13 @@
             },
             "detail": {
                 "title": "Condicionante"
-            }
+            },
+            "ativo": "Ativo",
+            "conteudo": "Conteudo",
+            "data": "Data",
+            "descricao": "Descricao",
+            "observacao": "Observacao",
+            "situacao": "Situacao"
         }
     }
 }

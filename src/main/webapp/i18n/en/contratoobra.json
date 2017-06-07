@@ -14,7 +14,11 @@
             },
             "detail": {
                 "title": "Contratoobra"
-            }
+            },
+            "tipo": "Tipo",
+            "contrato": "Contrato",
+            "residente": "Residente",
+            "responsavel": "Responsavel"
         }
     }
 }

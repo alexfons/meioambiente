@@ -1,0 +1,31 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.contratoprojeto.detail.title">Contratoprojeto</span> {{vm.contratoprojeto.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.contratoprojeto.tipo">Tipo</span></dt>
+        <dd>
+            <span>{{vm.contratoprojeto.tipo}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.contratoprojeto.contrato">Contrato</span></dt>
+        <dd>
+            <a ui-sref="contrato-ambiental-detail({id:vm.contratoprojeto.contratoId})">{{vm.contratoprojeto.contratoId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.contratoprojeto.responsavel">Responsavel</span></dt>
+        <dd>
+            <a ui-sref="responsavel-ambiental-detail({id:vm.contratoprojeto.responsavelId})">{{vm.contratoprojeto.responsavelId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="contratoprojeto-ambiental-detail.edit({id:vm.contratoprojeto.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

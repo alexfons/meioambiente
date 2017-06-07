@@ -1,0 +1,28 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "datafim",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "datainicio",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "taxa",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20170607001832",
+    "entityTableName": "balanco",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "ambiental"
+}

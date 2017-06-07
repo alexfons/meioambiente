@@ -1,0 +1,21 @@
+{
+    "meioambienteApp": {
+        "linha" : {
+            "home": {
+                "title": "Linhas",
+                "createLabel": "Criar novo Linha",
+                "createOrEditLabel": "Criar ou editar Linha"
+            },
+            "created": "Um novo Linha é criado com o identificador {{ param }}",
+            "updated": "Um Linha é atualizado com o identificador {{ param }}",
+            "deleted": "Um Linha é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Linha {{ id }}?"
+            },
+            "detail": {
+                "title": "Linha"
+            },
+            "coluna": "Coluna"
+        }
+    }
+}

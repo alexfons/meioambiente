@@ -1,0 +1,69 @@
+{
+    "meioambienteApp": {
+        "autorizacao" : {
+            "home": {
+                "title": "Autorizacaos",
+                "createLabel": "Criar novo Autorizacao",
+                "createOrEditLabel": "Criar ou editar Autorizacao"
+            },
+            "created": "Um novo Autorizacao é criado com o identificador {{ param }}",
+            "updated": "Um Autorizacao é atualizado com o identificador {{ param }}",
+            "deleted": "Um Autorizacao é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Autorizacao {{ id }}?"
+            },
+            "detail": {
+                "title": "Autorizacao"
+            },
+            "album": "Album",
+            "andamento": "Andamento",
+            "data": "Data",
+            "dataentregadocs": "Dataentregadocs",
+            "dataexpedicaoprorrogacao1": "Dataexpedicaoprorrogacao 1",
+            "dataexpedicaoprorrogacao2": "Dataexpedicaoprorrogacao 2",
+            "dataexpedicaoprorrogacao3": "Dataexpedicaoprorrogacao 3",
+            "datapedidoprorrogacao1": "Datapedidoprorrogacao 1",
+            "datapedidoprorrogacao2": "Datapedidoprorrogacao 2",
+            "datapedidoprorrogacao3": "Datapedidoprorrogacao 3",
+            "datavalidadeprorrogacao1": "Datavalidadeprorrogacao 1",
+            "datavalidadeprorrogacao2": "Datavalidadeprorrogacao 2",
+            "datavalidadeprorrogacao3": "Datavalidadeprorrogacao 3",
+            "datavencimento": "Datavencimento",
+            "datavencimentoatual": "Datavencimentoatual",
+            "descricao": "Descricao",
+            "docsentregues": "Docsentregues",
+            "fcei": "Fcei",
+            "fceidatapagamento": "Fceidatapagamento",
+            "fceidataprotocolo": "Fceidataprotocolo",
+            "fceivalor": "Fceivalor",
+            "folder": "Folder",
+            "inativo": "Inativo",
+            "kmfim": "Kmfim",
+            "kminicio": "Kminicio",
+            "lado": "Lado",
+            "naoria": "Naoria",
+            "numero": "Numero",
+            "numerooficioconcessaoprorrogacao1": "Numerooficioconcessaoprorrogacao 1",
+            "numerooficioconcessaoprorrogacao2": "Numerooficioconcessaoprorrogacao 2",
+            "numerooficioconcessaoprorrogacao3": "Numerooficioconcessaoprorrogacao 3",
+            "numerooficioprorrogacao1": "Numerooficioprorrogacao 1",
+            "numerooficioprorrogacao2": "Numerooficioprorrogacao 2",
+            "numerooficioprorrogacao3": "Numerooficioprorrogacao 3",
+            "numeroprocesso": "Numeroprocesso",
+            "observacao": "Observacao",
+            "pendente": "Pendente",
+            "prazomes": "Prazomes",
+            "prazovalidade": "Prazovalidade",
+            "proprietario": "Proprietario",
+            "reciboentregadocs": "Reciboentregadocs",
+            "atividadelicenca": "Atividadelicenca",
+            "empresa": "Empresa",
+            "obra": "Obra",
+            "orgaoemissor": "Orgaoemissor",
+            "projeto": "Projeto",
+            "tipoautorizacao": "Tipoautorizacao",
+            "fotos": "Fotos",
+            "docs": "Docs"
+        }
+    }
+}

@@ -1,0 +1,79 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.categoriainversao.detail.title">Categoriainversao</span> {{vm.categoriainversao.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.categoriainversao.codcategoria">Codcategoria</span></dt>
+        <dd>
+            <span>{{vm.categoriainversao.codcategoria}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.categoriainversao.descricaocategoria">Descricaocategoria</span></dt>
+        <dd>
+            <span>{{vm.categoriainversao.descricaocategoria}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.categoriainversao.descricaoitem">Descricaoitem</span></dt>
+        <dd>
+            <span>{{vm.categoriainversao.descricaoitem}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.categoriainversao.descricaosubcategoria">Descricaosubcategoria</span></dt>
+        <dd>
+            <span>{{vm.categoriainversao.descricaosubcategoria}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.categoriainversao.descricaosubitem">Descricaosubitem</span></dt>
+        <dd>
+            <span>{{vm.categoriainversao.descricaosubitem}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.categoriainversao.idcategoriainversao">Idcategoriainversao</span></dt>
+        <dd>
+            <span>{{vm.categoriainversao.idcategoriainversao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.categoriainversao.item">Item</span></dt>
+        <dd>
+            <span>{{vm.categoriainversao.item}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.categoriainversao.percentualcatagente">Percentualcatagente</span></dt>
+        <dd>
+            <span>{{vm.categoriainversao.percentualcatagente}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.categoriainversao.percentualcatlocal">Percentualcatlocal</span></dt>
+        <dd>
+            <span>{{vm.categoriainversao.percentualcatlocal}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.categoriainversao.subcategoria">Subcategoria</span></dt>
+        <dd>
+            <span>{{vm.categoriainversao.subcategoria}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.categoriainversao.subitem">Subitem</span></dt>
+        <dd>
+            <span>{{vm.categoriainversao.subitem}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.categoriainversao.valorcatagente">Valorcatagente</span></dt>
+        <dd>
+            <span>{{vm.categoriainversao.valorcatagente}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.categoriainversao.valorcatlocal">Valorcatlocal</span></dt>
+        <dd>
+            <span>{{vm.categoriainversao.valorcatlocal}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.categoriainversao.valorporcategoria">Valorporcategoria</span></dt>
+        <dd>
+            <span>{{vm.categoriainversao.valorporcategoria}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.categoriainversao.idcontratoagente">Idcontratoagente</span></dt>
+        <dd>
+            <a ui-sref="contratoagente-ambiental-detail({id:vm.categoriainversao.idcontratoagenteId})">{{vm.categoriainversao.idcontratoagenteId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="categoriainversao-ambiental-detail.edit({id:vm.categoriainversao.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

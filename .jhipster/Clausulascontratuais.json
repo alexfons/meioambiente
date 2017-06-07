@@ -1,0 +1,51 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "idcontratoagente",
+            "otherEntityName": "contratoagente",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "artigo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "noficioenviado",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "noficioaprovado",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataaprovacao",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataenvio",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "datavigente",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "idclausulascontratuais",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170607001836",
+    "entityTableName": "clausulascontratuais",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "ambiental"
+}

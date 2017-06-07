@@ -1,0 +1,106 @@
+<div>
+    <h2 data-translate="meioambienteApp.certificadoconformidade.home.title">Certificadoconformidades</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="certificadoconformidade-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.certificadoconformidade.home.createLabel">
+                        Create new Certificadoconformidade
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.certificadoconformidade.data">Data</span></th>
+                    <th><span data-translate="meioambienteApp.certificadoconformidade.dataliberacao">Dataliberacao</span></th>
+                    <th><span data-translate="meioambienteApp.certificadoconformidade.dataparalisacao">Dataparalisacao</span></th>
+                    <th><span data-translate="meioambienteApp.certificadoconformidade.datareinicio">Datareinicio</span></th>
+                    <th><span data-translate="meioambienteApp.certificadoconformidade.edital">Edital</span></th>
+                    <th><span data-translate="meioambienteApp.certificadoconformidade.item">Item</span></th>
+                    <th><span data-translate="meioambienteApp.certificadoconformidade.liberacao">Liberacao</span></th>
+                    <th><span data-translate="meioambienteApp.certificadoconformidade.liberacaoadministrativamente">Liberacaoadministrativamente</span></th>
+                    <th><span data-translate="meioambienteApp.certificadoconformidade.periodo">Periodo</span></th>
+                    <th><span data-translate="meioambienteApp.certificadoconformidade.texto">Texto</span></th>
+                    <th><span data-translate="meioambienteApp.certificadoconformidade.texto2">Texto 2</span></th>
+                    <th><span data-translate="meioambienteApp.certificadoconformidade.obra">Obra</span></th>
+                    <th><span data-translate="meioambienteApp.certificadoconformidade.tipo">Tipo</span></th>
+                    <th><span data-translate="meioambienteApp.certificadoconformidade.tipocertificadoconformidade">Tipocertificadoconformidade</span></th>
+                    <th><span data-translate="meioambienteApp.certificadoconformidade.informescertificadoirregularidade">Informescertificadoirregularidade</span></th>
+                    <th><span data-translate="meioambienteApp.certificadoconformidade.notificacaoscertificadoirregularidade">Notificacaoscertificadoirregularidade</span></th>
+                    <th><span data-translate="meioambienteApp.certificadoconformidade.ocorrenciascertificadoirregularidade">Ocorrenciascertificadoirregularidade</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="certificadoconformidade in vm.certificadoconformidades track by certificadoconformidade.id">
+                    <td><a ui-sref="certificadoconformidade-ambiental-detail({id:certificadoconformidade.id})">{{certificadoconformidade.id}}</a></td>
+                    <td>{{certificadoconformidade.data | date:'medium'}}</td>
+                    <td>{{certificadoconformidade.dataliberacao | date:'medium'}}</td>
+                    <td>{{certificadoconformidade.dataparalisacao | date:'medium'}}</td>
+                    <td>{{certificadoconformidade.datareinicio | date:'medium'}}</td>
+                    <td>{{certificadoconformidade.edital}}</td>
+                    <td>{{certificadoconformidade.item}}</td>
+                    <td>{{certificadoconformidade.liberacao}}</td>
+                    <td>{{certificadoconformidade.liberacaoadministrativamente}}</td>
+                    <td>{{certificadoconformidade.periodo}}</td>
+                    <td>{{certificadoconformidade.texto}}</td>
+                    <td>{{certificadoconformidade.texto2}}</td>
+                    <td>
+                        <a ui-sref="obra-ambiental-detail({id:certificadoconformidade.obraId})">{{certificadoconformidade.obraId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="tipocertificadoconformidade-ambiental-detail({id:certificadoconformidade.tipoId})">{{certificadoconformidade.tipoId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="tipocertificadoconformidade-ambiental-detail({id:certificadoconformidade.tipocertificadoconformidadeId})">{{certificadoconformidade.tipocertificadoconformidadeId}}</a>
+                    </td>
+                    <td>
+                        <span ng-repeat="informescertificadoirregularidade in certificadoconformidade.informescertificadoirregularidades">
+                            <a class="form-control-static" ui-sref="informecertificadoirregularidade-ambiental-detail({id: informescertificadoirregularidade.id})">{{informescertificadoirregularidade.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td>
+                        <span ng-repeat="notificacaoscertificadoirregularidade in certificadoconformidade.notificacaoscertificadoirregularidades">
+                            <a class="form-control-static" ui-sref="notificacaocertificadoirregularidade-ambiental-detail({id: notificacaoscertificadoirregularidade.id})">{{notificacaoscertificadoirregularidade.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td>
+                        <span ng-repeat="ocorrenciascertificadoirregularidade in certificadoconformidade.ocorrenciascertificadoirregularidades">
+                            <a class="form-control-static" ui-sref="ocorrenciacertificadoirregularidade-ambiental-detail({id: ocorrenciascertificadoirregularidade.id})">{{ocorrenciascertificadoirregularidade.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="certificadoconformidade-ambiental-detail({id:certificadoconformidade.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="certificadoconformidade-ambiental.edit({id:certificadoconformidade.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="certificadoconformidade-ambiental.delete({id:certificadoconformidade.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

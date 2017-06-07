@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "fonte" : {
+            "home": {
+                "title": "Fontes",
+                "createLabel": "Create a new Fonte",
+                "createOrEditLabel": "Create or edit a Fonte"
+            },
+            "created": "A new Fonte is created with identifier {{ param }}",
+            "updated": "A Fonte is updated with identifier {{ param }}",
+            "deleted": "A Fonte is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Fonte {{ id }}?"
+            },
+            "detail": {
+                "title": "Fonte"
+            }
+        }
+    }
+}

@@ -1,0 +1,123 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "contacontabilC1",
+            "otherEntityName": "planocontas",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "contacontabilC2",
+            "otherEntityName": "planocontas",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "contacontabilD1",
+            "otherEntityName": "planocontas",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "contacontabilD2",
+            "otherEntityName": "planocontas",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "divcontacontabilC1",
+            "otherEntityName": "planocontas",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "divcontacontabilD1",
+            "otherEntityName": "planocontas",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "juscontacontabilC1",
+            "otherEntityName": "planocontas",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "juscontacontabilD1",
+            "otherEntityName": "planocontas",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "fonte",
+            "otherEntityName": "fonte",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "idcategoriainversao",
+            "otherEntityName": "categoriainversao",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "idcontabancaria",
+            "otherEntityName": "contabancaria",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "idreferencia",
+            "otherEntityName": "referencia",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "rodovia",
+            "otherEntityName": "rodovia",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "dataop",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "iddesapropria",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nprocesso",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nomedesapropriado",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "local",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nsolicitacao",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "valorpago",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "valorus",
+            "fieldType": "BigDecimal"
+        }
+    ],
+    "changelogDate": "20170607001846",
+    "entityTableName": "desapropriacao",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "ambiental"
+}

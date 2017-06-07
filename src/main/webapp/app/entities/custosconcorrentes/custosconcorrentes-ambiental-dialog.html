@@ -1,0 +1,120 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myCustosconcorrentesLabel" data-translate="meioambienteApp.custosconcorrentes.home.createOrEditLabel">Create or edit a Custosconcorrentes</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.custosconcorrentes.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.custosconcorrentes.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.custosconcorrentes.datainicio" for="field_datainicio">Datainicio</label>
+                <div class="input-group">
+                    <input id="field_datainicio" type="text" class="form-control" name="datainicio" datetime-picker="{{dateformat}}" ng-model="vm.custosconcorrentes.datainicio" is-open="vm.datePickerOpenStatus.datainicio"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datainicio')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.custosconcorrentes.nsolicitacao" for="field_nsolicitacao">Nsolicitacao</label>
+            <input type="number" class="form-control" name="nsolicitacao" id="field_nsolicitacao"
+                    ng-model="vm.custosconcorrentes.nsolicitacao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.custosconcorrentes.valorus" for="field_valorus">Valorus</label>
+            <input type="number" class="form-control" name="valorus" id="field_valorus"
+                    ng-model="vm.custosconcorrentes.valorus"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.custosconcorrentes.valorpagoreais" for="field_valorpagoreais">Valorpagoreais</label>
+            <input type="number" class="form-control" name="valorpagoreais" id="field_valorpagoreais"
+                    ng-model="vm.custosconcorrentes.valorpagoreais"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.custosconcorrentes.taxa" for="field_taxa">Taxa</label>
+            <input type="number" class="form-control" name="taxa" id="field_taxa"
+                    ng-model="vm.custosconcorrentes.taxa"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="meioambienteApp.custosconcorrentes.contacontabilC1" for="field_contacontabilC1">Contacontabil C 1</label>
+            <select class="form-control" id="field_contacontabilC1" name="contacontabilC1" ng-model="vm.custosconcorrentes.contacontabilC1Id" ng-options="planocontas.id as planocontas.id for planocontas in vm.planocontas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.custosconcorrentes.contacontabilC2" for="field_contacontabilC2">Contacontabil C 2</label>
+            <select class="form-control" id="field_contacontabilC2" name="contacontabilC2" ng-model="vm.custosconcorrentes.contacontabilC2Id" ng-options="planocontas.id as planocontas.id for planocontas in vm.planocontas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.custosconcorrentes.contacontabilD1" for="field_contacontabilD1">Contacontabil D 1</label>
+            <select class="form-control" id="field_contacontabilD1" name="contacontabilD1" ng-model="vm.custosconcorrentes.contacontabilD1Id" ng-options="planocontas.id as planocontas.id for planocontas in vm.planocontas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.custosconcorrentes.contacontabilD2" for="field_contacontabilD2">Contacontabil D 2</label>
+            <select class="form-control" id="field_contacontabilD2" name="contacontabilD2" ng-model="vm.custosconcorrentes.contacontabilD2Id" ng-options="planocontas.id as planocontas.id for planocontas in vm.planocontas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.custosconcorrentes.divcontacontabilC1" for="field_divcontacontabilC1">Divcontacontabil C 1</label>
+            <select class="form-control" id="field_divcontacontabilC1" name="divcontacontabilC1" ng-model="vm.custosconcorrentes.divcontacontabilC1Id" ng-options="planocontas.id as planocontas.id for planocontas in vm.planocontas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.custosconcorrentes.divcontacontabilD1" for="field_divcontacontabilD1">Divcontacontabil D 1</label>
+            <select class="form-control" id="field_divcontacontabilD1" name="divcontacontabilD1" ng-model="vm.custosconcorrentes.divcontacontabilD1Id" ng-options="planocontas.id as planocontas.id for planocontas in vm.planocontas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.custosconcorrentes.juscontacontabilC1" for="field_juscontacontabilC1">Juscontacontabil C 1</label>
+            <select class="form-control" id="field_juscontacontabilC1" name="juscontacontabilC1" ng-model="vm.custosconcorrentes.juscontacontabilC1Id" ng-options="planocontas.id as planocontas.id for planocontas in vm.planocontas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.custosconcorrentes.juscontacontabilD1" for="field_juscontacontabilD1">Juscontacontabil D 1</label>
+            <select class="form-control" id="field_juscontacontabilD1" name="juscontacontabilD1" ng-model="vm.custosconcorrentes.juscontacontabilD1Id" ng-options="planocontas.id as planocontas.id for planocontas in vm.planocontas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.custosconcorrentes.fonte" for="field_fonte">Fonte</label>
+            <select class="form-control" id="field_fonte" name="fonte" ng-model="vm.custosconcorrentes.fonteId" ng-options="fonte.id as fonte.id for fonte in vm.fontes"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.custosconcorrentes.idcategoriainversao" for="field_idcategoriainversao">Idcategoriainversao</label>
+            <select class="form-control" id="field_idcategoriainversao" name="idcategoriainversao" ng-model="vm.custosconcorrentes.idcategoriainversaoId" ng-options="categoriainversao.id as categoriainversao.id for categoriainversao in vm.categoriainversaos"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

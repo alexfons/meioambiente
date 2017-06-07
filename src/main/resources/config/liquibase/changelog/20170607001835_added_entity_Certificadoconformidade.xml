@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Certificadoconformidade.
+    -->
+    <changeSet id="20170607001835-1" author="jhipster">
+        <createTable tableName="certificadoconformidade">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="data" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="dataliberacao" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="dataparalisacao" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="datareinicio" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="edital" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="item" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="liberacao" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="liberacaoadministrativamente" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="periodo" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="texto" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="texto_2" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="obra_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="tipo_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="tipocertificadoconformidade_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="certificadoconformidade" columnName="data" columnDataType="datetime"/>
+        <dropDefaultValue tableName="certificadoconformidade" columnName="dataliberacao" columnDataType="datetime"/>
+        <dropDefaultValue tableName="certificadoconformidade" columnName="dataparalisacao" columnDataType="datetime"/>
+        <dropDefaultValue tableName="certificadoconformidade" columnName="datareinicio" columnDataType="datetime"/>
+        
+        <createTable tableName="certificadoconformidade_informescertificadoirregularidade">
+            <column name="informescertificadoirregularidades_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="certificadoconformidades_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="certificadoconformidades_id, informescertificadoirregularidades_id" tableName="certificadoconformidade_informescertificadoirregularidade"/>
+        
+        <createTable tableName="certificadoconformidade_notificacaoscertificadoirregularidade">
+            <column name="notificacaoscertificadoirregularidades_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="certificadoconformidades_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="certificadoconformidades_id, notificacaoscertificadoirregularidades_id" tableName="certificadoconformidade_notificacaoscertificadoirregularidade"/>
+        
+        <createTable tableName="certificadoconformidade_ocorrenciascertificadoirregularidade">
+            <column name="ocorrenciascertificadoirregularidades_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="certificadoconformidades_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="certificadoconformidades_id, ocorrenciascertificadoirregularidades_id" tableName="certificadoconformidade_ocorrenciascertificadoirregularidade"/>
+        
+    </changeSet>
+</databaseChangeLog>

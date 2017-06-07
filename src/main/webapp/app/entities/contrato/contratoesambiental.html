@@ -1,0 +1,162 @@
+<div>
+    <h2 data-translate="meioambienteApp.contrato.home.title">Contratoes</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="contrato-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.contrato.home.createLabel">
+                        Create new Contrato
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.codigobid">Codigobid</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.dataatual">Dataatual</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.databasecontrato">Databasecontrato</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.datacontratacao">Datacontratacao</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.dataterminocaucao">Dataterminocaucao</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.extatualcontrato">Extatualcontrato</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.extinicialcontrato">Extinicialcontrato</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.ncontrato">Ncontrato</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.ordemservico">Ordemservico</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.prazoatual">Prazoatual</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.prazoinicial">Prazoinicial</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.rodoviacontrato">Rodoviacontrato</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.saldocontratual">Saldocontratual</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.situacao">Situacao</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.taxaatual">Taxaatual</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.taxaoriginal">Taxaoriginal</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.tipocontrato">Tipocontrato</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.titulocontrato">Titulocontrato</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.trechocontrato">Trechocontrato</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.valoratual">Valoratual</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.valorcaucao">Valorcaucao</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.valorpi">Valorpi</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.valorreajuste">Valorreajuste</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.idempresa">Idempresa</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.contacontabilC2">Contacontabil C 2</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.contacontabilD1">Contacontabil D 1</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.contacontabilD2">Contacontabil D 2</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.divcontacontabilC1">Divcontacontabil C 1</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.divcontacontabilD1">Divcontacontabil D 1</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.juscontacontabilC1">Juscontacontabil C 1</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.juscontacontabilD1">Juscontacontabil D 1</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.idnatureza">Idnatureza</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.proposta">Proposta</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.idcategoriainversao">Idcategoriainversao</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.aditivocontratos">Aditivocontratos</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.contratosobra">Contratosobra</span></th>
+                    <th><span data-translate="meioambienteApp.contrato.empresascontrato">Empresascontrato</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="contrato in vm.contratoes track by contrato.id">
+                    <td><a ui-sref="contrato-ambiental-detail({id:contrato.id})">{{contrato.id}}</a></td>
+                    <td>{{contrato.codigobid}}</td>
+                    <td>{{contrato.dataatual | date:'medium'}}</td>
+                    <td>{{contrato.databasecontrato | date:'medium'}}</td>
+                    <td>{{contrato.datacontratacao | date:'medium'}}</td>
+                    <td>{{contrato.dataterminocaucao | date:'medium'}}</td>
+                    <td>{{contrato.extatualcontrato}}</td>
+                    <td>{{contrato.extinicialcontrato}}</td>
+                    <td>{{contrato.ncontrato}}</td>
+                    <td>{{contrato.ordemservico}}</td>
+                    <td>{{contrato.prazoatual}}</td>
+                    <td>{{contrato.prazoinicial}}</td>
+                    <td>{{contrato.rodoviacontrato}}</td>
+                    <td>{{contrato.saldocontratual}}</td>
+                    <td>{{contrato.situacao}}</td>
+                    <td>{{contrato.taxaatual}}</td>
+                    <td>{{contrato.taxaoriginal}}</td>
+                    <td>{{contrato.tipocontrato}}</td>
+                    <td>{{contrato.titulocontrato}}</td>
+                    <td>{{contrato.trechocontrato}}</td>
+                    <td>{{contrato.valoratual}}</td>
+                    <td>{{contrato.valorcaucao}}</td>
+                    <td>{{contrato.valorpi}}</td>
+                    <td>{{contrato.valorreajuste}}</td>
+                    <td>
+                        <a ui-sref="empresa-ambiental-detail({id:contrato.idempresaId})">{{contrato.idempresaId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="planocontas-ambiental-detail({id:contrato.contacontabilC2Id})">{{contrato.contacontabilC2Id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="planocontas-ambiental-detail({id:contrato.contacontabilD1Id})">{{contrato.contacontabilD1Id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="planocontas-ambiental-detail({id:contrato.contacontabilD2Id})">{{contrato.contacontabilD2Id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="planocontas-ambiental-detail({id:contrato.divcontacontabilC1Id})">{{contrato.divcontacontabilC1Id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="planocontas-ambiental-detail({id:contrato.divcontacontabilD1Id})">{{contrato.divcontacontabilD1Id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="planocontas-ambiental-detail({id:contrato.juscontacontabilC1Id})">{{contrato.juscontacontabilC1Id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="planocontas-ambiental-detail({id:contrato.juscontacontabilD1Id})">{{contrato.juscontacontabilD1Id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="natureza-ambiental-detail({id:contrato.idnaturezaId})">{{contrato.idnaturezaId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="proposta-ambiental-detail({id:contrato.propostaId})">{{contrato.propostaId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="categoriainversao-ambiental-detail({id:contrato.idcategoriainversaoId})">{{contrato.idcategoriainversaoId}}</a>
+                    </td>
+                    <td>
+                        <span ng-repeat="aditivocontratos in contrato.aditivocontratos">
+                            <a class="form-control-static" ui-sref="aditivocontrato-ambiental-detail({id: aditivocontratos.id})">{{aditivocontratos.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td>
+                        <span ng-repeat="contratosobra in contrato.contratosobras">
+                            <a class="form-control-static" ui-sref="contratoobra-ambiental-detail({id: contratosobra.id})">{{contratosobra.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td>
+                        <span ng-repeat="empresascontrato in contrato.empresascontratoes">
+                            <a class="form-control-static" ui-sref="empresacontrato-ambiental-detail({id: empresascontrato.id})">{{empresascontrato.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="contrato-ambiental-detail({id:contrato.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="contrato-ambiental.edit({id:contrato.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="contrato-ambiental.delete({id:contrato.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

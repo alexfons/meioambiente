@@ -1,0 +1,31 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "opcoes",
+            "otherEntityName": "linha",
+            "otherEntityRelationshipName": "coluna"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lista",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "sequencia",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170607001837",
+    "entityTableName": "coluna",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "ambiental"
+}

@@ -4,6 +4,22 @@
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.contratoobra.tipo">Tipo</span></dt>
+        <dd>
+            <span>{{vm.contratoobra.tipo}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.contratoobra.contrato">Contrato</span></dt>
+        <dd>
+            <a ui-sref="contrato-ambiental-detail({id:vm.contratoobra.contratoId})">{{vm.contratoobra.contratoId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.contratoobra.residente">Residente</span></dt>
+        <dd>
+            <a ui-sref="residente-ambiental-detail({id:vm.contratoobra.residenteId})">{{vm.contratoobra.residenteId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.contratoobra.responsavel">Responsavel</span></dt>
+        <dd>
+            <a ui-sref="responsavel-ambiental-detail({id:vm.contratoobra.responsavelId})">{{vm.contratoobra.responsavelId}}</a>
+        </dd>
     </dl>
 
     <button type="submit"

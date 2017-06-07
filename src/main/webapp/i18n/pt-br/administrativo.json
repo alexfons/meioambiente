@@ -15,13 +15,13 @@
             "detail": {
                 "title": "Administrativo"
             },
-            "descricao": "Descricao",
-            "assunto": "Assunto",
-            "local": "Local",
             "album": "Album",
-            "folder": "Folder",
+            "assunto": "Assunto",
             "consideracao": "Consideracao",
             "data": "Data",
+            "descricao": "Descricao",
+            "folder": "Folder",
+            "local": "Local",
             "tipo": "Tipo",
             "obra": "Obra",
             "fotos": "Fotos",

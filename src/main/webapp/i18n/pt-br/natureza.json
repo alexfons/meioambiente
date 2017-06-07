@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "natureza" : {
+            "home": {
+                "title": "Naturezas",
+                "createLabel": "Criar novo Natureza",
+                "createOrEditLabel": "Criar ou editar Natureza"
+            },
+            "created": "Um novo Natureza é criado com o identificador {{ param }}",
+            "updated": "Um Natureza é atualizado com o identificador {{ param }}",
+            "deleted": "Um Natureza é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Natureza {{ id }}?"
+            },
+            "detail": {
+                "title": "Natureza"
+            }
+        }
+    }
+}
