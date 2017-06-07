@@ -82,6 +82,16 @@
     <include file="classpath:config/liquibase/changelog/20170607015510_added_entity_Tipolicenca.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170607015511_added_entity_Tipoocorrencia.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170607015513_added_entity_Usuario.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170515105929_added_entity_Foto.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170515105930_added_entity_Inspetor.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170515105931_added_entity_Fiscal.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170515105933_added_entity_Empresa.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170515105937_added_entity_Documento.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170515105939_added_entity_Historico.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607001849_added_entity_Empresacontrato.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607001851_added_entity_Fonte.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607001854_added_entity_Informecertificadoirregularidade.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607001856_added_entity_Linha.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="classpath:config/liquibase/changelog/20170515105938_added_entity_constraints_Contratoobra.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170515105940_added_entity_constraints_Administrativo.xml" relativeToChangelogFile="false"/>

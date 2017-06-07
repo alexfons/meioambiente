@@ -9,7 +9,7 @@
     <changeSet id="20170607001854-2" author="jhipster">
         
         <addForeignKeyConstraint baseColumnNames="informe_id"
-                                 baseTableName="informecertirreg"
+                                 baseTableName="informe_cert_irreg"
                                  constraintName="fk_informecertificadoirregularidade_informe_id"
                                  referencedColumnNames="id"
                                  referencedTableName="informe"/>

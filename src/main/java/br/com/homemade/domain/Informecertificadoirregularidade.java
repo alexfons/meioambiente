@@ -11,7 +11,7 @@ import java.util.Objects;
  * A Informecertificadoirregularidade.
  */
 @Entity
-@Table(name = "informecertirreg")
+@Table(name = "informe_cert_irreg")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Informecertificadoirregularidade implements Serializable {
 
