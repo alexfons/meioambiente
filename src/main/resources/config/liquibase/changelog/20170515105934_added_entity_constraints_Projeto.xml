@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Projeto.
+    -->
+    <changeSet id="20170515105934-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="inspetor_id"
+                                 baseTableName="projeto"
+                                 constraintName="fk_projeto_inspetor_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="inspetor"/>
+
+        <addForeignKeyConstraint baseColumnNames="municipio_id"
+                                 baseTableName="projeto"
+                                 constraintName="fk_projeto_municipio_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="municipio"/>
+
+        <addForeignKeyConstraint baseColumnNames="tipo_id"
+                                 baseTableName="projeto"
+                                 constraintName="fk_projeto_tipo_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tipoobra"/>
+
+        <addForeignKeyConstraint baseColumnNames="tipoobra_id"
+                                 baseTableName="projeto"
+                                 constraintName="fk_projeto_tipoobra_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tipoobra"/>
+
+        <addForeignKeyConstraint baseColumnNames="trecho_id"
+                                 baseTableName="projeto"
+                                 constraintName="fk_projeto_trecho_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="trecho"/>
+
+        <addForeignKeyConstraint baseColumnNames="fiscal_id"
+                                 baseTableName="projeto"
+                                 constraintName="fk_projeto_fiscal_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fiscal"/>
+
+        <addForeignKeyConstraint baseColumnNames="projetos_id"
+                                 baseTableName="projeto_contratosprojeto"
+                                 constraintName="fk_projeto_contratosprojeto_projetos_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="projeto"/>
+        <addForeignKeyConstraint baseColumnNames="contratosprojetos_id"
+                                 baseTableName="projeto_contratosprojeto"
+                                 constraintName="fk_projeto_contratosprojeto_contratosprojetos_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="contratoprojeto"/>
+        
+        <addForeignKeyConstraint baseColumnNames="projetos_id"
+                                 baseTableName="projeto_historicos"
+                                 constraintName="fk_projeto_historicos_projetos_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="projeto"/>
+        <addForeignKeyConstraint baseColumnNames="historicos_id"
+                                 baseTableName="projeto_historicos"
+                                 constraintName="fk_projeto_historicos_historicos_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="historico"/>
+        
+        <addForeignKeyConstraint baseColumnNames="projetos_id"
+                                 baseTableName="projeto_municipios"
+                                 constraintName="fk_projeto_municipios_projetos_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="projeto"/>
+        <addForeignKeyConstraint baseColumnNames="municipios_id"
+                                 baseTableName="projeto_municipios"
+                                 constraintName="fk_projeto_municipios_municipios_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="municipio"/>
+        
+    </changeSet>
+</databaseChangeLog>

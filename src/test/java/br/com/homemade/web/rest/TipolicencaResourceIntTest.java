@@ -39,6 +39,15 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = MeioambienteApp.class)
 public class TipolicencaResourceIntTest {
 
+    private static final String DEFAULT_CATEGORIA = "AAAAAAAAAA";
+    private static final String UPDATED_CATEGORIA = "BBBBBBBBBB";
+
+    private static final String DEFAULT_DESCRICAO = "AAAAAAAAAA";
+    private static final String UPDATED_DESCRICAO = "BBBBBBBBBB";
+
+    private static final String DEFAULT_SUBCATEGORIA = "AAAAAAAAAA";
+    private static final String UPDATED_SUBCATEGORIA = "BBBBBBBBBB";
+
     @Autowired
     private TipolicencaRepository tipolicencaRepository;
 
@@ -78,7 +87,10 @@ public class TipolicencaResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Tipolicenca createEntity(EntityManager em) {
-        Tipolicenca tipolicenca = new Tipolicenca();
+        Tipolicenca tipolicenca = new Tipolicenca()
+            .categoria(DEFAULT_CATEGORIA)
+            .descricao(DEFAULT_DESCRICAO)
+            .subcategoria(DEFAULT_SUBCATEGORIA);
         return tipolicenca;
     }
 
@@ -103,6 +115,9 @@ public class TipolicencaResourceIntTest {
         List<Tipolicenca> tipolicencaList = tipolicencaRepository.findAll();
         assertThat(tipolicencaList).hasSize(databaseSizeBeforeCreate + 1);
         Tipolicenca testTipolicenca = tipolicencaList.get(tipolicencaList.size() - 1);
+        assertThat(testTipolicenca.getCategoria()).isEqualTo(DEFAULT_CATEGORIA);
+        assertThat(testTipolicenca.getDescricao()).isEqualTo(DEFAULT_DESCRICAO);
+        assertThat(testTipolicenca.getSubcategoria()).isEqualTo(DEFAULT_SUBCATEGORIA);
     }
 
     @Test
@@ -135,7 +150,10 @@ public class TipolicencaResourceIntTest {
         restTipolicencaMockMvc.perform(get("/api/tipolicencas?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(tipolicenca.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(tipolicenca.getId().intValue())))
+            .andExpect(jsonPath("$.[*].categoria").value(hasItem(DEFAULT_CATEGORIA.toString())))
+            .andExpect(jsonPath("$.[*].descricao").value(hasItem(DEFAULT_DESCRICAO.toString())))
+            .andExpect(jsonPath("$.[*].subcategoria").value(hasItem(DEFAULT_SUBCATEGORIA.toString())));
     }
 
     @Test
@@ -148,7 +166,10 @@ public class TipolicencaResourceIntTest {
         restTipolicencaMockMvc.perform(get("/api/tipolicencas/{id}", tipolicenca.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(tipolicenca.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(tipolicenca.getId().intValue()))
+            .andExpect(jsonPath("$.categoria").value(DEFAULT_CATEGORIA.toString()))
+            .andExpect(jsonPath("$.descricao").value(DEFAULT_DESCRICAO.toString()))
+            .andExpect(jsonPath("$.subcategoria").value(DEFAULT_SUBCATEGORIA.toString()));
     }
 
     @Test
@@ -168,6 +189,10 @@ public class TipolicencaResourceIntTest {
 
         // Update the tipolicenca
         Tipolicenca updatedTipolicenca = tipolicencaRepository.findOne(tipolicenca.getId());
+        updatedTipolicenca
+            .categoria(UPDATED_CATEGORIA)
+            .descricao(UPDATED_DESCRICAO)
+            .subcategoria(UPDATED_SUBCATEGORIA);
         TipolicencaDTO tipolicencaDTO = tipolicencaMapper.toDto(updatedTipolicenca);
 
         restTipolicencaMockMvc.perform(put("/api/tipolicencas")
@@ -179,6 +204,9 @@ public class TipolicencaResourceIntTest {
         List<Tipolicenca> tipolicencaList = tipolicencaRepository.findAll();
         assertThat(tipolicencaList).hasSize(databaseSizeBeforeUpdate);
         Tipolicenca testTipolicenca = tipolicencaList.get(tipolicencaList.size() - 1);
+        assertThat(testTipolicenca.getCategoria()).isEqualTo(UPDATED_CATEGORIA);
+        assertThat(testTipolicenca.getDescricao()).isEqualTo(UPDATED_DESCRICAO);
+        assertThat(testTipolicenca.getSubcategoria()).isEqualTo(UPDATED_SUBCATEGORIA);
     }
 
     @Test

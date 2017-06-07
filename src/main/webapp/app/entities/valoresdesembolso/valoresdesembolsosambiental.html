@@ -1,0 +1,76 @@
+<div>
+    <h2 data-translate="meioambienteApp.valoresdesembolso.home.title">Valoresdesembolsos</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="valoresdesembolso-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.valoresdesembolso.home.createLabel">
+                        Create new Valoresdesembolso
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.valoresdesembolso.datainternalizacao">Datainternalizacao</span></th>
+                    <th><span data-translate="meioambienteApp.valoresdesembolso.idvaloresdesembolso">Idvaloresdesembolso</span></th>
+                    <th><span data-translate="meioambienteApp.valoresdesembolso.nsolicitacao">Nsolicitacao</span></th>
+                    <th><span data-translate="meioambienteApp.valoresdesembolso.tipodesembolso">Tipodesembolso</span></th>
+                    <th><span data-translate="meioambienteApp.valoresdesembolso.valoreais">Valoreais</span></th>
+                    <th><span data-translate="meioambienteApp.valoresdesembolso.valorus">Valorus</span></th>
+                    <th><span data-translate="meioambienteApp.valoresdesembolso.valuedata">Valuedata</span></th>
+                    <th><span data-translate="meioambienteApp.valoresdesembolso.idcontabancaria">Idcontabancaria</span></th>
+                    <th><span data-translate="meioambienteApp.valoresdesembolso.idreferencia">Idreferencia</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="valoresdesembolso in vm.valoresdesembolsos track by valoresdesembolso.id">
+                    <td><a ui-sref="valoresdesembolso-ambiental-detail({id:valoresdesembolso.id})">{{valoresdesembolso.id}}</a></td>
+                    <td>{{valoresdesembolso.datainternalizacao | date:'medium'}}</td>
+                    <td>{{valoresdesembolso.idvaloresdesembolso}}</td>
+                    <td>{{valoresdesembolso.nsolicitacao}}</td>
+                    <td>{{valoresdesembolso.tipodesembolso}}</td>
+                    <td>{{valoresdesembolso.valoreais}}</td>
+                    <td>{{valoresdesembolso.valorus}}</td>
+                    <td>{{valoresdesembolso.valuedata | date:'medium'}}</td>
+                    <td>
+                        <a ui-sref="contabancaria-ambiental-detail({id:valoresdesembolso.idcontabancariaId})">{{valoresdesembolso.idcontabancariaId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="referencia-ambiental-detail({id:valoresdesembolso.idreferenciaId})">{{valoresdesembolso.idreferenciaId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="valoresdesembolso-ambiental-detail({id:valoresdesembolso.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="valoresdesembolso-ambiental.edit({id:valoresdesembolso.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="valoresdesembolso-ambiental.delete({id:valoresdesembolso.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,7 +1,12 @@
 {
     "fluentMethods": true,
     "relationships": [],
-    "fields": [],
+    "fields": [
+        {
+            "fieldName": "sgrodovia",
+            "fieldType": "String"
+        }
+    ],
     "changelogDate": "20170607001909",
     "entityTableName": "rodovia",
     "dto": "mapstruct",

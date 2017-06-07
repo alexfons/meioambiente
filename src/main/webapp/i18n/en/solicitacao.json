@@ -1,0 +1,33 @@
+{
+    "meioambienteApp": {
+        "solicitacao" : {
+            "home": {
+                "title": "Solicitacaos",
+                "createLabel": "Create a new Solicitacao",
+                "createOrEditLabel": "Create or edit a Solicitacao"
+            },
+            "created": "A new Solicitacao is created with identifier {{ param }}",
+            "updated": "A Solicitacao is updated with identifier {{ param }}",
+            "deleted": "A Solicitacao is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Solicitacao {{ id }}?"
+            },
+            "detail": {
+                "title": "Solicitacao"
+            },
+            "apresentamos": "Apresentamos",
+            "data": "Data",
+            "descricao": "Descricao",
+            "extenso": "Extenso",
+            "extenso1": "Extenso 1",
+            "idsolicitacao": "Idsolicitacao",
+            "moeda": "Moeda",
+            "montante": "Montante",
+            "nsolicitacao": "Nsolicitacao",
+            "oficio": "Oficio",
+            "solicitamos": "Solicitamos",
+            "idbanco": "Idbanco",
+            "idContratoagente": "Id Contratoagente"
+        }
+    }
+}

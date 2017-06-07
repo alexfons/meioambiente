@@ -13,7 +13,25 @@
             <input type="text" class="form-control" id="id" name="id"
                     ng-model="vm.obraatividade.id" readonly />
         </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.obraatividade.peso" for="field_peso">Peso</label>
+            <input type="number" class="form-control" name="peso" id="field_peso"
+                    ng-model="vm.obraatividade.peso"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.obraatividade.revestimento" for="field_revestimento">Revestimento</label>
+            <input type="text" class="form-control" name="revestimento" id="field_revestimento"
+                    ng-model="vm.obraatividade.revestimento"
+                    />
+        </div>
 
+        <div class="form-group">
+            <label data-translate="meioambienteApp.obraatividade.atividade" for="field_atividade">Atividade</label>
+            <select class="form-control" id="field_atividade" name="atividade" ng-model="vm.obraatividade.atividadeId" ng-options="atividade.id as atividade.id for atividade in vm.atividades"            >
+                <option value=""></option>
+            </select>
+        </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">

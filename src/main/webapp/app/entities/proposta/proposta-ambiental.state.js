@@ -104,6 +104,17 @@
                     resolve: {
                         entity: function () {
                             return {
+                                classificacao: null,
+                                nota: null,
+                                tipoproposta: null,
+                                obs: null,
+                                contrato: null,
+                                habilitada: null,
+                                arqlink: null,
+                                idproposta: null,
+                                numeroedital: null,
+                                valorproposta: null,
+                                valorrenegociado: null,
                                 id: null
                             };
                         }

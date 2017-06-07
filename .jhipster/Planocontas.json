@@ -1,7 +1,28 @@
 {
     "fluentMethods": true,
     "relationships": [],
-    "fields": [],
+    "fields": [
+        {
+            "fieldName": "idplanocontas",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "ncontabil",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tipoconta",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tipolancamento",
+            "fieldType": "String"
+        }
+    ],
     "changelogDate": "20170607001904",
     "entityTableName": "planocontas",
     "dto": "mapstruct",

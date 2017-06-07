@@ -13,7 +13,97 @@
             <input type="text" class="form-control" id="id" name="id"
                     ng-model="vm.trecho.id" readonly />
         </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.trecho.defim" for="field_defim">Defim</label>
+            <input type="text" class="form-control" name="defim" id="field_defim"
+                    ng-model="vm.trecho.defim"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.trecho.deinicio" for="field_deinicio">Deinicio</label>
+            <input type="text" class="form-control" name="deinicio" id="field_deinicio"
+                    ng-model="vm.trecho.deinicio"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.trecho.fim" for="field_fim">Fim</label>
+            <input type="text" class="form-control" name="fim" id="field_fim"
+                    ng-model="vm.trecho.fim"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.trecho.inicio" for="field_inicio">Inicio</label>
+            <input type="text" class="form-control" name="inicio" id="field_inicio"
+                    ng-model="vm.trecho.inicio"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.trecho.jurisdicao" for="field_jurisdicao">Jurisdicao</label>
+            <input type="text" class="form-control" name="jurisdicao" id="field_jurisdicao"
+                    ng-model="vm.trecho.jurisdicao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.trecho.kml" for="field_kml">Kml</label>
+            <input type="text" class="form-control" name="kml" id="field_kml"
+                    ng-model="vm.trecho.kml"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.trecho.nuextensao" for="field_nuextensao">Nuextensao</label>
+            <input type="number" class="form-control" name="nuextensao" id="field_nuextensao"
+                    ng-model="vm.trecho.nuextensao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.trecho.nukmfinal" for="field_nukmfinal">Nukmfinal</label>
+            <input type="number" class="form-control" name="nukmfinal" id="field_nukmfinal"
+                    ng-model="vm.trecho.nukmfinal"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.trecho.nukminicia" for="field_nukminicia">Nukminicia</label>
+            <input type="number" class="form-control" name="nukminicia" id="field_nukminicia"
+                    ng-model="vm.trecho.nukminicia"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.trecho.responsavel" for="field_responsavel">Responsavel</label>
+            <input type="text" class="form-control" name="responsavel" id="field_responsavel"
+                    ng-model="vm.trecho.responsavel"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.trecho.sgpre" for="field_sgpre">Sgpre</label>
+            <input type="text" class="form-control" name="sgpre" id="field_sgpre"
+                    ng-model="vm.trecho.sgpre"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.trecho.sgsituacao" for="field_sgsituacao">Sgsituacao</label>
+            <input type="text" class="form-control" name="sgsituacao" id="field_sgsituacao"
+                    ng-model="vm.trecho.sgsituacao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.trecho.tprevest" for="field_tprevest">Tprevest</label>
+            <input type="text" class="form-control" name="tprevest" id="field_tprevest"
+                    ng-model="vm.trecho.tprevest"
+                    />
+        </div>
 
+        <div class="form-group">
+            <label data-translate="meioambienteApp.trecho.rodovia" for="field_rodovia">Rodovia</label>
+            <select class="form-control" id="field_rodovia" name="rodovia" ng-model="vm.trecho.rodoviaId" ng-options="rodovia.id as rodovia.id for rodovia in vm.rodovias"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.trecho.supre" for="field_supre">Supre</label>
+            <select class="form-control" id="field_supre" name="supre" ng-model="vm.trecho.supreId" ng-options="supre.id as supre.id for supre in vm.supres"            >
+                <option value=""></option>
+            </select>
+        </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">

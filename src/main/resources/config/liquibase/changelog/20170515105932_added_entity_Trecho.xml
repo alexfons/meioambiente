@@ -21,6 +21,66 @@
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="defim" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="deinicio" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="fim" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="inicio" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="jurisdicao" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="kml" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="nuextensao" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="nukmfinal" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="nukminicia" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="responsavel" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="sgpre" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="sgsituacao" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="tprevest" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="rodovia_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="supre_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
         

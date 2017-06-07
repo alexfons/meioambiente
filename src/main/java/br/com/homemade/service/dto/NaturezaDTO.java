@@ -11,12 +11,62 @@ public class NaturezaDTO implements Serializable {
 
     private Long id;
 
+    private String descnatureza;
+
+    private String descsubacao;
+
+    private Integer idnatureza;
+
+    private Integer numnatureza;
+
+    private Integer subacao;
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getDescnatureza() {
+        return descnatureza;
+    }
+
+    public void setDescnatureza(String descnatureza) {
+        this.descnatureza = descnatureza;
+    }
+
+    public String getDescsubacao() {
+        return descsubacao;
+    }
+
+    public void setDescsubacao(String descsubacao) {
+        this.descsubacao = descsubacao;
+    }
+
+    public Integer getIdnatureza() {
+        return idnatureza;
+    }
+
+    public void setIdnatureza(Integer idnatureza) {
+        this.idnatureza = idnatureza;
+    }
+
+    public Integer getNumnatureza() {
+        return numnatureza;
+    }
+
+    public void setNumnatureza(Integer numnatureza) {
+        this.numnatureza = numnatureza;
+    }
+
+    public Integer getSubacao() {
+        return subacao;
+    }
+
+    public void setSubacao(Integer subacao) {
+        this.subacao = subacao;
     }
 
     @Override
@@ -44,6 +94,11 @@ public class NaturezaDTO implements Serializable {
     public String toString() {
         return "NaturezaDTO{" +
             "id=" + getId() +
+            ", descnatureza='" + getDescnatureza() + "'" +
+            ", descsubacao='" + getDescsubacao() + "'" +
+            ", idnatureza='" + getIdnatureza() + "'" +
+            ", numnatureza='" + getNumnatureza() + "'" +
+            ", subacao='" + getSubacao() + "'" +
             "}";
     }
 }

@@ -68,7 +68,7 @@ class RodoviaGatlingTest extends Simulation {
             .exec(http("Create new rodovia")
             .post("/api/rodovias")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null}""")).asJSON
+            .body(StringBody("""{"id":null, "sgrodovia":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_rodovia_url"))).exitHereIfFailed
             .pause(10)

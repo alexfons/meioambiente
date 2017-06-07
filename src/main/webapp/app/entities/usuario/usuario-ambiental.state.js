@@ -104,6 +104,10 @@
                     resolve: {
                         entity: function () {
                             return {
+                                email: null,
+                                nome: null,
+                                permissoes: null,
+                                senha: null,
                                 id: null
                             };
                         }

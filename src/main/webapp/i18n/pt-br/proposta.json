@@ -14,7 +14,20 @@
             },
             "detail": {
                 "title": "Proposta"
-            }
+            },
+            "classificacao": "Classificacao",
+            "nota": "Nota",
+            "tipoproposta": "Tipoproposta",
+            "obs": "Obs",
+            "contrato": "Contrato",
+            "habilitada": "Habilitada",
+            "arqlink": "Arqlink",
+            "idproposta": "Idproposta",
+            "numeroedital": "Numeroedital",
+            "valorproposta": "Valorproposta",
+            "valorrenegociado": "Valorrenegociado",
+            "idempresa": "Idempresa",
+            "idlote": "Idlote"
         }
     }
 }

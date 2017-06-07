@@ -1,0 +1,51 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.responsavelTipo.detail.title">Responsavel Tipo</span> {{vm.responsavelTipo.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.responsavelTipo.email">Email</span></dt>
+        <dd>
+            <span>{{vm.responsavelTipo.email}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.responsavelTipo.funcao">Funcao</span></dt>
+        <dd>
+            <span>{{vm.responsavelTipo.funcao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.responsavelTipo.localtrabalho">Localtrabalho</span></dt>
+        <dd>
+            <span>{{vm.responsavelTipo.localtrabalho}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.responsavelTipo.matricula">Matricula</span></dt>
+        <dd>
+            <span>{{vm.responsavelTipo.matricula}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.responsavelTipo.nome">Nome</span></dt>
+        <dd>
+            <span>{{vm.responsavelTipo.nome}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.responsavelTipo.superintendencia">Superintendencia</span></dt>
+        <dd>
+            <span>{{vm.responsavelTipo.superintendencia}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.responsavelTipo.telefone">Telefone</span></dt>
+        <dd>
+            <span>{{vm.responsavelTipo.telefone}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.responsavelTipo.telefonecomercial">Telefonecomercial</span></dt>
+        <dd>
+            <span>{{vm.responsavelTipo.telefonecomercial}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="responsavel-tipo-ambiental-detail.edit({id:vm.responsavelTipo.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,47 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.quantitativo.detail.title">Quantitativo</span> {{vm.quantitativo.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.quantitativo.descricao">Descricao</span></dt>
+        <dd>
+            <span>{{vm.quantitativo.descricao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.quantitativo.idquantitativo">Idquantitativo</span></dt>
+        <dd>
+            <span>{{vm.quantitativo.idquantitativo}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.quantitativo.quantidade">Quantidade</span></dt>
+        <dd>
+            <span>{{vm.quantitativo.quantidade}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.quantitativo.total">Total</span></dt>
+        <dd>
+            <span>{{vm.quantitativo.total}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.quantitativo.unidade">Unidade</span></dt>
+        <dd>
+            <span>{{vm.quantitativo.unidade}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.quantitativo.unitario">Unitario</span></dt>
+        <dd>
+            <span>{{vm.quantitativo.unitario}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.quantitativo.nmedicao">Nmedicao</span></dt>
+        <dd>
+            <a ui-sref="medicao-ambiental-detail({id:vm.quantitativo.nmedicaoId})">{{vm.quantitativo.nmedicaoId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="quantitativo-ambiental-detail.edit({id:vm.quantitativo.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

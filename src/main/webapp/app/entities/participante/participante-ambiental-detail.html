@@ -4,6 +4,18 @@
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.participante.formacao">Formacao</span></dt>
+        <dd>
+            <span>{{vm.participante.formacao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.participante.nome">Nome</span></dt>
+        <dd>
+            <span>{{vm.participante.nome}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.participante.empresa">Empresa</span></dt>
+        <dd>
+            <a ui-sref="empresa-ambiental-detail({id:vm.participante.empresaId})">{{vm.participante.empresaId}}</a>
+        </dd>
     </dl>
 
     <button type="submit"

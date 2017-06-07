@@ -1,0 +1,74 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myResponsavelTipoLabel" data-translate="meioambienteApp.responsavelTipo.home.createOrEditLabel">Create or edit a Responsavel Tipo</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.responsavelTipo.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.responsavelTipo.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.responsavelTipo.email" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                    ng-model="vm.responsavelTipo.email"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.responsavelTipo.funcao" for="field_funcao">Funcao</label>
+            <input type="text" class="form-control" name="funcao" id="field_funcao"
+                    ng-model="vm.responsavelTipo.funcao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.responsavelTipo.localtrabalho" for="field_localtrabalho">Localtrabalho</label>
+            <input type="text" class="form-control" name="localtrabalho" id="field_localtrabalho"
+                    ng-model="vm.responsavelTipo.localtrabalho"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.responsavelTipo.matricula" for="field_matricula">Matricula</label>
+            <input type="text" class="form-control" name="matricula" id="field_matricula"
+                    ng-model="vm.responsavelTipo.matricula"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.responsavelTipo.nome" for="field_nome">Nome</label>
+            <input type="text" class="form-control" name="nome" id="field_nome"
+                    ng-model="vm.responsavelTipo.nome"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.responsavelTipo.superintendencia" for="field_superintendencia">Superintendencia</label>
+            <input type="text" class="form-control" name="superintendencia" id="field_superintendencia"
+                    ng-model="vm.responsavelTipo.superintendencia"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.responsavelTipo.telefone" for="field_telefone">Telefone</label>
+            <input type="number" class="form-control" name="telefone" id="field_telefone"
+                    ng-model="vm.responsavelTipo.telefone"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.responsavelTipo.telefonecomercial" for="field_telefonecomercial">Telefonecomercial</label>
+            <input type="number" class="form-control" name="telefonecomercial" id="field_telefonecomercial"
+                    ng-model="vm.responsavelTipo.telefonecomercial"
+                    />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,7 +1,31 @@
 {
     "fluentMethods": true,
-    "relationships": [],
-    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "supervisor",
+            "otherEntityName": "usuario",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "permissoes",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "senha",
+            "fieldType": "String"
+        }
+    ],
     "changelogDate": "20170607015513",
     "entityTableName": "usuario",
     "dto": "mapstruct",

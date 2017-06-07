@@ -19,12 +19,18 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.tipoadministrativo.categoria">Categoria</span></th>
+                    <th><span data-translate="meioambienteApp.tipoadministrativo.descricao">Descricao</span></th>
+                    <th><span data-translate="meioambienteApp.tipoadministrativo.subcategoria">Subcategoria</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="tipoadministrativo in vm.tipoadministrativos track by tipoadministrativo.id">
                     <td><a ui-sref="tipoadministrativo-ambiental-detail({id:tipoadministrativo.id})">{{tipoadministrativo.id}}</a></td>
+                    <td>{{tipoadministrativo.categoria}}</td>
+                    <td>{{tipoadministrativo.descricao}}</td>
+                    <td>{{tipoadministrativo.subcategoria}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

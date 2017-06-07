@@ -22,12 +22,60 @@ public class Participante implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
+    @Column(name = "formacao")
+    private String formacao;
+
+    @Column(name = "nome")
+    private String nome;
+
+    @ManyToOne
+    private Empresa empresa;
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getFormacao() {
+        return formacao;
+    }
+
+    public Participante formacao(String formacao) {
+        this.formacao = formacao;
+        return this;
+    }
+
+    public void setFormacao(String formacao) {
+        this.formacao = formacao;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public Participante nome(String nome) {
+        this.nome = nome;
+        return this;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public Participante empresa(Empresa empresa) {
+        this.empresa = empresa;
+        return this;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
     }
 
     @Override
@@ -54,6 +102,8 @@ public class Participante implements Serializable {
     public String toString() {
         return "Participante{" +
             "id=" + getId() +
+            ", formacao='" + getFormacao() + "'" +
+            ", nome='" + getNome() + "'" +
             "}";
     }
 }

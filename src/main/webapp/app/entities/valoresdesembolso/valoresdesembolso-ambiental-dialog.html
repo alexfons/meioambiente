@@ -1,0 +1,88 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myValoresdesembolsoLabel" data-translate="meioambienteApp.valoresdesembolso.home.createOrEditLabel">Create or edit a Valoresdesembolso</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.valoresdesembolso.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.valoresdesembolso.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.valoresdesembolso.datainternalizacao" for="field_datainternalizacao">Datainternalizacao</label>
+                <div class="input-group">
+                    <input id="field_datainternalizacao" type="text" class="form-control" name="datainternalizacao" datetime-picker="{{dateformat}}" ng-model="vm.valoresdesembolso.datainternalizacao" is-open="vm.datePickerOpenStatus.datainternalizacao"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datainternalizacao')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.valoresdesembolso.idvaloresdesembolso" for="field_idvaloresdesembolso">Idvaloresdesembolso</label>
+            <input type="number" class="form-control" name="idvaloresdesembolso" id="field_idvaloresdesembolso"
+                    ng-model="vm.valoresdesembolso.idvaloresdesembolso"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.valoresdesembolso.nsolicitacao" for="field_nsolicitacao">Nsolicitacao</label>
+            <input type="number" class="form-control" name="nsolicitacao" id="field_nsolicitacao"
+                    ng-model="vm.valoresdesembolso.nsolicitacao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.valoresdesembolso.tipodesembolso" for="field_tipodesembolso">Tipodesembolso</label>
+            <input type="text" class="form-control" name="tipodesembolso" id="field_tipodesembolso"
+                    ng-model="vm.valoresdesembolso.tipodesembolso"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.valoresdesembolso.valoreais" for="field_valoreais">Valoreais</label>
+            <input type="number" class="form-control" name="valoreais" id="field_valoreais"
+                    ng-model="vm.valoresdesembolso.valoreais"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.valoresdesembolso.valorus" for="field_valorus">Valorus</label>
+            <input type="number" class="form-control" name="valorus" id="field_valorus"
+                    ng-model="vm.valoresdesembolso.valorus"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.valoresdesembolso.valuedata" for="field_valuedata">Valuedata</label>
+                <div class="input-group">
+                    <input id="field_valuedata" type="text" class="form-control" name="valuedata" datetime-picker="{{dateformat}}" ng-model="vm.valoresdesembolso.valuedata" is-open="vm.datePickerOpenStatus.valuedata"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('valuedata')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="meioambienteApp.valoresdesembolso.idcontabancaria" for="field_idcontabancaria">Idcontabancaria</label>
+            <select class="form-control" id="field_idcontabancaria" name="idcontabancaria" ng-model="vm.valoresdesembolso.idcontabancariaId" ng-options="contabancaria.id as contabancaria.id for contabancaria in vm.contabancarias"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.valoresdesembolso.idreferencia" for="field_idreferencia">Idreferencia</label>
+            <select class="form-control" id="field_idreferencia" name="idreferencia" ng-model="vm.valoresdesembolso.idreferenciaId" ng-options="referencia.id as referencia.id for referencia in vm.referencias"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

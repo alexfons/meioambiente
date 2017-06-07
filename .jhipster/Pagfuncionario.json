@@ -1,0 +1,117 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "contacontabilC1",
+            "otherEntityName": "planocontas",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "contacontabilC2",
+            "otherEntityName": "planocontas",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "contacontabilD1",
+            "otherEntityName": "planocontas",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "contacontabilD2",
+            "otherEntityName": "planocontas",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "divcontacontabilC1",
+            "otherEntityName": "planocontas",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "divcontacontabilD1",
+            "otherEntityName": "planocontas",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "juscontacontabilC1",
+            "otherEntityName": "planocontas",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "juscontacontabilD1",
+            "otherEntityName": "planocontas",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "fonte",
+            "otherEntityName": "fonte",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "idcategoriainversao",
+            "otherEntityName": "categoriainversao",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "idfuncionarios",
+            "otherEntityName": "funcionario",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "idreferencia",
+            "otherEntityName": "referencia",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "datapagamento",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "idpagfuncionarios",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nsolicitacao",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "percentual",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "salario",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "salariocontribuicao",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "salariototal",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "valorus",
+            "fieldType": "BigDecimal"
+        }
+    ],
+    "changelogDate": "20170607114335",
+    "entityTableName": "pagfuncionario",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "ambiental"
+}

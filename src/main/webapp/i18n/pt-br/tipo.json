@@ -1,0 +1,23 @@
+{
+    "meioambienteApp": {
+        "tipo" : {
+            "home": {
+                "title": "Tipos",
+                "createLabel": "Criar novo Tipo",
+                "createOrEditLabel": "Criar ou editar Tipo"
+            },
+            "created": "Um novo Tipo é criado com o identificador {{ param }}",
+            "updated": "Um Tipo é atualizado com o identificador {{ param }}",
+            "deleted": "Um Tipo é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Tipo {{ id }}?"
+            },
+            "detail": {
+                "title": "Tipo"
+            },
+            "categoria": "Categoria",
+            "descricao": "Descricao",
+            "subcategoria": "Subcategoria"
+        }
+    }
+}

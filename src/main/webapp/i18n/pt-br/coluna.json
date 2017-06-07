@@ -18,7 +18,8 @@
             "descricao": "Descricao",
             "lista": "Lista",
             "sequencia": "Sequencia",
-            "opcoes": "Opcoes"
+            "opcoes": "Opcoes",
+            "tabela": "Tabela"
         }
     }
 }

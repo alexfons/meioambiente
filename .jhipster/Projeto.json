@@ -1,7 +1,77 @@
 {
     "fluentMethods": true,
-    "relationships": [],
-    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "inspetor",
+            "otherEntityName": "inspetor",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "municipio",
+            "otherEntityName": "municipio",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "tipo",
+            "otherEntityName": "tipoobra",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "tipoobra",
+            "otherEntityName": "tipoobra",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "trecho",
+            "otherEntityName": "trecho",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "fiscal",
+            "otherEntityName": "fiscal",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "contratosprojeto",
+            "otherEntityName": "contratoprojeto",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "historicos",
+            "otherEntityName": "historico",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "municipios",
+            "otherEntityName": "municipio",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "andamento",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pendente",
+            "fieldType": "String"
+        }
+    ],
     "changelogDate": "20170515105934",
     "entityTableName": "projeto",
     "dto": "mapstruct",

@@ -5,9 +5,9 @@
         .module('meioambienteApp')
         .controller('TrechoAmbientalDetailController', TrechoAmbientalDetailController);
 
-    TrechoAmbientalDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Trecho'];
+    TrechoAmbientalDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Trecho', 'Rodovia', 'Supre'];
 
-    function TrechoAmbientalDetailController($scope, $rootScope, $stateParams, previousState, entity, Trecho) {
+    function TrechoAmbientalDetailController($scope, $rootScope, $stateParams, previousState, entity, Trecho, Rodovia, Supre) {
         var vm = this;
 
         vm.trecho = entity;

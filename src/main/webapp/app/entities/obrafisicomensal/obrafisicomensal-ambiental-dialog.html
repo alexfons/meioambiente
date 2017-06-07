@@ -1,0 +1,132 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myObrafisicomensalLabel" data-translate="meioambienteApp.obrafisicomensal.home.createOrEditLabel">Create or edit a Obrafisicomensal</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.obrafisicomensal.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.obrafisicomensal.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.obrafisicomensal.comentario" for="field_comentario">Comentario</label>
+            <input type="text" class="form-control" name="comentario" id="field_comentario"
+                    ng-model="vm.obrafisicomensal.comentario"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.obrafisicomensal.datainspecao" for="field_datainspecao">Datainspecao</label>
+                <div class="input-group">
+                    <input id="field_datainspecao" type="text" class="form-control" name="datainspecao" datetime-picker="{{dateformat}}" ng-model="vm.obrafisicomensal.datainspecao" is-open="vm.datePickerOpenStatus.datainspecao"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datainspecao')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.obrafisicomensal.datarelatorio" for="field_datarelatorio">Datarelatorio</label>
+                <div class="input-group">
+                    <input id="field_datarelatorio" type="text" class="form-control" name="datarelatorio" datetime-picker="{{dateformat}}" ng-model="vm.obrafisicomensal.datarelatorio" is-open="vm.datePickerOpenStatus.datarelatorio"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datarelatorio')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.obrafisicomensal.pessoal" for="field_pessoal">Pessoal</label>
+            <input type="text" class="form-control" name="pessoal" id="field_pessoal"
+                    ng-model="vm.obrafisicomensal.pessoal"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.obrafisicomensal.equipamento" for="field_equipamento">Equipamento</label>
+            <input type="text" class="form-control" name="equipamento" id="field_equipamento"
+                    ng-model="vm.obrafisicomensal.equipamento"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.obrafisicomensal.instalacaoapoio" for="field_instalacaoapoio">Instalacaoapoio</label>
+            <input type="text" class="form-control" name="instalacaoapoio" id="field_instalacaoapoio"
+                    ng-model="vm.obrafisicomensal.instalacaoapoio"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.obrafisicomensal.ritmo" for="field_ritmo">Ritmo</label>
+            <input type="text" class="form-control" name="ritmo" id="field_ritmo"
+                    ng-model="vm.obrafisicomensal.ritmo"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.obrafisicomensal.apresentacao" for="field_apresentacao">Apresentacao</label>
+            <input type="text" class="form-control" name="apresentacao" id="field_apresentacao"
+                    ng-model="vm.obrafisicomensal.apresentacao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.obrafisicomensal.qualidadeservicos" for="field_qualidadeservicos">Qualidadeservicos</label>
+            <input type="text" class="form-control" name="qualidadeservicos" id="field_qualidadeservicos"
+                    ng-model="vm.obrafisicomensal.qualidadeservicos"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.obrafisicomensal.cronograma" for="field_cronograma">Cronograma</label>
+            <input type="text" class="form-control" name="cronograma" id="field_cronograma"
+                    ng-model="vm.obrafisicomensal.cronograma"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.obrafisicomensal.prazodecorrido" for="field_prazodecorrido">Prazodecorrido</label>
+            <input type="number" class="form-control" name="prazodecorrido" id="field_prazodecorrido"
+                    ng-model="vm.obrafisicomensal.prazodecorrido"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.obrafisicomensal.avancofisicoOAE" for="field_avancofisicoOAE">Avancofisico OAE</label>
+            <input type="number" class="form-control" name="avancofisicoOAE" id="field_avancofisicoOAE"
+                    ng-model="vm.obrafisicomensal.avancofisicoOAE"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.obrafisicomensal.avancofisicoponderado" for="field_avancofisicoponderado">Avancofisicoponderado</label>
+            <input type="number" class="form-control" name="avancofisicoponderado" id="field_avancofisicoponderado"
+                    ng-model="vm.obrafisicomensal.avancofisicoponderado"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.obrafisicomensal.previsaoatual" for="field_previsaoatual">Previsaoatual</label>
+                <div class="input-group">
+                    <input id="field_previsaoatual" type="text" class="form-control" name="previsaoatual" datetime-picker="{{dateformat}}" ng-model="vm.obrafisicomensal.previsaoatual" is-open="vm.datePickerOpenStatus.previsaoatual"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('previsaoatual')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="meioambienteApp.obrafisicomensal.fisico" for="field_fisico">Fisico</label>
+            <select class="form-control" id="field_fisico" name="fisico" ng-model="vm.obrafisicomensal.fisicoId" ng-options="fisico.id as fisico.id for fisico in vm.fisicos"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.obrafisicomensal.atividadeexecutadamensals" for="field_atividadeexecutadamensals">Atividadeexecutadamensals</label>
+            <select class="form-control" id="field_atividadeexecutadamensals" multiple name="atividadeexecutadamensals" ng-model="vm.obrafisicomensal.atividadeexecutadamensals" ng-options="atividadeexecutadamensal as atividadeexecutadamensal.id for atividadeexecutadamensal in vm.atividadeexecutadamensals track by atividadeexecutadamensal.id"></select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

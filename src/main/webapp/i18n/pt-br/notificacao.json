@@ -1,0 +1,27 @@
+{
+    "meioambienteApp": {
+        "notificacao" : {
+            "home": {
+                "title": "Notificacaos",
+                "createLabel": "Criar novo Notificacao",
+                "createOrEditLabel": "Criar ou editar Notificacao"
+            },
+            "created": "Um novo Notificacao é criado com o identificador {{ param }}",
+            "updated": "Um Notificacao é atualizado com o identificador {{ param }}",
+            "deleted": "Um Notificacao é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Notificacao {{ id }}?"
+            },
+            "detail": {
+                "title": "Notificacao"
+            },
+            "data": "Data",
+            "datainspecao": "Datainspecao",
+            "numero": "Numero",
+            "obs": "Obs",
+            "obra": "Obra",
+            "fotos": "Fotos",
+            "ocorrenciasnotificacao": "Ocorrenciasnotificacao"
+        }
+    }
+}

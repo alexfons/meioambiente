@@ -68,7 +68,7 @@ class UsuarioGatlingTest extends Simulation {
             .exec(http("Create new usuario")
             .post("/api/usuarios")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null}""")).asJSON
+            .body(StringBody("""{"id":null, "email":"SAMPLE_TEXT", "nome":"SAMPLE_TEXT", "permissoes":"SAMPLE_TEXT", "senha":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_usuario_url"))).exitHereIfFailed
             .pause(10)

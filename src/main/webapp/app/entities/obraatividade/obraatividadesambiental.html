@@ -19,12 +19,20 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.obraatividade.peso">Peso</span></th>
+                    <th><span data-translate="meioambienteApp.obraatividade.revestimento">Revestimento</span></th>
+                    <th><span data-translate="meioambienteApp.obraatividade.atividade">Atividade</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="obraatividade in vm.obraatividades track by obraatividade.id">
                     <td><a ui-sref="obraatividade-ambiental-detail({id:obraatividade.id})">{{obraatividade.id}}</a></td>
+                    <td>{{obraatividade.peso}}</td>
+                    <td>{{obraatividade.revestimento}}</td>
+                    <td>
+                        <a ui-sref="atividade-ambiental-detail({id:obraatividade.atividadeId})">{{obraatividade.atividadeId}}</a>
+                    </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

@@ -1,0 +1,71 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "fonte",
+            "otherEntityName": "fonte",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "idcontratoagente",
+            "otherEntityName": "contratoagente",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "idedital",
+            "otherEntityName": "edital",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "avisolicitacao",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "custoestimado",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "aportelocal",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "aporteagente",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "metodo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "revisao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prequalificado",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "situacao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idplanoaquisicoes",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170607114338",
+    "entityTableName": "planoaquisicoes",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "ambiental"
+}

@@ -14,7 +14,9 @@
             },
             "detail": {
                 "title": "Status"
-            }
+            },
+            "cor": "Cor",
+            "descricao": "Descricao"
         }
     }
 }

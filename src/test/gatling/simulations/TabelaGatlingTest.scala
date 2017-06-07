@@ -68,7 +68,7 @@ class TabelaGatlingTest extends Simulation {
             .exec(http("Create new tabela")
             .post("/api/tabelas")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null}""")).asJSON
+            .body(StringBody("""{"id":null, "codigo":"SAMPLE_TEXT", "descricao":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_tabela_url"))).exitHereIfFailed
             .pause(10)

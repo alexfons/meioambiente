@@ -1,0 +1,33 @@
+{
+    "meioambienteApp": {
+        "planoaquisicoes" : {
+            "home": {
+                "title": "Planoaquisicoes",
+                "createLabel": "Criar novo Planoaquisicoes",
+                "createOrEditLabel": "Criar ou editar Planoaquisicoes"
+            },
+            "created": "Um novo Planoaquisicoes é criado com o identificador {{ param }}",
+            "updated": "Um Planoaquisicoes é atualizado com o identificador {{ param }}",
+            "deleted": "Um Planoaquisicoes é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Planoaquisicoes {{ id }}?"
+            },
+            "detail": {
+                "title": "Planoaquisicoes"
+            },
+            "avisolicitacao": "Avisolicitacao",
+            "custoestimado": "Custoestimado",
+            "aportelocal": "Aportelocal",
+            "aporteagente": "Aporteagente",
+            "descricao": "Descricao",
+            "metodo": "Metodo",
+            "revisao": "Revisao",
+            "prequalificado": "Prequalificado",
+            "situacao": "Situacao",
+            "idplanoaquisicoes": "Idplanoaquisicoes",
+            "fonte": "Fonte",
+            "idcontratoagente": "Idcontratoagente",
+            "idedital": "Idedital"
+        }
+    }
+}

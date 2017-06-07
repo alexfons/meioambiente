@@ -4,6 +4,26 @@
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.usuario.email">Email</span></dt>
+        <dd>
+            <span>{{vm.usuario.email}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.usuario.nome">Nome</span></dt>
+        <dd>
+            <span>{{vm.usuario.nome}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.usuario.permissoes">Permissoes</span></dt>
+        <dd>
+            <span>{{vm.usuario.permissoes}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.usuario.senha">Senha</span></dt>
+        <dd>
+            <span>{{vm.usuario.senha}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.usuario.supervisor">Supervisor</span></dt>
+        <dd>
+            <a ui-sref="usuario-ambiental-detail({id:vm.usuario.supervisorId})">{{vm.usuario.supervisorId}}</a>
+        </dd>
     </dl>
 
     <button type="submit"

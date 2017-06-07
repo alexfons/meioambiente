@@ -14,7 +14,22 @@
             },
             "detail": {
                 "title": "Trecho"
-            }
+            },
+            "defim": "Defim",
+            "deinicio": "Deinicio",
+            "fim": "Fim",
+            "inicio": "Inicio",
+            "jurisdicao": "Jurisdicao",
+            "kml": "Kml",
+            "nuextensao": "Nuextensao",
+            "nukmfinal": "Nukmfinal",
+            "nukminicia": "Nukminicia",
+            "responsavel": "Responsavel",
+            "sgpre": "Sgpre",
+            "sgsituacao": "Sgsituacao",
+            "tprevest": "Tprevest",
+            "rodovia": "Rodovia",
+            "supre": "Supre"
         }
     }
 }

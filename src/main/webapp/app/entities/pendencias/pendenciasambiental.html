@@ -1,0 +1,80 @@
+<div>
+    <h2 data-translate="meioambienteApp.pendencias.home.title">Pendencias</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="pendencias-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.pendencias.home.createLabel">
+                        Create new Pendencias
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.pendencias.data">Data</span></th>
+                    <th><span data-translate="meioambienteApp.pendencias.datainspecao">Datainspecao</span></th>
+                    <th><span data-translate="meioambienteApp.pendencias.notificacao">Notificacao</span></th>
+                    <th><span data-translate="meioambienteApp.pendencias.numero">Numero</span></th>
+                    <th><span data-translate="meioambienteApp.pendencias.obs">Obs</span></th>
+                    <th><span data-translate="meioambienteApp.pendencias.obra">Obra</span></th>
+                    <th><span data-translate="meioambienteApp.pendencias.fotos">Fotos</span></th>
+                    <th><span data-translate="meioambienteApp.pendencias.ocorrenciaspendencias">Ocorrenciaspendencias</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="pendencias in vm.pendencias track by pendencias.id">
+                    <td><a ui-sref="pendencias-ambiental-detail({id:pendencias.id})">{{pendencias.id}}</a></td>
+                    <td>{{pendencias.data | date:'medium'}}</td>
+                    <td>{{pendencias.datainspecao | date:'medium'}}</td>
+                    <td>{{pendencias.notificacao}}</td>
+                    <td>{{pendencias.numero}}</td>
+                    <td>{{pendencias.obs}}</td>
+                    <td>
+                        <a ui-sref="obra-ambiental-detail({id:pendencias.obraId})">{{pendencias.obraId}}</a>
+                    </td>
+                    <td>
+                        <span ng-repeat="fotos in pendencias.fotos">
+                            <a class="form-control-static" ui-sref="foto-ambiental-detail({id: fotos.id})">{{fotos.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td>
+                        <span ng-repeat="ocorrenciaspendencias in pendencias.ocorrenciaspendencias">
+                            <a class="form-control-static" ui-sref="ocorrenciapendencias-ambiental-detail({id: ocorrenciaspendencias.id})">{{ocorrenciaspendencias.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="pendencias-ambiental-detail({id:pendencias.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="pendencias-ambiental.edit({id:pendencias.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="pendencias-ambiental.delete({id:pendencias.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -104,6 +104,7 @@
                     resolve: {
                         entity: function () {
                             return {
+                                enquadramento: null,
                                 id: null
                             };
                         }

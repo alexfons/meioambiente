@@ -39,6 +39,15 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = MeioambienteApp.class)
 public class TipocertificadoconformidadeResourceIntTest {
 
+    private static final String DEFAULT_CATEGORIA = "AAAAAAAAAA";
+    private static final String UPDATED_CATEGORIA = "BBBBBBBBBB";
+
+    private static final String DEFAULT_DESCRICAO = "AAAAAAAAAA";
+    private static final String UPDATED_DESCRICAO = "BBBBBBBBBB";
+
+    private static final String DEFAULT_SUBCATEGORIA = "AAAAAAAAAA";
+    private static final String UPDATED_SUBCATEGORIA = "BBBBBBBBBB";
+
     @Autowired
     private TipocertificadoconformidadeRepository tipocertificadoconformidadeRepository;
 
@@ -78,7 +87,10 @@ public class TipocertificadoconformidadeResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Tipocertificadoconformidade createEntity(EntityManager em) {
-        Tipocertificadoconformidade tipocertificadoconformidade = new Tipocertificadoconformidade();
+        Tipocertificadoconformidade tipocertificadoconformidade = new Tipocertificadoconformidade()
+            .categoria(DEFAULT_CATEGORIA)
+            .descricao(DEFAULT_DESCRICAO)
+            .subcategoria(DEFAULT_SUBCATEGORIA);
         return tipocertificadoconformidade;
     }
 
@@ -103,6 +115,9 @@ public class TipocertificadoconformidadeResourceIntTest {
         List<Tipocertificadoconformidade> tipocertificadoconformidadeList = tipocertificadoconformidadeRepository.findAll();
         assertThat(tipocertificadoconformidadeList).hasSize(databaseSizeBeforeCreate + 1);
         Tipocertificadoconformidade testTipocertificadoconformidade = tipocertificadoconformidadeList.get(tipocertificadoconformidadeList.size() - 1);
+        assertThat(testTipocertificadoconformidade.getCategoria()).isEqualTo(DEFAULT_CATEGORIA);
+        assertThat(testTipocertificadoconformidade.getDescricao()).isEqualTo(DEFAULT_DESCRICAO);
+        assertThat(testTipocertificadoconformidade.getSubcategoria()).isEqualTo(DEFAULT_SUBCATEGORIA);
     }
 
     @Test
@@ -135,7 +150,10 @@ public class TipocertificadoconformidadeResourceIntTest {
         restTipocertificadoconformidadeMockMvc.perform(get("/api/tipocertificadoconformidades?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(tipocertificadoconformidade.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(tipocertificadoconformidade.getId().intValue())))
+            .andExpect(jsonPath("$.[*].categoria").value(hasItem(DEFAULT_CATEGORIA.toString())))
+            .andExpect(jsonPath("$.[*].descricao").value(hasItem(DEFAULT_DESCRICAO.toString())))
+            .andExpect(jsonPath("$.[*].subcategoria").value(hasItem(DEFAULT_SUBCATEGORIA.toString())));
     }
 
     @Test
@@ -148,7 +166,10 @@ public class TipocertificadoconformidadeResourceIntTest {
         restTipocertificadoconformidadeMockMvc.perform(get("/api/tipocertificadoconformidades/{id}", tipocertificadoconformidade.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(tipocertificadoconformidade.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(tipocertificadoconformidade.getId().intValue()))
+            .andExpect(jsonPath("$.categoria").value(DEFAULT_CATEGORIA.toString()))
+            .andExpect(jsonPath("$.descricao").value(DEFAULT_DESCRICAO.toString()))
+            .andExpect(jsonPath("$.subcategoria").value(DEFAULT_SUBCATEGORIA.toString()));
     }
 
     @Test
@@ -168,6 +189,10 @@ public class TipocertificadoconformidadeResourceIntTest {
 
         // Update the tipocertificadoconformidade
         Tipocertificadoconformidade updatedTipocertificadoconformidade = tipocertificadoconformidadeRepository.findOne(tipocertificadoconformidade.getId());
+        updatedTipocertificadoconformidade
+            .categoria(UPDATED_CATEGORIA)
+            .descricao(UPDATED_DESCRICAO)
+            .subcategoria(UPDATED_SUBCATEGORIA);
         TipocertificadoconformidadeDTO tipocertificadoconformidadeDTO = tipocertificadoconformidadeMapper.toDto(updatedTipocertificadoconformidade);
 
         restTipocertificadoconformidadeMockMvc.perform(put("/api/tipocertificadoconformidades")
@@ -179,6 +204,9 @@ public class TipocertificadoconformidadeResourceIntTest {
         List<Tipocertificadoconformidade> tipocertificadoconformidadeList = tipocertificadoconformidadeRepository.findAll();
         assertThat(tipocertificadoconformidadeList).hasSize(databaseSizeBeforeUpdate);
         Tipocertificadoconformidade testTipocertificadoconformidade = tipocertificadoconformidadeList.get(tipocertificadoconformidadeList.size() - 1);
+        assertThat(testTipocertificadoconformidade.getCategoria()).isEqualTo(UPDATED_CATEGORIA);
+        assertThat(testTipocertificadoconformidade.getDescricao()).isEqualTo(UPDATED_DESCRICAO);
+        assertThat(testTipocertificadoconformidade.getSubcategoria()).isEqualTo(UPDATED_SUBCATEGORIA);
     }
 
     @Test

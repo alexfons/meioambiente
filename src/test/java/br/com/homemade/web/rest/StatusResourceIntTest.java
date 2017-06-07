@@ -39,6 +39,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = MeioambienteApp.class)
 public class StatusResourceIntTest {
 
+    private static final String DEFAULT_COR = "AAAAAAAAAA";
+    private static final String UPDATED_COR = "BBBBBBBBBB";
+
+    private static final String DEFAULT_DESCRICAO = "AAAAAAAAAA";
+    private static final String UPDATED_DESCRICAO = "BBBBBBBBBB";
+
     @Autowired
     private StatusRepository statusRepository;
 
@@ -78,7 +84,9 @@ public class StatusResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Status createEntity(EntityManager em) {
-        Status status = new Status();
+        Status status = new Status()
+            .cor(DEFAULT_COR)
+            .descricao(DEFAULT_DESCRICAO);
         return status;
     }
 
@@ -103,6 +111,8 @@ public class StatusResourceIntTest {
         List<Status> statusList = statusRepository.findAll();
         assertThat(statusList).hasSize(databaseSizeBeforeCreate + 1);
         Status testStatus = statusList.get(statusList.size() - 1);
+        assertThat(testStatus.getCor()).isEqualTo(DEFAULT_COR);
+        assertThat(testStatus.getDescricao()).isEqualTo(DEFAULT_DESCRICAO);
     }
 
     @Test
@@ -135,7 +145,9 @@ public class StatusResourceIntTest {
         restStatusMockMvc.perform(get("/api/statuses?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(status.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(status.getId().intValue())))
+            .andExpect(jsonPath("$.[*].cor").value(hasItem(DEFAULT_COR.toString())))
+            .andExpect(jsonPath("$.[*].descricao").value(hasItem(DEFAULT_DESCRICAO.toString())));
     }
 
     @Test
@@ -148,7 +160,9 @@ public class StatusResourceIntTest {
         restStatusMockMvc.perform(get("/api/statuses/{id}", status.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(status.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(status.getId().intValue()))
+            .andExpect(jsonPath("$.cor").value(DEFAULT_COR.toString()))
+            .andExpect(jsonPath("$.descricao").value(DEFAULT_DESCRICAO.toString()));
     }
 
     @Test
@@ -168,6 +182,9 @@ public class StatusResourceIntTest {
 
         // Update the status
         Status updatedStatus = statusRepository.findOne(status.getId());
+        updatedStatus
+            .cor(UPDATED_COR)
+            .descricao(UPDATED_DESCRICAO);
         StatusDTO statusDTO = statusMapper.toDto(updatedStatus);
 
         restStatusMockMvc.perform(put("/api/statuses")
@@ -179,6 +196,8 @@ public class StatusResourceIntTest {
         List<Status> statusList = statusRepository.findAll();
         assertThat(statusList).hasSize(databaseSizeBeforeUpdate);
         Status testStatus = statusList.get(statusList.size() - 1);
+        assertThat(testStatus.getCor()).isEqualTo(UPDATED_COR);
+        assertThat(testStatus.getDescricao()).isEqualTo(UPDATED_DESCRICAO);
     }
 
     @Test

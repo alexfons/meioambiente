@@ -1,0 +1,31 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.script.detail.title">Script</span> {{vm.script.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.script.codigo">Codigo</span></dt>
+        <dd>
+            <span>{{vm.script.codigo}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.script.dataVerificacaoLicencas">Data Verificacao Licencas</span></dt>
+        <dd>
+            <span>{{vm.script.dataVerificacaoLicencas | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.script.descricao">Descricao</span></dt>
+        <dd>
+            <span>{{vm.script.descricao}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="script-ambiental-detail.edit({id:vm.script.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,7 +1,23 @@
 {
     "fluentMethods": true,
-    "relationships": [],
-    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "atividade",
+            "otherEntityName": "atividade",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "peso",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "revestimento",
+            "fieldType": "String"
+        }
+    ],
     "changelogDate": "20170607011351",
     "entityTableName": "obraatividade",
     "dto": "mapstruct",

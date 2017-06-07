@@ -68,7 +68,7 @@ class OcorrenciainformeGatlingTest extends Simulation {
             .exec(http("Create new ocorrenciainforme")
             .post("/api/ocorrenciainformes")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null}""")).asJSON
+            .body(StringBody("""{"id":null, "enquadramento":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_ocorrenciainforme_url"))).exitHereIfFailed
             .pause(10)

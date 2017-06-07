@@ -19,12 +19,28 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.residente.email">Email</span></th>
+                    <th><span data-translate="meioambienteApp.residente.funcao">Funcao</span></th>
+                    <th><span data-translate="meioambienteApp.residente.localtrabalho">Localtrabalho</span></th>
+                    <th><span data-translate="meioambienteApp.residente.matricula">Matricula</span></th>
+                    <th><span data-translate="meioambienteApp.residente.nome">Nome</span></th>
+                    <th><span data-translate="meioambienteApp.residente.superintendencia">Superintendencia</span></th>
+                    <th><span data-translate="meioambienteApp.residente.telefone">Telefone</span></th>
+                    <th><span data-translate="meioambienteApp.residente.telefonecomercial">Telefonecomercial</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="residente in vm.residentes track by residente.id">
                     <td><a ui-sref="residente-ambiental-detail({id:residente.id})">{{residente.id}}</a></td>
+                    <td>{{residente.email}}</td>
+                    <td>{{residente.funcao}}</td>
+                    <td>{{residente.localtrabalho}}</td>
+                    <td>{{residente.matricula}}</td>
+                    <td>{{residente.nome}}</td>
+                    <td>{{residente.superintendencia}}</td>
+                    <td>{{residente.telefone}}</td>
+                    <td>{{residente.telefonecomercial}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

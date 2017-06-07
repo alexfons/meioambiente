@@ -23,6 +23,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import java.math.BigDecimal;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -38,6 +39,39 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = MeioambienteApp.class)
 public class PropostaResourceIntTest {
+
+    private static final String DEFAULT_CLASSIFICACAO = "AAAAAAAAAA";
+    private static final String UPDATED_CLASSIFICACAO = "BBBBBBBBBB";
+
+    private static final String DEFAULT_NOTA = "AAAAAAAAAA";
+    private static final String UPDATED_NOTA = "BBBBBBBBBB";
+
+    private static final String DEFAULT_TIPOPROPOSTA = "AAAAAAAAAA";
+    private static final String UPDATED_TIPOPROPOSTA = "BBBBBBBBBB";
+
+    private static final String DEFAULT_OBS = "AAAAAAAAAA";
+    private static final String UPDATED_OBS = "BBBBBBBBBB";
+
+    private static final String DEFAULT_CONTRATO = "AAAAAAAAAA";
+    private static final String UPDATED_CONTRATO = "BBBBBBBBBB";
+
+    private static final String DEFAULT_HABILITADA = "AAAAAAAAAA";
+    private static final String UPDATED_HABILITADA = "BBBBBBBBBB";
+
+    private static final String DEFAULT_ARQLINK = "AAAAAAAAAA";
+    private static final String UPDATED_ARQLINK = "BBBBBBBBBB";
+
+    private static final Integer DEFAULT_IDPROPOSTA = 1;
+    private static final Integer UPDATED_IDPROPOSTA = 2;
+
+    private static final Integer DEFAULT_NUMEROEDITAL = 1;
+    private static final Integer UPDATED_NUMEROEDITAL = 2;
+
+    private static final BigDecimal DEFAULT_VALORPROPOSTA = new BigDecimal(1);
+    private static final BigDecimal UPDATED_VALORPROPOSTA = new BigDecimal(2);
+
+    private static final BigDecimal DEFAULT_VALORRENEGOCIADO = new BigDecimal(1);
+    private static final BigDecimal UPDATED_VALORRENEGOCIADO = new BigDecimal(2);
 
     @Autowired
     private PropostaRepository propostaRepository;
@@ -78,7 +112,18 @@ public class PropostaResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Proposta createEntity(EntityManager em) {
-        Proposta proposta = new Proposta();
+        Proposta proposta = new Proposta()
+            .classificacao(DEFAULT_CLASSIFICACAO)
+            .nota(DEFAULT_NOTA)
+            .tipoproposta(DEFAULT_TIPOPROPOSTA)
+            .obs(DEFAULT_OBS)
+            .contrato(DEFAULT_CONTRATO)
+            .habilitada(DEFAULT_HABILITADA)
+            .arqlink(DEFAULT_ARQLINK)
+            .idproposta(DEFAULT_IDPROPOSTA)
+            .numeroedital(DEFAULT_NUMEROEDITAL)
+            .valorproposta(DEFAULT_VALORPROPOSTA)
+            .valorrenegociado(DEFAULT_VALORRENEGOCIADO);
         return proposta;
     }
 
@@ -103,6 +148,17 @@ public class PropostaResourceIntTest {
         List<Proposta> propostaList = propostaRepository.findAll();
         assertThat(propostaList).hasSize(databaseSizeBeforeCreate + 1);
         Proposta testProposta = propostaList.get(propostaList.size() - 1);
+        assertThat(testProposta.getClassificacao()).isEqualTo(DEFAULT_CLASSIFICACAO);
+        assertThat(testProposta.getNota()).isEqualTo(DEFAULT_NOTA);
+        assertThat(testProposta.getTipoproposta()).isEqualTo(DEFAULT_TIPOPROPOSTA);
+        assertThat(testProposta.getObs()).isEqualTo(DEFAULT_OBS);
+        assertThat(testProposta.getContrato()).isEqualTo(DEFAULT_CONTRATO);
+        assertThat(testProposta.getHabilitada()).isEqualTo(DEFAULT_HABILITADA);
+        assertThat(testProposta.getArqlink()).isEqualTo(DEFAULT_ARQLINK);
+        assertThat(testProposta.getIdproposta()).isEqualTo(DEFAULT_IDPROPOSTA);
+        assertThat(testProposta.getNumeroedital()).isEqualTo(DEFAULT_NUMEROEDITAL);
+        assertThat(testProposta.getValorproposta()).isEqualTo(DEFAULT_VALORPROPOSTA);
+        assertThat(testProposta.getValorrenegociado()).isEqualTo(DEFAULT_VALORRENEGOCIADO);
     }
 
     @Test
@@ -135,7 +191,18 @@ public class PropostaResourceIntTest {
         restPropostaMockMvc.perform(get("/api/propostas?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(proposta.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(proposta.getId().intValue())))
+            .andExpect(jsonPath("$.[*].classificacao").value(hasItem(DEFAULT_CLASSIFICACAO.toString())))
+            .andExpect(jsonPath("$.[*].nota").value(hasItem(DEFAULT_NOTA.toString())))
+            .andExpect(jsonPath("$.[*].tipoproposta").value(hasItem(DEFAULT_TIPOPROPOSTA.toString())))
+            .andExpect(jsonPath("$.[*].obs").value(hasItem(DEFAULT_OBS.toString())))
+            .andExpect(jsonPath("$.[*].contrato").value(hasItem(DEFAULT_CONTRATO.toString())))
+            .andExpect(jsonPath("$.[*].habilitada").value(hasItem(DEFAULT_HABILITADA.toString())))
+            .andExpect(jsonPath("$.[*].arqlink").value(hasItem(DEFAULT_ARQLINK.toString())))
+            .andExpect(jsonPath("$.[*].idproposta").value(hasItem(DEFAULT_IDPROPOSTA)))
+            .andExpect(jsonPath("$.[*].numeroedital").value(hasItem(DEFAULT_NUMEROEDITAL)))
+            .andExpect(jsonPath("$.[*].valorproposta").value(hasItem(DEFAULT_VALORPROPOSTA.intValue())))
+            .andExpect(jsonPath("$.[*].valorrenegociado").value(hasItem(DEFAULT_VALORRENEGOCIADO.intValue())));
     }
 
     @Test
@@ -148,7 +215,18 @@ public class PropostaResourceIntTest {
         restPropostaMockMvc.perform(get("/api/propostas/{id}", proposta.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(proposta.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(proposta.getId().intValue()))
+            .andExpect(jsonPath("$.classificacao").value(DEFAULT_CLASSIFICACAO.toString()))
+            .andExpect(jsonPath("$.nota").value(DEFAULT_NOTA.toString()))
+            .andExpect(jsonPath("$.tipoproposta").value(DEFAULT_TIPOPROPOSTA.toString()))
+            .andExpect(jsonPath("$.obs").value(DEFAULT_OBS.toString()))
+            .andExpect(jsonPath("$.contrato").value(DEFAULT_CONTRATO.toString()))
+            .andExpect(jsonPath("$.habilitada").value(DEFAULT_HABILITADA.toString()))
+            .andExpect(jsonPath("$.arqlink").value(DEFAULT_ARQLINK.toString()))
+            .andExpect(jsonPath("$.idproposta").value(DEFAULT_IDPROPOSTA))
+            .andExpect(jsonPath("$.numeroedital").value(DEFAULT_NUMEROEDITAL))
+            .andExpect(jsonPath("$.valorproposta").value(DEFAULT_VALORPROPOSTA.intValue()))
+            .andExpect(jsonPath("$.valorrenegociado").value(DEFAULT_VALORRENEGOCIADO.intValue()));
     }
 
     @Test
@@ -168,6 +246,18 @@ public class PropostaResourceIntTest {
 
         // Update the proposta
         Proposta updatedProposta = propostaRepository.findOne(proposta.getId());
+        updatedProposta
+            .classificacao(UPDATED_CLASSIFICACAO)
+            .nota(UPDATED_NOTA)
+            .tipoproposta(UPDATED_TIPOPROPOSTA)
+            .obs(UPDATED_OBS)
+            .contrato(UPDATED_CONTRATO)
+            .habilitada(UPDATED_HABILITADA)
+            .arqlink(UPDATED_ARQLINK)
+            .idproposta(UPDATED_IDPROPOSTA)
+            .numeroedital(UPDATED_NUMEROEDITAL)
+            .valorproposta(UPDATED_VALORPROPOSTA)
+            .valorrenegociado(UPDATED_VALORRENEGOCIADO);
         PropostaDTO propostaDTO = propostaMapper.toDto(updatedProposta);
 
         restPropostaMockMvc.perform(put("/api/propostas")
@@ -179,6 +269,17 @@ public class PropostaResourceIntTest {
         List<Proposta> propostaList = propostaRepository.findAll();
         assertThat(propostaList).hasSize(databaseSizeBeforeUpdate);
         Proposta testProposta = propostaList.get(propostaList.size() - 1);
+        assertThat(testProposta.getClassificacao()).isEqualTo(UPDATED_CLASSIFICACAO);
+        assertThat(testProposta.getNota()).isEqualTo(UPDATED_NOTA);
+        assertThat(testProposta.getTipoproposta()).isEqualTo(UPDATED_TIPOPROPOSTA);
+        assertThat(testProposta.getObs()).isEqualTo(UPDATED_OBS);
+        assertThat(testProposta.getContrato()).isEqualTo(UPDATED_CONTRATO);
+        assertThat(testProposta.getHabilitada()).isEqualTo(UPDATED_HABILITADA);
+        assertThat(testProposta.getArqlink()).isEqualTo(UPDATED_ARQLINK);
+        assertThat(testProposta.getIdproposta()).isEqualTo(UPDATED_IDPROPOSTA);
+        assertThat(testProposta.getNumeroedital()).isEqualTo(UPDATED_NUMEROEDITAL);
+        assertThat(testProposta.getValorproposta()).isEqualTo(UPDATED_VALORPROPOSTA);
+        assertThat(testProposta.getValorrenegociado()).isEqualTo(UPDATED_VALORRENEGOCIADO);
     }
 
     @Test

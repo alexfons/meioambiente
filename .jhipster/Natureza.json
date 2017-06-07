@@ -1,7 +1,28 @@
 {
     "fluentMethods": true,
     "relationships": [],
-    "fields": [],
+    "fields": [
+        {
+            "fieldName": "descnatureza",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descsubacao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idnatureza",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "numnatureza",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "subacao",
+            "fieldType": "Integer"
+        }
+    ],
     "changelogDate": "20170607001857",
     "entityTableName": "natureza",
     "dto": "mapstruct",

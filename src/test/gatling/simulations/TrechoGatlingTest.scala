@@ -68,7 +68,7 @@ class TrechoGatlingTest extends Simulation {
             .exec(http("Create new trecho")
             .post("/api/trechos")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null}""")).asJSON
+            .body(StringBody("""{"id":null, "defim":"SAMPLE_TEXT", "deinicio":"SAMPLE_TEXT", "fim":"SAMPLE_TEXT", "inicio":"SAMPLE_TEXT", "jurisdicao":"SAMPLE_TEXT", "kml":"SAMPLE_TEXT", "nuextensao":null, "nukmfinal":null, "nukminicia":null, "responsavel":"SAMPLE_TEXT", "sgpre":"SAMPLE_TEXT", "sgsituacao":"SAMPLE_TEXT", "tprevest":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_trecho_url"))).exitHereIfFailed
             .pause(10)

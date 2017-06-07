@@ -104,6 +104,11 @@
                     resolve: {
                         entity: function () {
                             return {
+                                aporte: null,
+                                idreferencia: null,
+                                moeda: null,
+                                nreferencia: null,
+                                valorreferencia: null,
                                 id: null
                             };
                         }

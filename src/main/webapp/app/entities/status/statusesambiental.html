@@ -19,12 +19,16 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.status.cor">Cor</span></th>
+                    <th><span data-translate="meioambienteApp.status.descricao">Descricao</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="status in vm.statuses track by status.id">
                     <td><a ui-sref="status-ambiental-detail({id:status.id})">{{status.id}}</a></td>
+                    <td>{{status.cor}}</td>
+                    <td>{{status.descricao}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

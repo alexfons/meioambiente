@@ -19,12 +19,42 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.proposta.classificacao">Classificacao</span></th>
+                    <th><span data-translate="meioambienteApp.proposta.nota">Nota</span></th>
+                    <th><span data-translate="meioambienteApp.proposta.tipoproposta">Tipoproposta</span></th>
+                    <th><span data-translate="meioambienteApp.proposta.obs">Obs</span></th>
+                    <th><span data-translate="meioambienteApp.proposta.contrato">Contrato</span></th>
+                    <th><span data-translate="meioambienteApp.proposta.habilitada">Habilitada</span></th>
+                    <th><span data-translate="meioambienteApp.proposta.arqlink">Arqlink</span></th>
+                    <th><span data-translate="meioambienteApp.proposta.idproposta">Idproposta</span></th>
+                    <th><span data-translate="meioambienteApp.proposta.numeroedital">Numeroedital</span></th>
+                    <th><span data-translate="meioambienteApp.proposta.valorproposta">Valorproposta</span></th>
+                    <th><span data-translate="meioambienteApp.proposta.valorrenegociado">Valorrenegociado</span></th>
+                    <th><span data-translate="meioambienteApp.proposta.idempresa">Idempresa</span></th>
+                    <th><span data-translate="meioambienteApp.proposta.idlote">Idlote</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="proposta in vm.propostas track by proposta.id">
                     <td><a ui-sref="proposta-ambiental-detail({id:proposta.id})">{{proposta.id}}</a></td>
+                    <td>{{proposta.classificacao}}</td>
+                    <td>{{proposta.nota}}</td>
+                    <td>{{proposta.tipoproposta}}</td>
+                    <td>{{proposta.obs}}</td>
+                    <td>{{proposta.contrato}}</td>
+                    <td>{{proposta.habilitada}}</td>
+                    <td>{{proposta.arqlink}}</td>
+                    <td>{{proposta.idproposta}}</td>
+                    <td>{{proposta.numeroedital}}</td>
+                    <td>{{proposta.valorproposta}}</td>
+                    <td>{{proposta.valorrenegociado}}</td>
+                    <td>
+                        <a ui-sref="empresa-ambiental-detail({id:proposta.idempresaId})">{{proposta.idempresaId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="editallote-ambiental-detail({id:proposta.idloteId})">{{proposta.idloteId}}</a>
+                    </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

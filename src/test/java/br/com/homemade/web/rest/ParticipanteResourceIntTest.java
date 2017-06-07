@@ -39,6 +39,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = MeioambienteApp.class)
 public class ParticipanteResourceIntTest {
 
+    private static final String DEFAULT_FORMACAO = "AAAAAAAAAA";
+    private static final String UPDATED_FORMACAO = "BBBBBBBBBB";
+
+    private static final String DEFAULT_NOME = "AAAAAAAAAA";
+    private static final String UPDATED_NOME = "BBBBBBBBBB";
+
     @Autowired
     private ParticipanteRepository participanteRepository;
 
@@ -78,7 +84,9 @@ public class ParticipanteResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Participante createEntity(EntityManager em) {
-        Participante participante = new Participante();
+        Participante participante = new Participante()
+            .formacao(DEFAULT_FORMACAO)
+            .nome(DEFAULT_NOME);
         return participante;
     }
 
@@ -103,6 +111,8 @@ public class ParticipanteResourceIntTest {
         List<Participante> participanteList = participanteRepository.findAll();
         assertThat(participanteList).hasSize(databaseSizeBeforeCreate + 1);
         Participante testParticipante = participanteList.get(participanteList.size() - 1);
+        assertThat(testParticipante.getFormacao()).isEqualTo(DEFAULT_FORMACAO);
+        assertThat(testParticipante.getNome()).isEqualTo(DEFAULT_NOME);
     }
 
     @Test
@@ -135,7 +145,9 @@ public class ParticipanteResourceIntTest {
         restParticipanteMockMvc.perform(get("/api/participantes?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(participante.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(participante.getId().intValue())))
+            .andExpect(jsonPath("$.[*].formacao").value(hasItem(DEFAULT_FORMACAO.toString())))
+            .andExpect(jsonPath("$.[*].nome").value(hasItem(DEFAULT_NOME.toString())));
     }
 
     @Test
@@ -148,7 +160,9 @@ public class ParticipanteResourceIntTest {
         restParticipanteMockMvc.perform(get("/api/participantes/{id}", participante.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(participante.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(participante.getId().intValue()))
+            .andExpect(jsonPath("$.formacao").value(DEFAULT_FORMACAO.toString()))
+            .andExpect(jsonPath("$.nome").value(DEFAULT_NOME.toString()));
     }
 
     @Test
@@ -168,6 +182,9 @@ public class ParticipanteResourceIntTest {
 
         // Update the participante
         Participante updatedParticipante = participanteRepository.findOne(participante.getId());
+        updatedParticipante
+            .formacao(UPDATED_FORMACAO)
+            .nome(UPDATED_NOME);
         ParticipanteDTO participanteDTO = participanteMapper.toDto(updatedParticipante);
 
         restParticipanteMockMvc.perform(put("/api/participantes")
@@ -179,6 +196,8 @@ public class ParticipanteResourceIntTest {
         List<Participante> participanteList = participanteRepository.findAll();
         assertThat(participanteList).hasSize(databaseSizeBeforeUpdate);
         Participante testParticipante = participanteList.get(participanteList.size() - 1);
+        assertThat(testParticipante.getFormacao()).isEqualTo(UPDATED_FORMACAO);
+        assertThat(testParticipante.getNome()).isEqualTo(UPDATED_NOME);
     }
 
     @Test

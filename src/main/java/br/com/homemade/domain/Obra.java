@@ -40,7 +40,7 @@ public class Obra implements Serializable {
     private String certificadoMes;
 
     @ManyToOne
-    private TipoObra tipoobra;
+    private Tipoobra tipoobra;
 
     @ManyToOne
     private Inspetor inspetor;
@@ -138,17 +138,17 @@ public class Obra implements Serializable {
         this.certificadoMes = certificadoMes;
     }
 
-    public TipoObra getTipoobra() {
+    public Tipoobra getTipoobra() {
         return tipoobra;
     }
 
-    public Obra tipoobra(TipoObra tipoObra) {
-        this.tipoobra = tipoObra;
+    public Obra tipoobra(Tipoobra tipoobra) {
+        this.tipoobra = tipoobra;
         return this;
     }
 
-    public void setTipoobra(TipoObra tipoObra) {
-        this.tipoobra = tipoObra;
+    public void setTipoobra(Tipoobra tipoobra) {
+        this.tipoobra = tipoobra;
     }
 
     public Inspetor getInspetor() {

@@ -14,7 +14,12 @@
             },
             "detail": {
                 "title": "Referencia"
-            }
+            },
+            "aporte": "Aporte",
+            "idreferencia": "Idreferencia",
+            "moeda": "Moeda",
+            "nreferencia": "Nreferencia",
+            "valorreferencia": "Valorreferencia"
         }
     }
 }

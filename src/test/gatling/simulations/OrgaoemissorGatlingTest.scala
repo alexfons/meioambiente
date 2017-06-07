@@ -68,7 +68,7 @@ class OrgaoemissorGatlingTest extends Simulation {
             .exec(http("Create new orgaoemissor")
             .post("/api/orgaoemissors")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null}""")).asJSON
+            .body(StringBody("""{"id":null, "descricao":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_orgaoemissor_url"))).exitHereIfFailed
             .pause(10)

@@ -1,0 +1,31 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.tipocontrato.detail.title">Tipocontrato</span> {{vm.tipocontrato.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.tipocontrato.categoria">Categoria</span></dt>
+        <dd>
+            <span>{{vm.tipocontrato.categoria}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.tipocontrato.descricao">Descricao</span></dt>
+        <dd>
+            <span>{{vm.tipocontrato.descricao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.tipocontrato.subcategoria">Subcategoria</span></dt>
+        <dd>
+            <span>{{vm.tipocontrato.subcategoria}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="tipocontrato-ambiental-detail.edit({id:vm.tipocontrato.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

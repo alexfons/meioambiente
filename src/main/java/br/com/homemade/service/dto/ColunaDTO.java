@@ -19,6 +19,8 @@ public class ColunaDTO implements Serializable {
 
     private Integer sequencia;
 
+    private Long tabelaId;
+
     public Long getId() {
         return id;
     }
@@ -49,6 +51,14 @@ public class ColunaDTO implements Serializable {
 
     public void setSequencia(Integer sequencia) {
         this.sequencia = sequencia;
+    }
+
+    public Long getTabelaId() {
+        return tabelaId;
+    }
+
+    public void setTabelaId(Long tabelaId) {
+        this.tabelaId = tabelaId;
     }
 
     @Override

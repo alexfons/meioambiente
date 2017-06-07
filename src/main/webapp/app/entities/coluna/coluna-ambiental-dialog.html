@@ -31,6 +31,12 @@
                     />
         </div>
 
+        <div class="form-group">
+            <label data-translate="meioambienteApp.coluna.tabela" for="field_tabela">Tabela</label>
+            <select class="form-control" id="field_tabela" name="tabela" ng-model="vm.coluna.tabelaId" ng-options="tabela.id as tabela.id for tabela in vm.tabelas"            >
+                <option value=""></option>
+            </select>
+        </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">

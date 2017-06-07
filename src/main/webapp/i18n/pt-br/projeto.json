@@ -14,7 +14,18 @@
             },
             "detail": {
                 "title": "Projeto"
-            }
+            },
+            "andamento": "Andamento",
+            "pendente": "Pendente",
+            "inspetor": "Inspetor",
+            "municipio": "Municipio",
+            "tipo": "Tipo",
+            "tipoobra": "Tipoobra",
+            "trecho": "Trecho",
+            "fiscal": "Fiscal",
+            "contratosprojeto": "Contratosprojeto",
+            "historicos": "Historicos",
+            "municipios": "Municipios"
         }
     }
 }

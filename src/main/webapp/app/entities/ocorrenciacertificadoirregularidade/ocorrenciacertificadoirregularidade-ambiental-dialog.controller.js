@@ -5,14 +5,15 @@
         .module('meioambienteApp')
         .controller('OcorrenciacertificadoirregularidadeAmbientalDialogController', OcorrenciacertificadoirregularidadeAmbientalDialogController);
 
-    OcorrenciacertificadoirregularidadeAmbientalDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Ocorrenciacertificadoirregularidade'];
+    OcorrenciacertificadoirregularidadeAmbientalDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Ocorrenciacertificadoirregularidade', 'Ocorrencia'];
 
-    function OcorrenciacertificadoirregularidadeAmbientalDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Ocorrenciacertificadoirregularidade) {
+    function OcorrenciacertificadoirregularidadeAmbientalDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Ocorrenciacertificadoirregularidade, Ocorrencia) {
         var vm = this;
 
         vm.ocorrenciacertificadoirregularidade = entity;
         vm.clear = clear;
         vm.save = save;
+        vm.ocorrencias = Ocorrencia.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

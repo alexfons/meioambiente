@@ -68,7 +68,7 @@ class ReferenciaGatlingTest extends Simulation {
             .exec(http("Create new referencia")
             .post("/api/referencias")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null}""")).asJSON
+            .body(StringBody("""{"id":null, "aporte":"SAMPLE_TEXT", "idreferencia":"0", "moeda":"SAMPLE_TEXT", "nreferencia":"0", "valorreferencia":null}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_referencia_url"))).exitHereIfFailed
             .pause(10)

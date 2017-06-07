@@ -19,12 +19,22 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.planocontas.idplanocontas">Idplanocontas</span></th>
+                    <th><span data-translate="meioambienteApp.planocontas.ncontabil">Ncontabil</span></th>
+                    <th><span data-translate="meioambienteApp.planocontas.descricao">Descricao</span></th>
+                    <th><span data-translate="meioambienteApp.planocontas.tipoconta">Tipoconta</span></th>
+                    <th><span data-translate="meioambienteApp.planocontas.tipolancamento">Tipolancamento</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="planocontas in vm.planocontas track by planocontas.id">
                     <td><a ui-sref="planocontas-ambiental-detail({id:planocontas.id})">{{planocontas.id}}</a></td>
+                    <td>{{planocontas.idplanocontas}}</td>
+                    <td>{{planocontas.ncontabil}}</td>
+                    <td>{{planocontas.descricao}}</td>
+                    <td>{{planocontas.tipoconta}}</td>
+                    <td>{{planocontas.tipolancamento}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

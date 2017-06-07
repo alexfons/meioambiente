@@ -1,0 +1,22 @@
+{
+    "meioambienteApp": {
+        "ocorrencianotificacao" : {
+            "home": {
+                "title": "Ocorrencianotificacaos",
+                "createLabel": "Criar novo Ocorrencianotificacao",
+                "createOrEditLabel": "Criar ou editar Ocorrencianotificacao"
+            },
+            "created": "Um novo Ocorrencianotificacao é criado com o identificador {{ param }}",
+            "updated": "Um Ocorrencianotificacao é atualizado com o identificador {{ param }}",
+            "deleted": "Um Ocorrencianotificacao é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Ocorrencianotificacao {{ id }}?"
+            },
+            "detail": {
+                "title": "Ocorrencianotificacao"
+            },
+            "enquadramento": "Enquadramento",
+            "ocorrencia": "Ocorrencia"
+        }
+    }
+}

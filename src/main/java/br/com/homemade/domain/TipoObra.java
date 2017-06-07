@@ -11,7 +11,7 @@ import java.util.Objects;
  * A TipoObra.
  */
 @Entity
-@Table(name = "tipo_obra")
+@Table(name = "tipoobra")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class TipoObra implements Serializable {
 

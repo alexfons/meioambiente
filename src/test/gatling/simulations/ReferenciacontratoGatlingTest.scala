@@ -68,7 +68,7 @@ class ReferenciacontratoGatlingTest extends Simulation {
             .exec(http("Create new referenciacontrato")
             .post("/api/referenciacontratoes")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null}""")).asJSON
+            .body(StringBody("""{"id":null, "aporte":"SAMPLE_TEXT", "moeda":"SAMPLE_TEXT", "idreferenciacontrato":"0", "nreferencia":"0", "valorreferencia":null}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_referenciacontrato_url"))).exitHereIfFailed
             .pause(10)

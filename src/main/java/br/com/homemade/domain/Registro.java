@@ -22,12 +22,28 @@ public class Registro implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
+    @ManyToOne
+    private Linha opcoes;
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Linha getOpcoes() {
+        return opcoes;
+    }
+
+    public Registro opcoes(Linha linha) {
+        this.opcoes = linha;
+        return this;
+    }
+
+    public void setOpcoes(Linha linha) {
+        this.opcoes = linha;
     }
 
     @Override

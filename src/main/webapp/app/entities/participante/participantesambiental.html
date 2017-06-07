@@ -19,12 +19,20 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.participante.formacao">Formacao</span></th>
+                    <th><span data-translate="meioambienteApp.participante.nome">Nome</span></th>
+                    <th><span data-translate="meioambienteApp.participante.empresa">Empresa</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="participante in vm.participantes track by participante.id">
                     <td><a ui-sref="participante-ambiental-detail({id:participante.id})">{{participante.id}}</a></td>
+                    <td>{{participante.formacao}}</td>
+                    <td>{{participante.nome}}</td>
+                    <td>
+                        <a ui-sref="empresa-ambiental-detail({id:participante.empresaId})">{{participante.empresaId}}</a>
+                    </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

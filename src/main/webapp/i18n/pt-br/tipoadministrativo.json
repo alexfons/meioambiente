@@ -14,7 +14,10 @@
             },
             "detail": {
                 "title": "Tipoadministrativo"
-            }
+            },
+            "categoria": "Categoria",
+            "descricao": "Descricao",
+            "subcategoria": "Subcategoria"
         }
     }
 }

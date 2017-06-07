@@ -19,12 +19,14 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.orgaoemissor.descricao">Descricao</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="orgaoemissor in vm.orgaoemissors track by orgaoemissor.id">
                     <td><a ui-sref="orgaoemissor-ambiental-detail({id:orgaoemissor.id})">{{orgaoemissor.id}}</a></td>
+                    <td>{{orgaoemissor.descricao}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

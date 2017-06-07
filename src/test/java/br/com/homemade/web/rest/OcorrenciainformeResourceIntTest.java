@@ -39,6 +39,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = MeioambienteApp.class)
 public class OcorrenciainformeResourceIntTest {
 
+    private static final String DEFAULT_ENQUADRAMENTO = "AAAAAAAAAA";
+    private static final String UPDATED_ENQUADRAMENTO = "BBBBBBBBBB";
+
     @Autowired
     private OcorrenciainformeRepository ocorrenciainformeRepository;
 
@@ -78,7 +81,8 @@ public class OcorrenciainformeResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Ocorrenciainforme createEntity(EntityManager em) {
-        Ocorrenciainforme ocorrenciainforme = new Ocorrenciainforme();
+        Ocorrenciainforme ocorrenciainforme = new Ocorrenciainforme()
+            .enquadramento(DEFAULT_ENQUADRAMENTO);
         return ocorrenciainforme;
     }
 
@@ -103,6 +107,7 @@ public class OcorrenciainformeResourceIntTest {
         List<Ocorrenciainforme> ocorrenciainformeList = ocorrenciainformeRepository.findAll();
         assertThat(ocorrenciainformeList).hasSize(databaseSizeBeforeCreate + 1);
         Ocorrenciainforme testOcorrenciainforme = ocorrenciainformeList.get(ocorrenciainformeList.size() - 1);
+        assertThat(testOcorrenciainforme.getEnquadramento()).isEqualTo(DEFAULT_ENQUADRAMENTO);
     }
 
     @Test
@@ -135,7 +140,8 @@ public class OcorrenciainformeResourceIntTest {
         restOcorrenciainformeMockMvc.perform(get("/api/ocorrenciainformes?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(ocorrenciainforme.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(ocorrenciainforme.getId().intValue())))
+            .andExpect(jsonPath("$.[*].enquadramento").value(hasItem(DEFAULT_ENQUADRAMENTO.toString())));
     }
 
     @Test
@@ -148,7 +154,8 @@ public class OcorrenciainformeResourceIntTest {
         restOcorrenciainformeMockMvc.perform(get("/api/ocorrenciainformes/{id}", ocorrenciainforme.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(ocorrenciainforme.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(ocorrenciainforme.getId().intValue()))
+            .andExpect(jsonPath("$.enquadramento").value(DEFAULT_ENQUADRAMENTO.toString()));
     }
 
     @Test
@@ -168,6 +175,8 @@ public class OcorrenciainformeResourceIntTest {
 
         // Update the ocorrenciainforme
         Ocorrenciainforme updatedOcorrenciainforme = ocorrenciainformeRepository.findOne(ocorrenciainforme.getId());
+        updatedOcorrenciainforme
+            .enquadramento(UPDATED_ENQUADRAMENTO);
         OcorrenciainformeDTO ocorrenciainformeDTO = ocorrenciainformeMapper.toDto(updatedOcorrenciainforme);
 
         restOcorrenciainformeMockMvc.perform(put("/api/ocorrenciainformes")
@@ -179,6 +188,7 @@ public class OcorrenciainformeResourceIntTest {
         List<Ocorrenciainforme> ocorrenciainformeList = ocorrenciainformeRepository.findAll();
         assertThat(ocorrenciainformeList).hasSize(databaseSizeBeforeUpdate);
         Ocorrenciainforme testOcorrenciainforme = ocorrenciainformeList.get(ocorrenciainformeList.size() - 1);
+        assertThat(testOcorrenciainforme.getEnquadramento()).isEqualTo(UPDATED_ENQUADRAMENTO);
     }
 
     @Test

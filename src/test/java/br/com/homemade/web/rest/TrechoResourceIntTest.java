@@ -39,6 +39,45 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = MeioambienteApp.class)
 public class TrechoResourceIntTest {
 
+    private static final String DEFAULT_DEFIM = "AAAAAAAAAA";
+    private static final String UPDATED_DEFIM = "BBBBBBBBBB";
+
+    private static final String DEFAULT_DEINICIO = "AAAAAAAAAA";
+    private static final String UPDATED_DEINICIO = "BBBBBBBBBB";
+
+    private static final String DEFAULT_FIM = "AAAAAAAAAA";
+    private static final String UPDATED_FIM = "BBBBBBBBBB";
+
+    private static final String DEFAULT_INICIO = "AAAAAAAAAA";
+    private static final String UPDATED_INICIO = "BBBBBBBBBB";
+
+    private static final String DEFAULT_JURISDICAO = "AAAAAAAAAA";
+    private static final String UPDATED_JURISDICAO = "BBBBBBBBBB";
+
+    private static final String DEFAULT_KML = "AAAAAAAAAA";
+    private static final String UPDATED_KML = "BBBBBBBBBB";
+
+    private static final Double DEFAULT_NUEXTENSAO = 1D;
+    private static final Double UPDATED_NUEXTENSAO = 2D;
+
+    private static final Double DEFAULT_NUKMFINAL = 1D;
+    private static final Double UPDATED_NUKMFINAL = 2D;
+
+    private static final Double DEFAULT_NUKMINICIA = 1D;
+    private static final Double UPDATED_NUKMINICIA = 2D;
+
+    private static final String DEFAULT_RESPONSAVEL = "AAAAAAAAAA";
+    private static final String UPDATED_RESPONSAVEL = "BBBBBBBBBB";
+
+    private static final String DEFAULT_SGPRE = "AAAAAAAAAA";
+    private static final String UPDATED_SGPRE = "BBBBBBBBBB";
+
+    private static final String DEFAULT_SGSITUACAO = "AAAAAAAAAA";
+    private static final String UPDATED_SGSITUACAO = "BBBBBBBBBB";
+
+    private static final String DEFAULT_TPREVEST = "AAAAAAAAAA";
+    private static final String UPDATED_TPREVEST = "BBBBBBBBBB";
+
     @Autowired
     private TrechoRepository trechoRepository;
 
@@ -78,7 +117,20 @@ public class TrechoResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Trecho createEntity(EntityManager em) {
-        Trecho trecho = new Trecho();
+        Trecho trecho = new Trecho()
+            .defim(DEFAULT_DEFIM)
+            .deinicio(DEFAULT_DEINICIO)
+            .fim(DEFAULT_FIM)
+            .inicio(DEFAULT_INICIO)
+            .jurisdicao(DEFAULT_JURISDICAO)
+            .kml(DEFAULT_KML)
+            .nuextensao(DEFAULT_NUEXTENSAO)
+            .nukmfinal(DEFAULT_NUKMFINAL)
+            .nukminicia(DEFAULT_NUKMINICIA)
+            .responsavel(DEFAULT_RESPONSAVEL)
+            .sgpre(DEFAULT_SGPRE)
+            .sgsituacao(DEFAULT_SGSITUACAO)
+            .tprevest(DEFAULT_TPREVEST);
         return trecho;
     }
 
@@ -103,6 +155,19 @@ public class TrechoResourceIntTest {
         List<Trecho> trechoList = trechoRepository.findAll();
         assertThat(trechoList).hasSize(databaseSizeBeforeCreate + 1);
         Trecho testTrecho = trechoList.get(trechoList.size() - 1);
+        assertThat(testTrecho.getDefim()).isEqualTo(DEFAULT_DEFIM);
+        assertThat(testTrecho.getDeinicio()).isEqualTo(DEFAULT_DEINICIO);
+        assertThat(testTrecho.getFim()).isEqualTo(DEFAULT_FIM);
+        assertThat(testTrecho.getInicio()).isEqualTo(DEFAULT_INICIO);
+        assertThat(testTrecho.getJurisdicao()).isEqualTo(DEFAULT_JURISDICAO);
+        assertThat(testTrecho.getKml()).isEqualTo(DEFAULT_KML);
+        assertThat(testTrecho.getNuextensao()).isEqualTo(DEFAULT_NUEXTENSAO);
+        assertThat(testTrecho.getNukmfinal()).isEqualTo(DEFAULT_NUKMFINAL);
+        assertThat(testTrecho.getNukminicia()).isEqualTo(DEFAULT_NUKMINICIA);
+        assertThat(testTrecho.getResponsavel()).isEqualTo(DEFAULT_RESPONSAVEL);
+        assertThat(testTrecho.getSgpre()).isEqualTo(DEFAULT_SGPRE);
+        assertThat(testTrecho.getSgsituacao()).isEqualTo(DEFAULT_SGSITUACAO);
+        assertThat(testTrecho.getTprevest()).isEqualTo(DEFAULT_TPREVEST);
     }
 
     @Test
@@ -135,7 +200,20 @@ public class TrechoResourceIntTest {
         restTrechoMockMvc.perform(get("/api/trechos?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(trecho.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(trecho.getId().intValue())))
+            .andExpect(jsonPath("$.[*].defim").value(hasItem(DEFAULT_DEFIM.toString())))
+            .andExpect(jsonPath("$.[*].deinicio").value(hasItem(DEFAULT_DEINICIO.toString())))
+            .andExpect(jsonPath("$.[*].fim").value(hasItem(DEFAULT_FIM.toString())))
+            .andExpect(jsonPath("$.[*].inicio").value(hasItem(DEFAULT_INICIO.toString())))
+            .andExpect(jsonPath("$.[*].jurisdicao").value(hasItem(DEFAULT_JURISDICAO.toString())))
+            .andExpect(jsonPath("$.[*].kml").value(hasItem(DEFAULT_KML.toString())))
+            .andExpect(jsonPath("$.[*].nuextensao").value(hasItem(DEFAULT_NUEXTENSAO.doubleValue())))
+            .andExpect(jsonPath("$.[*].nukmfinal").value(hasItem(DEFAULT_NUKMFINAL.doubleValue())))
+            .andExpect(jsonPath("$.[*].nukminicia").value(hasItem(DEFAULT_NUKMINICIA.doubleValue())))
+            .andExpect(jsonPath("$.[*].responsavel").value(hasItem(DEFAULT_RESPONSAVEL.toString())))
+            .andExpect(jsonPath("$.[*].sgpre").value(hasItem(DEFAULT_SGPRE.toString())))
+            .andExpect(jsonPath("$.[*].sgsituacao").value(hasItem(DEFAULT_SGSITUACAO.toString())))
+            .andExpect(jsonPath("$.[*].tprevest").value(hasItem(DEFAULT_TPREVEST.toString())));
     }
 
     @Test
@@ -148,7 +226,20 @@ public class TrechoResourceIntTest {
         restTrechoMockMvc.perform(get("/api/trechos/{id}", trecho.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(trecho.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(trecho.getId().intValue()))
+            .andExpect(jsonPath("$.defim").value(DEFAULT_DEFIM.toString()))
+            .andExpect(jsonPath("$.deinicio").value(DEFAULT_DEINICIO.toString()))
+            .andExpect(jsonPath("$.fim").value(DEFAULT_FIM.toString()))
+            .andExpect(jsonPath("$.inicio").value(DEFAULT_INICIO.toString()))
+            .andExpect(jsonPath("$.jurisdicao").value(DEFAULT_JURISDICAO.toString()))
+            .andExpect(jsonPath("$.kml").value(DEFAULT_KML.toString()))
+            .andExpect(jsonPath("$.nuextensao").value(DEFAULT_NUEXTENSAO.doubleValue()))
+            .andExpect(jsonPath("$.nukmfinal").value(DEFAULT_NUKMFINAL.doubleValue()))
+            .andExpect(jsonPath("$.nukminicia").value(DEFAULT_NUKMINICIA.doubleValue()))
+            .andExpect(jsonPath("$.responsavel").value(DEFAULT_RESPONSAVEL.toString()))
+            .andExpect(jsonPath("$.sgpre").value(DEFAULT_SGPRE.toString()))
+            .andExpect(jsonPath("$.sgsituacao").value(DEFAULT_SGSITUACAO.toString()))
+            .andExpect(jsonPath("$.tprevest").value(DEFAULT_TPREVEST.toString()));
     }
 
     @Test
@@ -168,6 +259,20 @@ public class TrechoResourceIntTest {
 
         // Update the trecho
         Trecho updatedTrecho = trechoRepository.findOne(trecho.getId());
+        updatedTrecho
+            .defim(UPDATED_DEFIM)
+            .deinicio(UPDATED_DEINICIO)
+            .fim(UPDATED_FIM)
+            .inicio(UPDATED_INICIO)
+            .jurisdicao(UPDATED_JURISDICAO)
+            .kml(UPDATED_KML)
+            .nuextensao(UPDATED_NUEXTENSAO)
+            .nukmfinal(UPDATED_NUKMFINAL)
+            .nukminicia(UPDATED_NUKMINICIA)
+            .responsavel(UPDATED_RESPONSAVEL)
+            .sgpre(UPDATED_SGPRE)
+            .sgsituacao(UPDATED_SGSITUACAO)
+            .tprevest(UPDATED_TPREVEST);
         TrechoDTO trechoDTO = trechoMapper.toDto(updatedTrecho);
 
         restTrechoMockMvc.perform(put("/api/trechos")
@@ -179,6 +284,19 @@ public class TrechoResourceIntTest {
         List<Trecho> trechoList = trechoRepository.findAll();
         assertThat(trechoList).hasSize(databaseSizeBeforeUpdate);
         Trecho testTrecho = trechoList.get(trechoList.size() - 1);
+        assertThat(testTrecho.getDefim()).isEqualTo(UPDATED_DEFIM);
+        assertThat(testTrecho.getDeinicio()).isEqualTo(UPDATED_DEINICIO);
+        assertThat(testTrecho.getFim()).isEqualTo(UPDATED_FIM);
+        assertThat(testTrecho.getInicio()).isEqualTo(UPDATED_INICIO);
+        assertThat(testTrecho.getJurisdicao()).isEqualTo(UPDATED_JURISDICAO);
+        assertThat(testTrecho.getKml()).isEqualTo(UPDATED_KML);
+        assertThat(testTrecho.getNuextensao()).isEqualTo(UPDATED_NUEXTENSAO);
+        assertThat(testTrecho.getNukmfinal()).isEqualTo(UPDATED_NUKMFINAL);
+        assertThat(testTrecho.getNukminicia()).isEqualTo(UPDATED_NUKMINICIA);
+        assertThat(testTrecho.getResponsavel()).isEqualTo(UPDATED_RESPONSAVEL);
+        assertThat(testTrecho.getSgpre()).isEqualTo(UPDATED_SGPRE);
+        assertThat(testTrecho.getSgsituacao()).isEqualTo(UPDATED_SGSITUACAO);
+        assertThat(testTrecho.getTprevest()).isEqualTo(UPDATED_TPREVEST);
     }
 
     @Test

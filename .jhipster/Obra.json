@@ -4,7 +4,7 @@
         {
             "relationshipType": "many-to-one",
             "relationshipName": "tipoobra",
-            "otherEntityName": "tipoObra",
+            "otherEntityName": "tipoobra",
             "otherEntityField": "id"
         },
         {

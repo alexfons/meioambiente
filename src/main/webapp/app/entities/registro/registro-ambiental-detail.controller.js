@@ -5,9 +5,9 @@
         .module('meioambienteApp')
         .controller('RegistroAmbientalDetailController', RegistroAmbientalDetailController);
 
-    RegistroAmbientalDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Registro'];
+    RegistroAmbientalDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Registro', 'Linha'];
 
-    function RegistroAmbientalDetailController($scope, $rootScope, $stateParams, previousState, entity, Registro) {
+    function RegistroAmbientalDetailController($scope, $rootScope, $stateParams, previousState, entity, Registro, Linha) {
         var vm = this;
 
         vm.registro = entity;

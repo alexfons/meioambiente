@@ -5,14 +5,15 @@
         .module('meioambienteApp')
         .controller('RegistroAmbientalDialogController', RegistroAmbientalDialogController);
 
-    RegistroAmbientalDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Registro'];
+    RegistroAmbientalDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Registro', 'Linha'];
 
-    function RegistroAmbientalDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Registro) {
+    function RegistroAmbientalDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Registro, Linha) {
         var vm = this;
 
         vm.registro = entity;
         vm.clear = clear;
         vm.save = save;
+        vm.linhas = Linha.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

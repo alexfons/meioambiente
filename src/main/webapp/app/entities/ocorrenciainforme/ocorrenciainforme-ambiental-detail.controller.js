@@ -5,9 +5,9 @@
         .module('meioambienteApp')
         .controller('OcorrenciainformeAmbientalDetailController', OcorrenciainformeAmbientalDetailController);
 
-    OcorrenciainformeAmbientalDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Ocorrenciainforme'];
+    OcorrenciainformeAmbientalDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Ocorrenciainforme', 'Ocorrencia'];
 
-    function OcorrenciainformeAmbientalDetailController($scope, $rootScope, $stateParams, previousState, entity, Ocorrenciainforme) {
+    function OcorrenciainformeAmbientalDetailController($scope, $rootScope, $stateParams, previousState, entity, Ocorrenciainforme, Ocorrencia) {
         var vm = this;
 
         vm.ocorrenciainforme = entity;

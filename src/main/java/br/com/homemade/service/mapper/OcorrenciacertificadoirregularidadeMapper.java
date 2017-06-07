@@ -8,10 +8,12 @@ import org.mapstruct.*;
 /**
  * Mapper for the entity Ocorrenciacertificadoirregularidade and its DTO OcorrenciacertificadoirregularidadeDTO.
  */
-@Mapper(componentModel = "spring", uses = {})
+@Mapper(componentModel = "spring", uses = {OcorrenciaMapper.class, })
 public interface OcorrenciacertificadoirregularidadeMapper extends EntityMapper <OcorrenciacertificadoirregularidadeDTO, Ocorrenciacertificadoirregularidade> {
-    
-    
+    @Mapping(source = "ocorrencia.id", target = "ocorrenciaId")
+    OcorrenciacertificadoirregularidadeDTO toDto(Ocorrenciacertificadoirregularidade ocorrenciacertificadoirregularidade); 
+    @Mapping(source = "ocorrenciaId", target = "ocorrencia")
+    Ocorrenciacertificadoirregularidade toEntity(OcorrenciacertificadoirregularidadeDTO ocorrenciacertificadoirregularidadeDTO); 
     /**
      * generating the fromId for all mappers if the databaseType is sql, as the class has relationship to it might need it, instead of
      * creating a new attribute to know if the entity has any relationship from some other entity

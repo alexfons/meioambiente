@@ -104,6 +104,9 @@
                     resolve: {
                         entity: function () {
                             return {
+                                descricao: null,
+                                categoria: null,
+                                subcategoria: null,
                                 id: null
                             };
                         }

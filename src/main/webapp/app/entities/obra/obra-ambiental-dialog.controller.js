@@ -5,15 +5,15 @@
         .module('meioambienteApp')
         .controller('ObraAmbientalDialogController', ObraAmbientalDialogController);
 
-    ObraAmbientalDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Obra', 'TipoObra', 'Inspetor', 'Fiscal', 'Trecho', 'Contratoobra', 'Historico'];
+    ObraAmbientalDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Obra', 'Tipoobra', 'Inspetor', 'Fiscal', 'Trecho', 'Contratoobra', 'Historico'];
 
-    function ObraAmbientalDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Obra, TipoObra, Inspetor, Fiscal, Trecho, Contratoobra, Historico) {
+    function ObraAmbientalDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Obra, Tipoobra, Inspetor, Fiscal, Trecho, Contratoobra, Historico) {
         var vm = this;
 
         vm.obra = entity;
         vm.clear = clear;
         vm.save = save;
-        vm.tipoobras = TipoObra.query();
+        vm.tipoobras = Tipoobra.query();
         vm.inspetors = Inspetor.query();
         vm.fiscals = Fiscal.query();
         vm.trechos = Trecho.query();

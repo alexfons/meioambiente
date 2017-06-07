@@ -1,7 +1,20 @@
 {
     "fluentMethods": true,
     "relationships": [],
-    "fields": [],
+    "fields": [
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "categoria",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "subcategoria",
+            "fieldType": "String"
+        }
+    ],
     "changelogDate": "20170607015511",
     "entityTableName": "tipoocorrencia",
     "dto": "mapstruct",

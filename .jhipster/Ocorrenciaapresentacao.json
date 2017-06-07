@@ -1,7 +1,19 @@
 {
     "fluentMethods": true,
-    "relationships": [],
-    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "ocorrencia",
+            "otherEntityName": "ocorrencia",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "enquadramento",
+            "fieldType": "String"
+        }
+    ],
     "changelogDate": "20170515105928",
     "entityTableName": "ocorrenciaapresentacao",
     "dto": "mapstruct",

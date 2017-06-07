@@ -19,12 +19,14 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.rodovia.sgrodovia">Sgrodovia</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="rodovia in vm.rodovias track by rodovia.id">
                     <td><a ui-sref="rodovia-ambiental-detail({id:rodovia.id})">{{rodovia.id}}</a></td>
+                    <td>{{rodovia.sgrodovia}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

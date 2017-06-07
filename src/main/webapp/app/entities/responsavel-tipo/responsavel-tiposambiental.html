@@ -1,0 +1,70 @@
+<div>
+    <h2 data-translate="meioambienteApp.responsavelTipo.home.title">Responsavel Tipos</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="responsavel-tipo-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.responsavelTipo.home.createLabel">
+                        Create new Responsavel Tipo
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.responsavelTipo.email">Email</span></th>
+                    <th><span data-translate="meioambienteApp.responsavelTipo.funcao">Funcao</span></th>
+                    <th><span data-translate="meioambienteApp.responsavelTipo.localtrabalho">Localtrabalho</span></th>
+                    <th><span data-translate="meioambienteApp.responsavelTipo.matricula">Matricula</span></th>
+                    <th><span data-translate="meioambienteApp.responsavelTipo.nome">Nome</span></th>
+                    <th><span data-translate="meioambienteApp.responsavelTipo.superintendencia">Superintendencia</span></th>
+                    <th><span data-translate="meioambienteApp.responsavelTipo.telefone">Telefone</span></th>
+                    <th><span data-translate="meioambienteApp.responsavelTipo.telefonecomercial">Telefonecomercial</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="responsavelTipo in vm.responsavelTipos track by responsavelTipo.id">
+                    <td><a ui-sref="responsavel-tipo-ambiental-detail({id:responsavelTipo.id})">{{responsavelTipo.id}}</a></td>
+                    <td>{{responsavelTipo.email}}</td>
+                    <td>{{responsavelTipo.funcao}}</td>
+                    <td>{{responsavelTipo.localtrabalho}}</td>
+                    <td>{{responsavelTipo.matricula}}</td>
+                    <td>{{responsavelTipo.nome}}</td>
+                    <td>{{responsavelTipo.superintendencia}}</td>
+                    <td>{{responsavelTipo.telefone}}</td>
+                    <td>{{responsavelTipo.telefonecomercial}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="responsavel-tipo-ambiental-detail({id:responsavelTipo.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="responsavel-tipo-ambiental.edit({id:responsavelTipo.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="responsavel-tipo-ambiental.delete({id:responsavelTipo.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -19,12 +19,22 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.natureza.descnatureza">Descnatureza</span></th>
+                    <th><span data-translate="meioambienteApp.natureza.descsubacao">Descsubacao</span></th>
+                    <th><span data-translate="meioambienteApp.natureza.idnatureza">Idnatureza</span></th>
+                    <th><span data-translate="meioambienteApp.natureza.numnatureza">Numnatureza</span></th>
+                    <th><span data-translate="meioambienteApp.natureza.subacao">Subacao</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="natureza in vm.naturezas track by natureza.id">
                     <td><a ui-sref="natureza-ambiental-detail({id:natureza.id})">{{natureza.id}}</a></td>
+                    <td>{{natureza.descnatureza}}</td>
+                    <td>{{natureza.descsubacao}}</td>
+                    <td>{{natureza.idnatureza}}</td>
+                    <td>{{natureza.numnatureza}}</td>
+                    <td>{{natureza.subacao}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

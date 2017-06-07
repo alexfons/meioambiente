@@ -1,0 +1,28 @@
+{
+    "meioambienteApp": {
+        "pendencias" : {
+            "home": {
+                "title": "Pendencias",
+                "createLabel": "Criar novo Pendencias",
+                "createOrEditLabel": "Criar ou editar Pendencias"
+            },
+            "created": "Um novo Pendencias é criado com o identificador {{ param }}",
+            "updated": "Um Pendencias é atualizado com o identificador {{ param }}",
+            "deleted": "Um Pendencias é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Pendencias {{ id }}?"
+            },
+            "detail": {
+                "title": "Pendencias"
+            },
+            "data": "Data",
+            "datainspecao": "Datainspecao",
+            "notificacao": "Notificacao",
+            "numero": "Numero",
+            "obs": "Obs",
+            "obra": "Obra",
+            "fotos": "Fotos",
+            "ocorrenciaspendencias": "Ocorrenciaspendencias"
+        }
+    }
+}

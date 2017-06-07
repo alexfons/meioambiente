@@ -22,12 +22,60 @@ public class Obraatividade implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
+    @Column(name = "peso")
+    private Double peso;
+
+    @Column(name = "revestimento")
+    private String revestimento;
+
+    @ManyToOne
+    private Atividade atividade;
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Double getPeso() {
+        return peso;
+    }
+
+    public Obraatividade peso(Double peso) {
+        this.peso = peso;
+        return this;
+    }
+
+    public void setPeso(Double peso) {
+        this.peso = peso;
+    }
+
+    public String getRevestimento() {
+        return revestimento;
+    }
+
+    public Obraatividade revestimento(String revestimento) {
+        this.revestimento = revestimento;
+        return this;
+    }
+
+    public void setRevestimento(String revestimento) {
+        this.revestimento = revestimento;
+    }
+
+    public Atividade getAtividade() {
+        return atividade;
+    }
+
+    public Obraatividade atividade(Atividade atividade) {
+        this.atividade = atividade;
+        return this;
+    }
+
+    public void setAtividade(Atividade atividade) {
+        this.atividade = atividade;
     }
 
     @Override
@@ -54,6 +102,8 @@ public class Obraatividade implements Serializable {
     public String toString() {
         return "Obraatividade{" +
             "id=" + getId() +
+            ", peso='" + getPeso() + "'" +
+            ", revestimento='" + getRevestimento() + "'" +
             "}";
     }
 }

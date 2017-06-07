@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Trecho.
+    -->
+    <changeSet id="20170515105932-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="rodovia_id"
+                                 baseTableName="trecho"
+                                 constraintName="fk_trecho_rodovia_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="rodovia"/>
+
+        <addForeignKeyConstraint baseColumnNames="supre_id"
+                                 baseTableName="trecho"
+                                 constraintName="fk_trecho_supre_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="supre"/>
+
+    </changeSet>
+</databaseChangeLog>

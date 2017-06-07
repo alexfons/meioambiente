@@ -21,8 +21,73 @@
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
+            <column name="andamento" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="pendente" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="inspetor_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="municipio_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="tipo_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="tipoobra_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="trecho_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="fiscal_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
+        
+        <createTable tableName="projeto_contratosprojeto">
+            <column name="contratosprojetos_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="projetos_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="projetos_id, contratosprojetos_id" tableName="projeto_contratosprojeto"/>
+        
+        <createTable tableName="projeto_historicos">
+            <column name="historicos_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="projetos_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="projetos_id, historicos_id" tableName="projeto_historicos"/>
+        
+        <createTable tableName="projeto_municipios">
+            <column name="municipios_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="projetos_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="projetos_id, municipios_id" tableName="projeto_municipios"/>
         
     </changeSet>
 </databaseChangeLog>

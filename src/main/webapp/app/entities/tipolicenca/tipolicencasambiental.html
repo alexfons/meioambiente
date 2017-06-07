@@ -19,12 +19,18 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.tipolicenca.categoria">Categoria</span></th>
+                    <th><span data-translate="meioambienteApp.tipolicenca.descricao">Descricao</span></th>
+                    <th><span data-translate="meioambienteApp.tipolicenca.subcategoria">Subcategoria</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="tipolicenca in vm.tipolicencas track by tipolicenca.id">
                     <td><a ui-sref="tipolicenca-ambiental-detail({id:tipolicenca.id})">{{tipolicenca.id}}</a></td>
+                    <td>{{tipolicenca.categoria}}</td>
+                    <td>{{tipolicenca.descricao}}</td>
+                    <td>{{tipolicenca.subcategoria}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

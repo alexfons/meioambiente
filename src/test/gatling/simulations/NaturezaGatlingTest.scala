@@ -68,7 +68,7 @@ class NaturezaGatlingTest extends Simulation {
             .exec(http("Create new natureza")
             .post("/api/naturezas")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null}""")).asJSON
+            .body(StringBody("""{"id":null, "descnatureza":"SAMPLE_TEXT", "descsubacao":"SAMPLE_TEXT", "idnatureza":"0", "numnatureza":"0", "subacao":"0"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_natureza_url"))).exitHereIfFailed
             .pause(10)

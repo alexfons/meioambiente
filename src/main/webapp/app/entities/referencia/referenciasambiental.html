@@ -19,12 +19,22 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.referencia.aporte">Aporte</span></th>
+                    <th><span data-translate="meioambienteApp.referencia.idreferencia">Idreferencia</span></th>
+                    <th><span data-translate="meioambienteApp.referencia.moeda">Moeda</span></th>
+                    <th><span data-translate="meioambienteApp.referencia.nreferencia">Nreferencia</span></th>
+                    <th><span data-translate="meioambienteApp.referencia.valorreferencia">Valorreferencia</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="referencia in vm.referencias track by referencia.id">
                     <td><a ui-sref="referencia-ambiental-detail({id:referencia.id})">{{referencia.id}}</a></td>
+                    <td>{{referencia.aporte}}</td>
+                    <td>{{referencia.idreferencia}}</td>
+                    <td>{{referencia.moeda}}</td>
+                    <td>{{referencia.nreferencia}}</td>
+                    <td>{{referencia.valorreferencia}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

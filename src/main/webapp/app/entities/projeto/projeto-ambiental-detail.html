@@ -4,6 +4,56 @@
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.projeto.andamento">Andamento</span></dt>
+        <dd>
+            <span>{{vm.projeto.andamento}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.projeto.pendente">Pendente</span></dt>
+        <dd>
+            <span>{{vm.projeto.pendente}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.projeto.inspetor">Inspetor</span></dt>
+        <dd>
+            <a ui-sref="inspetor-ambiental-detail({id:vm.projeto.inspetorId})">{{vm.projeto.inspetorId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.projeto.municipio">Municipio</span></dt>
+        <dd>
+            <a ui-sref="municipio-ambiental-detail({id:vm.projeto.municipioId})">{{vm.projeto.municipioId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.projeto.tipo">Tipo</span></dt>
+        <dd>
+            <a ui-sref="tipoobra-ambiental-detail({id:vm.projeto.tipoId})">{{vm.projeto.tipoId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.projeto.tipoobra">Tipoobra</span></dt>
+        <dd>
+            <a ui-sref="tipoobra-ambiental-detail({id:vm.projeto.tipoobraId})">{{vm.projeto.tipoobraId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.projeto.trecho">Trecho</span></dt>
+        <dd>
+            <a ui-sref="trecho-ambiental-detail({id:vm.projeto.trechoId})">{{vm.projeto.trechoId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.projeto.fiscal">Fiscal</span></dt>
+        <dd>
+            <a ui-sref="fiscal-ambiental-detail({id:vm.projeto.fiscalId})">{{vm.projeto.fiscalId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.projeto.contratosprojeto">Contratosprojeto</span></dt>
+        <dd>
+            <span ng-repeat="contratosprojeto in vm.projeto.contratosprojetos">
+                <a ui-sref="contratoprojeto-ambiental-detail({id: contratosprojeto.id})">{{contratosprojeto.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.projeto.historicos">Historicos</span></dt>
+        <dd>
+            <span ng-repeat="historicos in vm.projeto.historicos">
+                <a ui-sref="historico-ambiental-detail({id: historicos.id})">{{historicos.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.projeto.municipios">Municipios</span></dt>
+        <dd>
+            <span ng-repeat="municipios in vm.projeto.municipios">
+                <a ui-sref="municipio-ambiental-detail({id: municipios.id})">{{municipios.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
     </dl>
 
     <button type="submit"

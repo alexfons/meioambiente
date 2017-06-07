@@ -14,7 +14,10 @@
             },
             "detail": {
                 "title": "Participante"
-            }
+            },
+            "formacao": "Formacao",
+            "nome": "Nome",
+            "empresa": "Empresa"
         }
     }
 }

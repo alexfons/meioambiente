@@ -1,0 +1,53 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "idcontabancaria",
+            "otherEntityName": "contabancaria",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "idreferencia",
+            "otherEntityName": "referencia",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "datainternalizacao",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "idvaloresdesembolso",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nsolicitacao",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tipodesembolso",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "valoreais",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "valorus",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "valuedata",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170607114405",
+    "entityTableName": "valoresdesembolso",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "ambiental"
+}

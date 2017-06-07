@@ -104,6 +104,11 @@
                     resolve: {
                         entity: function () {
                             return {
+                                idplanocontas: null,
+                                ncontabil: null,
+                                descricao: null,
+                                tipoconta: null,
+                                tipolancamento: null,
                                 id: null
                             };
                         }

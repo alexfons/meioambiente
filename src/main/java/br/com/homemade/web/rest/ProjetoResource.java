@@ -95,7 +95,7 @@ public class ProjetoResource {
     @Timed
     public List<ProjetoDTO> getAllProjetos() {
         log.debug("REST request to get all Projetos");
-        List<Projeto> projetos = projetoRepository.findAll();
+        List<Projeto> projetos = projetoRepository.findAllWithEagerRelationships();
         return projetoMapper.toDto(projetos);
     }
 
@@ -109,7 +109,7 @@ public class ProjetoResource {
     @Timed
     public ResponseEntity<ProjetoDTO> getProjeto(@PathVariable Long id) {
         log.debug("REST request to get Projeto : {}", id);
-        Projeto projeto = projetoRepository.findOne(id);
+        Projeto projeto = projetoRepository.findOneWithEagerRelationships(id);
         ProjetoDTO projetoDTO = projetoMapper.toDto(projeto);
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(projetoDTO));
     }

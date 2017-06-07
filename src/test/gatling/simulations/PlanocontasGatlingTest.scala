@@ -68,7 +68,7 @@ class PlanocontasGatlingTest extends Simulation {
             .exec(http("Create new planocontas")
             .post("/api/planocontas")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null}""")).asJSON
+            .body(StringBody("""{"id":null, "idplanocontas":"0", "ncontabil":"SAMPLE_TEXT", "descricao":"SAMPLE_TEXT", "tipoconta":"SAMPLE_TEXT", "tipolancamento":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_planocontas_url"))).exitHereIfFailed
             .pause(10)

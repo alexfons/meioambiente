@@ -1,0 +1,118 @@
+<div>
+    <h2 data-translate="meioambienteApp.pagfuncionario.home.title">Pagfuncionarios</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="pagfuncionario-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.pagfuncionario.home.createLabel">
+                        Create new Pagfuncionario
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.pagfuncionario.datapagamento">Datapagamento</span></th>
+                    <th><span data-translate="meioambienteApp.pagfuncionario.idpagfuncionarios">Idpagfuncionarios</span></th>
+                    <th><span data-translate="meioambienteApp.pagfuncionario.nsolicitacao">Nsolicitacao</span></th>
+                    <th><span data-translate="meioambienteApp.pagfuncionario.percentual">Percentual</span></th>
+                    <th><span data-translate="meioambienteApp.pagfuncionario.salario">Salario</span></th>
+                    <th><span data-translate="meioambienteApp.pagfuncionario.salariocontribuicao">Salariocontribuicao</span></th>
+                    <th><span data-translate="meioambienteApp.pagfuncionario.salariototal">Salariototal</span></th>
+                    <th><span data-translate="meioambienteApp.pagfuncionario.valorus">Valorus</span></th>
+                    <th><span data-translate="meioambienteApp.pagfuncionario.contacontabilC1">Contacontabil C 1</span></th>
+                    <th><span data-translate="meioambienteApp.pagfuncionario.contacontabilC2">Contacontabil C 2</span></th>
+                    <th><span data-translate="meioambienteApp.pagfuncionario.contacontabilD1">Contacontabil D 1</span></th>
+                    <th><span data-translate="meioambienteApp.pagfuncionario.contacontabilD2">Contacontabil D 2</span></th>
+                    <th><span data-translate="meioambienteApp.pagfuncionario.divcontacontabilC1">Divcontacontabil C 1</span></th>
+                    <th><span data-translate="meioambienteApp.pagfuncionario.divcontacontabilD1">Divcontacontabil D 1</span></th>
+                    <th><span data-translate="meioambienteApp.pagfuncionario.juscontacontabilC1">Juscontacontabil C 1</span></th>
+                    <th><span data-translate="meioambienteApp.pagfuncionario.juscontacontabilD1">Juscontacontabil D 1</span></th>
+                    <th><span data-translate="meioambienteApp.pagfuncionario.fonte">Fonte</span></th>
+                    <th><span data-translate="meioambienteApp.pagfuncionario.idcategoriainversao">Idcategoriainversao</span></th>
+                    <th><span data-translate="meioambienteApp.pagfuncionario.idfuncionarios">Idfuncionarios</span></th>
+                    <th><span data-translate="meioambienteApp.pagfuncionario.idreferencia">Idreferencia</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="pagfuncionario in vm.pagfuncionarios track by pagfuncionario.id">
+                    <td><a ui-sref="pagfuncionario-ambiental-detail({id:pagfuncionario.id})">{{pagfuncionario.id}}</a></td>
+                    <td>{{pagfuncionario.datapagamento | date:'medium'}}</td>
+                    <td>{{pagfuncionario.idpagfuncionarios}}</td>
+                    <td>{{pagfuncionario.nsolicitacao}}</td>
+                    <td>{{pagfuncionario.percentual}}</td>
+                    <td>{{pagfuncionario.salario}}</td>
+                    <td>{{pagfuncionario.salariocontribuicao}}</td>
+                    <td>{{pagfuncionario.salariototal}}</td>
+                    <td>{{pagfuncionario.valorus}}</td>
+                    <td>
+                        <a ui-sref="planocontas-ambiental-detail({id:pagfuncionario.contacontabilC1Id})">{{pagfuncionario.contacontabilC1Id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="planocontas-ambiental-detail({id:pagfuncionario.contacontabilC2Id})">{{pagfuncionario.contacontabilC2Id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="planocontas-ambiental-detail({id:pagfuncionario.contacontabilD1Id})">{{pagfuncionario.contacontabilD1Id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="planocontas-ambiental-detail({id:pagfuncionario.contacontabilD2Id})">{{pagfuncionario.contacontabilD2Id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="planocontas-ambiental-detail({id:pagfuncionario.divcontacontabilC1Id})">{{pagfuncionario.divcontacontabilC1Id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="planocontas-ambiental-detail({id:pagfuncionario.divcontacontabilD1Id})">{{pagfuncionario.divcontacontabilD1Id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="planocontas-ambiental-detail({id:pagfuncionario.juscontacontabilC1Id})">{{pagfuncionario.juscontacontabilC1Id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="planocontas-ambiental-detail({id:pagfuncionario.juscontacontabilD1Id})">{{pagfuncionario.juscontacontabilD1Id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="fonte-ambiental-detail({id:pagfuncionario.fonteId})">{{pagfuncionario.fonteId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="categoriainversao-ambiental-detail({id:pagfuncionario.idcategoriainversaoId})">{{pagfuncionario.idcategoriainversaoId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="funcionario-ambiental-detail({id:pagfuncionario.idfuncionariosId})">{{pagfuncionario.idfuncionariosId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="referencia-ambiental-detail({id:pagfuncionario.idreferenciaId})">{{pagfuncionario.idreferenciaId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="pagfuncionario-ambiental-detail({id:pagfuncionario.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="pagfuncionario-ambiental.edit({id:pagfuncionario.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="pagfuncionario-ambiental.delete({id:pagfuncionario.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -39,6 +39,21 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = MeioambienteApp.class)
 public class NaturezaResourceIntTest {
 
+    private static final String DEFAULT_DESCNATUREZA = "AAAAAAAAAA";
+    private static final String UPDATED_DESCNATUREZA = "BBBBBBBBBB";
+
+    private static final String DEFAULT_DESCSUBACAO = "AAAAAAAAAA";
+    private static final String UPDATED_DESCSUBACAO = "BBBBBBBBBB";
+
+    private static final Integer DEFAULT_IDNATUREZA = 1;
+    private static final Integer UPDATED_IDNATUREZA = 2;
+
+    private static final Integer DEFAULT_NUMNATUREZA = 1;
+    private static final Integer UPDATED_NUMNATUREZA = 2;
+
+    private static final Integer DEFAULT_SUBACAO = 1;
+    private static final Integer UPDATED_SUBACAO = 2;
+
     @Autowired
     private NaturezaRepository naturezaRepository;
 
@@ -78,7 +93,12 @@ public class NaturezaResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Natureza createEntity(EntityManager em) {
-        Natureza natureza = new Natureza();
+        Natureza natureza = new Natureza()
+            .descnatureza(DEFAULT_DESCNATUREZA)
+            .descsubacao(DEFAULT_DESCSUBACAO)
+            .idnatureza(DEFAULT_IDNATUREZA)
+            .numnatureza(DEFAULT_NUMNATUREZA)
+            .subacao(DEFAULT_SUBACAO);
         return natureza;
     }
 
@@ -103,6 +123,11 @@ public class NaturezaResourceIntTest {
         List<Natureza> naturezaList = naturezaRepository.findAll();
         assertThat(naturezaList).hasSize(databaseSizeBeforeCreate + 1);
         Natureza testNatureza = naturezaList.get(naturezaList.size() - 1);
+        assertThat(testNatureza.getDescnatureza()).isEqualTo(DEFAULT_DESCNATUREZA);
+        assertThat(testNatureza.getDescsubacao()).isEqualTo(DEFAULT_DESCSUBACAO);
+        assertThat(testNatureza.getIdnatureza()).isEqualTo(DEFAULT_IDNATUREZA);
+        assertThat(testNatureza.getNumnatureza()).isEqualTo(DEFAULT_NUMNATUREZA);
+        assertThat(testNatureza.getSubacao()).isEqualTo(DEFAULT_SUBACAO);
     }
 
     @Test
@@ -135,7 +160,12 @@ public class NaturezaResourceIntTest {
         restNaturezaMockMvc.perform(get("/api/naturezas?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(natureza.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(natureza.getId().intValue())))
+            .andExpect(jsonPath("$.[*].descnatureza").value(hasItem(DEFAULT_DESCNATUREZA.toString())))
+            .andExpect(jsonPath("$.[*].descsubacao").value(hasItem(DEFAULT_DESCSUBACAO.toString())))
+            .andExpect(jsonPath("$.[*].idnatureza").value(hasItem(DEFAULT_IDNATUREZA)))
+            .andExpect(jsonPath("$.[*].numnatureza").value(hasItem(DEFAULT_NUMNATUREZA)))
+            .andExpect(jsonPath("$.[*].subacao").value(hasItem(DEFAULT_SUBACAO)));
     }
 
     @Test
@@ -148,7 +178,12 @@ public class NaturezaResourceIntTest {
         restNaturezaMockMvc.perform(get("/api/naturezas/{id}", natureza.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(natureza.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(natureza.getId().intValue()))
+            .andExpect(jsonPath("$.descnatureza").value(DEFAULT_DESCNATUREZA.toString()))
+            .andExpect(jsonPath("$.descsubacao").value(DEFAULT_DESCSUBACAO.toString()))
+            .andExpect(jsonPath("$.idnatureza").value(DEFAULT_IDNATUREZA))
+            .andExpect(jsonPath("$.numnatureza").value(DEFAULT_NUMNATUREZA))
+            .andExpect(jsonPath("$.subacao").value(DEFAULT_SUBACAO));
     }
 
     @Test
@@ -168,6 +203,12 @@ public class NaturezaResourceIntTest {
 
         // Update the natureza
         Natureza updatedNatureza = naturezaRepository.findOne(natureza.getId());
+        updatedNatureza
+            .descnatureza(UPDATED_DESCNATUREZA)
+            .descsubacao(UPDATED_DESCSUBACAO)
+            .idnatureza(UPDATED_IDNATUREZA)
+            .numnatureza(UPDATED_NUMNATUREZA)
+            .subacao(UPDATED_SUBACAO);
         NaturezaDTO naturezaDTO = naturezaMapper.toDto(updatedNatureza);
 
         restNaturezaMockMvc.perform(put("/api/naturezas")
@@ -179,6 +220,11 @@ public class NaturezaResourceIntTest {
         List<Natureza> naturezaList = naturezaRepository.findAll();
         assertThat(naturezaList).hasSize(databaseSizeBeforeUpdate);
         Natureza testNatureza = naturezaList.get(naturezaList.size() - 1);
+        assertThat(testNatureza.getDescnatureza()).isEqualTo(UPDATED_DESCNATUREZA);
+        assertThat(testNatureza.getDescsubacao()).isEqualTo(UPDATED_DESCSUBACAO);
+        assertThat(testNatureza.getIdnatureza()).isEqualTo(UPDATED_IDNATUREZA);
+        assertThat(testNatureza.getNumnatureza()).isEqualTo(UPDATED_NUMNATUREZA);
+        assertThat(testNatureza.getSubacao()).isEqualTo(UPDATED_SUBACAO);
     }
 
     @Test

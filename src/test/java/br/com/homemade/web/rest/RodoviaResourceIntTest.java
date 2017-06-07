@@ -39,6 +39,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = MeioambienteApp.class)
 public class RodoviaResourceIntTest {
 
+    private static final String DEFAULT_SGRODOVIA = "AAAAAAAAAA";
+    private static final String UPDATED_SGRODOVIA = "BBBBBBBBBB";
+
     @Autowired
     private RodoviaRepository rodoviaRepository;
 
@@ -78,7 +81,8 @@ public class RodoviaResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Rodovia createEntity(EntityManager em) {
-        Rodovia rodovia = new Rodovia();
+        Rodovia rodovia = new Rodovia()
+            .sgrodovia(DEFAULT_SGRODOVIA);
         return rodovia;
     }
 
@@ -103,6 +107,7 @@ public class RodoviaResourceIntTest {
         List<Rodovia> rodoviaList = rodoviaRepository.findAll();
         assertThat(rodoviaList).hasSize(databaseSizeBeforeCreate + 1);
         Rodovia testRodovia = rodoviaList.get(rodoviaList.size() - 1);
+        assertThat(testRodovia.getSgrodovia()).isEqualTo(DEFAULT_SGRODOVIA);
     }
 
     @Test
@@ -135,7 +140,8 @@ public class RodoviaResourceIntTest {
         restRodoviaMockMvc.perform(get("/api/rodovias?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(rodovia.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(rodovia.getId().intValue())))
+            .andExpect(jsonPath("$.[*].sgrodovia").value(hasItem(DEFAULT_SGRODOVIA.toString())));
     }
 
     @Test
@@ -148,7 +154,8 @@ public class RodoviaResourceIntTest {
         restRodoviaMockMvc.perform(get("/api/rodovias/{id}", rodovia.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(rodovia.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(rodovia.getId().intValue()))
+            .andExpect(jsonPath("$.sgrodovia").value(DEFAULT_SGRODOVIA.toString()));
     }
 
     @Test
@@ -168,6 +175,8 @@ public class RodoviaResourceIntTest {
 
         // Update the rodovia
         Rodovia updatedRodovia = rodoviaRepository.findOne(rodovia.getId());
+        updatedRodovia
+            .sgrodovia(UPDATED_SGRODOVIA);
         RodoviaDTO rodoviaDTO = rodoviaMapper.toDto(updatedRodovia);
 
         restRodoviaMockMvc.perform(put("/api/rodovias")
@@ -179,6 +188,7 @@ public class RodoviaResourceIntTest {
         List<Rodovia> rodoviaList = rodoviaRepository.findAll();
         assertThat(rodoviaList).hasSize(databaseSizeBeforeUpdate);
         Rodovia testRodovia = rodoviaList.get(rodoviaList.size() - 1);
+        assertThat(testRodovia.getSgrodovia()).isEqualTo(UPDATED_SGRODOVIA);
     }
 
     @Test

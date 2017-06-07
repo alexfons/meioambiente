@@ -1,0 +1,92 @@
+<div>
+    <h2 data-translate="meioambienteApp.obrafisicomensal.home.title">Obrafisicomensals</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="obrafisicomensal-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.obrafisicomensal.home.createLabel">
+                        Create new Obrafisicomensal
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.obrafisicomensal.comentario">Comentario</span></th>
+                    <th><span data-translate="meioambienteApp.obrafisicomensal.datainspecao">Datainspecao</span></th>
+                    <th><span data-translate="meioambienteApp.obrafisicomensal.datarelatorio">Datarelatorio</span></th>
+                    <th><span data-translate="meioambienteApp.obrafisicomensal.pessoal">Pessoal</span></th>
+                    <th><span data-translate="meioambienteApp.obrafisicomensal.equipamento">Equipamento</span></th>
+                    <th><span data-translate="meioambienteApp.obrafisicomensal.instalacaoapoio">Instalacaoapoio</span></th>
+                    <th><span data-translate="meioambienteApp.obrafisicomensal.ritmo">Ritmo</span></th>
+                    <th><span data-translate="meioambienteApp.obrafisicomensal.apresentacao">Apresentacao</span></th>
+                    <th><span data-translate="meioambienteApp.obrafisicomensal.qualidadeservicos">Qualidadeservicos</span></th>
+                    <th><span data-translate="meioambienteApp.obrafisicomensal.cronograma">Cronograma</span></th>
+                    <th><span data-translate="meioambienteApp.obrafisicomensal.prazodecorrido">Prazodecorrido</span></th>
+                    <th><span data-translate="meioambienteApp.obrafisicomensal.avancofisicoOAE">Avancofisico OAE</span></th>
+                    <th><span data-translate="meioambienteApp.obrafisicomensal.avancofisicoponderado">Avancofisicoponderado</span></th>
+                    <th><span data-translate="meioambienteApp.obrafisicomensal.previsaoatual">Previsaoatual</span></th>
+                    <th><span data-translate="meioambienteApp.obrafisicomensal.fisico">Fisico</span></th>
+                    <th><span data-translate="meioambienteApp.obrafisicomensal.atividadeexecutadamensals">Atividadeexecutadamensals</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="obrafisicomensal in vm.obrafisicomensals track by obrafisicomensal.id">
+                    <td><a ui-sref="obrafisicomensal-ambiental-detail({id:obrafisicomensal.id})">{{obrafisicomensal.id}}</a></td>
+                    <td>{{obrafisicomensal.comentario}}</td>
+                    <td>{{obrafisicomensal.datainspecao | date:'medium'}}</td>
+                    <td>{{obrafisicomensal.datarelatorio | date:'medium'}}</td>
+                    <td>{{obrafisicomensal.pessoal}}</td>
+                    <td>{{obrafisicomensal.equipamento}}</td>
+                    <td>{{obrafisicomensal.instalacaoapoio}}</td>
+                    <td>{{obrafisicomensal.ritmo}}</td>
+                    <td>{{obrafisicomensal.apresentacao}}</td>
+                    <td>{{obrafisicomensal.qualidadeservicos}}</td>
+                    <td>{{obrafisicomensal.cronograma}}</td>
+                    <td>{{obrafisicomensal.prazodecorrido}}</td>
+                    <td>{{obrafisicomensal.avancofisicoOAE}}</td>
+                    <td>{{obrafisicomensal.avancofisicoponderado}}</td>
+                    <td>{{obrafisicomensal.previsaoatual | date:'medium'}}</td>
+                    <td>
+                        <a ui-sref="fisico-ambiental-detail({id:obrafisicomensal.fisicoId})">{{obrafisicomensal.fisicoId}}</a>
+                    </td>
+                    <td>
+                        <span ng-repeat="atividadeexecutadamensals in obrafisicomensal.atividadeexecutadamensals">
+                            <a class="form-control-static" ui-sref="atividadeexecutadamensal-ambiental-detail({id: atividadeexecutadamensals.id})">{{atividadeexecutadamensals.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="obrafisicomensal-ambiental-detail({id:obrafisicomensal.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="obrafisicomensal-ambiental.edit({id:obrafisicomensal.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="obrafisicomensal-ambiental.delete({id:obrafisicomensal.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

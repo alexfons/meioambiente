@@ -13,7 +13,67 @@
             <input type="text" class="form-control" id="id" name="id"
                     ng-model="vm.projeto.id" readonly />
         </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.projeto.andamento" for="field_andamento">Andamento</label>
+            <input type="text" class="form-control" name="andamento" id="field_andamento"
+                    ng-model="vm.projeto.andamento"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.projeto.pendente" for="field_pendente">Pendente</label>
+            <input type="text" class="form-control" name="pendente" id="field_pendente"
+                    ng-model="vm.projeto.pendente"
+                    />
+        </div>
 
+        <div class="form-group">
+            <label data-translate="meioambienteApp.projeto.inspetor" for="field_inspetor">Inspetor</label>
+            <select class="form-control" id="field_inspetor" name="inspetor" ng-model="vm.projeto.inspetorId" ng-options="inspetor.id as inspetor.id for inspetor in vm.inspetors"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.projeto.municipio" for="field_municipio">Municipio</label>
+            <select class="form-control" id="field_municipio" name="municipio" ng-model="vm.projeto.municipioId" ng-options="municipio.id as municipio.id for municipio in vm.municipios"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.projeto.tipo" for="field_tipo">Tipo</label>
+            <select class="form-control" id="field_tipo" name="tipo" ng-model="vm.projeto.tipoId" ng-options="tipoobra.id as tipoobra.id for tipoobra in vm.tipoobras"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.projeto.tipoobra" for="field_tipoobra">Tipoobra</label>
+            <select class="form-control" id="field_tipoobra" name="tipoobra" ng-model="vm.projeto.tipoobraId" ng-options="tipoobra.id as tipoobra.id for tipoobra in vm.tipoobras"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.projeto.trecho" for="field_trecho">Trecho</label>
+            <select class="form-control" id="field_trecho" name="trecho" ng-model="vm.projeto.trechoId" ng-options="trecho.id as trecho.id for trecho in vm.trechos"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.projeto.fiscal" for="field_fiscal">Fiscal</label>
+            <select class="form-control" id="field_fiscal" name="fiscal" ng-model="vm.projeto.fiscalId" ng-options="fiscal.id as fiscal.id for fiscal in vm.fiscals"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.projeto.contratosprojeto" for="field_contratosprojeto">Contratosprojeto</label>
+            <select class="form-control" id="field_contratosprojeto" multiple name="contratosprojeto" ng-model="vm.projeto.contratosprojetos" ng-options="contratoprojeto as contratoprojeto.id for contratoprojeto in vm.contratoprojetos track by contratoprojeto.id"></select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.projeto.historicos" for="field_historicos">Historicos</label>
+            <select class="form-control" id="field_historicos" multiple name="historicos" ng-model="vm.projeto.historicos" ng-options="historico as historico.id for historico in vm.historicos track by historico.id"></select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.projeto.municipios" for="field_municipios">Municipios</label>
+            <select class="form-control" id="field_municipios" multiple name="municipios" ng-model="vm.projeto.municipios" ng-options="municipio as municipio.id for municipio in vm.municipios track by municipio.id"></select>
+        </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">

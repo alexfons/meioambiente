@@ -19,12 +19,46 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.trecho.defim">Defim</span></th>
+                    <th><span data-translate="meioambienteApp.trecho.deinicio">Deinicio</span></th>
+                    <th><span data-translate="meioambienteApp.trecho.fim">Fim</span></th>
+                    <th><span data-translate="meioambienteApp.trecho.inicio">Inicio</span></th>
+                    <th><span data-translate="meioambienteApp.trecho.jurisdicao">Jurisdicao</span></th>
+                    <th><span data-translate="meioambienteApp.trecho.kml">Kml</span></th>
+                    <th><span data-translate="meioambienteApp.trecho.nuextensao">Nuextensao</span></th>
+                    <th><span data-translate="meioambienteApp.trecho.nukmfinal">Nukmfinal</span></th>
+                    <th><span data-translate="meioambienteApp.trecho.nukminicia">Nukminicia</span></th>
+                    <th><span data-translate="meioambienteApp.trecho.responsavel">Responsavel</span></th>
+                    <th><span data-translate="meioambienteApp.trecho.sgpre">Sgpre</span></th>
+                    <th><span data-translate="meioambienteApp.trecho.sgsituacao">Sgsituacao</span></th>
+                    <th><span data-translate="meioambienteApp.trecho.tprevest">Tprevest</span></th>
+                    <th><span data-translate="meioambienteApp.trecho.rodovia">Rodovia</span></th>
+                    <th><span data-translate="meioambienteApp.trecho.supre">Supre</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="trecho in vm.trechos track by trecho.id">
                     <td><a ui-sref="trecho-ambiental-detail({id:trecho.id})">{{trecho.id}}</a></td>
+                    <td>{{trecho.defim}}</td>
+                    <td>{{trecho.deinicio}}</td>
+                    <td>{{trecho.fim}}</td>
+                    <td>{{trecho.inicio}}</td>
+                    <td>{{trecho.jurisdicao}}</td>
+                    <td>{{trecho.kml}}</td>
+                    <td>{{trecho.nuextensao}}</td>
+                    <td>{{trecho.nukmfinal}}</td>
+                    <td>{{trecho.nukminicia}}</td>
+                    <td>{{trecho.responsavel}}</td>
+                    <td>{{trecho.sgpre}}</td>
+                    <td>{{trecho.sgsituacao}}</td>
+                    <td>{{trecho.tprevest}}</td>
+                    <td>
+                        <a ui-sref="rodovia-ambiental-detail({id:trecho.rodoviaId})">{{trecho.rodoviaId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="supre-ambiental-detail({id:trecho.supreId})">{{trecho.supreId}}</a>
+                    </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

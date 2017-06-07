@@ -1,7 +1,28 @@
 {
     "fluentMethods": true,
     "relationships": [],
-    "fields": [],
+    "fields": [
+        {
+            "fieldName": "aporte",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "moeda",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idreferenciacontrato",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "nreferencia",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "valorreferencia",
+            "fieldType": "BigDecimal"
+        }
+    ],
     "changelogDate": "20170607011400",
     "entityTableName": "referenciacontrato",
     "dto": "mapstruct",

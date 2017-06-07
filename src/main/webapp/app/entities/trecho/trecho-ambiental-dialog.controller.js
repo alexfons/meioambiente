@@ -5,14 +5,16 @@
         .module('meioambienteApp')
         .controller('TrechoAmbientalDialogController', TrechoAmbientalDialogController);
 
-    TrechoAmbientalDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Trecho'];
+    TrechoAmbientalDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Trecho', 'Rodovia', 'Supre'];
 
-    function TrechoAmbientalDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Trecho) {
+    function TrechoAmbientalDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Trecho, Rodovia, Supre) {
         var vm = this;
 
         vm.trecho = entity;
         vm.clear = clear;
         vm.save = save;
+        vm.rodovias = Rodovia.query();
+        vm.supres = Supre.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

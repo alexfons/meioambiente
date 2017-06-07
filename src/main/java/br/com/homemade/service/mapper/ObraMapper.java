@@ -8,7 +8,7 @@ import org.mapstruct.*;
 /**
  * Mapper for the entity Obra and its DTO ObraDTO.
  */
-@Mapper(componentModel = "spring", uses = {TipoObraMapper.class, InspetorMapper.class, FiscalMapper.class, TrechoMapper.class, ContratoobraMapper.class, HistoricoMapper.class, })
+@Mapper(componentModel = "spring", uses = {TipoobraMapper.class, InspetorMapper.class, FiscalMapper.class, TrechoMapper.class, ContratoobraMapper.class, HistoricoMapper.class, })
 public interface ObraMapper extends EntityMapper <ObraDTO, Obra> {
     @Mapping(source = "tipoobra.id", target = "tipoobraId")
     @Mapping(source = "inspetor.id", target = "inspetorId")

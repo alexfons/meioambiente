@@ -1,0 +1,71 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.planoaquisicoes.detail.title">Planoaquisicoes</span> {{vm.planoaquisicoes.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.planoaquisicoes.avisolicitacao">Avisolicitacao</span></dt>
+        <dd>
+            <span>{{vm.planoaquisicoes.avisolicitacao | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.planoaquisicoes.custoestimado">Custoestimado</span></dt>
+        <dd>
+            <span>{{vm.planoaquisicoes.custoestimado}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.planoaquisicoes.aportelocal">Aportelocal</span></dt>
+        <dd>
+            <span>{{vm.planoaquisicoes.aportelocal}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.planoaquisicoes.aporteagente">Aporteagente</span></dt>
+        <dd>
+            <span>{{vm.planoaquisicoes.aporteagente}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.planoaquisicoes.descricao">Descricao</span></dt>
+        <dd>
+            <span>{{vm.planoaquisicoes.descricao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.planoaquisicoes.metodo">Metodo</span></dt>
+        <dd>
+            <span>{{vm.planoaquisicoes.metodo}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.planoaquisicoes.revisao">Revisao</span></dt>
+        <dd>
+            <span>{{vm.planoaquisicoes.revisao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.planoaquisicoes.prequalificado">Prequalificado</span></dt>
+        <dd>
+            <span>{{vm.planoaquisicoes.prequalificado}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.planoaquisicoes.situacao">Situacao</span></dt>
+        <dd>
+            <span>{{vm.planoaquisicoes.situacao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.planoaquisicoes.idplanoaquisicoes">Idplanoaquisicoes</span></dt>
+        <dd>
+            <span>{{vm.planoaquisicoes.idplanoaquisicoes}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.planoaquisicoes.fonte">Fonte</span></dt>
+        <dd>
+            <a ui-sref="fonte-ambiental-detail({id:vm.planoaquisicoes.fonteId})">{{vm.planoaquisicoes.fonteId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.planoaquisicoes.idcontratoagente">Idcontratoagente</span></dt>
+        <dd>
+            <a ui-sref="contratoagente-ambiental-detail({id:vm.planoaquisicoes.idcontratoagenteId})">{{vm.planoaquisicoes.idcontratoagenteId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.planoaquisicoes.idedital">Idedital</span></dt>
+        <dd>
+            <a ui-sref="edital-ambiental-detail({id:vm.planoaquisicoes.ideditalId})">{{vm.planoaquisicoes.ideditalId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="planoaquisicoes-ambiental-detail.edit({id:vm.planoaquisicoes.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

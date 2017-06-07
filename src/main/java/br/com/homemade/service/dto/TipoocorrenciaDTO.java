@@ -11,12 +11,42 @@ public class TipoocorrenciaDTO implements Serializable {
 
     private Long id;
 
+    private String descricao;
+
+    private String categoria;
+
+    private String subcategoria;
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public String getSubcategoria() {
+        return subcategoria;
+    }
+
+    public void setSubcategoria(String subcategoria) {
+        this.subcategoria = subcategoria;
     }
 
     @Override
@@ -44,6 +74,9 @@ public class TipoocorrenciaDTO implements Serializable {
     public String toString() {
         return "TipoocorrenciaDTO{" +
             "id=" + getId() +
+            ", descricao='" + getDescricao() + "'" +
+            ", categoria='" + getCategoria() + "'" +
+            ", subcategoria='" + getSubcategoria() + "'" +
             "}";
     }
 }

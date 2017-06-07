@@ -14,7 +14,12 @@
             },
             "detail": {
                 "title": "Referenciacontrato"
-            }
+            },
+            "aporte": "Aporte",
+            "moeda": "Moeda",
+            "idreferenciacontrato": "Idreferenciacontrato",
+            "nreferencia": "Nreferencia",
+            "valorreferencia": "Valorreferencia"
         }
     }
 }

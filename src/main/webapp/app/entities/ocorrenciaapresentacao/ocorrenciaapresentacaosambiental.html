@@ -19,12 +19,18 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.ocorrenciaapresentacao.enquadramento">Enquadramento</span></th>
+                    <th><span data-translate="meioambienteApp.ocorrenciaapresentacao.ocorrencia">Ocorrencia</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="ocorrenciaapresentacao in vm.ocorrenciaapresentacaos track by ocorrenciaapresentacao.id">
                     <td><a ui-sref="ocorrenciaapresentacao-ambiental-detail({id:ocorrenciaapresentacao.id})">{{ocorrenciaapresentacao.id}}</a></td>
+                    <td>{{ocorrenciaapresentacao.enquadramento}}</td>
+                    <td>
+                        <a ui-sref="ocorrencia-ambiental-detail({id:ocorrenciaapresentacao.ocorrenciaId})">{{ocorrenciaapresentacao.ocorrenciaId}}</a>
+                    </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

@@ -11,7 +11,7 @@ import java.util.Objects;
  * A Ocorrenciacertificadoirregularidade.
  */
 @Entity
-@Table(name = "ocorrenciacertificadoirregularidade")
+@Table(name = "ocorrencia_cert_irreg")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Ocorrenciacertificadoirregularidade implements Serializable {
 
@@ -22,12 +22,28 @@ public class Ocorrenciacertificadoirregularidade implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
+    @ManyToOne
+    private Ocorrencia ocorrencia;
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Ocorrencia getOcorrencia() {
+        return ocorrencia;
+    }
+
+    public Ocorrenciacertificadoirregularidade ocorrencia(Ocorrencia ocorrencia) {
+        this.ocorrencia = ocorrencia;
+        return this;
+    }
+
+    public void setOcorrencia(Ocorrencia ocorrencia) {
+        this.ocorrencia = ocorrencia;
     }
 
     @Override

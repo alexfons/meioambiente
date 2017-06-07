@@ -39,6 +39,15 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = MeioambienteApp.class)
 public class TipoocorrenciaResourceIntTest {
 
+    private static final String DEFAULT_DESCRICAO = "AAAAAAAAAA";
+    private static final String UPDATED_DESCRICAO = "BBBBBBBBBB";
+
+    private static final String DEFAULT_CATEGORIA = "AAAAAAAAAA";
+    private static final String UPDATED_CATEGORIA = "BBBBBBBBBB";
+
+    private static final String DEFAULT_SUBCATEGORIA = "AAAAAAAAAA";
+    private static final String UPDATED_SUBCATEGORIA = "BBBBBBBBBB";
+
     @Autowired
     private TipoocorrenciaRepository tipoocorrenciaRepository;
 
@@ -78,7 +87,10 @@ public class TipoocorrenciaResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Tipoocorrencia createEntity(EntityManager em) {
-        Tipoocorrencia tipoocorrencia = new Tipoocorrencia();
+        Tipoocorrencia tipoocorrencia = new Tipoocorrencia()
+            .descricao(DEFAULT_DESCRICAO)
+            .categoria(DEFAULT_CATEGORIA)
+            .subcategoria(DEFAULT_SUBCATEGORIA);
         return tipoocorrencia;
     }
 
@@ -103,6 +115,9 @@ public class TipoocorrenciaResourceIntTest {
         List<Tipoocorrencia> tipoocorrenciaList = tipoocorrenciaRepository.findAll();
         assertThat(tipoocorrenciaList).hasSize(databaseSizeBeforeCreate + 1);
         Tipoocorrencia testTipoocorrencia = tipoocorrenciaList.get(tipoocorrenciaList.size() - 1);
+        assertThat(testTipoocorrencia.getDescricao()).isEqualTo(DEFAULT_DESCRICAO);
+        assertThat(testTipoocorrencia.getCategoria()).isEqualTo(DEFAULT_CATEGORIA);
+        assertThat(testTipoocorrencia.getSubcategoria()).isEqualTo(DEFAULT_SUBCATEGORIA);
     }
 
     @Test
@@ -135,7 +150,10 @@ public class TipoocorrenciaResourceIntTest {
         restTipoocorrenciaMockMvc.perform(get("/api/tipoocorrencias?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(tipoocorrencia.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(tipoocorrencia.getId().intValue())))
+            .andExpect(jsonPath("$.[*].descricao").value(hasItem(DEFAULT_DESCRICAO.toString())))
+            .andExpect(jsonPath("$.[*].categoria").value(hasItem(DEFAULT_CATEGORIA.toString())))
+            .andExpect(jsonPath("$.[*].subcategoria").value(hasItem(DEFAULT_SUBCATEGORIA.toString())));
     }
 
     @Test
@@ -148,7 +166,10 @@ public class TipoocorrenciaResourceIntTest {
         restTipoocorrenciaMockMvc.perform(get("/api/tipoocorrencias/{id}", tipoocorrencia.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(tipoocorrencia.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(tipoocorrencia.getId().intValue()))
+            .andExpect(jsonPath("$.descricao").value(DEFAULT_DESCRICAO.toString()))
+            .andExpect(jsonPath("$.categoria").value(DEFAULT_CATEGORIA.toString()))
+            .andExpect(jsonPath("$.subcategoria").value(DEFAULT_SUBCATEGORIA.toString()));
     }
 
     @Test
@@ -168,6 +189,10 @@ public class TipoocorrenciaResourceIntTest {
 
         // Update the tipoocorrencia
         Tipoocorrencia updatedTipoocorrencia = tipoocorrenciaRepository.findOne(tipoocorrencia.getId());
+        updatedTipoocorrencia
+            .descricao(UPDATED_DESCRICAO)
+            .categoria(UPDATED_CATEGORIA)
+            .subcategoria(UPDATED_SUBCATEGORIA);
         TipoocorrenciaDTO tipoocorrenciaDTO = tipoocorrenciaMapper.toDto(updatedTipoocorrencia);
 
         restTipoocorrenciaMockMvc.perform(put("/api/tipoocorrencias")
@@ -179,6 +204,9 @@ public class TipoocorrenciaResourceIntTest {
         List<Tipoocorrencia> tipoocorrenciaList = tipoocorrenciaRepository.findAll();
         assertThat(tipoocorrenciaList).hasSize(databaseSizeBeforeUpdate);
         Tipoocorrencia testTipoocorrencia = tipoocorrenciaList.get(tipoocorrenciaList.size() - 1);
+        assertThat(testTipoocorrencia.getDescricao()).isEqualTo(UPDATED_DESCRICAO);
+        assertThat(testTipoocorrencia.getCategoria()).isEqualTo(UPDATED_CATEGORIA);
+        assertThat(testTipoocorrencia.getSubcategoria()).isEqualTo(UPDATED_SUBCATEGORIA);
     }
 
     @Test

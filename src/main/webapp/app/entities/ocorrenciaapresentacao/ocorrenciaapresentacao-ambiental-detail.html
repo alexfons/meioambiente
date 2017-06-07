@@ -4,6 +4,14 @@
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.ocorrenciaapresentacao.enquadramento">Enquadramento</span></dt>
+        <dd>
+            <span>{{vm.ocorrenciaapresentacao.enquadramento}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.ocorrenciaapresentacao.ocorrencia">Ocorrencia</span></dt>
+        <dd>
+            <a ui-sref="ocorrencia-ambiental-detail({id:vm.ocorrenciaapresentacao.ocorrenciaId})">{{vm.ocorrenciaapresentacao.ocorrenciaId}}</a>
+        </dd>
     </dl>
 
     <button type="submit"

@@ -1,7 +1,65 @@
 {
     "fluentMethods": true,
-    "relationships": [],
-    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "idempresa",
+            "otherEntityName": "empresa",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "idlote",
+            "otherEntityName": "editallote",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "classificacao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nota",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tipoproposta",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "obs",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contrato",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "habilitada",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "arqlink",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idproposta",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "numeroedital",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "valorproposta",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "valorrenegociado",
+            "fieldType": "BigDecimal"
+        }
+    ],
     "changelogDate": "20170607001906",
     "entityTableName": "proposta",
     "dto": "mapstruct",

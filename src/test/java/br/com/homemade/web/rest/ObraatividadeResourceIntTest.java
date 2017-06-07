@@ -39,6 +39,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = MeioambienteApp.class)
 public class ObraatividadeResourceIntTest {
 
+    private static final Double DEFAULT_PESO = 1D;
+    private static final Double UPDATED_PESO = 2D;
+
+    private static final String DEFAULT_REVESTIMENTO = "AAAAAAAAAA";
+    private static final String UPDATED_REVESTIMENTO = "BBBBBBBBBB";
+
     @Autowired
     private ObraatividadeRepository obraatividadeRepository;
 
@@ -78,7 +84,9 @@ public class ObraatividadeResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Obraatividade createEntity(EntityManager em) {
-        Obraatividade obraatividade = new Obraatividade();
+        Obraatividade obraatividade = new Obraatividade()
+            .peso(DEFAULT_PESO)
+            .revestimento(DEFAULT_REVESTIMENTO);
         return obraatividade;
     }
 
@@ -103,6 +111,8 @@ public class ObraatividadeResourceIntTest {
         List<Obraatividade> obraatividadeList = obraatividadeRepository.findAll();
         assertThat(obraatividadeList).hasSize(databaseSizeBeforeCreate + 1);
         Obraatividade testObraatividade = obraatividadeList.get(obraatividadeList.size() - 1);
+        assertThat(testObraatividade.getPeso()).isEqualTo(DEFAULT_PESO);
+        assertThat(testObraatividade.getRevestimento()).isEqualTo(DEFAULT_REVESTIMENTO);
     }
 
     @Test
@@ -135,7 +145,9 @@ public class ObraatividadeResourceIntTest {
         restObraatividadeMockMvc.perform(get("/api/obraatividades?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(obraatividade.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(obraatividade.getId().intValue())))
+            .andExpect(jsonPath("$.[*].peso").value(hasItem(DEFAULT_PESO.doubleValue())))
+            .andExpect(jsonPath("$.[*].revestimento").value(hasItem(DEFAULT_REVESTIMENTO.toString())));
     }
 
     @Test
@@ -148,7 +160,9 @@ public class ObraatividadeResourceIntTest {
         restObraatividadeMockMvc.perform(get("/api/obraatividades/{id}", obraatividade.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(obraatividade.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(obraatividade.getId().intValue()))
+            .andExpect(jsonPath("$.peso").value(DEFAULT_PESO.doubleValue()))
+            .andExpect(jsonPath("$.revestimento").value(DEFAULT_REVESTIMENTO.toString()));
     }
 
     @Test
@@ -168,6 +182,9 @@ public class ObraatividadeResourceIntTest {
 
         // Update the obraatividade
         Obraatividade updatedObraatividade = obraatividadeRepository.findOne(obraatividade.getId());
+        updatedObraatividade
+            .peso(UPDATED_PESO)
+            .revestimento(UPDATED_REVESTIMENTO);
         ObraatividadeDTO obraatividadeDTO = obraatividadeMapper.toDto(updatedObraatividade);
 
         restObraatividadeMockMvc.perform(put("/api/obraatividades")
@@ -179,6 +196,8 @@ public class ObraatividadeResourceIntTest {
         List<Obraatividade> obraatividadeList = obraatividadeRepository.findAll();
         assertThat(obraatividadeList).hasSize(databaseSizeBeforeUpdate);
         Obraatividade testObraatividade = obraatividadeList.get(obraatividadeList.size() - 1);
+        assertThat(testObraatividade.getPeso()).isEqualTo(UPDATED_PESO);
+        assertThat(testObraatividade.getRevestimento()).isEqualTo(UPDATED_REVESTIMENTO);
     }
 
     @Test

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Registro.
+    -->
+    <changeSet id="20170607015500-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="opcoes_id"
+                                 baseTableName="registro"
+                                 constraintName="fk_registro_opcoes_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="linha"/>
+
+    </changeSet>
+</databaseChangeLog>

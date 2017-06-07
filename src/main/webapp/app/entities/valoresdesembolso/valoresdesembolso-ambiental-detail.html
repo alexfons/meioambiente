@@ -1,0 +1,55 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.valoresdesembolso.detail.title">Valoresdesembolso</span> {{vm.valoresdesembolso.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.valoresdesembolso.datainternalizacao">Datainternalizacao</span></dt>
+        <dd>
+            <span>{{vm.valoresdesembolso.datainternalizacao | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.valoresdesembolso.idvaloresdesembolso">Idvaloresdesembolso</span></dt>
+        <dd>
+            <span>{{vm.valoresdesembolso.idvaloresdesembolso}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.valoresdesembolso.nsolicitacao">Nsolicitacao</span></dt>
+        <dd>
+            <span>{{vm.valoresdesembolso.nsolicitacao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.valoresdesembolso.tipodesembolso">Tipodesembolso</span></dt>
+        <dd>
+            <span>{{vm.valoresdesembolso.tipodesembolso}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.valoresdesembolso.valoreais">Valoreais</span></dt>
+        <dd>
+            <span>{{vm.valoresdesembolso.valoreais}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.valoresdesembolso.valorus">Valorus</span></dt>
+        <dd>
+            <span>{{vm.valoresdesembolso.valorus}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.valoresdesembolso.valuedata">Valuedata</span></dt>
+        <dd>
+            <span>{{vm.valoresdesembolso.valuedata | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.valoresdesembolso.idcontabancaria">Idcontabancaria</span></dt>
+        <dd>
+            <a ui-sref="contabancaria-ambiental-detail({id:vm.valoresdesembolso.idcontabancariaId})">{{vm.valoresdesembolso.idcontabancariaId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.valoresdesembolso.idreferencia">Idreferencia</span></dt>
+        <dd>
+            <a ui-sref="referencia-ambiental-detail({id:vm.valoresdesembolso.idreferenciaId})">{{vm.valoresdesembolso.idreferenciaId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="valoresdesembolso-ambiental-detail.edit({id:vm.valoresdesembolso.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

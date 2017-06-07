@@ -39,6 +39,30 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = MeioambienteApp.class)
 public class ResponsavelResourceIntTest {
 
+    private static final String DEFAULT_EMAIL = "AAAAAAAAAA";
+    private static final String UPDATED_EMAIL = "BBBBBBBBBB";
+
+    private static final String DEFAULT_FUNCAO = "AAAAAAAAAA";
+    private static final String UPDATED_FUNCAO = "BBBBBBBBBB";
+
+    private static final String DEFAULT_LOCALTRABALHO = "AAAAAAAAAA";
+    private static final String UPDATED_LOCALTRABALHO = "BBBBBBBBBB";
+
+    private static final String DEFAULT_MATRICULA = "AAAAAAAAAA";
+    private static final String UPDATED_MATRICULA = "BBBBBBBBBB";
+
+    private static final String DEFAULT_NOME = "AAAAAAAAAA";
+    private static final String UPDATED_NOME = "BBBBBBBBBB";
+
+    private static final String DEFAULT_SUPERINTENDENCIA = "AAAAAAAAAA";
+    private static final String UPDATED_SUPERINTENDENCIA = "BBBBBBBBBB";
+
+    private static final Long DEFAULT_TELEFONE = 1L;
+    private static final Long UPDATED_TELEFONE = 2L;
+
+    private static final Long DEFAULT_TELEFONECOMERCIAL = 1L;
+    private static final Long UPDATED_TELEFONECOMERCIAL = 2L;
+
     @Autowired
     private ResponsavelRepository responsavelRepository;
 
@@ -78,7 +102,15 @@ public class ResponsavelResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Responsavel createEntity(EntityManager em) {
-        Responsavel responsavel = new Responsavel();
+        Responsavel responsavel = new Responsavel()
+            .email(DEFAULT_EMAIL)
+            .funcao(DEFAULT_FUNCAO)
+            .localtrabalho(DEFAULT_LOCALTRABALHO)
+            .matricula(DEFAULT_MATRICULA)
+            .nome(DEFAULT_NOME)
+            .superintendencia(DEFAULT_SUPERINTENDENCIA)
+            .telefone(DEFAULT_TELEFONE)
+            .telefonecomercial(DEFAULT_TELEFONECOMERCIAL);
         return responsavel;
     }
 
@@ -103,6 +135,14 @@ public class ResponsavelResourceIntTest {
         List<Responsavel> responsavelList = responsavelRepository.findAll();
         assertThat(responsavelList).hasSize(databaseSizeBeforeCreate + 1);
         Responsavel testResponsavel = responsavelList.get(responsavelList.size() - 1);
+        assertThat(testResponsavel.getEmail()).isEqualTo(DEFAULT_EMAIL);
+        assertThat(testResponsavel.getFuncao()).isEqualTo(DEFAULT_FUNCAO);
+        assertThat(testResponsavel.getLocaltrabalho()).isEqualTo(DEFAULT_LOCALTRABALHO);
+        assertThat(testResponsavel.getMatricula()).isEqualTo(DEFAULT_MATRICULA);
+        assertThat(testResponsavel.getNome()).isEqualTo(DEFAULT_NOME);
+        assertThat(testResponsavel.getSuperintendencia()).isEqualTo(DEFAULT_SUPERINTENDENCIA);
+        assertThat(testResponsavel.getTelefone()).isEqualTo(DEFAULT_TELEFONE);
+        assertThat(testResponsavel.getTelefonecomercial()).isEqualTo(DEFAULT_TELEFONECOMERCIAL);
     }
 
     @Test
@@ -135,7 +175,15 @@ public class ResponsavelResourceIntTest {
         restResponsavelMockMvc.perform(get("/api/responsavels?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(responsavel.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(responsavel.getId().intValue())))
+            .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL.toString())))
+            .andExpect(jsonPath("$.[*].funcao").value(hasItem(DEFAULT_FUNCAO.toString())))
+            .andExpect(jsonPath("$.[*].localtrabalho").value(hasItem(DEFAULT_LOCALTRABALHO.toString())))
+            .andExpect(jsonPath("$.[*].matricula").value(hasItem(DEFAULT_MATRICULA.toString())))
+            .andExpect(jsonPath("$.[*].nome").value(hasItem(DEFAULT_NOME.toString())))
+            .andExpect(jsonPath("$.[*].superintendencia").value(hasItem(DEFAULT_SUPERINTENDENCIA.toString())))
+            .andExpect(jsonPath("$.[*].telefone").value(hasItem(DEFAULT_TELEFONE.intValue())))
+            .andExpect(jsonPath("$.[*].telefonecomercial").value(hasItem(DEFAULT_TELEFONECOMERCIAL.intValue())));
     }
 
     @Test
@@ -148,7 +196,15 @@ public class ResponsavelResourceIntTest {
         restResponsavelMockMvc.perform(get("/api/responsavels/{id}", responsavel.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(responsavel.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(responsavel.getId().intValue()))
+            .andExpect(jsonPath("$.email").value(DEFAULT_EMAIL.toString()))
+            .andExpect(jsonPath("$.funcao").value(DEFAULT_FUNCAO.toString()))
+            .andExpect(jsonPath("$.localtrabalho").value(DEFAULT_LOCALTRABALHO.toString()))
+            .andExpect(jsonPath("$.matricula").value(DEFAULT_MATRICULA.toString()))
+            .andExpect(jsonPath("$.nome").value(DEFAULT_NOME.toString()))
+            .andExpect(jsonPath("$.superintendencia").value(DEFAULT_SUPERINTENDENCIA.toString()))
+            .andExpect(jsonPath("$.telefone").value(DEFAULT_TELEFONE.intValue()))
+            .andExpect(jsonPath("$.telefonecomercial").value(DEFAULT_TELEFONECOMERCIAL.intValue()));
     }
 
     @Test
@@ -168,6 +224,15 @@ public class ResponsavelResourceIntTest {
 
         // Update the responsavel
         Responsavel updatedResponsavel = responsavelRepository.findOne(responsavel.getId());
+        updatedResponsavel
+            .email(UPDATED_EMAIL)
+            .funcao(UPDATED_FUNCAO)
+            .localtrabalho(UPDATED_LOCALTRABALHO)
+            .matricula(UPDATED_MATRICULA)
+            .nome(UPDATED_NOME)
+            .superintendencia(UPDATED_SUPERINTENDENCIA)
+            .telefone(UPDATED_TELEFONE)
+            .telefonecomercial(UPDATED_TELEFONECOMERCIAL);
         ResponsavelDTO responsavelDTO = responsavelMapper.toDto(updatedResponsavel);
 
         restResponsavelMockMvc.perform(put("/api/responsavels")
@@ -179,6 +244,14 @@ public class ResponsavelResourceIntTest {
         List<Responsavel> responsavelList = responsavelRepository.findAll();
         assertThat(responsavelList).hasSize(databaseSizeBeforeUpdate);
         Responsavel testResponsavel = responsavelList.get(responsavelList.size() - 1);
+        assertThat(testResponsavel.getEmail()).isEqualTo(UPDATED_EMAIL);
+        assertThat(testResponsavel.getFuncao()).isEqualTo(UPDATED_FUNCAO);
+        assertThat(testResponsavel.getLocaltrabalho()).isEqualTo(UPDATED_LOCALTRABALHO);
+        assertThat(testResponsavel.getMatricula()).isEqualTo(UPDATED_MATRICULA);
+        assertThat(testResponsavel.getNome()).isEqualTo(UPDATED_NOME);
+        assertThat(testResponsavel.getSuperintendencia()).isEqualTo(UPDATED_SUPERINTENDENCIA);
+        assertThat(testResponsavel.getTelefone()).isEqualTo(UPDATED_TELEFONE);
+        assertThat(testResponsavel.getTelefonecomercial()).isEqualTo(UPDATED_TELEFONECOMERCIAL);
     }
 
     @Test

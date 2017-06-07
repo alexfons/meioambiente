@@ -22,12 +22,44 @@ public class Status implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
+    @Column(name = "cor")
+    private String cor;
+
+    @Column(name = "descricao")
+    private String descricao;
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getCor() {
+        return cor;
+    }
+
+    public Status cor(String cor) {
+        this.cor = cor;
+        return this;
+    }
+
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public Status descricao(String descricao) {
+        this.descricao = descricao;
+        return this;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     @Override
@@ -54,6 +86,8 @@ public class Status implements Serializable {
     public String toString() {
         return "Status{" +
             "id=" + getId() +
+            ", cor='" + getCor() + "'" +
+            ", descricao='" + getDescricao() + "'" +
             "}";
     }
 }

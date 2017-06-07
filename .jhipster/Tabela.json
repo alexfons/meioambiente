@@ -1,7 +1,23 @@
 {
     "fluentMethods": true,
-    "relationships": [],
-    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "campos",
+            "otherEntityName": "coluna",
+            "otherEntityRelationshipName": "tabela"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "codigo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        }
+    ],
     "changelogDate": "20170607015505",
     "entityTableName": "tabela",
     "dto": "mapstruct",

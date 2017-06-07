@@ -1,0 +1,71 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "idbanco",
+            "otherEntityName": "banco",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "solicitacao"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "idContratoagente",
+            "otherEntityName": "contratoagente",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "apresentamos",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "data",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "extenso",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "extenso1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idsolicitacao",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "moeda",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "montante",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "nsolicitacao",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "oficio",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "solicitamos",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20170607114351",
+    "entityTableName": "solicitacao",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "ambiental"
+}

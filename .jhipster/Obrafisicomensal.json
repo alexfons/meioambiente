@@ -1,0 +1,83 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "fisico",
+            "otherEntityName": "fisico",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "atividadeexecutadamensals",
+            "otherEntityName": "atividadeexecutadamensal",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "comentario",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "datainspecao",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "datarelatorio",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "pessoal",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "equipamento",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "instalacaoapoio",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ritmo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "apresentacao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "qualidadeservicos",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cronograma",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prazodecorrido",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "avancofisicoOAE",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "avancofisicoponderado",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "previsaoatual",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170607114327",
+    "entityTableName": "obrafisicomensal",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "ambiental"
+}

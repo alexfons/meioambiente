@@ -68,7 +68,7 @@ class TipoadministrativoGatlingTest extends Simulation {
             .exec(http("Create new tipoadministrativo")
             .post("/api/tipoadministrativos")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null}""")).asJSON
+            .body(StringBody("""{"id":null, "categoria":"SAMPLE_TEXT", "descricao":"SAMPLE_TEXT", "subcategoria":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_tipoadministrativo_url"))).exitHereIfFailed
             .pause(10)

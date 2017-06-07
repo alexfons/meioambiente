@@ -5,9 +5,9 @@
         .module('meioambienteApp')
         .controller('ColunaAmbientalDetailController', ColunaAmbientalDetailController);
 
-    ColunaAmbientalDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Coluna', 'Linha'];
+    ColunaAmbientalDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Coluna', 'Linha', 'Tabela'];
 
-    function ColunaAmbientalDetailController($scope, $rootScope, $stateParams, previousState, entity, Coluna, Linha) {
+    function ColunaAmbientalDetailController($scope, $rootScope, $stateParams, previousState, entity, Coluna, Linha, Tabela) {
         var vm = this;
 
         vm.coluna = entity;

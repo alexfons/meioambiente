@@ -1,0 +1,22 @@
+{
+    "meioambienteApp": {
+        "ocorrenciapendencias" : {
+            "home": {
+                "title": "Ocorrenciapendencias",
+                "createLabel": "Create a new Ocorrenciapendencias",
+                "createOrEditLabel": "Create or edit a Ocorrenciapendencias"
+            },
+            "created": "A new Ocorrenciapendencias is created with identifier {{ param }}",
+            "updated": "A Ocorrenciapendencias is updated with identifier {{ param }}",
+            "deleted": "A Ocorrenciapendencias is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Ocorrenciapendencias {{ id }}?"
+            },
+            "detail": {
+                "title": "Ocorrenciapendencias"
+            },
+            "enquadramento": "Enquadramento",
+            "ocorrencia": "Ocorrencia"
+        }
+    }
+}

@@ -4,7 +4,7 @@ describe('Controller Tests', function() {
 
     describe('Obra Management Detail Controller', function() {
         var $scope, $rootScope;
-        var MockEntity, MockPreviousState, MockObra, MockTipoObra, MockInspetor, MockFiscal, MockTrecho, MockContratoobra, MockHistorico;
+        var MockEntity, MockPreviousState, MockObra, MockTipoobra, MockInspetor, MockFiscal, MockTrecho, MockContratoobra, MockHistorico;
         var createController;
 
         beforeEach(inject(function($injector) {
@@ -13,7 +13,7 @@ describe('Controller Tests', function() {
             MockEntity = jasmine.createSpy('MockEntity');
             MockPreviousState = jasmine.createSpy('MockPreviousState');
             MockObra = jasmine.createSpy('MockObra');
-            MockTipoObra = jasmine.createSpy('MockTipoObra');
+            MockTipoobra = jasmine.createSpy('MockTipoobra');
             MockInspetor = jasmine.createSpy('MockInspetor');
             MockFiscal = jasmine.createSpy('MockFiscal');
             MockTrecho = jasmine.createSpy('MockTrecho');
@@ -27,7 +27,7 @@ describe('Controller Tests', function() {
                 'entity': MockEntity,
                 'previousState': MockPreviousState,
                 'Obra': MockObra,
-                'TipoObra': MockTipoObra,
+                'Tipoobra': MockTipoobra,
                 'Inspetor': MockInspetor,
                 'Fiscal': MockFiscal,
                 'Trecho': MockTrecho,

@@ -39,6 +39,18 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = MeioambienteApp.class)
 public class UsuarioResourceIntTest {
 
+    private static final String DEFAULT_EMAIL = "AAAAAAAAAA";
+    private static final String UPDATED_EMAIL = "BBBBBBBBBB";
+
+    private static final String DEFAULT_NOME = "AAAAAAAAAA";
+    private static final String UPDATED_NOME = "BBBBBBBBBB";
+
+    private static final String DEFAULT_PERMISSOES = "AAAAAAAAAA";
+    private static final String UPDATED_PERMISSOES = "BBBBBBBBBB";
+
+    private static final String DEFAULT_SENHA = "AAAAAAAAAA";
+    private static final String UPDATED_SENHA = "BBBBBBBBBB";
+
     @Autowired
     private UsuarioRepository usuarioRepository;
 
@@ -78,7 +90,11 @@ public class UsuarioResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Usuario createEntity(EntityManager em) {
-        Usuario usuario = new Usuario();
+        Usuario usuario = new Usuario()
+            .email(DEFAULT_EMAIL)
+            .nome(DEFAULT_NOME)
+            .permissoes(DEFAULT_PERMISSOES)
+            .senha(DEFAULT_SENHA);
         return usuario;
     }
 
@@ -103,6 +119,10 @@ public class UsuarioResourceIntTest {
         List<Usuario> usuarioList = usuarioRepository.findAll();
         assertThat(usuarioList).hasSize(databaseSizeBeforeCreate + 1);
         Usuario testUsuario = usuarioList.get(usuarioList.size() - 1);
+        assertThat(testUsuario.getEmail()).isEqualTo(DEFAULT_EMAIL);
+        assertThat(testUsuario.getNome()).isEqualTo(DEFAULT_NOME);
+        assertThat(testUsuario.getPermissoes()).isEqualTo(DEFAULT_PERMISSOES);
+        assertThat(testUsuario.getSenha()).isEqualTo(DEFAULT_SENHA);
     }
 
     @Test
@@ -135,7 +155,11 @@ public class UsuarioResourceIntTest {
         restUsuarioMockMvc.perform(get("/api/usuarios?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(usuario.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(usuario.getId().intValue())))
+            .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL.toString())))
+            .andExpect(jsonPath("$.[*].nome").value(hasItem(DEFAULT_NOME.toString())))
+            .andExpect(jsonPath("$.[*].permissoes").value(hasItem(DEFAULT_PERMISSOES.toString())))
+            .andExpect(jsonPath("$.[*].senha").value(hasItem(DEFAULT_SENHA.toString())));
     }
 
     @Test
@@ -148,7 +172,11 @@ public class UsuarioResourceIntTest {
         restUsuarioMockMvc.perform(get("/api/usuarios/{id}", usuario.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(usuario.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(usuario.getId().intValue()))
+            .andExpect(jsonPath("$.email").value(DEFAULT_EMAIL.toString()))
+            .andExpect(jsonPath("$.nome").value(DEFAULT_NOME.toString()))
+            .andExpect(jsonPath("$.permissoes").value(DEFAULT_PERMISSOES.toString()))
+            .andExpect(jsonPath("$.senha").value(DEFAULT_SENHA.toString()));
     }
 
     @Test
@@ -168,6 +196,11 @@ public class UsuarioResourceIntTest {
 
         // Update the usuario
         Usuario updatedUsuario = usuarioRepository.findOne(usuario.getId());
+        updatedUsuario
+            .email(UPDATED_EMAIL)
+            .nome(UPDATED_NOME)
+            .permissoes(UPDATED_PERMISSOES)
+            .senha(UPDATED_SENHA);
         UsuarioDTO usuarioDTO = usuarioMapper.toDto(updatedUsuario);
 
         restUsuarioMockMvc.perform(put("/api/usuarios")
@@ -179,6 +212,10 @@ public class UsuarioResourceIntTest {
         List<Usuario> usuarioList = usuarioRepository.findAll();
         assertThat(usuarioList).hasSize(databaseSizeBeforeUpdate);
         Usuario testUsuario = usuarioList.get(usuarioList.size() - 1);
+        assertThat(testUsuario.getEmail()).isEqualTo(UPDATED_EMAIL);
+        assertThat(testUsuario.getNome()).isEqualTo(UPDATED_NOME);
+        assertThat(testUsuario.getPermissoes()).isEqualTo(UPDATED_PERMISSOES);
+        assertThat(testUsuario.getSenha()).isEqualTo(UPDATED_SENHA);
     }
 
     @Test

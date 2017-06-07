@@ -14,7 +14,15 @@
             },
             "detail": {
                 "title": "Responsavel"
-            }
+            },
+            "email": "Email",
+            "funcao": "Funcao",
+            "localtrabalho": "Localtrabalho",
+            "matricula": "Matricula",
+            "nome": "Nome",
+            "superintendencia": "Superintendencia",
+            "telefone": "Telefone",
+            "telefonecomercial": "Telefonecomercial"
         }
     }
 }

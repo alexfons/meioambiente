@@ -19,12 +19,22 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.referenciacontrato.aporte">Aporte</span></th>
+                    <th><span data-translate="meioambienteApp.referenciacontrato.moeda">Moeda</span></th>
+                    <th><span data-translate="meioambienteApp.referenciacontrato.idreferenciacontrato">Idreferenciacontrato</span></th>
+                    <th><span data-translate="meioambienteApp.referenciacontrato.nreferencia">Nreferencia</span></th>
+                    <th><span data-translate="meioambienteApp.referenciacontrato.valorreferencia">Valorreferencia</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="referenciacontrato in vm.referenciacontratoes track by referenciacontrato.id">
                     <td><a ui-sref="referenciacontrato-ambiental-detail({id:referenciacontrato.id})">{{referenciacontrato.id}}</a></td>
+                    <td>{{referenciacontrato.aporte}}</td>
+                    <td>{{referenciacontrato.moeda}}</td>
+                    <td>{{referenciacontrato.idreferenciacontrato}}</td>
+                    <td>{{referenciacontrato.nreferencia}}</td>
+                    <td>{{referenciacontrato.valorreferencia}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

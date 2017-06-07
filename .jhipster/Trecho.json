@@ -1,7 +1,73 @@
 {
     "fluentMethods": true,
-    "relationships": [],
-    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "rodovia",
+            "otherEntityName": "rodovia",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "supre",
+            "otherEntityName": "supre",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "defim",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "deinicio",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "fim",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "inicio",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "jurisdicao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "kml",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nuextensao",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "nukmfinal",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "nukminicia",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "responsavel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sgpre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sgsituacao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tprevest",
+            "fieldType": "String"
+        }
+    ],
     "changelogDate": "20170515105932",
     "entityTableName": "trecho",
     "dto": "mapstruct",

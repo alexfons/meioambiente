@@ -5,14 +5,15 @@
         .module('meioambienteApp')
         .controller('ObraatividadeAmbientalDialogController', ObraatividadeAmbientalDialogController);
 
-    ObraatividadeAmbientalDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Obraatividade'];
+    ObraatividadeAmbientalDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Obraatividade', 'Atividade'];
 
-    function ObraatividadeAmbientalDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Obraatividade) {
+    function ObraatividadeAmbientalDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Obraatividade, Atividade) {
         var vm = this;
 
         vm.obraatividade = entity;
         vm.clear = clear;
         vm.save = save;
+        vm.atividades = Atividade.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

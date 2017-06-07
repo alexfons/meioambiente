@@ -22,12 +22,28 @@ public class Orgaoemissor implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
+    @Column(name = "descricao")
+    private String descricao;
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public Orgaoemissor descricao(String descricao) {
+        this.descricao = descricao;
+        return this;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     @Override
@@ -54,6 +70,7 @@ public class Orgaoemissor implements Serializable {
     public String toString() {
         return "Orgaoemissor{" +
             "id=" + getId() +
+            ", descricao='" + getDescricao() + "'" +
             "}";
     }
 }

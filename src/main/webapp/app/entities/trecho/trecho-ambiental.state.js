@@ -104,6 +104,19 @@
                     resolve: {
                         entity: function () {
                             return {
+                                defim: null,
+                                deinicio: null,
+                                fim: null,
+                                inicio: null,
+                                jurisdicao: null,
+                                kml: null,
+                                nuextensao: null,
+                                nukmfinal: null,
+                                nukminicia: null,
+                                responsavel: null,
+                                sgpre: null,
+                                sgsituacao: null,
+                                tprevest: null,
                                 id: null
                             };
                         }

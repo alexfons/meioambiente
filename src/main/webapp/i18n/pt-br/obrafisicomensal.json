@@ -1,0 +1,36 @@
+{
+    "meioambienteApp": {
+        "obrafisicomensal" : {
+            "home": {
+                "title": "Obrafisicomensals",
+                "createLabel": "Criar novo Obrafisicomensal",
+                "createOrEditLabel": "Criar ou editar Obrafisicomensal"
+            },
+            "created": "Um novo Obrafisicomensal é criado com o identificador {{ param }}",
+            "updated": "Um Obrafisicomensal é atualizado com o identificador {{ param }}",
+            "deleted": "Um Obrafisicomensal é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Obrafisicomensal {{ id }}?"
+            },
+            "detail": {
+                "title": "Obrafisicomensal"
+            },
+            "comentario": "Comentario",
+            "datainspecao": "Datainspecao",
+            "datarelatorio": "Datarelatorio",
+            "pessoal": "Pessoal",
+            "equipamento": "Equipamento",
+            "instalacaoapoio": "Instalacaoapoio",
+            "ritmo": "Ritmo",
+            "apresentacao": "Apresentacao",
+            "qualidadeservicos": "Qualidadeservicos",
+            "cronograma": "Cronograma",
+            "prazodecorrido": "Prazodecorrido",
+            "avancofisicoOAE": "Avancofisico OAE",
+            "avancofisicoponderado": "Avancofisicoponderado",
+            "previsaoatual": "Previsaoatual",
+            "fisico": "Fisico",
+            "atividadeexecutadamensals": "Atividadeexecutadamensals"
+        }
+    }
+}

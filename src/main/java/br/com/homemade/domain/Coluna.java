@@ -39,6 +39,9 @@ public class Coluna implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Linha> opcoes = new HashSet<>();
 
+    @ManyToOne
+    private Tabela tabela;
+
     public Long getId() {
         return id;
     }
@@ -109,6 +112,19 @@ public class Coluna implements Serializable {
 
     public void setOpcoes(Set<Linha> linhas) {
         this.opcoes = linhas;
+    }
+
+    public Tabela getTabela() {
+        return tabela;
+    }
+
+    public Coluna tabela(Tabela tabela) {
+        this.tabela = tabela;
+        return this;
+    }
+
+    public void setTabela(Tabela tabela) {
+        this.tabela = tabela;
     }
 
     @Override

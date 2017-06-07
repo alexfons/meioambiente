@@ -19,12 +19,18 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.tipoocorrencia.descricao">Descricao</span></th>
+                    <th><span data-translate="meioambienteApp.tipoocorrencia.categoria">Categoria</span></th>
+                    <th><span data-translate="meioambienteApp.tipoocorrencia.subcategoria">Subcategoria</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="tipoocorrencia in vm.tipoocorrencias track by tipoocorrencia.id">
                     <td><a ui-sref="tipoocorrencia-ambiental-detail({id:tipoocorrencia.id})">{{tipoocorrencia.id}}</a></td>
+                    <td>{{tipoocorrencia.descricao}}</td>
+                    <td>{{tipoocorrencia.categoria}}</td>
+                    <td>{{tipoocorrencia.subcategoria}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

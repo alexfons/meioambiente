@@ -4,6 +4,58 @@
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.proposta.classificacao">Classificacao</span></dt>
+        <dd>
+            <span>{{vm.proposta.classificacao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.proposta.nota">Nota</span></dt>
+        <dd>
+            <span>{{vm.proposta.nota}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.proposta.tipoproposta">Tipoproposta</span></dt>
+        <dd>
+            <span>{{vm.proposta.tipoproposta}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.proposta.obs">Obs</span></dt>
+        <dd>
+            <span>{{vm.proposta.obs}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.proposta.contrato">Contrato</span></dt>
+        <dd>
+            <span>{{vm.proposta.contrato}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.proposta.habilitada">Habilitada</span></dt>
+        <dd>
+            <span>{{vm.proposta.habilitada}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.proposta.arqlink">Arqlink</span></dt>
+        <dd>
+            <span>{{vm.proposta.arqlink}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.proposta.idproposta">Idproposta</span></dt>
+        <dd>
+            <span>{{vm.proposta.idproposta}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.proposta.numeroedital">Numeroedital</span></dt>
+        <dd>
+            <span>{{vm.proposta.numeroedital}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.proposta.valorproposta">Valorproposta</span></dt>
+        <dd>
+            <span>{{vm.proposta.valorproposta}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.proposta.valorrenegociado">Valorrenegociado</span></dt>
+        <dd>
+            <span>{{vm.proposta.valorrenegociado}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.proposta.idempresa">Idempresa</span></dt>
+        <dd>
+            <a ui-sref="empresa-ambiental-detail({id:vm.proposta.idempresaId})">{{vm.proposta.idempresaId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.proposta.idlote">Idlote</span></dt>
+        <dd>
+            <a ui-sref="editallote-ambiental-detail({id:vm.proposta.idloteId})">{{vm.proposta.idloteId}}</a>
+        </dd>
     </dl>
 
     <button type="submit"

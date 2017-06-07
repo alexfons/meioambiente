@@ -5,14 +5,15 @@
         .module('meioambienteApp')
         .controller('TabelaAmbientalDialogController', TabelaAmbientalDialogController);
 
-    TabelaAmbientalDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Tabela'];
+    TabelaAmbientalDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Tabela', 'Coluna'];
 
-    function TabelaAmbientalDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Tabela) {
+    function TabelaAmbientalDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Tabela, Coluna) {
         var vm = this;
 
         vm.tabela = entity;
         vm.clear = clear;
         vm.save = save;
+        vm.colunas = Coluna.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

@@ -13,7 +13,85 @@
             <input type="text" class="form-control" id="id" name="id"
                     ng-model="vm.proposta.id" readonly />
         </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.proposta.classificacao" for="field_classificacao">Classificacao</label>
+            <input type="text" class="form-control" name="classificacao" id="field_classificacao"
+                    ng-model="vm.proposta.classificacao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.proposta.nota" for="field_nota">Nota</label>
+            <input type="text" class="form-control" name="nota" id="field_nota"
+                    ng-model="vm.proposta.nota"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.proposta.tipoproposta" for="field_tipoproposta">Tipoproposta</label>
+            <input type="text" class="form-control" name="tipoproposta" id="field_tipoproposta"
+                    ng-model="vm.proposta.tipoproposta"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.proposta.obs" for="field_obs">Obs</label>
+            <input type="text" class="form-control" name="obs" id="field_obs"
+                    ng-model="vm.proposta.obs"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.proposta.contrato" for="field_contrato">Contrato</label>
+            <input type="text" class="form-control" name="contrato" id="field_contrato"
+                    ng-model="vm.proposta.contrato"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.proposta.habilitada" for="field_habilitada">Habilitada</label>
+            <input type="text" class="form-control" name="habilitada" id="field_habilitada"
+                    ng-model="vm.proposta.habilitada"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.proposta.arqlink" for="field_arqlink">Arqlink</label>
+            <input type="text" class="form-control" name="arqlink" id="field_arqlink"
+                    ng-model="vm.proposta.arqlink"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.proposta.idproposta" for="field_idproposta">Idproposta</label>
+            <input type="number" class="form-control" name="idproposta" id="field_idproposta"
+                    ng-model="vm.proposta.idproposta"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.proposta.numeroedital" for="field_numeroedital">Numeroedital</label>
+            <input type="number" class="form-control" name="numeroedital" id="field_numeroedital"
+                    ng-model="vm.proposta.numeroedital"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.proposta.valorproposta" for="field_valorproposta">Valorproposta</label>
+            <input type="number" class="form-control" name="valorproposta" id="field_valorproposta"
+                    ng-model="vm.proposta.valorproposta"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.proposta.valorrenegociado" for="field_valorrenegociado">Valorrenegociado</label>
+            <input type="number" class="form-control" name="valorrenegociado" id="field_valorrenegociado"
+                    ng-model="vm.proposta.valorrenegociado"
+                    />
+        </div>
 
+        <div class="form-group">
+            <label data-translate="meioambienteApp.proposta.idempresa" for="field_idempresa">Idempresa</label>
+            <select class="form-control" id="field_idempresa" name="idempresa" ng-model="vm.proposta.idempresaId" ng-options="empresa.id as empresa.id for empresa in vm.empresas"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.proposta.idlote" for="field_idlote">Idlote</label>
+            <select class="form-control" id="field_idlote" name="idlote" ng-model="vm.proposta.idloteId" ng-options="editallote.id as editallote.id for editallote in vm.editallotes"            >
+                <option value=""></option>
+            </select>
+        </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">

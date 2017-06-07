@@ -22,6 +22,7 @@
                     <th><span data-translate="meioambienteApp.coluna.descricao">Descricao</span></th>
                     <th><span data-translate="meioambienteApp.coluna.lista">Lista</span></th>
                     <th><span data-translate="meioambienteApp.coluna.sequencia">Sequencia</span></th>
+                    <th><span data-translate="meioambienteApp.coluna.tabela">Tabela</span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -31,6 +32,9 @@
                     <td>{{coluna.descricao}}</td>
                     <td>{{coluna.lista}}</td>
                     <td>{{coluna.sequencia}}</td>
+                    <td>
+                        <a ui-sref="tabela-ambiental-detail({id:coluna.tabelaId})">{{coluna.tabelaId}}</a>
+                    </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

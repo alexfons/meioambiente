@@ -1,0 +1,28 @@
+{
+    "meioambienteApp": {
+        "responsavelTipo" : {
+            "home": {
+                "title": "Responsavel Tipos",
+                "createLabel": "Criar novo Responsavel Tipo",
+                "createOrEditLabel": "Criar ou editar Responsavel Tipo"
+            },
+            "created": "Um novo Responsavel Tipo é criado com o identificador {{ param }}",
+            "updated": "Um Responsavel Tipo é atualizado com o identificador {{ param }}",
+            "deleted": "Um Responsavel Tipo é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Responsavel Tipo {{ id }}?"
+            },
+            "detail": {
+                "title": "Responsavel Tipo"
+            },
+            "email": "Email",
+            "funcao": "Funcao",
+            "localtrabalho": "Localtrabalho",
+            "matricula": "Matricula",
+            "nome": "Nome",
+            "superintendencia": "Superintendencia",
+            "telefone": "Telefone",
+            "telefonecomercial": "Telefonecomercial"
+        }
+    }
+}

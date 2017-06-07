@@ -5,9 +5,9 @@
         .module('meioambienteApp')
         .controller('ProjetoAmbientalDetailController', ProjetoAmbientalDetailController);
 
-    ProjetoAmbientalDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Projeto'];
+    ProjetoAmbientalDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Projeto', 'Inspetor', 'Municipio', 'Tipoobra', 'Trecho', 'Fiscal', 'Contratoprojeto', 'Historico'];
 
-    function ProjetoAmbientalDetailController($scope, $rootScope, $stateParams, previousState, entity, Projeto) {
+    function ProjetoAmbientalDetailController($scope, $rootScope, $stateParams, previousState, entity, Projeto, Inspetor, Municipio, Tipoobra, Trecho, Fiscal, Contratoprojeto, Historico) {
         var vm = this;
 
         vm.projeto = entity;

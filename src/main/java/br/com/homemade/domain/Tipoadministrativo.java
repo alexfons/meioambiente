@@ -22,12 +22,60 @@ public class Tipoadministrativo implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
+    @Column(name = "categoria")
+    private String categoria;
+
+    @Column(name = "descricao")
+    private String descricao;
+
+    @Column(name = "subcategoria")
+    private String subcategoria;
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public Tipoadministrativo categoria(String categoria) {
+        this.categoria = categoria;
+        return this;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public Tipoadministrativo descricao(String descricao) {
+        this.descricao = descricao;
+        return this;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public String getSubcategoria() {
+        return subcategoria;
+    }
+
+    public Tipoadministrativo subcategoria(String subcategoria) {
+        this.subcategoria = subcategoria;
+        return this;
+    }
+
+    public void setSubcategoria(String subcategoria) {
+        this.subcategoria = subcategoria;
     }
 
     @Override
@@ -54,6 +102,9 @@ public class Tipoadministrativo implements Serializable {
     public String toString() {
         return "Tipoadministrativo{" +
             "id=" + getId() +
+            ", categoria='" + getCategoria() + "'" +
+            ", descricao='" + getDescricao() + "'" +
+            ", subcategoria='" + getSubcategoria() + "'" +
             "}";
     }
 }

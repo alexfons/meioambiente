@@ -68,7 +68,7 @@ class ParticipanteGatlingTest extends Simulation {
             .exec(http("Create new participante")
             .post("/api/participantes")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null}""")).asJSON
+            .body(StringBody("""{"id":null, "formacao":"SAMPLE_TEXT", "nome":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_participante_url"))).exitHereIfFailed
             .pause(10)

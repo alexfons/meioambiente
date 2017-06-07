@@ -1,7 +1,20 @@
 {
     "fluentMethods": true,
     "relationships": [],
-    "fields": [],
+    "fields": [
+        {
+            "fieldName": "categoria",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "subcategoria",
+            "fieldType": "String"
+        }
+    ],
     "changelogDate": "20170607001913",
     "entityTableName": "tipoautorizacao",
     "dto": "mapstruct",

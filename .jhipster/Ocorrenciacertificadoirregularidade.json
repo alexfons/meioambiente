@@ -1,6 +1,13 @@
 {
     "fluentMethods": true,
-    "relationships": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "ocorrencia",
+            "otherEntityName": "ocorrencia",
+            "otherEntityField": "id"
+        }
+    ],
     "fields": [],
     "changelogDate": "20170607001901",
     "entityTableName": "ocorrenciacertificadoirregularidade",

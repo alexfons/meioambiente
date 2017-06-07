@@ -104,6 +104,8 @@
                     resolve: {
                         entity: function () {
                             return {
+                                andamento: null,
+                                pendente: null,
                                 id: null
                             };
                         }

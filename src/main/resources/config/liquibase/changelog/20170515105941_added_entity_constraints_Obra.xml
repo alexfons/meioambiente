@@ -12,7 +12,7 @@
                                  baseTableName="obra"
                                  constraintName="fk_obra_tipoobra_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="tipo_obra"/>
+                                 referencedTableName="tipoobra"/>
 
         <addForeignKeyConstraint baseColumnNames="inspetor_id"
                                  baseTableName="obra"

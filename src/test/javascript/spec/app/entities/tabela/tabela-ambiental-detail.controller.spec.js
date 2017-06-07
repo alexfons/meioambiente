@@ -4,7 +4,7 @@ describe('Controller Tests', function() {
 
     describe('Tabela Management Detail Controller', function() {
         var $scope, $rootScope;
-        var MockEntity, MockPreviousState, MockTabela;
+        var MockEntity, MockPreviousState, MockTabela, MockColuna;
         var createController;
 
         beforeEach(inject(function($injector) {
@@ -13,6 +13,7 @@ describe('Controller Tests', function() {
             MockEntity = jasmine.createSpy('MockEntity');
             MockPreviousState = jasmine.createSpy('MockPreviousState');
             MockTabela = jasmine.createSpy('MockTabela');
+            MockColuna = jasmine.createSpy('MockColuna');
             
 
             var locals = {
@@ -20,7 +21,8 @@ describe('Controller Tests', function() {
                 '$rootScope': $rootScope,
                 'entity': MockEntity,
                 'previousState': MockPreviousState,
-                'Tabela': MockTabela
+                'Tabela': MockTabela,
+                'Coluna': MockColuna
             };
             createController = function() {
                 $injector.get('$controller')("TabelaAmbientalDetailController", locals);

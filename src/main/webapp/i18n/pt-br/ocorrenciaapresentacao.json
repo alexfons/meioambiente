@@ -14,7 +14,9 @@
             },
             "detail": {
                 "title": "Ocorrenciaapresentacao"
-            }
+            },
+            "enquadramento": "Enquadramento",
+            "ocorrencia": "Ocorrencia"
         }
     }
 }

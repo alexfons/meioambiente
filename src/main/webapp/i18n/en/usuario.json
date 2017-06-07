@@ -14,7 +14,12 @@
             },
             "detail": {
                 "title": "Usuario"
-            }
+            },
+            "email": "Email",
+            "nome": "Nome",
+            "permissoes": "Permissoes",
+            "senha": "Senha",
+            "supervisor": "Supervisor"
         }
     }
 }

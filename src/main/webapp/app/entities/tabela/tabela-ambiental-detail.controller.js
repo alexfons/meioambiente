@@ -5,9 +5,9 @@
         .module('meioambienteApp')
         .controller('TabelaAmbientalDetailController', TabelaAmbientalDetailController);
 
-    TabelaAmbientalDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Tabela'];
+    TabelaAmbientalDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Tabela', 'Coluna'];
 
-    function TabelaAmbientalDetailController($scope, $rootScope, $stateParams, previousState, entity, Tabela) {
+    function TabelaAmbientalDetailController($scope, $rootScope, $stateParams, previousState, entity, Tabela, Coluna) {
         var vm = this;
 
         vm.tabela = entity;

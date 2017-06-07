@@ -1,0 +1,84 @@
+<div>
+    <h2 data-translate="meioambienteApp.solicitacao.home.title">Solicitacaos</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="solicitacao-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.solicitacao.home.createLabel">
+                        Create new Solicitacao
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.solicitacao.apresentamos">Apresentamos</span></th>
+                    <th><span data-translate="meioambienteApp.solicitacao.data">Data</span></th>
+                    <th><span data-translate="meioambienteApp.solicitacao.descricao">Descricao</span></th>
+                    <th><span data-translate="meioambienteApp.solicitacao.extenso">Extenso</span></th>
+                    <th><span data-translate="meioambienteApp.solicitacao.extenso1">Extenso 1</span></th>
+                    <th><span data-translate="meioambienteApp.solicitacao.idsolicitacao">Idsolicitacao</span></th>
+                    <th><span data-translate="meioambienteApp.solicitacao.moeda">Moeda</span></th>
+                    <th><span data-translate="meioambienteApp.solicitacao.montante">Montante</span></th>
+                    <th><span data-translate="meioambienteApp.solicitacao.nsolicitacao">Nsolicitacao</span></th>
+                    <th><span data-translate="meioambienteApp.solicitacao.oficio">Oficio</span></th>
+                    <th><span data-translate="meioambienteApp.solicitacao.solicitamos">Solicitamos</span></th>
+                    <th><span data-translate="meioambienteApp.solicitacao.idbanco">Idbanco</span></th>
+                    <th><span data-translate="meioambienteApp.solicitacao.idContratoagente">Id Contratoagente</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="solicitacao in vm.solicitacaos track by solicitacao.id">
+                    <td><a ui-sref="solicitacao-ambiental-detail({id:solicitacao.id})">{{solicitacao.id}}</a></td>
+                    <td>{{solicitacao.apresentamos}}</td>
+                    <td>{{solicitacao.data | date:'medium'}}</td>
+                    <td>{{solicitacao.descricao}}</td>
+                    <td>{{solicitacao.extenso}}</td>
+                    <td>{{solicitacao.extenso1}}</td>
+                    <td>{{solicitacao.idsolicitacao}}</td>
+                    <td>{{solicitacao.moeda}}</td>
+                    <td>{{solicitacao.montante}}</td>
+                    <td>{{solicitacao.nsolicitacao}}</td>
+                    <td>{{solicitacao.oficio}}</td>
+                    <td>{{solicitacao.solicitamos}}</td>
+                    <td>
+                        <a ui-sref="banco-ambiental-detail({id:solicitacao.idbancoId})">{{solicitacao.idbancoId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="contratoagente-ambiental-detail({id:solicitacao.idContratoagenteId})">{{solicitacao.idContratoagenteId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="solicitacao-ambiental-detail({id:solicitacao.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="solicitacao-ambiental.edit({id:solicitacao.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="solicitacao-ambiental.delete({id:solicitacao.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

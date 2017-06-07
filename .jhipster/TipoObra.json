@@ -16,7 +16,7 @@
         }
     ],
     "changelogDate": "20170515105942",
-    "entityTableName": "tipo_obra",
+    "entityTableName": "tipoobra",
     "dto": "mapstruct",
     "pagination": "no",
     "service": "no",

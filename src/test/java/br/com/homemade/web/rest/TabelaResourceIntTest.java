@@ -39,6 +39,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = MeioambienteApp.class)
 public class TabelaResourceIntTest {
 
+    private static final String DEFAULT_CODIGO = "AAAAAAAAAA";
+    private static final String UPDATED_CODIGO = "BBBBBBBBBB";
+
+    private static final String DEFAULT_DESCRICAO = "AAAAAAAAAA";
+    private static final String UPDATED_DESCRICAO = "BBBBBBBBBB";
+
     @Autowired
     private TabelaRepository tabelaRepository;
 
@@ -78,7 +84,9 @@ public class TabelaResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Tabela createEntity(EntityManager em) {
-        Tabela tabela = new Tabela();
+        Tabela tabela = new Tabela()
+            .codigo(DEFAULT_CODIGO)
+            .descricao(DEFAULT_DESCRICAO);
         return tabela;
     }
 
@@ -103,6 +111,8 @@ public class TabelaResourceIntTest {
         List<Tabela> tabelaList = tabelaRepository.findAll();
         assertThat(tabelaList).hasSize(databaseSizeBeforeCreate + 1);
         Tabela testTabela = tabelaList.get(tabelaList.size() - 1);
+        assertThat(testTabela.getCodigo()).isEqualTo(DEFAULT_CODIGO);
+        assertThat(testTabela.getDescricao()).isEqualTo(DEFAULT_DESCRICAO);
     }
 
     @Test
@@ -135,7 +145,9 @@ public class TabelaResourceIntTest {
         restTabelaMockMvc.perform(get("/api/tabelas?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(tabela.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(tabela.getId().intValue())))
+            .andExpect(jsonPath("$.[*].codigo").value(hasItem(DEFAULT_CODIGO.toString())))
+            .andExpect(jsonPath("$.[*].descricao").value(hasItem(DEFAULT_DESCRICAO.toString())));
     }
 
     @Test
@@ -148,7 +160,9 @@ public class TabelaResourceIntTest {
         restTabelaMockMvc.perform(get("/api/tabelas/{id}", tabela.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(tabela.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(tabela.getId().intValue()))
+            .andExpect(jsonPath("$.codigo").value(DEFAULT_CODIGO.toString()))
+            .andExpect(jsonPath("$.descricao").value(DEFAULT_DESCRICAO.toString()));
     }
 
     @Test
@@ -168,6 +182,9 @@ public class TabelaResourceIntTest {
 
         // Update the tabela
         Tabela updatedTabela = tabelaRepository.findOne(tabela.getId());
+        updatedTabela
+            .codigo(UPDATED_CODIGO)
+            .descricao(UPDATED_DESCRICAO);
         TabelaDTO tabelaDTO = tabelaMapper.toDto(updatedTabela);
 
         restTabelaMockMvc.perform(put("/api/tabelas")
@@ -179,6 +196,8 @@ public class TabelaResourceIntTest {
         List<Tabela> tabelaList = tabelaRepository.findAll();
         assertThat(tabelaList).hasSize(databaseSizeBeforeUpdate);
         Tabela testTabela = tabelaList.get(tabelaList.size() - 1);
+        assertThat(testTabela.getCodigo()).isEqualTo(UPDATED_CODIGO);
+        assertThat(testTabela.getDescricao()).isEqualTo(UPDATED_DESCRICAO);
     }
 
     @Test

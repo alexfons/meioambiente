@@ -4,6 +4,18 @@
     <hr>
     <jhi-alert-error></jhi-alert-error>
     <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.obraatividade.peso">Peso</span></dt>
+        <dd>
+            <span>{{vm.obraatividade.peso}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.obraatividade.revestimento">Revestimento</span></dt>
+        <dd>
+            <span>{{vm.obraatividade.revestimento}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.obraatividade.atividade">Atividade</span></dt>
+        <dd>
+            <a ui-sref="atividade-ambiental-detail({id:vm.obraatividade.atividadeId})">{{vm.obraatividade.atividadeId}}</a>
+        </dd>
     </dl>
 
     <button type="submit"

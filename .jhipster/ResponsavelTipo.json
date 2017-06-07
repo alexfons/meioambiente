@@ -1,0 +1,44 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "funcao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "localtrabalho",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "matricula",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "superintendencia",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "telefone",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "telefonecomercial",
+            "fieldType": "Long"
+        }
+    ],
+    "changelogDate": "20170607114348",
+    "entityTableName": "responsavel_tipo",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "ambiental"
+}

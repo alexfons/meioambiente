@@ -1,0 +1,71 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.solicitacao.detail.title">Solicitacao</span> {{vm.solicitacao.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.solicitacao.apresentamos">Apresentamos</span></dt>
+        <dd>
+            <span>{{vm.solicitacao.apresentamos}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.solicitacao.data">Data</span></dt>
+        <dd>
+            <span>{{vm.solicitacao.data | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.solicitacao.descricao">Descricao</span></dt>
+        <dd>
+            <span>{{vm.solicitacao.descricao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.solicitacao.extenso">Extenso</span></dt>
+        <dd>
+            <span>{{vm.solicitacao.extenso}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.solicitacao.extenso1">Extenso 1</span></dt>
+        <dd>
+            <span>{{vm.solicitacao.extenso1}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.solicitacao.idsolicitacao">Idsolicitacao</span></dt>
+        <dd>
+            <span>{{vm.solicitacao.idsolicitacao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.solicitacao.moeda">Moeda</span></dt>
+        <dd>
+            <span>{{vm.solicitacao.moeda}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.solicitacao.montante">Montante</span></dt>
+        <dd>
+            <span>{{vm.solicitacao.montante}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.solicitacao.nsolicitacao">Nsolicitacao</span></dt>
+        <dd>
+            <span>{{vm.solicitacao.nsolicitacao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.solicitacao.oficio">Oficio</span></dt>
+        <dd>
+            <span>{{vm.solicitacao.oficio}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.solicitacao.solicitamos">Solicitamos</span></dt>
+        <dd>
+            <span>{{vm.solicitacao.solicitamos}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.solicitacao.idbanco">Idbanco</span></dt>
+        <dd>
+            <a ui-sref="banco-ambiental-detail({id:vm.solicitacao.idbancoId})">{{vm.solicitacao.idbancoId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.solicitacao.idContratoagente">Id Contratoagente</span></dt>
+        <dd>
+            <a ui-sref="contratoagente-ambiental-detail({id:vm.solicitacao.idContratoagenteId})">{{vm.solicitacao.idContratoagenteId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="solicitacao-ambiental-detail.edit({id:vm.solicitacao.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

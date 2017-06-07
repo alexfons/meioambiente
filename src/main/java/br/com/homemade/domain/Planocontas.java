@@ -22,12 +22,92 @@ public class Planocontas implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
+    @Column(name = "idplanocontas")
+    private Integer idplanocontas;
+
+    @Column(name = "ncontabil")
+    private String ncontabil;
+
+    @Column(name = "descricao")
+    private String descricao;
+
+    @Column(name = "tipoconta")
+    private String tipoconta;
+
+    @Column(name = "tipolancamento")
+    private String tipolancamento;
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Integer getIdplanocontas() {
+        return idplanocontas;
+    }
+
+    public Planocontas idplanocontas(Integer idplanocontas) {
+        this.idplanocontas = idplanocontas;
+        return this;
+    }
+
+    public void setIdplanocontas(Integer idplanocontas) {
+        this.idplanocontas = idplanocontas;
+    }
+
+    public String getNcontabil() {
+        return ncontabil;
+    }
+
+    public Planocontas ncontabil(String ncontabil) {
+        this.ncontabil = ncontabil;
+        return this;
+    }
+
+    public void setNcontabil(String ncontabil) {
+        this.ncontabil = ncontabil;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public Planocontas descricao(String descricao) {
+        this.descricao = descricao;
+        return this;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public String getTipoconta() {
+        return tipoconta;
+    }
+
+    public Planocontas tipoconta(String tipoconta) {
+        this.tipoconta = tipoconta;
+        return this;
+    }
+
+    public void setTipoconta(String tipoconta) {
+        this.tipoconta = tipoconta;
+    }
+
+    public String getTipolancamento() {
+        return tipolancamento;
+    }
+
+    public Planocontas tipolancamento(String tipolancamento) {
+        this.tipolancamento = tipolancamento;
+        return this;
+    }
+
+    public void setTipolancamento(String tipolancamento) {
+        this.tipolancamento = tipolancamento;
     }
 
     @Override
@@ -54,6 +134,11 @@ public class Planocontas implements Serializable {
     public String toString() {
         return "Planocontas{" +
             "id=" + getId() +
+            ", idplanocontas='" + getIdplanocontas() + "'" +
+            ", ncontabil='" + getNcontabil() + "'" +
+            ", descricao='" + getDescricao() + "'" +
+            ", tipoconta='" + getTipoconta() + "'" +
+            ", tipolancamento='" + getTipolancamento() + "'" +
             "}";
     }
 }

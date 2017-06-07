@@ -87,8 +87,8 @@ public class ObraDTO implements Serializable {
         return tipoobraId;
     }
 
-    public void setTipoobraId(Long tipoObraId) {
-        this.tipoobraId = tipoObraId;
+    public void setTipoobraId(Long tipoobraId) {
+        this.tipoobraId = tipoobraId;
     }
 
     public Long getInspetorId() {

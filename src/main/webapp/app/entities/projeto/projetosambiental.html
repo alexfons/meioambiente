@@ -19,12 +19,58 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.projeto.andamento">Andamento</span></th>
+                    <th><span data-translate="meioambienteApp.projeto.pendente">Pendente</span></th>
+                    <th><span data-translate="meioambienteApp.projeto.inspetor">Inspetor</span></th>
+                    <th><span data-translate="meioambienteApp.projeto.municipio">Municipio</span></th>
+                    <th><span data-translate="meioambienteApp.projeto.tipo">Tipo</span></th>
+                    <th><span data-translate="meioambienteApp.projeto.tipoobra">Tipoobra</span></th>
+                    <th><span data-translate="meioambienteApp.projeto.trecho">Trecho</span></th>
+                    <th><span data-translate="meioambienteApp.projeto.fiscal">Fiscal</span></th>
+                    <th><span data-translate="meioambienteApp.projeto.contratosprojeto">Contratosprojeto</span></th>
+                    <th><span data-translate="meioambienteApp.projeto.historicos">Historicos</span></th>
+                    <th><span data-translate="meioambienteApp.projeto.municipios">Municipios</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="projeto in vm.projetos track by projeto.id">
                     <td><a ui-sref="projeto-ambiental-detail({id:projeto.id})">{{projeto.id}}</a></td>
+                    <td>{{projeto.andamento}}</td>
+                    <td>{{projeto.pendente}}</td>
+                    <td>
+                        <a ui-sref="inspetor-ambiental-detail({id:projeto.inspetorId})">{{projeto.inspetorId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="municipio-ambiental-detail({id:projeto.municipioId})">{{projeto.municipioId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="tipoobra-ambiental-detail({id:projeto.tipoId})">{{projeto.tipoId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="tipoobra-ambiental-detail({id:projeto.tipoobraId})">{{projeto.tipoobraId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="trecho-ambiental-detail({id:projeto.trechoId})">{{projeto.trechoId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="fiscal-ambiental-detail({id:projeto.fiscalId})">{{projeto.fiscalId}}</a>
+                    </td>
+                    <td>
+                        <span ng-repeat="contratosprojeto in projeto.contratosprojetos">
+                            <a class="form-control-static" ui-sref="contratoprojeto-ambiental-detail({id: contratosprojeto.id})">{{contratosprojeto.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td>
+                        <span ng-repeat="historicos in projeto.historicos">
+                            <a class="form-control-static" ui-sref="historico-ambiental-detail({id: historicos.id})">{{historicos.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td>
+                        <span ng-repeat="municipios in projeto.municipios">
+                            <a class="form-control-static" ui-sref="municipio-ambiental-detail({id: municipios.id})">{{municipios.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

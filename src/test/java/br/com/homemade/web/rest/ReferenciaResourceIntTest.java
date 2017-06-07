@@ -23,6 +23,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import java.math.BigDecimal;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -38,6 +39,21 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = MeioambienteApp.class)
 public class ReferenciaResourceIntTest {
+
+    private static final String DEFAULT_APORTE = "AAAAAAAAAA";
+    private static final String UPDATED_APORTE = "BBBBBBBBBB";
+
+    private static final Integer DEFAULT_IDREFERENCIA = 1;
+    private static final Integer UPDATED_IDREFERENCIA = 2;
+
+    private static final String DEFAULT_MOEDA = "AAAAAAAAAA";
+    private static final String UPDATED_MOEDA = "BBBBBBBBBB";
+
+    private static final Integer DEFAULT_NREFERENCIA = 1;
+    private static final Integer UPDATED_NREFERENCIA = 2;
+
+    private static final BigDecimal DEFAULT_VALORREFERENCIA = new BigDecimal(1);
+    private static final BigDecimal UPDATED_VALORREFERENCIA = new BigDecimal(2);
 
     @Autowired
     private ReferenciaRepository referenciaRepository;
@@ -78,7 +94,12 @@ public class ReferenciaResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Referencia createEntity(EntityManager em) {
-        Referencia referencia = new Referencia();
+        Referencia referencia = new Referencia()
+            .aporte(DEFAULT_APORTE)
+            .idreferencia(DEFAULT_IDREFERENCIA)
+            .moeda(DEFAULT_MOEDA)
+            .nreferencia(DEFAULT_NREFERENCIA)
+            .valorreferencia(DEFAULT_VALORREFERENCIA);
         return referencia;
     }
 
@@ -103,6 +124,11 @@ public class ReferenciaResourceIntTest {
         List<Referencia> referenciaList = referenciaRepository.findAll();
         assertThat(referenciaList).hasSize(databaseSizeBeforeCreate + 1);
         Referencia testReferencia = referenciaList.get(referenciaList.size() - 1);
+        assertThat(testReferencia.getAporte()).isEqualTo(DEFAULT_APORTE);
+        assertThat(testReferencia.getIdreferencia()).isEqualTo(DEFAULT_IDREFERENCIA);
+        assertThat(testReferencia.getMoeda()).isEqualTo(DEFAULT_MOEDA);
+        assertThat(testReferencia.getNreferencia()).isEqualTo(DEFAULT_NREFERENCIA);
+        assertThat(testReferencia.getValorreferencia()).isEqualTo(DEFAULT_VALORREFERENCIA);
     }
 
     @Test
@@ -135,7 +161,12 @@ public class ReferenciaResourceIntTest {
         restReferenciaMockMvc.perform(get("/api/referencias?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(referencia.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(referencia.getId().intValue())))
+            .andExpect(jsonPath("$.[*].aporte").value(hasItem(DEFAULT_APORTE.toString())))
+            .andExpect(jsonPath("$.[*].idreferencia").value(hasItem(DEFAULT_IDREFERENCIA)))
+            .andExpect(jsonPath("$.[*].moeda").value(hasItem(DEFAULT_MOEDA.toString())))
+            .andExpect(jsonPath("$.[*].nreferencia").value(hasItem(DEFAULT_NREFERENCIA)))
+            .andExpect(jsonPath("$.[*].valorreferencia").value(hasItem(DEFAULT_VALORREFERENCIA.intValue())));
     }
 
     @Test
@@ -148,7 +179,12 @@ public class ReferenciaResourceIntTest {
         restReferenciaMockMvc.perform(get("/api/referencias/{id}", referencia.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(referencia.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(referencia.getId().intValue()))
+            .andExpect(jsonPath("$.aporte").value(DEFAULT_APORTE.toString()))
+            .andExpect(jsonPath("$.idreferencia").value(DEFAULT_IDREFERENCIA))
+            .andExpect(jsonPath("$.moeda").value(DEFAULT_MOEDA.toString()))
+            .andExpect(jsonPath("$.nreferencia").value(DEFAULT_NREFERENCIA))
+            .andExpect(jsonPath("$.valorreferencia").value(DEFAULT_VALORREFERENCIA.intValue()));
     }
 
     @Test
@@ -168,6 +204,12 @@ public class ReferenciaResourceIntTest {
 
         // Update the referencia
         Referencia updatedReferencia = referenciaRepository.findOne(referencia.getId());
+        updatedReferencia
+            .aporte(UPDATED_APORTE)
+            .idreferencia(UPDATED_IDREFERENCIA)
+            .moeda(UPDATED_MOEDA)
+            .nreferencia(UPDATED_NREFERENCIA)
+            .valorreferencia(UPDATED_VALORREFERENCIA);
         ReferenciaDTO referenciaDTO = referenciaMapper.toDto(updatedReferencia);
 
         restReferenciaMockMvc.perform(put("/api/referencias")
@@ -179,6 +221,11 @@ public class ReferenciaResourceIntTest {
         List<Referencia> referenciaList = referenciaRepository.findAll();
         assertThat(referenciaList).hasSize(databaseSizeBeforeUpdate);
         Referencia testReferencia = referenciaList.get(referenciaList.size() - 1);
+        assertThat(testReferencia.getAporte()).isEqualTo(UPDATED_APORTE);
+        assertThat(testReferencia.getIdreferencia()).isEqualTo(UPDATED_IDREFERENCIA);
+        assertThat(testReferencia.getMoeda()).isEqualTo(UPDATED_MOEDA);
+        assertThat(testReferencia.getNreferencia()).isEqualTo(UPDATED_NREFERENCIA);
+        assertThat(testReferencia.getValorreferencia()).isEqualTo(UPDATED_VALORREFERENCIA);
     }
 
     @Test

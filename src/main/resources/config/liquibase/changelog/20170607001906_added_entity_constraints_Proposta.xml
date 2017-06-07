@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Proposta.
+    -->
+    <changeSet id="20170607001906-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="idempresa_id"
+                                 baseTableName="proposta"
+                                 constraintName="fk_proposta_idempresa_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="empresa"/>
+
+        <addForeignKeyConstraint baseColumnNames="idlote_id"
+                                 baseTableName="proposta"
+                                 constraintName="fk_proposta_idlote_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="editallote"/>
+
+    </changeSet>
+</databaseChangeLog>

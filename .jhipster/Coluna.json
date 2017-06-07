@@ -6,6 +6,12 @@
             "relationshipName": "opcoes",
             "otherEntityName": "linha",
             "otherEntityRelationshipName": "coluna"
+        },
+        {
+            "relationshipName": "tabela",
+            "otherEntityName": "tabela",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
         }
     ],
     "fields": [

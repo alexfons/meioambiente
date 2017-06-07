@@ -1,0 +1,106 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="mySolicitacaoLabel" data-translate="meioambienteApp.solicitacao.home.createOrEditLabel">Create or edit a Solicitacao</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.solicitacao.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.solicitacao.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.solicitacao.apresentamos" for="field_apresentamos">Apresentamos</label>
+                <input type="checkbox" name="apresentamos" id="field_apresentamos"
+                          ng-model="vm.solicitacao.apresentamos"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.solicitacao.data" for="field_data">Data</label>
+                <div class="input-group">
+                    <input id="field_data" type="text" class="form-control" name="data" datetime-picker="{{dateformat}}" ng-model="vm.solicitacao.data" is-open="vm.datePickerOpenStatus.data"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('data')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.solicitacao.descricao" for="field_descricao">Descricao</label>
+            <input type="text" class="form-control" name="descricao" id="field_descricao"
+                    ng-model="vm.solicitacao.descricao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.solicitacao.extenso" for="field_extenso">Extenso</label>
+            <input type="text" class="form-control" name="extenso" id="field_extenso"
+                    ng-model="vm.solicitacao.extenso"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.solicitacao.extenso1" for="field_extenso1">Extenso 1</label>
+            <input type="text" class="form-control" name="extenso1" id="field_extenso1"
+                    ng-model="vm.solicitacao.extenso1"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.solicitacao.idsolicitacao" for="field_idsolicitacao">Idsolicitacao</label>
+            <input type="number" class="form-control" name="idsolicitacao" id="field_idsolicitacao"
+                    ng-model="vm.solicitacao.idsolicitacao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.solicitacao.moeda" for="field_moeda">Moeda</label>
+            <input type="text" class="form-control" name="moeda" id="field_moeda"
+                    ng-model="vm.solicitacao.moeda"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.solicitacao.montante" for="field_montante">Montante</label>
+            <input type="number" class="form-control" name="montante" id="field_montante"
+                    ng-model="vm.solicitacao.montante"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.solicitacao.nsolicitacao" for="field_nsolicitacao">Nsolicitacao</label>
+            <input type="number" class="form-control" name="nsolicitacao" id="field_nsolicitacao"
+                    ng-model="vm.solicitacao.nsolicitacao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.solicitacao.oficio" for="field_oficio">Oficio</label>
+            <input type="text" class="form-control" name="oficio" id="field_oficio"
+                    ng-model="vm.solicitacao.oficio"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.solicitacao.solicitamos" for="field_solicitamos">Solicitamos</label>
+                <input type="checkbox" name="solicitamos" id="field_solicitamos"
+                          ng-model="vm.solicitacao.solicitamos"/>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="meioambienteApp.solicitacao.idbanco" for="field_idbanco">Idbanco</label>
+            <select class="form-control" id="field_idbanco" name="idbanco" ng-model="vm.solicitacao.idbancoId" ng-options="banco.id as banco.id for banco in vm.idbancos | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.solicitacao.idContratoagente" for="field_idContratoagente">Id Contratoagente</label>
+            <select class="form-control" id="field_idContratoagente" name="idContratoagente" ng-model="vm.solicitacao.idContratoagenteId" ng-options="contratoagente.id as contratoagente.id for contratoagente in vm.contratoagentes"            >
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

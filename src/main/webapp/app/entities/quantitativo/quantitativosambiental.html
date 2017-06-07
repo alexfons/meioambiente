@@ -1,0 +1,70 @@
+<div>
+    <h2 data-translate="meioambienteApp.quantitativo.home.title">Quantitativos</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="quantitativo-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.quantitativo.home.createLabel">
+                        Create new Quantitativo
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.quantitativo.descricao">Descricao</span></th>
+                    <th><span data-translate="meioambienteApp.quantitativo.idquantitativo">Idquantitativo</span></th>
+                    <th><span data-translate="meioambienteApp.quantitativo.quantidade">Quantidade</span></th>
+                    <th><span data-translate="meioambienteApp.quantitativo.total">Total</span></th>
+                    <th><span data-translate="meioambienteApp.quantitativo.unidade">Unidade</span></th>
+                    <th><span data-translate="meioambienteApp.quantitativo.unitario">Unitario</span></th>
+                    <th><span data-translate="meioambienteApp.quantitativo.nmedicao">Nmedicao</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="quantitativo in vm.quantitativos track by quantitativo.id">
+                    <td><a ui-sref="quantitativo-ambiental-detail({id:quantitativo.id})">{{quantitativo.id}}</a></td>
+                    <td>{{quantitativo.descricao}}</td>
+                    <td>{{quantitativo.idquantitativo}}</td>
+                    <td>{{quantitativo.quantidade}}</td>
+                    <td>{{quantitativo.total}}</td>
+                    <td>{{quantitativo.unidade}}</td>
+                    <td>{{quantitativo.unitario}}</td>
+                    <td>
+                        <a ui-sref="medicao-ambiental-detail({id:quantitativo.nmedicaoId})">{{quantitativo.nmedicaoId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="quantitativo-ambiental-detail({id:quantitativo.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="quantitativo-ambiental.edit({id:quantitativo.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="quantitativo-ambiental.delete({id:quantitativo.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

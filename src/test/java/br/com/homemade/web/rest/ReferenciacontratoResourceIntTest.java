@@ -23,6 +23,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import java.math.BigDecimal;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -38,6 +39,21 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = MeioambienteApp.class)
 public class ReferenciacontratoResourceIntTest {
+
+    private static final String DEFAULT_APORTE = "AAAAAAAAAA";
+    private static final String UPDATED_APORTE = "BBBBBBBBBB";
+
+    private static final String DEFAULT_MOEDA = "AAAAAAAAAA";
+    private static final String UPDATED_MOEDA = "BBBBBBBBBB";
+
+    private static final Integer DEFAULT_IDREFERENCIACONTRATO = 1;
+    private static final Integer UPDATED_IDREFERENCIACONTRATO = 2;
+
+    private static final Integer DEFAULT_NREFERENCIA = 1;
+    private static final Integer UPDATED_NREFERENCIA = 2;
+
+    private static final BigDecimal DEFAULT_VALORREFERENCIA = new BigDecimal(1);
+    private static final BigDecimal UPDATED_VALORREFERENCIA = new BigDecimal(2);
 
     @Autowired
     private ReferenciacontratoRepository referenciacontratoRepository;
@@ -78,7 +94,12 @@ public class ReferenciacontratoResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Referenciacontrato createEntity(EntityManager em) {
-        Referenciacontrato referenciacontrato = new Referenciacontrato();
+        Referenciacontrato referenciacontrato = new Referenciacontrato()
+            .aporte(DEFAULT_APORTE)
+            .moeda(DEFAULT_MOEDA)
+            .idreferenciacontrato(DEFAULT_IDREFERENCIACONTRATO)
+            .nreferencia(DEFAULT_NREFERENCIA)
+            .valorreferencia(DEFAULT_VALORREFERENCIA);
         return referenciacontrato;
     }
 
@@ -103,6 +124,11 @@ public class ReferenciacontratoResourceIntTest {
         List<Referenciacontrato> referenciacontratoList = referenciacontratoRepository.findAll();
         assertThat(referenciacontratoList).hasSize(databaseSizeBeforeCreate + 1);
         Referenciacontrato testReferenciacontrato = referenciacontratoList.get(referenciacontratoList.size() - 1);
+        assertThat(testReferenciacontrato.getAporte()).isEqualTo(DEFAULT_APORTE);
+        assertThat(testReferenciacontrato.getMoeda()).isEqualTo(DEFAULT_MOEDA);
+        assertThat(testReferenciacontrato.getIdreferenciacontrato()).isEqualTo(DEFAULT_IDREFERENCIACONTRATO);
+        assertThat(testReferenciacontrato.getNreferencia()).isEqualTo(DEFAULT_NREFERENCIA);
+        assertThat(testReferenciacontrato.getValorreferencia()).isEqualTo(DEFAULT_VALORREFERENCIA);
     }
 
     @Test
@@ -135,7 +161,12 @@ public class ReferenciacontratoResourceIntTest {
         restReferenciacontratoMockMvc.perform(get("/api/referenciacontratoes?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(referenciacontrato.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(referenciacontrato.getId().intValue())))
+            .andExpect(jsonPath("$.[*].aporte").value(hasItem(DEFAULT_APORTE.toString())))
+            .andExpect(jsonPath("$.[*].moeda").value(hasItem(DEFAULT_MOEDA.toString())))
+            .andExpect(jsonPath("$.[*].idreferenciacontrato").value(hasItem(DEFAULT_IDREFERENCIACONTRATO)))
+            .andExpect(jsonPath("$.[*].nreferencia").value(hasItem(DEFAULT_NREFERENCIA)))
+            .andExpect(jsonPath("$.[*].valorreferencia").value(hasItem(DEFAULT_VALORREFERENCIA.intValue())));
     }
 
     @Test
@@ -148,7 +179,12 @@ public class ReferenciacontratoResourceIntTest {
         restReferenciacontratoMockMvc.perform(get("/api/referenciacontratoes/{id}", referenciacontrato.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(referenciacontrato.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(referenciacontrato.getId().intValue()))
+            .andExpect(jsonPath("$.aporte").value(DEFAULT_APORTE.toString()))
+            .andExpect(jsonPath("$.moeda").value(DEFAULT_MOEDA.toString()))
+            .andExpect(jsonPath("$.idreferenciacontrato").value(DEFAULT_IDREFERENCIACONTRATO))
+            .andExpect(jsonPath("$.nreferencia").value(DEFAULT_NREFERENCIA))
+            .andExpect(jsonPath("$.valorreferencia").value(DEFAULT_VALORREFERENCIA.intValue()));
     }
 
     @Test
@@ -168,6 +204,12 @@ public class ReferenciacontratoResourceIntTest {
 
         // Update the referenciacontrato
         Referenciacontrato updatedReferenciacontrato = referenciacontratoRepository.findOne(referenciacontrato.getId());
+        updatedReferenciacontrato
+            .aporte(UPDATED_APORTE)
+            .moeda(UPDATED_MOEDA)
+            .idreferenciacontrato(UPDATED_IDREFERENCIACONTRATO)
+            .nreferencia(UPDATED_NREFERENCIA)
+            .valorreferencia(UPDATED_VALORREFERENCIA);
         ReferenciacontratoDTO referenciacontratoDTO = referenciacontratoMapper.toDto(updatedReferenciacontrato);
 
         restReferenciacontratoMockMvc.perform(put("/api/referenciacontratoes")
@@ -179,6 +221,11 @@ public class ReferenciacontratoResourceIntTest {
         List<Referenciacontrato> referenciacontratoList = referenciacontratoRepository.findAll();
         assertThat(referenciacontratoList).hasSize(databaseSizeBeforeUpdate);
         Referenciacontrato testReferenciacontrato = referenciacontratoList.get(referenciacontratoList.size() - 1);
+        assertThat(testReferenciacontrato.getAporte()).isEqualTo(UPDATED_APORTE);
+        assertThat(testReferenciacontrato.getMoeda()).isEqualTo(UPDATED_MOEDA);
+        assertThat(testReferenciacontrato.getIdreferenciacontrato()).isEqualTo(UPDATED_IDREFERENCIACONTRATO);
+        assertThat(testReferenciacontrato.getNreferencia()).isEqualTo(UPDATED_NREFERENCIA);
+        assertThat(testReferenciacontrato.getValorreferencia()).isEqualTo(UPDATED_VALORREFERENCIA);
     }
 
     @Test

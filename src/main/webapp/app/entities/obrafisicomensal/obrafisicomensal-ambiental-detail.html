@@ -1,0 +1,85 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.obrafisicomensal.detail.title">Obrafisicomensal</span> {{vm.obrafisicomensal.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.obrafisicomensal.comentario">Comentario</span></dt>
+        <dd>
+            <span>{{vm.obrafisicomensal.comentario}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.obrafisicomensal.datainspecao">Datainspecao</span></dt>
+        <dd>
+            <span>{{vm.obrafisicomensal.datainspecao | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.obrafisicomensal.datarelatorio">Datarelatorio</span></dt>
+        <dd>
+            <span>{{vm.obrafisicomensal.datarelatorio | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.obrafisicomensal.pessoal">Pessoal</span></dt>
+        <dd>
+            <span>{{vm.obrafisicomensal.pessoal}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.obrafisicomensal.equipamento">Equipamento</span></dt>
+        <dd>
+            <span>{{vm.obrafisicomensal.equipamento}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.obrafisicomensal.instalacaoapoio">Instalacaoapoio</span></dt>
+        <dd>
+            <span>{{vm.obrafisicomensal.instalacaoapoio}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.obrafisicomensal.ritmo">Ritmo</span></dt>
+        <dd>
+            <span>{{vm.obrafisicomensal.ritmo}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.obrafisicomensal.apresentacao">Apresentacao</span></dt>
+        <dd>
+            <span>{{vm.obrafisicomensal.apresentacao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.obrafisicomensal.qualidadeservicos">Qualidadeservicos</span></dt>
+        <dd>
+            <span>{{vm.obrafisicomensal.qualidadeservicos}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.obrafisicomensal.cronograma">Cronograma</span></dt>
+        <dd>
+            <span>{{vm.obrafisicomensal.cronograma}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.obrafisicomensal.prazodecorrido">Prazodecorrido</span></dt>
+        <dd>
+            <span>{{vm.obrafisicomensal.prazodecorrido}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.obrafisicomensal.avancofisicoOAE">Avancofisico OAE</span></dt>
+        <dd>
+            <span>{{vm.obrafisicomensal.avancofisicoOAE}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.obrafisicomensal.avancofisicoponderado">Avancofisicoponderado</span></dt>
+        <dd>
+            <span>{{vm.obrafisicomensal.avancofisicoponderado}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.obrafisicomensal.previsaoatual">Previsaoatual</span></dt>
+        <dd>
+            <span>{{vm.obrafisicomensal.previsaoatual | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.obrafisicomensal.fisico">Fisico</span></dt>
+        <dd>
+            <a ui-sref="fisico-ambiental-detail({id:vm.obrafisicomensal.fisicoId})">{{vm.obrafisicomensal.fisicoId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.obrafisicomensal.atividadeexecutadamensals">Atividadeexecutadamensals</span></dt>
+        <dd>
+            <span ng-repeat="atividadeexecutadamensals in vm.obrafisicomensal.atividadeexecutadamensals">
+                <a ui-sref="atividadeexecutadamensal-ambiental-detail({id: atividadeexecutadamensals.id})">{{atividadeexecutadamensals.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="obrafisicomensal-ambiental-detail.edit({id:vm.obrafisicomensal.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

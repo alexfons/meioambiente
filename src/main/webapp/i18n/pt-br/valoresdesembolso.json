@@ -1,0 +1,29 @@
+{
+    "meioambienteApp": {
+        "valoresdesembolso" : {
+            "home": {
+                "title": "Valoresdesembolsos",
+                "createLabel": "Criar novo Valoresdesembolso",
+                "createOrEditLabel": "Criar ou editar Valoresdesembolso"
+            },
+            "created": "Um novo Valoresdesembolso é criado com o identificador {{ param }}",
+            "updated": "Um Valoresdesembolso é atualizado com o identificador {{ param }}",
+            "deleted": "Um Valoresdesembolso é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Valoresdesembolso {{ id }}?"
+            },
+            "detail": {
+                "title": "Valoresdesembolso"
+            },
+            "datainternalizacao": "Datainternalizacao",
+            "idvaloresdesembolso": "Idvaloresdesembolso",
+            "nsolicitacao": "Nsolicitacao",
+            "tipodesembolso": "Tipodesembolso",
+            "valoreais": "Valoreais",
+            "valorus": "Valorus",
+            "valuedata": "Valuedata",
+            "idcontabancaria": "Idcontabancaria",
+            "idreferencia": "Idreferencia"
+        }
+    }
+}

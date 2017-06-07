@@ -104,6 +104,11 @@
                     resolve: {
                         entity: function () {
                             return {
+                                descnatureza: null,
+                                descsubacao: null,
+                                idnatureza: null,
+                                numnatureza: null,
+                                subacao: null,
                                 id: null
                             };
                         }

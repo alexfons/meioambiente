@@ -14,7 +14,12 @@
             },
             "detail": {
                 "title": "Planocontas"
-            }
+            },
+            "idplanocontas": "Idplanocontas",
+            "ncontabil": "Ncontabil",
+            "descricao": "Descricao",
+            "tipoconta": "Tipoconta",
+            "tipolancamento": "Tipolancamento"
         }
     }
 }

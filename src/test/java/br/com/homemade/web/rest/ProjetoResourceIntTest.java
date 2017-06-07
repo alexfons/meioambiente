@@ -39,6 +39,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = MeioambienteApp.class)
 public class ProjetoResourceIntTest {
 
+    private static final String DEFAULT_ANDAMENTO = "AAAAAAAAAA";
+    private static final String UPDATED_ANDAMENTO = "BBBBBBBBBB";
+
+    private static final String DEFAULT_PENDENTE = "AAAAAAAAAA";
+    private static final String UPDATED_PENDENTE = "BBBBBBBBBB";
+
     @Autowired
     private ProjetoRepository projetoRepository;
 
@@ -78,7 +84,9 @@ public class ProjetoResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Projeto createEntity(EntityManager em) {
-        Projeto projeto = new Projeto();
+        Projeto projeto = new Projeto()
+            .andamento(DEFAULT_ANDAMENTO)
+            .pendente(DEFAULT_PENDENTE);
         return projeto;
     }
 
@@ -103,6 +111,8 @@ public class ProjetoResourceIntTest {
         List<Projeto> projetoList = projetoRepository.findAll();
         assertThat(projetoList).hasSize(databaseSizeBeforeCreate + 1);
         Projeto testProjeto = projetoList.get(projetoList.size() - 1);
+        assertThat(testProjeto.getAndamento()).isEqualTo(DEFAULT_ANDAMENTO);
+        assertThat(testProjeto.getPendente()).isEqualTo(DEFAULT_PENDENTE);
     }
 
     @Test
@@ -135,7 +145,9 @@ public class ProjetoResourceIntTest {
         restProjetoMockMvc.perform(get("/api/projetos?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(projeto.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(projeto.getId().intValue())))
+            .andExpect(jsonPath("$.[*].andamento").value(hasItem(DEFAULT_ANDAMENTO.toString())))
+            .andExpect(jsonPath("$.[*].pendente").value(hasItem(DEFAULT_PENDENTE.toString())));
     }
 
     @Test
@@ -148,7 +160,9 @@ public class ProjetoResourceIntTest {
         restProjetoMockMvc.perform(get("/api/projetos/{id}", projeto.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(projeto.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(projeto.getId().intValue()))
+            .andExpect(jsonPath("$.andamento").value(DEFAULT_ANDAMENTO.toString()))
+            .andExpect(jsonPath("$.pendente").value(DEFAULT_PENDENTE.toString()));
     }
 
     @Test
@@ -168,6 +182,9 @@ public class ProjetoResourceIntTest {
 
         // Update the projeto
         Projeto updatedProjeto = projetoRepository.findOne(projeto.getId());
+        updatedProjeto
+            .andamento(UPDATED_ANDAMENTO)
+            .pendente(UPDATED_PENDENTE);
         ProjetoDTO projetoDTO = projetoMapper.toDto(updatedProjeto);
 
         restProjetoMockMvc.perform(put("/api/projetos")
@@ -179,6 +196,8 @@ public class ProjetoResourceIntTest {
         List<Projeto> projetoList = projetoRepository.findAll();
         assertThat(projetoList).hasSize(databaseSizeBeforeUpdate);
         Projeto testProjeto = projetoList.get(projetoList.size() - 1);
+        assertThat(testProjeto.getAndamento()).isEqualTo(UPDATED_ANDAMENTO);
+        assertThat(testProjeto.getPendente()).isEqualTo(UPDATED_PENDENTE);
     }
 
     @Test

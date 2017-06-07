@@ -13,7 +13,37 @@
             <input type="text" class="form-control" id="id" name="id"
                     ng-model="vm.usuario.id" readonly />
         </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.usuario.email" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                    ng-model="vm.usuario.email"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.usuario.nome" for="field_nome">Nome</label>
+            <input type="text" class="form-control" name="nome" id="field_nome"
+                    ng-model="vm.usuario.nome"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.usuario.permissoes" for="field_permissoes">Permissoes</label>
+            <input type="text" class="form-control" name="permissoes" id="field_permissoes"
+                    ng-model="vm.usuario.permissoes"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.usuario.senha" for="field_senha">Senha</label>
+            <input type="text" class="form-control" name="senha" id="field_senha"
+                    ng-model="vm.usuario.senha"
+                    />
+        </div>
 
+        <div class="form-group">
+            <label data-translate="meioambienteApp.usuario.supervisor" for="field_supervisor">Supervisor</label>
+            <select class="form-control" id="field_supervisor" name="supervisor" ng-model="vm.usuario.supervisorId" ng-options="usuario.id as usuario.id for usuario in vm.usuarios"            >
+                <option value=""></option>
+            </select>
+        </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">

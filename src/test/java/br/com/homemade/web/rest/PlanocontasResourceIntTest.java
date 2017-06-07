@@ -39,6 +39,21 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = MeioambienteApp.class)
 public class PlanocontasResourceIntTest {
 
+    private static final Integer DEFAULT_IDPLANOCONTAS = 1;
+    private static final Integer UPDATED_IDPLANOCONTAS = 2;
+
+    private static final String DEFAULT_NCONTABIL = "AAAAAAAAAA";
+    private static final String UPDATED_NCONTABIL = "BBBBBBBBBB";
+
+    private static final String DEFAULT_DESCRICAO = "AAAAAAAAAA";
+    private static final String UPDATED_DESCRICAO = "BBBBBBBBBB";
+
+    private static final String DEFAULT_TIPOCONTA = "AAAAAAAAAA";
+    private static final String UPDATED_TIPOCONTA = "BBBBBBBBBB";
+
+    private static final String DEFAULT_TIPOLANCAMENTO = "AAAAAAAAAA";
+    private static final String UPDATED_TIPOLANCAMENTO = "BBBBBBBBBB";
+
     @Autowired
     private PlanocontasRepository planocontasRepository;
 
@@ -78,7 +93,12 @@ public class PlanocontasResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Planocontas createEntity(EntityManager em) {
-        Planocontas planocontas = new Planocontas();
+        Planocontas planocontas = new Planocontas()
+            .idplanocontas(DEFAULT_IDPLANOCONTAS)
+            .ncontabil(DEFAULT_NCONTABIL)
+            .descricao(DEFAULT_DESCRICAO)
+            .tipoconta(DEFAULT_TIPOCONTA)
+            .tipolancamento(DEFAULT_TIPOLANCAMENTO);
         return planocontas;
     }
 
@@ -103,6 +123,11 @@ public class PlanocontasResourceIntTest {
         List<Planocontas> planocontasList = planocontasRepository.findAll();
         assertThat(planocontasList).hasSize(databaseSizeBeforeCreate + 1);
         Planocontas testPlanocontas = planocontasList.get(planocontasList.size() - 1);
+        assertThat(testPlanocontas.getIdplanocontas()).isEqualTo(DEFAULT_IDPLANOCONTAS);
+        assertThat(testPlanocontas.getNcontabil()).isEqualTo(DEFAULT_NCONTABIL);
+        assertThat(testPlanocontas.getDescricao()).isEqualTo(DEFAULT_DESCRICAO);
+        assertThat(testPlanocontas.getTipoconta()).isEqualTo(DEFAULT_TIPOCONTA);
+        assertThat(testPlanocontas.getTipolancamento()).isEqualTo(DEFAULT_TIPOLANCAMENTO);
     }
 
     @Test
@@ -135,7 +160,12 @@ public class PlanocontasResourceIntTest {
         restPlanocontasMockMvc.perform(get("/api/planocontas?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(planocontas.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(planocontas.getId().intValue())))
+            .andExpect(jsonPath("$.[*].idplanocontas").value(hasItem(DEFAULT_IDPLANOCONTAS)))
+            .andExpect(jsonPath("$.[*].ncontabil").value(hasItem(DEFAULT_NCONTABIL.toString())))
+            .andExpect(jsonPath("$.[*].descricao").value(hasItem(DEFAULT_DESCRICAO.toString())))
+            .andExpect(jsonPath("$.[*].tipoconta").value(hasItem(DEFAULT_TIPOCONTA.toString())))
+            .andExpect(jsonPath("$.[*].tipolancamento").value(hasItem(DEFAULT_TIPOLANCAMENTO.toString())));
     }
 
     @Test
@@ -148,7 +178,12 @@ public class PlanocontasResourceIntTest {
         restPlanocontasMockMvc.perform(get("/api/planocontas/{id}", planocontas.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(planocontas.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(planocontas.getId().intValue()))
+            .andExpect(jsonPath("$.idplanocontas").value(DEFAULT_IDPLANOCONTAS))
+            .andExpect(jsonPath("$.ncontabil").value(DEFAULT_NCONTABIL.toString()))
+            .andExpect(jsonPath("$.descricao").value(DEFAULT_DESCRICAO.toString()))
+            .andExpect(jsonPath("$.tipoconta").value(DEFAULT_TIPOCONTA.toString()))
+            .andExpect(jsonPath("$.tipolancamento").value(DEFAULT_TIPOLANCAMENTO.toString()));
     }
 
     @Test
@@ -168,6 +203,12 @@ public class PlanocontasResourceIntTest {
 
         // Update the planocontas
         Planocontas updatedPlanocontas = planocontasRepository.findOne(planocontas.getId());
+        updatedPlanocontas
+            .idplanocontas(UPDATED_IDPLANOCONTAS)
+            .ncontabil(UPDATED_NCONTABIL)
+            .descricao(UPDATED_DESCRICAO)
+            .tipoconta(UPDATED_TIPOCONTA)
+            .tipolancamento(UPDATED_TIPOLANCAMENTO);
         PlanocontasDTO planocontasDTO = planocontasMapper.toDto(updatedPlanocontas);
 
         restPlanocontasMockMvc.perform(put("/api/planocontas")
@@ -179,6 +220,11 @@ public class PlanocontasResourceIntTest {
         List<Planocontas> planocontasList = planocontasRepository.findAll();
         assertThat(planocontasList).hasSize(databaseSizeBeforeUpdate);
         Planocontas testPlanocontas = planocontasList.get(planocontasList.size() - 1);
+        assertThat(testPlanocontas.getIdplanocontas()).isEqualTo(UPDATED_IDPLANOCONTAS);
+        assertThat(testPlanocontas.getNcontabil()).isEqualTo(UPDATED_NCONTABIL);
+        assertThat(testPlanocontas.getDescricao()).isEqualTo(UPDATED_DESCRICAO);
+        assertThat(testPlanocontas.getTipoconta()).isEqualTo(UPDATED_TIPOCONTA);
+        assertThat(testPlanocontas.getTipolancamento()).isEqualTo(UPDATED_TIPOLANCAMENTO);
     }
 
     @Test

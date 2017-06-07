@@ -9,17 +9,17 @@
     <include file="classpath:config/liquibase/changelog/20170515105926_added_entity_Participante.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170515105927_added_entity_Tipoadministrativo.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170515105928_added_entity_Ocorrenciaapresentacao.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20170607105929_added_entity_Foto.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20170607105930_added_entity_Inspetor.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20170607105931_added_entity_Fiscal.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170515105929_added_entity_Foto.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170515105930_added_entity_Inspetor.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170515105931_added_entity_Fiscal.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170515105932_added_entity_Trecho.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20170607105933_added_entity_Empresa.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170515105933_added_entity_Empresa.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170515105934_added_entity_Projeto.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170515105935_added_entity_Orgaoemissor.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170515105936_added_entity_Condicionante.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20170607105937_added_entity_Documento.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170515105937_added_entity_Documento.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170515105938_added_entity_Contratoobra.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20170607105939_added_entity_Historico.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170515105939_added_entity_Historico.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170515105940_added_entity_Administrativo.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170515105941_added_entity_Obra.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170515105942_added_entity_TipoObra.xml" relativeToChangelogFile="false"/>
@@ -42,10 +42,10 @@
     <include file="classpath:config/liquibase/changelog/20170607001844_added_entity_Coordenada.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170607001845_added_entity_Custosconcorrentes.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170607001846_added_entity_Desapropriacao.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20170607001850_added_entity_Empresacontrato.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20170607001850_added_entity_Fonte.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20170607001850_added_entity_Informecertificadoirregularidade.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20170607001850_added_entity_Linha.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607001849_added_entity_Empresacontrato.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607001851_added_entity_Fonte.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607001854_added_entity_Informecertificadoirregularidade.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607001856_added_entity_Linha.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170607001857_added_entity_Natureza.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170607001858_added_entity_Notificacaocertificadoirregularidade.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170607001901_added_entity_Ocorrenciacertificadoirregularidade.xml" relativeToChangelogFile="false"/>
@@ -82,8 +82,29 @@
     <include file="classpath:config/liquibase/changelog/20170607015510_added_entity_Tipolicenca.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170607015511_added_entity_Tipoocorrencia.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170607015513_added_entity_Usuario.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607114322_added_entity_Municipio.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607114323_added_entity_Notificacao.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607114327_added_entity_Obrafisicomensal.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607114332_added_entity_Ocorrencianotificacao.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607114333_added_entity_Ocorrenciapendencias.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607114335_added_entity_Pagfuncionario.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607114337_added_entity_Pendencias.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607114338_added_entity_Planoaquisicoes.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607114342_added_entity_Quantitativo.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607114348_added_entity_ResponsavelTipo.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607114350_added_entity_Script.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607114351_added_entity_Solicitacao.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607114353_added_entity_Supre.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607114355_added_entity_Tipo.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607114359_added_entity_Tipocontrato.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607114405_added_entity_Valoresdesembolso.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="classpath:config/liquibase/changelog/20170515105926_added_entity_constraints_Participante.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170515105928_added_entity_constraints_Ocorrenciaapresentacao.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170515105932_added_entity_constraints_Trecho.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170515105934_added_entity_constraints_Projeto.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170515105938_added_entity_constraints_Contratoobra.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170515105939_added_entity_constraints_Historico.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170515105940_added_entity_constraints_Administrativo.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170515105941_added_entity_constraints_Obra.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170515105943_added_entity_constraints_Apresentacao.xml" relativeToChangelogFile="false"/>
@@ -93,22 +114,25 @@
     <include file="classpath:config/liquibase/changelog/20170607001834_added_entity_constraints_Categoriainversao.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170607001835_added_entity_constraints_Certificadoconformidade.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170607001836_added_entity_constraints_Clausulascontratuais.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607001837_added_entity_constraints_Coluna.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170607001839_added_entity_constraints_Contabancaria.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170607001840_added_entity_constraints_Contrato.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170607001843_added_entity_constraints_Contratoprojeto.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170607001845_added_entity_constraints_Custosconcorrentes.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170607001846_added_entity_constraints_Desapropriacao.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20170607001856_added_entity_constraints_Linha.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170607001849_added_entity_constraints_Empresacontrato.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170607001851_added_entity_constraints_Fonte.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607001854_added_entity_constraints_Informecertificadoirregularidade.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607001856_added_entity_constraints_Linha.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607001901_added_entity_constraints_Ocorrenciacertificadoirregularidade.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607001906_added_entity_constraints_Proposta.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170607011333_added_entity_constraints_Editallote.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170607011336_added_entity_constraints_Fatura.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170607011337_added_entity_constraints_Faturacontrato.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170607011339_added_entity_constraints_Fisico.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170607011340_added_entity_constraints_Fisicografico.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20170515105939_added_entity_constraints_Historico.xml" relativeToChangelogFile="false"/>
-    <include file="classpath:config/liquibase/changelog/20170607001854_added_entity_constraints_Informecertificadoirregularidade.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170607011347_added_entity_constraints_Medicao.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607011351_added_entity_constraints_Obraatividade.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170607015434_added_entity_constraints_Informe.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170607015437_added_entity_constraints_Lancamentos.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170607015438_added_entity_constraints_Licenca.xml" relativeToChangelogFile="false"/>
@@ -116,5 +140,18 @@
     <include file="classpath:config/liquibase/changelog/20170607015441_added_entity_constraints_Log.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170607015444_added_entity_constraints_Movimentacao.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20170607015449_added_entity_constraints_Ocorrencia.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607015452_added_entity_constraints_Ocorrenciainforme.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607015500_added_entity_constraints_Registro.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607015513_added_entity_constraints_Usuario.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607114323_added_entity_constraints_Notificacao.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607114327_added_entity_constraints_Obrafisicomensal.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607114332_added_entity_constraints_Ocorrencianotificacao.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607114333_added_entity_constraints_Ocorrenciapendencias.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607114335_added_entity_constraints_Pagfuncionario.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607114337_added_entity_constraints_Pendencias.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607114338_added_entity_constraints_Planoaquisicoes.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607114342_added_entity_constraints_Quantitativo.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607114351_added_entity_constraints_Solicitacao.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170607114405_added_entity_constraints_Valoresdesembolso.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

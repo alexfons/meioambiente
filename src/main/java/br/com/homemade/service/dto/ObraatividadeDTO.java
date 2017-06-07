@@ -2,6 +2,8 @@ package br.com.homemade.service.dto;
 
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -11,12 +13,42 @@ public class ObraatividadeDTO implements Serializable {
 
     private Long id;
 
+    private Double peso;
+
+    private String revestimento;
+
+    private Long atividadeId;
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Double getPeso() {
+        return peso;
+    }
+
+    public void setPeso(Double peso) {
+        this.peso = peso;
+    }
+
+    public String getRevestimento() {
+        return revestimento;
+    }
+
+    public void setRevestimento(String revestimento) {
+        this.revestimento = revestimento;
+    }
+
+    public Long getAtividadeId() {
+        return atividadeId;
+    }
+
+    public void setAtividadeId(Long atividadeId) {
+        this.atividadeId = atividadeId;
     }
 
     @Override
@@ -44,6 +76,8 @@ public class ObraatividadeDTO implements Serializable {
     public String toString() {
         return "ObraatividadeDTO{" +
             "id=" + getId() +
+            ", peso='" + getPeso() + "'" +
+            ", revestimento='" + getRevestimento() + "'" +
             "}";
     }
 }

@@ -39,6 +39,15 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = MeioambienteApp.class)
 public class TipoautorizacaoResourceIntTest {
 
+    private static final String DEFAULT_CATEGORIA = "AAAAAAAAAA";
+    private static final String UPDATED_CATEGORIA = "BBBBBBBBBB";
+
+    private static final String DEFAULT_DESCRICAO = "AAAAAAAAAA";
+    private static final String UPDATED_DESCRICAO = "BBBBBBBBBB";
+
+    private static final String DEFAULT_SUBCATEGORIA = "AAAAAAAAAA";
+    private static final String UPDATED_SUBCATEGORIA = "BBBBBBBBBB";
+
     @Autowired
     private TipoautorizacaoRepository tipoautorizacaoRepository;
 
@@ -78,7 +87,10 @@ public class TipoautorizacaoResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Tipoautorizacao createEntity(EntityManager em) {
-        Tipoautorizacao tipoautorizacao = new Tipoautorizacao();
+        Tipoautorizacao tipoautorizacao = new Tipoautorizacao()
+            .categoria(DEFAULT_CATEGORIA)
+            .descricao(DEFAULT_DESCRICAO)
+            .subcategoria(DEFAULT_SUBCATEGORIA);
         return tipoautorizacao;
     }
 
@@ -103,6 +115,9 @@ public class TipoautorizacaoResourceIntTest {
         List<Tipoautorizacao> tipoautorizacaoList = tipoautorizacaoRepository.findAll();
         assertThat(tipoautorizacaoList).hasSize(databaseSizeBeforeCreate + 1);
         Tipoautorizacao testTipoautorizacao = tipoautorizacaoList.get(tipoautorizacaoList.size() - 1);
+        assertThat(testTipoautorizacao.getCategoria()).isEqualTo(DEFAULT_CATEGORIA);
+        assertThat(testTipoautorizacao.getDescricao()).isEqualTo(DEFAULT_DESCRICAO);
+        assertThat(testTipoautorizacao.getSubcategoria()).isEqualTo(DEFAULT_SUBCATEGORIA);
     }
 
     @Test
@@ -135,7 +150,10 @@ public class TipoautorizacaoResourceIntTest {
         restTipoautorizacaoMockMvc.perform(get("/api/tipoautorizacaos?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(tipoautorizacao.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(tipoautorizacao.getId().intValue())))
+            .andExpect(jsonPath("$.[*].categoria").value(hasItem(DEFAULT_CATEGORIA.toString())))
+            .andExpect(jsonPath("$.[*].descricao").value(hasItem(DEFAULT_DESCRICAO.toString())))
+            .andExpect(jsonPath("$.[*].subcategoria").value(hasItem(DEFAULT_SUBCATEGORIA.toString())));
     }
 
     @Test
@@ -148,7 +166,10 @@ public class TipoautorizacaoResourceIntTest {
         restTipoautorizacaoMockMvc.perform(get("/api/tipoautorizacaos/{id}", tipoautorizacao.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(tipoautorizacao.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(tipoautorizacao.getId().intValue()))
+            .andExpect(jsonPath("$.categoria").value(DEFAULT_CATEGORIA.toString()))
+            .andExpect(jsonPath("$.descricao").value(DEFAULT_DESCRICAO.toString()))
+            .andExpect(jsonPath("$.subcategoria").value(DEFAULT_SUBCATEGORIA.toString()));
     }
 
     @Test
@@ -168,6 +189,10 @@ public class TipoautorizacaoResourceIntTest {
 
         // Update the tipoautorizacao
         Tipoautorizacao updatedTipoautorizacao = tipoautorizacaoRepository.findOne(tipoautorizacao.getId());
+        updatedTipoautorizacao
+            .categoria(UPDATED_CATEGORIA)
+            .descricao(UPDATED_DESCRICAO)
+            .subcategoria(UPDATED_SUBCATEGORIA);
         TipoautorizacaoDTO tipoautorizacaoDTO = tipoautorizacaoMapper.toDto(updatedTipoautorizacao);
 
         restTipoautorizacaoMockMvc.perform(put("/api/tipoautorizacaos")
@@ -179,6 +204,9 @@ public class TipoautorizacaoResourceIntTest {
         List<Tipoautorizacao> tipoautorizacaoList = tipoautorizacaoRepository.findAll();
         assertThat(tipoautorizacaoList).hasSize(databaseSizeBeforeUpdate);
         Tipoautorizacao testTipoautorizacao = tipoautorizacaoList.get(tipoautorizacaoList.size() - 1);
+        assertThat(testTipoautorizacao.getCategoria()).isEqualTo(UPDATED_CATEGORIA);
+        assertThat(testTipoautorizacao.getDescricao()).isEqualTo(UPDATED_DESCRICAO);
+        assertThat(testTipoautorizacao.getSubcategoria()).isEqualTo(UPDATED_SUBCATEGORIA);
     }
 
     @Test

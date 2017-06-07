@@ -1,0 +1,27 @@
+{
+    "meioambienteApp": {
+        "quantitativo" : {
+            "home": {
+                "title": "Quantitativos",
+                "createLabel": "Create a new Quantitativo",
+                "createOrEditLabel": "Create or edit a Quantitativo"
+            },
+            "created": "A new Quantitativo is created with identifier {{ param }}",
+            "updated": "A Quantitativo is updated with identifier {{ param }}",
+            "deleted": "A Quantitativo is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Quantitativo {{ id }}?"
+            },
+            "detail": {
+                "title": "Quantitativo"
+            },
+            "descricao": "Descricao",
+            "idquantitativo": "Idquantitativo",
+            "quantidade": "Quantidade",
+            "total": "Total",
+            "unidade": "Unidade",
+            "unitario": "Unitario",
+            "nmedicao": "Nmedicao"
+        }
+    }
+}

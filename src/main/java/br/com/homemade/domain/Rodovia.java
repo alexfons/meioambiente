@@ -22,12 +22,28 @@ public class Rodovia implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
+    @Column(name = "sgrodovia")
+    private String sgrodovia;
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getSgrodovia() {
+        return sgrodovia;
+    }
+
+    public Rodovia sgrodovia(String sgrodovia) {
+        this.sgrodovia = sgrodovia;
+        return this;
+    }
+
+    public void setSgrodovia(String sgrodovia) {
+        this.sgrodovia = sgrodovia;
     }
 
     @Override
@@ -54,6 +70,7 @@ public class Rodovia implements Serializable {
     public String toString() {
         return "Rodovia{" +
             "id=" + getId() +
+            ", sgrodovia='" + getSgrodovia() + "'" +
             "}";
     }
 }

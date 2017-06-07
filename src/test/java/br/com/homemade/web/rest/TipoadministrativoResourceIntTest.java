@@ -39,6 +39,15 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = MeioambienteApp.class)
 public class TipoadministrativoResourceIntTest {
 
+    private static final String DEFAULT_CATEGORIA = "AAAAAAAAAA";
+    private static final String UPDATED_CATEGORIA = "BBBBBBBBBB";
+
+    private static final String DEFAULT_DESCRICAO = "AAAAAAAAAA";
+    private static final String UPDATED_DESCRICAO = "BBBBBBBBBB";
+
+    private static final String DEFAULT_SUBCATEGORIA = "AAAAAAAAAA";
+    private static final String UPDATED_SUBCATEGORIA = "BBBBBBBBBB";
+
     @Autowired
     private TipoadministrativoRepository tipoadministrativoRepository;
 
@@ -78,7 +87,10 @@ public class TipoadministrativoResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Tipoadministrativo createEntity(EntityManager em) {
-        Tipoadministrativo tipoadministrativo = new Tipoadministrativo();
+        Tipoadministrativo tipoadministrativo = new Tipoadministrativo()
+            .categoria(DEFAULT_CATEGORIA)
+            .descricao(DEFAULT_DESCRICAO)
+            .subcategoria(DEFAULT_SUBCATEGORIA);
         return tipoadministrativo;
     }
 
@@ -103,6 +115,9 @@ public class TipoadministrativoResourceIntTest {
         List<Tipoadministrativo> tipoadministrativoList = tipoadministrativoRepository.findAll();
         assertThat(tipoadministrativoList).hasSize(databaseSizeBeforeCreate + 1);
         Tipoadministrativo testTipoadministrativo = tipoadministrativoList.get(tipoadministrativoList.size() - 1);
+        assertThat(testTipoadministrativo.getCategoria()).isEqualTo(DEFAULT_CATEGORIA);
+        assertThat(testTipoadministrativo.getDescricao()).isEqualTo(DEFAULT_DESCRICAO);
+        assertThat(testTipoadministrativo.getSubcategoria()).isEqualTo(DEFAULT_SUBCATEGORIA);
     }
 
     @Test
@@ -135,7 +150,10 @@ public class TipoadministrativoResourceIntTest {
         restTipoadministrativoMockMvc.perform(get("/api/tipoadministrativos?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(tipoadministrativo.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(tipoadministrativo.getId().intValue())))
+            .andExpect(jsonPath("$.[*].categoria").value(hasItem(DEFAULT_CATEGORIA.toString())))
+            .andExpect(jsonPath("$.[*].descricao").value(hasItem(DEFAULT_DESCRICAO.toString())))
+            .andExpect(jsonPath("$.[*].subcategoria").value(hasItem(DEFAULT_SUBCATEGORIA.toString())));
     }
 
     @Test
@@ -148,7 +166,10 @@ public class TipoadministrativoResourceIntTest {
         restTipoadministrativoMockMvc.perform(get("/api/tipoadministrativos/{id}", tipoadministrativo.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(tipoadministrativo.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(tipoadministrativo.getId().intValue()))
+            .andExpect(jsonPath("$.categoria").value(DEFAULT_CATEGORIA.toString()))
+            .andExpect(jsonPath("$.descricao").value(DEFAULT_DESCRICAO.toString()))
+            .andExpect(jsonPath("$.subcategoria").value(DEFAULT_SUBCATEGORIA.toString()));
     }
 
     @Test
@@ -168,6 +189,10 @@ public class TipoadministrativoResourceIntTest {
 
         // Update the tipoadministrativo
         Tipoadministrativo updatedTipoadministrativo = tipoadministrativoRepository.findOne(tipoadministrativo.getId());
+        updatedTipoadministrativo
+            .categoria(UPDATED_CATEGORIA)
+            .descricao(UPDATED_DESCRICAO)
+            .subcategoria(UPDATED_SUBCATEGORIA);
         TipoadministrativoDTO tipoadministrativoDTO = tipoadministrativoMapper.toDto(updatedTipoadministrativo);
 
         restTipoadministrativoMockMvc.perform(put("/api/tipoadministrativos")
@@ -179,6 +204,9 @@ public class TipoadministrativoResourceIntTest {
         List<Tipoadministrativo> tipoadministrativoList = tipoadministrativoRepository.findAll();
         assertThat(tipoadministrativoList).hasSize(databaseSizeBeforeUpdate);
         Tipoadministrativo testTipoadministrativo = tipoadministrativoList.get(tipoadministrativoList.size() - 1);
+        assertThat(testTipoadministrativo.getCategoria()).isEqualTo(UPDATED_CATEGORIA);
+        assertThat(testTipoadministrativo.getDescricao()).isEqualTo(UPDATED_DESCRICAO);
+        assertThat(testTipoadministrativo.getSubcategoria()).isEqualTo(UPDATED_SUBCATEGORIA);
     }
 
     @Test

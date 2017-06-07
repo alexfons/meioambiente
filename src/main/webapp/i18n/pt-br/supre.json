@@ -1,0 +1,23 @@
+{
+    "meioambienteApp": {
+        "supre" : {
+            "home": {
+                "title": "Supres",
+                "createLabel": "Criar novo Supre",
+                "createOrEditLabel": "Criar ou editar Supre"
+            },
+            "created": "Um novo Supre é criado com o identificador {{ param }}",
+            "updated": "Um Supre é atualizado com o identificador {{ param }}",
+            "deleted": "Um Supre é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Supre {{ id }}?"
+            },
+            "detail": {
+                "title": "Supre"
+            },
+            "cdorgaoset": "Cdorgaoset",
+            "descricao": "Descricao",
+            "nome": "Nome"
+        }
+    }
+}

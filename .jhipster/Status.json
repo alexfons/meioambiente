@@ -1,7 +1,16 @@
 {
     "fluentMethods": true,
     "relationships": [],
-    "fields": [],
+    "fields": [
+        {
+            "fieldName": "cor",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        }
+    ],
     "changelogDate": "20170607015504",
     "entityTableName": "status",
     "dto": "mapstruct",

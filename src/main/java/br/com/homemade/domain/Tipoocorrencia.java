@@ -22,12 +22,60 @@ public class Tipoocorrencia implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
+    @Column(name = "descricao")
+    private String descricao;
+
+    @Column(name = "categoria")
+    private String categoria;
+
+    @Column(name = "subcategoria")
+    private String subcategoria;
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public Tipoocorrencia descricao(String descricao) {
+        this.descricao = descricao;
+        return this;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public Tipoocorrencia categoria(String categoria) {
+        this.categoria = categoria;
+        return this;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public String getSubcategoria() {
+        return subcategoria;
+    }
+
+    public Tipoocorrencia subcategoria(String subcategoria) {
+        this.subcategoria = subcategoria;
+        return this;
+    }
+
+    public void setSubcategoria(String subcategoria) {
+        this.subcategoria = subcategoria;
     }
 
     @Override
@@ -54,6 +102,9 @@ public class Tipoocorrencia implements Serializable {
     public String toString() {
         return "Tipoocorrencia{" +
             "id=" + getId() +
+            ", descricao='" + getDescricao() + "'" +
+            ", categoria='" + getCategoria() + "'" +
+            ", subcategoria='" + getSubcategoria() + "'" +
             "}";
     }
 }

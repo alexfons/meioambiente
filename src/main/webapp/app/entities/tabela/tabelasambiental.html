@@ -19,12 +19,16 @@
             <thead>
                 <tr>
                     <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.tabela.codigo">Codigo</span></th>
+                    <th><span data-translate="meioambienteApp.tabela.descricao">Descricao</span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="tabela in vm.tabelas track by tabela.id">
                     <td><a ui-sref="tabela-ambiental-detail({id:tabela.id})">{{tabela.id}}</a></td>
+                    <td>{{tabela.codigo}}</td>
+                    <td>{{tabela.descricao}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

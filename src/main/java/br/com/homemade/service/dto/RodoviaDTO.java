@@ -11,12 +11,22 @@ public class RodoviaDTO implements Serializable {
 
     private Long id;
 
+    private String sgrodovia;
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getSgrodovia() {
+        return sgrodovia;
+    }
+
+    public void setSgrodovia(String sgrodovia) {
+        this.sgrodovia = sgrodovia;
     }
 
     @Override
@@ -44,6 +54,7 @@ public class RodoviaDTO implements Serializable {
     public String toString() {
         return "RodoviaDTO{" +
             "id=" + getId() +
+            ", sgrodovia='" + getSgrodovia() + "'" +
             "}";
     }
 }

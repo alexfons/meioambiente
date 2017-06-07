@@ -22,12 +22,44 @@ public class Ocorrenciainforme implements Serializable {
     @SequenceGenerator(name = "sequenceGenerator")
     private Long id;
 
+    @Column(name = "enquadramento")
+    private String enquadramento;
+
+    @ManyToOne
+    private Ocorrencia ocorrencia;
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getEnquadramento() {
+        return enquadramento;
+    }
+
+    public Ocorrenciainforme enquadramento(String enquadramento) {
+        this.enquadramento = enquadramento;
+        return this;
+    }
+
+    public void setEnquadramento(String enquadramento) {
+        this.enquadramento = enquadramento;
+    }
+
+    public Ocorrencia getOcorrencia() {
+        return ocorrencia;
+    }
+
+    public Ocorrenciainforme ocorrencia(Ocorrencia ocorrencia) {
+        this.ocorrencia = ocorrencia;
+        return this;
+    }
+
+    public void setOcorrencia(Ocorrencia ocorrencia) {
+        this.ocorrencia = ocorrencia;
     }
 
     @Override
@@ -54,6 +86,7 @@ public class Ocorrenciainforme implements Serializable {
     public String toString() {
         return "Ocorrenciainforme{" +
             "id=" + getId() +
+            ", enquadramento='" + getEnquadramento() + "'" +
             "}";
     }
 }

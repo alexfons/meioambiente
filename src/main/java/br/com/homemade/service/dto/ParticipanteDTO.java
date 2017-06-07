@@ -2,6 +2,8 @@ package br.com.homemade.service.dto;
 
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -11,12 +13,42 @@ public class ParticipanteDTO implements Serializable {
 
     private Long id;
 
+    private String formacao;
+
+    private String nome;
+
+    private Long empresaId;
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getFormacao() {
+        return formacao;
+    }
+
+    public void setFormacao(String formacao) {
+        this.formacao = formacao;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Long getEmpresaId() {
+        return empresaId;
+    }
+
+    public void setEmpresaId(Long empresaId) {
+        this.empresaId = empresaId;
     }
 
     @Override
@@ -44,6 +76,8 @@ public class ParticipanteDTO implements Serializable {
     public String toString() {
         return "ParticipanteDTO{" +
             "id=" + getId() +
+            ", formacao='" + getFormacao() + "'" +
+            ", nome='" + getNome() + "'" +
             "}";
     }
 }

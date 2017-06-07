@@ -1,6 +1,13 @@
 {
     "fluentMethods": true,
-    "relationships": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "opcoes",
+            "otherEntityName": "linha",
+            "otherEntityField": "id"
+        }
+    ],
     "fields": [],
     "changelogDate": "20170607015500",
     "entityTableName": "registro",

@@ -1,0 +1,86 @@
+<div>
+    <h2 data-translate="meioambienteApp.planoaquisicoes.home.title">Planoaquisicoes</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="planoaquisicoes-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.planoaquisicoes.home.createLabel">
+                        Create new Planoaquisicoes
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.planoaquisicoes.avisolicitacao">Avisolicitacao</span></th>
+                    <th><span data-translate="meioambienteApp.planoaquisicoes.custoestimado">Custoestimado</span></th>
+                    <th><span data-translate="meioambienteApp.planoaquisicoes.aportelocal">Aportelocal</span></th>
+                    <th><span data-translate="meioambienteApp.planoaquisicoes.aporteagente">Aporteagente</span></th>
+                    <th><span data-translate="meioambienteApp.planoaquisicoes.descricao">Descricao</span></th>
+                    <th><span data-translate="meioambienteApp.planoaquisicoes.metodo">Metodo</span></th>
+                    <th><span data-translate="meioambienteApp.planoaquisicoes.revisao">Revisao</span></th>
+                    <th><span data-translate="meioambienteApp.planoaquisicoes.prequalificado">Prequalificado</span></th>
+                    <th><span data-translate="meioambienteApp.planoaquisicoes.situacao">Situacao</span></th>
+                    <th><span data-translate="meioambienteApp.planoaquisicoes.idplanoaquisicoes">Idplanoaquisicoes</span></th>
+                    <th><span data-translate="meioambienteApp.planoaquisicoes.fonte">Fonte</span></th>
+                    <th><span data-translate="meioambienteApp.planoaquisicoes.idcontratoagente">Idcontratoagente</span></th>
+                    <th><span data-translate="meioambienteApp.planoaquisicoes.idedital">Idedital</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="planoaquisicoes in vm.planoaquisicoes track by planoaquisicoes.id">
+                    <td><a ui-sref="planoaquisicoes-ambiental-detail({id:planoaquisicoes.id})">{{planoaquisicoes.id}}</a></td>
+                    <td>{{planoaquisicoes.avisolicitacao | date:'medium'}}</td>
+                    <td>{{planoaquisicoes.custoestimado}}</td>
+                    <td>{{planoaquisicoes.aportelocal}}</td>
+                    <td>{{planoaquisicoes.aporteagente}}</td>
+                    <td>{{planoaquisicoes.descricao}}</td>
+                    <td>{{planoaquisicoes.metodo}}</td>
+                    <td>{{planoaquisicoes.revisao}}</td>
+                    <td>{{planoaquisicoes.prequalificado}}</td>
+                    <td>{{planoaquisicoes.situacao}}</td>
+                    <td>{{planoaquisicoes.idplanoaquisicoes}}</td>
+                    <td>
+                        <a ui-sref="fonte-ambiental-detail({id:planoaquisicoes.fonteId})">{{planoaquisicoes.fonteId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="contratoagente-ambiental-detail({id:planoaquisicoes.idcontratoagenteId})">{{planoaquisicoes.idcontratoagenteId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="edital-ambiental-detail({id:planoaquisicoes.ideditalId})">{{planoaquisicoes.ideditalId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="planoaquisicoes-ambiental-detail({id:planoaquisicoes.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="planoaquisicoes-ambiental.edit({id:planoaquisicoes.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="planoaquisicoes-ambiental.delete({id:planoaquisicoes.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

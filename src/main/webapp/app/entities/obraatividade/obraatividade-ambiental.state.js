@@ -104,6 +104,8 @@
                     resolve: {
                         entity: function () {
                             return {
+                                peso: null,
+                                revestimento: null,
                                 id: null
                             };
                         }

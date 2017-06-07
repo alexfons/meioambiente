@@ -1,0 +1,51 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.notificacao.detail.title">Notificacao</span> {{vm.notificacao.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.notificacao.data">Data</span></dt>
+        <dd>
+            <span>{{vm.notificacao.data | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.notificacao.datainspecao">Datainspecao</span></dt>
+        <dd>
+            <span>{{vm.notificacao.datainspecao | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.notificacao.numero">Numero</span></dt>
+        <dd>
+            <span>{{vm.notificacao.numero}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.notificacao.obs">Obs</span></dt>
+        <dd>
+            <span>{{vm.notificacao.obs}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.notificacao.obra">Obra</span></dt>
+        <dd>
+            <a ui-sref="obra-ambiental-detail({id:vm.notificacao.obraId})">{{vm.notificacao.obraId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.notificacao.fotos">Fotos</span></dt>
+        <dd>
+            <span ng-repeat="fotos in vm.notificacao.fotos">
+                <a ui-sref="foto-ambiental-detail({id: fotos.id})">{{fotos.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.notificacao.ocorrenciasnotificacao">Ocorrenciasnotificacao</span></dt>
+        <dd>
+            <span ng-repeat="ocorrenciasnotificacao in vm.notificacao.ocorrenciasnotificacaos">
+                <a ui-sref="ocorrencianotificacao-ambiental-detail({id: ocorrenciasnotificacao.id})">{{ocorrenciasnotificacao.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="notificacao-ambiental-detail.edit({id:vm.notificacao.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

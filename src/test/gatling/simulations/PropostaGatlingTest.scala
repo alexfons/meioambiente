@@ -68,7 +68,7 @@ class PropostaGatlingTest extends Simulation {
             .exec(http("Create new proposta")
             .post("/api/propostas")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null}""")).asJSON
+            .body(StringBody("""{"id":null, "classificacao":"SAMPLE_TEXT", "nota":"SAMPLE_TEXT", "tipoproposta":"SAMPLE_TEXT", "obs":"SAMPLE_TEXT", "contrato":"SAMPLE_TEXT", "habilitada":"SAMPLE_TEXT", "arqlink":"SAMPLE_TEXT", "idproposta":"0", "numeroedital":"0", "valorproposta":null, "valorrenegociado":null}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_proposta_url"))).exitHereIfFailed
             .pause(10)

@@ -68,7 +68,7 @@ class ProjetoGatlingTest extends Simulation {
             .exec(http("Create new projeto")
             .post("/api/projetos")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null}""")).asJSON
+            .body(StringBody("""{"id":null, "andamento":"SAMPLE_TEXT", "pendente":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_projeto_url"))).exitHereIfFailed
             .pause(10)

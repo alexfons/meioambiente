@@ -1,0 +1,43 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "nmedicao",
+            "otherEntityName": "medicao",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "descricao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "idquantitativo",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "quantidade",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "total",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "unidade",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "unitario",
+            "fieldType": "Double"
+        }
+    ],
+    "changelogDate": "20170607114342",
+    "entityTableName": "quantitativo",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "ambiental"
+}

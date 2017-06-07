@@ -68,7 +68,7 @@ class TipoocorrenciaGatlingTest extends Simulation {
             .exec(http("Create new tipoocorrencia")
             .post("/api/tipoocorrencias")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null}""")).asJSON
+            .body(StringBody("""{"id":null, "descricao":"SAMPLE_TEXT", "categoria":"SAMPLE_TEXT", "subcategoria":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_tipoocorrencia_url"))).exitHereIfFailed
             .pause(10)

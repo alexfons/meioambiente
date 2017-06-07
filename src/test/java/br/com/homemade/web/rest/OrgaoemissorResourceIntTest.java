@@ -39,6 +39,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = MeioambienteApp.class)
 public class OrgaoemissorResourceIntTest {
 
+    private static final String DEFAULT_DESCRICAO = "AAAAAAAAAA";
+    private static final String UPDATED_DESCRICAO = "BBBBBBBBBB";
+
     @Autowired
     private OrgaoemissorRepository orgaoemissorRepository;
 
@@ -78,7 +81,8 @@ public class OrgaoemissorResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Orgaoemissor createEntity(EntityManager em) {
-        Orgaoemissor orgaoemissor = new Orgaoemissor();
+        Orgaoemissor orgaoemissor = new Orgaoemissor()
+            .descricao(DEFAULT_DESCRICAO);
         return orgaoemissor;
     }
 
@@ -103,6 +107,7 @@ public class OrgaoemissorResourceIntTest {
         List<Orgaoemissor> orgaoemissorList = orgaoemissorRepository.findAll();
         assertThat(orgaoemissorList).hasSize(databaseSizeBeforeCreate + 1);
         Orgaoemissor testOrgaoemissor = orgaoemissorList.get(orgaoemissorList.size() - 1);
+        assertThat(testOrgaoemissor.getDescricao()).isEqualTo(DEFAULT_DESCRICAO);
     }
 
     @Test
@@ -135,7 +140,8 @@ public class OrgaoemissorResourceIntTest {
         restOrgaoemissorMockMvc.perform(get("/api/orgaoemissors?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(orgaoemissor.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(orgaoemissor.getId().intValue())))
+            .andExpect(jsonPath("$.[*].descricao").value(hasItem(DEFAULT_DESCRICAO.toString())));
     }
 
     @Test
@@ -148,7 +154,8 @@ public class OrgaoemissorResourceIntTest {
         restOrgaoemissorMockMvc.perform(get("/api/orgaoemissors/{id}", orgaoemissor.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(orgaoemissor.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(orgaoemissor.getId().intValue()))
+            .andExpect(jsonPath("$.descricao").value(DEFAULT_DESCRICAO.toString()));
     }
 
     @Test
@@ -168,6 +175,8 @@ public class OrgaoemissorResourceIntTest {
 
         // Update the orgaoemissor
         Orgaoemissor updatedOrgaoemissor = orgaoemissorRepository.findOne(orgaoemissor.getId());
+        updatedOrgaoemissor
+            .descricao(UPDATED_DESCRICAO);
         OrgaoemissorDTO orgaoemissorDTO = orgaoemissorMapper.toDto(updatedOrgaoemissor);
 
         restOrgaoemissorMockMvc.perform(put("/api/orgaoemissors")
@@ -179,6 +188,7 @@ public class OrgaoemissorResourceIntTest {
         List<Orgaoemissor> orgaoemissorList = orgaoemissorRepository.findAll();
         assertThat(orgaoemissorList).hasSize(databaseSizeBeforeUpdate);
         Orgaoemissor testOrgaoemissor = orgaoemissorList.get(orgaoemissorList.size() - 1);
+        assertThat(testOrgaoemissor.getDescricao()).isEqualTo(UPDATED_DESCRICAO);
     }
 
     @Test

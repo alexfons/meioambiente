@@ -1,0 +1,28 @@
+{
+    "meioambienteApp": {
+        "responsavelTipo" : {
+            "home": {
+                "title": "Responsavel Tipos",
+                "createLabel": "Create a new Responsavel Tipo",
+                "createOrEditLabel": "Create or edit a Responsavel Tipo"
+            },
+            "created": "A new Responsavel Tipo is created with identifier {{ param }}",
+            "updated": "A Responsavel Tipo is updated with identifier {{ param }}",
+            "deleted": "A Responsavel Tipo is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Responsavel Tipo {{ id }}?"
+            },
+            "detail": {
+                "title": "Responsavel Tipo"
+            },
+            "email": "Email",
+            "funcao": "Funcao",
+            "localtrabalho": "Localtrabalho",
+            "matricula": "Matricula",
+            "nome": "Nome",
+            "superintendencia": "Superintendencia",
+            "telefone": "Telefone",
+            "telefonecomercial": "Telefonecomercial"
+        }
+    }
+}

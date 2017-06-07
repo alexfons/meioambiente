@@ -1,0 +1,55 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.pendencias.detail.title">Pendencias</span> {{vm.pendencias.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.pendencias.data">Data</span></dt>
+        <dd>
+            <span>{{vm.pendencias.data | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.pendencias.datainspecao">Datainspecao</span></dt>
+        <dd>
+            <span>{{vm.pendencias.datainspecao | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.pendencias.notificacao">Notificacao</span></dt>
+        <dd>
+            <span>{{vm.pendencias.notificacao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.pendencias.numero">Numero</span></dt>
+        <dd>
+            <span>{{vm.pendencias.numero}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.pendencias.obs">Obs</span></dt>
+        <dd>
+            <span>{{vm.pendencias.obs}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.pendencias.obra">Obra</span></dt>
+        <dd>
+            <a ui-sref="obra-ambiental-detail({id:vm.pendencias.obraId})">{{vm.pendencias.obraId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.pendencias.fotos">Fotos</span></dt>
+        <dd>
+            <span ng-repeat="fotos in vm.pendencias.fotos">
+                <a ui-sref="foto-ambiental-detail({id: fotos.id})">{{fotos.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.pendencias.ocorrenciaspendencias">Ocorrenciaspendencias</span></dt>
+        <dd>
+            <span ng-repeat="ocorrenciaspendencias in vm.pendencias.ocorrenciaspendencias">
+                <a ui-sref="ocorrenciapendencias-ambiental-detail({id: ocorrenciaspendencias.id})">{{ocorrenciaspendencias.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="pendencias-ambiental-detail.edit({id:vm.pendencias.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

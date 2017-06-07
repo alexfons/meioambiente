@@ -2,6 +2,8 @@ package br.com.homemade.service.dto;
 
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -11,12 +13,22 @@ public class OcorrenciacertificadoirregularidadeDTO implements Serializable {
 
     private Long id;
 
+    private Long ocorrenciaId;
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getOcorrenciaId() {
+        return ocorrenciaId;
+    }
+
+    public void setOcorrenciaId(Long ocorrenciaId) {
+        this.ocorrenciaId = ocorrenciaId;
     }
 
     @Override

@@ -1,0 +1,23 @@
+{
+    "meioambienteApp": {
+        "tipocontrato" : {
+            "home": {
+                "title": "Tipocontratoes",
+                "createLabel": "Criar novo Tipocontrato",
+                "createOrEditLabel": "Criar ou editar Tipocontrato"
+            },
+            "created": "Um novo Tipocontrato é criado com o identificador {{ param }}",
+            "updated": "Um Tipocontrato é atualizado com o identificador {{ param }}",
+            "deleted": "Um Tipocontrato é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Tipocontrato {{ id }}?"
+            },
+            "detail": {
+                "title": "Tipocontrato"
+            },
+            "categoria": "Categoria",
+            "descricao": "Descricao",
+            "subcategoria": "Subcategoria"
+        }
+    }
+}

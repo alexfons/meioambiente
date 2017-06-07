@@ -54,6 +54,9 @@ public class CacheConfiguration {
             cm.createCache(br.com.homemade.domain.Trecho.class.getName(), jcacheConfiguration);
             cm.createCache(br.com.homemade.domain.Empresa.class.getName(), jcacheConfiguration);
             cm.createCache(br.com.homemade.domain.Projeto.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.homemade.domain.Projeto.class.getName() + ".contratosprojetos", jcacheConfiguration);
+            cm.createCache(br.com.homemade.domain.Projeto.class.getName() + ".historicos", jcacheConfiguration);
+            cm.createCache(br.com.homemade.domain.Projeto.class.getName() + ".municipios", jcacheConfiguration);
             cm.createCache(br.com.homemade.domain.Orgaoemissor.class.getName(), jcacheConfiguration);
             cm.createCache(br.com.homemade.domain.Condicionante.class.getName(), jcacheConfiguration);
             cm.createCache(br.com.homemade.domain.Documento.class.getName(), jcacheConfiguration);
@@ -147,9 +150,31 @@ public class CacheConfiguration {
             cm.createCache(br.com.homemade.domain.Registro.class.getName(), jcacheConfiguration);
             cm.createCache(br.com.homemade.domain.Status.class.getName(), jcacheConfiguration);
             cm.createCache(br.com.homemade.domain.Tabela.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.homemade.domain.Tabela.class.getName() + ".campos", jcacheConfiguration);
             cm.createCache(br.com.homemade.domain.Tipolicenca.class.getName(), jcacheConfiguration);
             cm.createCache(br.com.homemade.domain.Tipoocorrencia.class.getName(), jcacheConfiguration);
             cm.createCache(br.com.homemade.domain.Usuario.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.homemade.domain.Municipio.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.homemade.domain.Notificacao.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.homemade.domain.Notificacao.class.getName() + ".fotos", jcacheConfiguration);
+            cm.createCache(br.com.homemade.domain.Notificacao.class.getName() + ".ocorrenciasnotificacaos", jcacheConfiguration);
+            cm.createCache(br.com.homemade.domain.Obrafisicomensal.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.homemade.domain.Obrafisicomensal.class.getName() + ".atividadeexecutadamensals", jcacheConfiguration);
+            cm.createCache(br.com.homemade.domain.Ocorrencianotificacao.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.homemade.domain.Ocorrenciapendencias.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.homemade.domain.Pagfuncionario.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.homemade.domain.Pendencias.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.homemade.domain.Pendencias.class.getName() + ".fotos", jcacheConfiguration);
+            cm.createCache(br.com.homemade.domain.Pendencias.class.getName() + ".ocorrenciaspendencias", jcacheConfiguration);
+            cm.createCache(br.com.homemade.domain.Planoaquisicoes.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.homemade.domain.Quantitativo.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.homemade.domain.ResponsavelTipo.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.homemade.domain.Script.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.homemade.domain.Solicitacao.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.homemade.domain.Supre.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.homemade.domain.Tipo.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.homemade.domain.Tipocontrato.class.getName(), jcacheConfiguration);
+            cm.createCache(br.com.homemade.domain.Valoresdesembolso.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

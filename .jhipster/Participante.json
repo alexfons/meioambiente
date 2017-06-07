@@ -1,7 +1,23 @@
 {
     "fluentMethods": true,
-    "relationships": [],
-    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "empresa",
+            "otherEntityName": "empresa",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "formacao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nome",
+            "fieldType": "String"
+        }
+    ],
     "changelogDate": "20170515105926",
     "entityTableName": "participante",
     "dto": "mapstruct",

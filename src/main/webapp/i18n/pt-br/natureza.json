@@ -14,7 +14,12 @@
             },
             "detail": {
                 "title": "Natureza"
-            }
+            },
+            "descnatureza": "Descnatureza",
+            "descsubacao": "Descsubacao",
+            "idnatureza": "Idnatureza",
+            "numnatureza": "Numnatureza",
+            "subacao": "Subacao"
         }
     }
 }
