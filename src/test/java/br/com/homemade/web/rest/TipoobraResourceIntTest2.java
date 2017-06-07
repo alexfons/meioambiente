@@ -3,7 +3,7 @@ package br.com.homemade.web.rest;
 import br.com.homemade.MeioambienteApp;
 
 import br.com.homemade.domain.Tipoobra;
-import br.com.homemade.repository.TipoobraRepository;
+import br.com.homemade.repository.TipoobraRepository2;
 import br.com.homemade.service.dto.TipoobraDTO;
 import br.com.homemade.service.mapper.TipoobraMapper;
 import br.com.homemade.web.rest.errors.ExceptionTranslator;
@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = MeioambienteApp.class)
-public class TipoobraResourceIntTest {
+public class TipoobraResourceIntTest2 {
 
     private static final String DEFAULT_DESCRICAO = "AAAAAAAAAA";
     private static final String UPDATED_DESCRICAO = "BBBBBBBBBB";
@@ -49,7 +49,7 @@ public class TipoobraResourceIntTest {
     private static final String UPDATED_SUBCATEGORIA = "BBBBBBBBBB";
 
     @Autowired
-    private TipoobraRepository tipoobraRepository;
+    private TipoobraRepository2 tipoobraRepository;
 
     @Autowired
     private TipoobraMapper tipoobraMapper;
