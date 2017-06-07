@@ -11,7 +11,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170515105946",
+    "changelogDate": "20170607205431",
     "entityTableName": "atividadelicenca",
     "dto": "mapstruct",
     "pagination": "no",

@@ -15,7 +15,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170515105927",
+    "changelogDate": "20170607205549",
     "entityTableName": "tipoadministrativo",
     "dto": "mapstruct",
     "pagination": "no",

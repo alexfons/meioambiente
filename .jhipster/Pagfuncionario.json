@@ -108,7 +108,7 @@
             "fieldType": "BigDecimal"
         }
     ],
-    "changelogDate": "20170607114335",
+    "changelogDate": "20170607205528",
     "entityTableName": "pagfuncionario",
     "dto": "mapstruct",
     "pagination": "no",

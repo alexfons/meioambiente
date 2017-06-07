@@ -7,9 +7,9 @@ import org.slf4j.LoggerFactory
 import scala.concurrent.duration._
 
 /**
- * Performance test for the TipoObra entity.
+ * Performance test for the Tipoobra entity.
  */
-class TipoObraGatlingTest extends Simulation {
+class TipoobraGatlingTest extends Simulation {
 
     val context: LoggerContext = LoggerFactory.getILoggerFactory.asInstanceOf[LoggerContext]
     // Log all HTTP requests
@@ -42,7 +42,7 @@ class TipoObraGatlingTest extends Simulation {
         "Authorization" -> "${access_token}"
     )
 
-    val scn = scenario("Test the TipoObra entity")
+    val scn = scenario("Test the Tipoobra entity")
         .exec(http("First unauthenticated request")
         .get("/api/account")
         .headers(headers_http)
@@ -60,26 +60,26 @@ class TipoObraGatlingTest extends Simulation {
         .check(status.is(200)))
         .pause(10)
         .repeat(2) {
-            exec(http("Get all tipoObras")
-            .get("/api/tipo-obras")
+            exec(http("Get all tipoobras")
+            .get("/api/tipoobras")
             .headers(headers_http_authenticated)
             .check(status.is(200)))
             .pause(10 seconds, 20 seconds)
-            .exec(http("Create new tipoObra")
-            .post("/api/tipo-obras")
+            .exec(http("Create new tipoobra")
+            .post("/api/tipoobras")
             .headers(headers_http_authenticated)
             .body(StringBody("""{"id":null, "descricao":"SAMPLE_TEXT", "categoria":"SAMPLE_TEXT", "subcategoria":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
-            .check(headerRegex("Location", "(.*)").saveAs("new_tipoObra_url"))).exitHereIfFailed
+            .check(headerRegex("Location", "(.*)").saveAs("new_tipoobra_url"))).exitHereIfFailed
             .pause(10)
             .repeat(5) {
-                exec(http("Get created tipoObra")
-                .get("${new_tipoObra_url}")
+                exec(http("Get created tipoobra")
+                .get("${new_tipoobra_url}")
                 .headers(headers_http_authenticated))
                 .pause(10)
             }
-            .exec(http("Delete created tipoObra")
-            .delete("${new_tipoObra_url}")
+            .exec(http("Delete created tipoobra")
+            .delete("${new_tipoobra_url}")
             .headers(headers_http_authenticated))
             .pause(10)
         }

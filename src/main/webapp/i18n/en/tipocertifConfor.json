@@ -1,0 +1,23 @@
+{
+    "meioambienteApp": {
+        "tipocertifConfor" : {
+            "home": {
+                "title": "Tipocertif Confors",
+                "createLabel": "Create a new Tipocertif Confor",
+                "createOrEditLabel": "Create or edit a Tipocertif Confor"
+            },
+            "created": "A new Tipocertif Confor is created with identifier {{ param }}",
+            "updated": "A Tipocertif Confor is updated with identifier {{ param }}",
+            "deleted": "A Tipocertif Confor is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Tipocertif Confor {{ id }}?"
+            },
+            "detail": {
+                "title": "Tipocertif Confor"
+            },
+            "categoria": "Categoria",
+            "descricao": "Descricao",
+            "subcategoria": "Subcategoria"
+        }
+    }
+}

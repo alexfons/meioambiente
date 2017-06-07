@@ -1,0 +1,23 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.informeCertifIrreg.detail.title">Informe Certif Irreg</span> {{vm.informeCertifIrreg.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.informeCertifIrreg.informe">Informe</span></dt>
+        <dd>
+            <a ui-sref="informe-ambiental-detail({id:vm.informeCertifIrreg.informeId})">{{vm.informeCertifIrreg.informeId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="informe-certif-irreg-ambiental-detail.edit({id:vm.informeCertifIrreg.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

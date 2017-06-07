@@ -5,9 +5,9 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * A DTO for the TipoObra entity.
+ * A DTO for the Tipoobra entity.
  */
-public class TipoObraDTO implements Serializable {
+public class TipoobraDTO implements Serializable {
 
     private Long id;
 
@@ -58,11 +58,11 @@ public class TipoObraDTO implements Serializable {
             return false;
         }
 
-        TipoObraDTO tipoObraDTO = (TipoObraDTO) o;
-        if(tipoObraDTO.getId() == null || getId() == null) {
+        TipoobraDTO tipoobraDTO = (TipoobraDTO) o;
+        if(tipoobraDTO.getId() == null || getId() == null) {
             return false;
         }
-        return Objects.equals(getId(), tipoObraDTO.getId());
+        return Objects.equals(getId(), tipoobraDTO.getId());
     }
 
     @Override
@@ -72,7 +72,7 @@ public class TipoObraDTO implements Serializable {
 
     @Override
     public String toString() {
-        return "TipoObraDTO{" +
+        return "TipoobraDTO{" +
             "id=" + getId() +
             ", descricao='" + getDescricao() + "'" +
             ", categoria='" + getCategoria() + "'" +

@@ -23,7 +23,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170607001904",
+    "changelogDate": "20170607205532",
     "entityTableName": "planocontas",
     "dto": "mapstruct",
     "pagination": "no",

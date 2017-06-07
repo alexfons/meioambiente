@@ -15,7 +15,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170607015432",
+    "changelogDate": "20170607205501",
     "entityTableName": "funcionario",
     "dto": "mapstruct",
     "pagination": "no",

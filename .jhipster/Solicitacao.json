@@ -62,7 +62,7 @@
             "fieldType": "Boolean"
         }
     ],
-    "changelogDate": "20170607114351",
+    "changelogDate": "20170607205544",
     "entityTableName": "solicitacao",
     "dto": "mapstruct",
     "pagination": "no",

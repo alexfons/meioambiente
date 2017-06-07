@@ -1,0 +1,20 @@
+{
+    "meioambienteApp": {
+        "notificacaoCertifIrreg" : {
+            "home": {
+                "title": "Notificacao Certif Irregs",
+                "createLabel": "Criar novo Notificacao Certif Irreg",
+                "createOrEditLabel": "Criar ou editar Notificacao Certif Irreg"
+            },
+            "created": "Um novo Notificacao Certif Irreg é criado com o identificador {{ param }}",
+            "updated": "Um Notificacao Certif Irreg é atualizado com o identificador {{ param }}",
+            "deleted": "Um Notificacao Certif Irreg é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Notificacao Certif Irreg {{ id }}?"
+            },
+            "detail": {
+                "title": "Notificacao Certif Irreg"
+            }
+        }
+    }
+}

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity CertifConfor.
+    -->
+    <changeSet id="20170607205437-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="obra_id"
+                                 baseTableName="certif_confor"
+                                 constraintName="fk_certif_confor_obra_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="obra"/>
+
+        <addForeignKeyConstraint baseColumnNames="tipo_id"
+                                 baseTableName="certif_confor"
+                                 constraintName="fk_certif_confor_tipo_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tipocertif_confor"/>
+
+        <addForeignKeyConstraint baseColumnNames="tipocertif_confor_id"
+                                 baseTableName="certif_confor"
+                                 constraintName="fk_certif_confor_tipocertif_confor_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tipocertif_confor"/>
+
+        <addForeignKeyConstraint baseColumnNames="certif_confors_id"
+                                 baseTableName="certif_confor_informes_certif_irreg"
+                                 constraintName="fk_certif_confor_informes_certif_irreg_certif_confors_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="certif_confor"/>
+        <addForeignKeyConstraint baseColumnNames="informes_certif_irregs_id"
+                                 baseTableName="certif_confor_informes_certif_irreg"
+                                 constraintName="fk_certif_confor_informes_certif_irreg_informes_certif_irregs_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="informe_certif_irreg"/>
+        
+        <addForeignKeyConstraint baseColumnNames="certif_confors_id"
+                                 baseTableName="certif_confor_notificacaos_certif_irreg"
+                                 constraintName="fk_certif_confor_notificacaos_certif_irreg_certif_confors_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="certif_confor"/>
+        <addForeignKeyConstraint baseColumnNames="notificacaos_certif_irregs_id"
+                                 baseTableName="certif_confor_notificacaos_certif_irreg"
+                                 constraintName="fk_certif_confor_notificacaos_certif_irreg_notificacaos_certif_irregs_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="notificacao_certif_irreg"/>
+        
+        <addForeignKeyConstraint baseColumnNames="certif_confors_id"
+                                 baseTableName="certif_confor_ocorrencias_certif_irreg"
+                                 constraintName="fk_certif_confor_ocorrencias_certif_irreg_certif_confors_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="certif_confor"/>
+        <addForeignKeyConstraint baseColumnNames="ocorrencias_certif_irregs_id"
+                                 baseTableName="certif_confor_ocorrencias_certif_irreg"
+                                 constraintName="fk_certif_confor_ocorrencias_certif_irreg_ocorrencias_certif_irregs_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ocorrencia_certif_irreg"/>
+        
+    </changeSet>
+</databaseChangeLog>

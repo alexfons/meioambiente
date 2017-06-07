@@ -34,7 +34,7 @@
             "fieldType": "Double"
         }
     ],
-    "changelogDate": "20170607114342",
+    "changelogDate": "20170607205535",
     "entityTableName": "quantitativo",
     "dto": "mapstruct",
     "pagination": "no",

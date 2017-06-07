@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Notificacao.
+    -->
+    <changeSet id="20170607205516-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="obra_id"
+                                 baseTableName="notificacao"
+                                 constraintName="fk_notificacao_obra_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="obra"/>
+
+        <addForeignKeyConstraint baseColumnNames="notificacaos_id"
+                                 baseTableName="notificacao_fotos"
+                                 constraintName="fk_notificacao_fotos_notificacaos_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="notificacao"/>
+        <addForeignKeyConstraint baseColumnNames="fotos_id"
+                                 baseTableName="notificacao_fotos"
+                                 constraintName="fk_notificacao_fotos_fotos_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="foto"/>
+        
+        <addForeignKeyConstraint baseColumnNames="notificacaos_id"
+                                 baseTableName="notificacao_ocorrenciasnotificacao"
+                                 constraintName="fk_notificacao_ocorrenciasnotificacao_notificacaos_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="notificacao"/>
+        <addForeignKeyConstraint baseColumnNames="ocorrenciasnotificacaos_id"
+                                 baseTableName="notificacao_ocorrenciasnotificacao"
+                                 constraintName="fk_notificacao_ocorrenciasnotificacao_ocorrenciasnotificacaos_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ocorrencianotificacao"/>
+        
+    </changeSet>
+</databaseChangeLog>

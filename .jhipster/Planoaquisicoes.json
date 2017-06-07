@@ -62,7 +62,7 @@
             "fieldType": "Integer"
         }
     ],
-    "changelogDate": "20170607114338",
+    "changelogDate": "20170607205531",
     "entityTableName": "planoaquisicoes",
     "dto": "mapstruct",
     "pagination": "no",

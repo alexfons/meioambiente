@@ -42,7 +42,7 @@
             "fieldType": "ZonedDateTime"
         }
     ],
-    "changelogDate": "20170515105943",
+    "changelogDate": "20170607205428",
     "entityTableName": "apresentacao",
     "dto": "mapstruct",
     "pagination": "no",

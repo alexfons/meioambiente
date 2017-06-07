@@ -38,7 +38,7 @@
             "fieldType": "Integer"
         }
     ],
-    "changelogDate": "20170607011340",
+    "changelogDate": "20170607205458",
     "entityTableName": "fisicografico",
     "dto": "mapstruct",
     "pagination": "no",

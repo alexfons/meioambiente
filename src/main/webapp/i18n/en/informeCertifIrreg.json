@@ -1,0 +1,21 @@
+{
+    "meioambienteApp": {
+        "informeCertifIrreg" : {
+            "home": {
+                "title": "Informe Certif Irregs",
+                "createLabel": "Create a new Informe Certif Irreg",
+                "createOrEditLabel": "Create or edit a Informe Certif Irreg"
+            },
+            "created": "A new Informe Certif Irreg is created with identifier {{ param }}",
+            "updated": "A Informe Certif Irreg is updated with identifier {{ param }}",
+            "deleted": "A Informe Certif Irreg is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Informe Certif Irreg {{ id }}?"
+            },
+            "detail": {
+                "title": "Informe Certif Irreg"
+            },
+            "informe": "Informe"
+        }
+    }
+}

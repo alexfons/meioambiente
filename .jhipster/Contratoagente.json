@@ -71,7 +71,7 @@
             "fieldType": "Double"
         }
     ],
-    "changelogDate": "20170607001841",
+    "changelogDate": "20170607205443",
     "entityTableName": "contratoagente",
     "dto": "mapstruct",
     "pagination": "no",

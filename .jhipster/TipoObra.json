@@ -15,7 +15,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170515105942",
+    "changelogDate": "20170607205554",
     "entityTableName": "tipoobra",
     "dto": "mapstruct",
     "pagination": "no",

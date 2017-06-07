@@ -15,7 +15,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170607114350",
+    "changelogDate": "20170607205543",
     "entityTableName": "script",
     "dto": "mapstruct",
     "pagination": "no",

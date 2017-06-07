@@ -112,7 +112,7 @@
             "fieldType": "Integer"
         }
     ],
-    "changelogDate": "20170607015449",
+    "changelogDate": "20170607205521",
     "entityTableName": "ocorrencia",
     "dto": "mapstruct",
     "pagination": "no",

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Obrafisicomensal.
+    -->
+    <changeSet id="20170607205520-1" author="jhipster">
+        <createTable tableName="obrafisicomensal">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="comentario" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="datainspecao" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="datarelatorio" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="pessoal" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="equipamento" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="instalacaoapoio" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="ritmo" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="apresentacao" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="qualidadeservicos" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="cronograma" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="prazodecorrido" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="avancofisico_oae" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="avancofisicoponderado" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="previsaoatual" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="fisico_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="obrafisicomensal" columnName="datainspecao" columnDataType="datetime"/>
+        <dropDefaultValue tableName="obrafisicomensal" columnName="datarelatorio" columnDataType="datetime"/>
+        <dropDefaultValue tableName="obrafisicomensal" columnName="previsaoatual" columnDataType="datetime"/>
+        
+        <createTable tableName="obrafisicomensal_atividadeexecutadamensals">
+            <column name="atividadeexecutadamensals_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="obrafisicomensals_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="obrafisicomensals_id, atividadeexecutadamensals_id" tableName="obrafisicomensal_atividadeexecutadamensals"/>
+        
+    </changeSet>
+</databaseChangeLog>

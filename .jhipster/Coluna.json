@@ -28,7 +28,7 @@
             "fieldType": "Integer"
         }
     ],
-    "changelogDate": "20170607001837",
+    "changelogDate": "20170607205439",
     "entityTableName": "coluna",
     "dto": "mapstruct",
     "pagination": "no",

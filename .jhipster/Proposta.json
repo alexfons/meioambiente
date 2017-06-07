@@ -60,7 +60,7 @@
             "fieldType": "BigDecimal"
         }
     ],
-    "changelogDate": "20170607001906",
+    "changelogDate": "20170607205534",
     "entityTableName": "proposta",
     "dto": "mapstruct",
     "pagination": "no",

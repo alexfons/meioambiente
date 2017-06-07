@@ -15,7 +15,7 @@
             "fieldType": "Integer"
         }
     ],
-    "changelogDate": "20170607015442",
+    "changelogDate": "20170607205511",
     "entityTableName": "manifestacao",
     "dto": "mapstruct",
     "pagination": "no",

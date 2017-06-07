@@ -19,7 +19,7 @@
             "fieldType": "Double"
         }
     ],
-    "changelogDate": "20170607001832",
+    "changelogDate": "20170607205434",
     "entityTableName": "balanco",
     "dto": "mapstruct",
     "pagination": "no",

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Ocorrencia.
+    -->
+    <changeSet id="20170607205521-1" author="jhipster">
+        <createTable tableName="ocorrencia">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="album" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="caracterizacao" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="coordenadaa" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="coordenadae" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="coordenadan" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="data" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="distanciaeixo" type="${floatType}">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="feature" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="kmfim" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="kminicio" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="lado" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="numero" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="atividade_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="obra_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="servico_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="tabela_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="tipo_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="tipoocorrencia_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="ocorrencia" columnName="data" columnDataType="datetime"/>
+        
+        <createTable tableName="ocorrencia_fotos">
+            <column name="fotos_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ocorrencias_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="ocorrencias_id, fotos_id" tableName="ocorrencia_fotos"/>
+        
+        <createTable tableName="ocorrencia_historicos">
+            <column name="historicos_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ocorrencias_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="ocorrencias_id, historicos_id" tableName="ocorrencia_historicos"/>
+        
+        <createTable tableName="ocorrencia_registros">
+            <column name="registros_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ocorrencias_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="ocorrencias_id, registros_id" tableName="ocorrencia_registros"/>
+        
+    </changeSet>
+</databaseChangeLog>

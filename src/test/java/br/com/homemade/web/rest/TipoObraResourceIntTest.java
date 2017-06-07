@@ -2,10 +2,10 @@ package br.com.homemade.web.rest;
 
 import br.com.homemade.MeioambienteApp;
 
-import br.com.homemade.domain.TipoObra;
-import br.com.homemade.repository.TipoObraRepository;
-import br.com.homemade.service.dto.TipoObraDTO;
-import br.com.homemade.service.mapper.TipoObraMapper;
+import br.com.homemade.domain.Tipoobra;
+import br.com.homemade.repository.TipoobraRepository;
+import br.com.homemade.service.dto.TipoobraDTO;
+import br.com.homemade.service.mapper.TipoobraMapper;
 import br.com.homemade.web.rest.errors.ExceptionTranslator;
 
 import org.junit.Before;
@@ -31,13 +31,13 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 /**
- * Test class for the TipoObraResource REST controller.
+ * Test class for the TipoobraResource REST controller.
  *
- * @see TipoObraResource
+ * @see TipoobraResource
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = MeioambienteApp.class)
-public class TipoObraResourceIntTest {
+public class TipoobraResourceIntTest {
 
     private static final String DEFAULT_DESCRICAO = "AAAAAAAAAA";
     private static final String UPDATED_DESCRICAO = "BBBBBBBBBB";
@@ -49,10 +49,10 @@ public class TipoObraResourceIntTest {
     private static final String UPDATED_SUBCATEGORIA = "BBBBBBBBBB";
 
     @Autowired
-    private TipoObraRepository tipoObraRepository;
+    private TipoobraRepository tipoobraRepository;
 
     @Autowired
-    private TipoObraMapper tipoObraMapper;
+    private TipoobraMapper tipoobraMapper;
 
     @Autowired
     private MappingJackson2HttpMessageConverter jacksonMessageConverter;
@@ -66,15 +66,15 @@ public class TipoObraResourceIntTest {
     @Autowired
     private EntityManager em;
 
-    private MockMvc restTipoObraMockMvc;
+    private MockMvc restTipoobraMockMvc;
 
-    private TipoObra tipoObra;
+    private Tipoobra tipoobra;
 
     @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
-        TipoObraResource tipoObraResource = new TipoObraResource(tipoObraRepository, tipoObraMapper);
-        this.restTipoObraMockMvc = MockMvcBuilders.standaloneSetup(tipoObraResource)
+        TipoobraResource tipoobraResource = new TipoobraResource(tipoobraRepository, tipoobraMapper);
+        this.restTipoobraMockMvc = MockMvcBuilders.standaloneSetup(tipoobraResource)
             .setCustomArgumentResolvers(pageableArgumentResolver)
             .setControllerAdvice(exceptionTranslator)
             .setMessageConverters(jacksonMessageConverter).build();
@@ -86,71 +86,71 @@ public class TipoObraResourceIntTest {
      * This is a static method, as tests for other entities might also need it,
      * if they test an entity which requires the current entity.
      */
-    public static TipoObra createEntity(EntityManager em) {
-        TipoObra tipoObra = new TipoObra()
+    public static Tipoobra createEntity(EntityManager em) {
+        Tipoobra tipoobra = new Tipoobra()
             .descricao(DEFAULT_DESCRICAO)
             .categoria(DEFAULT_CATEGORIA)
             .subcategoria(DEFAULT_SUBCATEGORIA);
-        return tipoObra;
+        return tipoobra;
     }
 
     @Before
     public void initTest() {
-        tipoObra = createEntity(em);
+        tipoobra = createEntity(em);
     }
 
     @Test
     @Transactional
-    public void createTipoObra() throws Exception {
-        int databaseSizeBeforeCreate = tipoObraRepository.findAll().size();
+    public void createTipoobra() throws Exception {
+        int databaseSizeBeforeCreate = tipoobraRepository.findAll().size();
 
-        // Create the TipoObra
-        TipoObraDTO tipoObraDTO = tipoObraMapper.toDto(tipoObra);
-        restTipoObraMockMvc.perform(post("/api/tipo-obras")
+        // Create the Tipoobra
+        TipoobraDTO tipoobraDTO = tipoobraMapper.toDto(tipoobra);
+        restTipoobraMockMvc.perform(post("/api/tipoobras")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(tipoObraDTO)))
+            .content(TestUtil.convertObjectToJsonBytes(tipoobraDTO)))
             .andExpect(status().isCreated());
 
-        // Validate the TipoObra in the database
-        List<TipoObra> tipoObraList = tipoObraRepository.findAll();
-        assertThat(tipoObraList).hasSize(databaseSizeBeforeCreate + 1);
-        TipoObra testTipoObra = tipoObraList.get(tipoObraList.size() - 1);
-        assertThat(testTipoObra.getDescricao()).isEqualTo(DEFAULT_DESCRICAO);
-        assertThat(testTipoObra.getCategoria()).isEqualTo(DEFAULT_CATEGORIA);
-        assertThat(testTipoObra.getSubcategoria()).isEqualTo(DEFAULT_SUBCATEGORIA);
+        // Validate the Tipoobra in the database
+        List<Tipoobra> tipoobraList = tipoobraRepository.findAll();
+        assertThat(tipoobraList).hasSize(databaseSizeBeforeCreate + 1);
+        Tipoobra testTipoobra = tipoobraList.get(tipoobraList.size() - 1);
+        assertThat(testTipoobra.getDescricao()).isEqualTo(DEFAULT_DESCRICAO);
+        assertThat(testTipoobra.getCategoria()).isEqualTo(DEFAULT_CATEGORIA);
+        assertThat(testTipoobra.getSubcategoria()).isEqualTo(DEFAULT_SUBCATEGORIA);
     }
 
     @Test
     @Transactional
-    public void createTipoObraWithExistingId() throws Exception {
-        int databaseSizeBeforeCreate = tipoObraRepository.findAll().size();
+    public void createTipoobraWithExistingId() throws Exception {
+        int databaseSizeBeforeCreate = tipoobraRepository.findAll().size();
 
-        // Create the TipoObra with an existing ID
-        tipoObra.setId(1L);
-        TipoObraDTO tipoObraDTO = tipoObraMapper.toDto(tipoObra);
+        // Create the Tipoobra with an existing ID
+        tipoobra.setId(1L);
+        TipoobraDTO tipoobraDTO = tipoobraMapper.toDto(tipoobra);
 
         // An entity with an existing ID cannot be created, so this API call must fail
-        restTipoObraMockMvc.perform(post("/api/tipo-obras")
+        restTipoobraMockMvc.perform(post("/api/tipoobras")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(tipoObraDTO)))
+            .content(TestUtil.convertObjectToJsonBytes(tipoobraDTO)))
             .andExpect(status().isBadRequest());
 
         // Validate the Alice in the database
-        List<TipoObra> tipoObraList = tipoObraRepository.findAll();
-        assertThat(tipoObraList).hasSize(databaseSizeBeforeCreate);
+        List<Tipoobra> tipoobraList = tipoobraRepository.findAll();
+        assertThat(tipoobraList).hasSize(databaseSizeBeforeCreate);
     }
 
     @Test
     @Transactional
-    public void getAllTipoObras() throws Exception {
+    public void getAllTipoobras() throws Exception {
         // Initialize the database
-        tipoObraRepository.saveAndFlush(tipoObra);
+        tipoobraRepository.saveAndFlush(tipoobra);
 
-        // Get all the tipoObraList
-        restTipoObraMockMvc.perform(get("/api/tipo-obras?sort=id,desc"))
+        // Get all the tipoobraList
+        restTipoobraMockMvc.perform(get("/api/tipoobras?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(tipoObra.getId().intValue())))
+            .andExpect(jsonPath("$.[*].id").value(hasItem(tipoobra.getId().intValue())))
             .andExpect(jsonPath("$.[*].descricao").value(hasItem(DEFAULT_DESCRICAO.toString())))
             .andExpect(jsonPath("$.[*].categoria").value(hasItem(DEFAULT_CATEGORIA.toString())))
             .andExpect(jsonPath("$.[*].subcategoria").value(hasItem(DEFAULT_SUBCATEGORIA.toString())));
@@ -158,15 +158,15 @@ public class TipoObraResourceIntTest {
 
     @Test
     @Transactional
-    public void getTipoObra() throws Exception {
+    public void getTipoobra() throws Exception {
         // Initialize the database
-        tipoObraRepository.saveAndFlush(tipoObra);
+        tipoobraRepository.saveAndFlush(tipoobra);
 
-        // Get the tipoObra
-        restTipoObraMockMvc.perform(get("/api/tipo-obras/{id}", tipoObra.getId()))
+        // Get the tipoobra
+        restTipoobraMockMvc.perform(get("/api/tipoobras/{id}", tipoobra.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(tipoObra.getId().intValue()))
+            .andExpect(jsonPath("$.id").value(tipoobra.getId().intValue()))
             .andExpect(jsonPath("$.descricao").value(DEFAULT_DESCRICAO.toString()))
             .andExpect(jsonPath("$.categoria").value(DEFAULT_CATEGORIA.toString()))
             .andExpect(jsonPath("$.subcategoria").value(DEFAULT_SUBCATEGORIA.toString()));
@@ -174,112 +174,112 @@ public class TipoObraResourceIntTest {
 
     @Test
     @Transactional
-    public void getNonExistingTipoObra() throws Exception {
-        // Get the tipoObra
-        restTipoObraMockMvc.perform(get("/api/tipo-obras/{id}", Long.MAX_VALUE))
+    public void getNonExistingTipoobra() throws Exception {
+        // Get the tipoobra
+        restTipoobraMockMvc.perform(get("/api/tipoobras/{id}", Long.MAX_VALUE))
             .andExpect(status().isNotFound());
     }
 
     @Test
     @Transactional
-    public void updateTipoObra() throws Exception {
+    public void updateTipoobra() throws Exception {
         // Initialize the database
-        tipoObraRepository.saveAndFlush(tipoObra);
-        int databaseSizeBeforeUpdate = tipoObraRepository.findAll().size();
+        tipoobraRepository.saveAndFlush(tipoobra);
+        int databaseSizeBeforeUpdate = tipoobraRepository.findAll().size();
 
-        // Update the tipoObra
-        TipoObra updatedTipoObra = tipoObraRepository.findOne(tipoObra.getId());
-        updatedTipoObra
+        // Update the tipoobra
+        Tipoobra updatedTipoobra = tipoobraRepository.findOne(tipoobra.getId());
+        updatedTipoobra
             .descricao(UPDATED_DESCRICAO)
             .categoria(UPDATED_CATEGORIA)
             .subcategoria(UPDATED_SUBCATEGORIA);
-        TipoObraDTO tipoObraDTO = tipoObraMapper.toDto(updatedTipoObra);
+        TipoobraDTO tipoobraDTO = tipoobraMapper.toDto(updatedTipoobra);
 
-        restTipoObraMockMvc.perform(put("/api/tipo-obras")
+        restTipoobraMockMvc.perform(put("/api/tipoobras")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(tipoObraDTO)))
+            .content(TestUtil.convertObjectToJsonBytes(tipoobraDTO)))
             .andExpect(status().isOk());
 
-        // Validate the TipoObra in the database
-        List<TipoObra> tipoObraList = tipoObraRepository.findAll();
-        assertThat(tipoObraList).hasSize(databaseSizeBeforeUpdate);
-        TipoObra testTipoObra = tipoObraList.get(tipoObraList.size() - 1);
-        assertThat(testTipoObra.getDescricao()).isEqualTo(UPDATED_DESCRICAO);
-        assertThat(testTipoObra.getCategoria()).isEqualTo(UPDATED_CATEGORIA);
-        assertThat(testTipoObra.getSubcategoria()).isEqualTo(UPDATED_SUBCATEGORIA);
+        // Validate the Tipoobra in the database
+        List<Tipoobra> tipoobraList = tipoobraRepository.findAll();
+        assertThat(tipoobraList).hasSize(databaseSizeBeforeUpdate);
+        Tipoobra testTipoobra = tipoobraList.get(tipoobraList.size() - 1);
+        assertThat(testTipoobra.getDescricao()).isEqualTo(UPDATED_DESCRICAO);
+        assertThat(testTipoobra.getCategoria()).isEqualTo(UPDATED_CATEGORIA);
+        assertThat(testTipoobra.getSubcategoria()).isEqualTo(UPDATED_SUBCATEGORIA);
     }
 
     @Test
     @Transactional
-    public void updateNonExistingTipoObra() throws Exception {
-        int databaseSizeBeforeUpdate = tipoObraRepository.findAll().size();
+    public void updateNonExistingTipoobra() throws Exception {
+        int databaseSizeBeforeUpdate = tipoobraRepository.findAll().size();
 
-        // Create the TipoObra
-        TipoObraDTO tipoObraDTO = tipoObraMapper.toDto(tipoObra);
+        // Create the Tipoobra
+        TipoobraDTO tipoobraDTO = tipoobraMapper.toDto(tipoobra);
 
         // If the entity doesn't have an ID, it will be created instead of just being updated
-        restTipoObraMockMvc.perform(put("/api/tipo-obras")
+        restTipoobraMockMvc.perform(put("/api/tipoobras")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(tipoObraDTO)))
+            .content(TestUtil.convertObjectToJsonBytes(tipoobraDTO)))
             .andExpect(status().isCreated());
 
-        // Validate the TipoObra in the database
-        List<TipoObra> tipoObraList = tipoObraRepository.findAll();
-        assertThat(tipoObraList).hasSize(databaseSizeBeforeUpdate + 1);
+        // Validate the Tipoobra in the database
+        List<Tipoobra> tipoobraList = tipoobraRepository.findAll();
+        assertThat(tipoobraList).hasSize(databaseSizeBeforeUpdate + 1);
     }
 
     @Test
     @Transactional
-    public void deleteTipoObra() throws Exception {
+    public void deleteTipoobra() throws Exception {
         // Initialize the database
-        tipoObraRepository.saveAndFlush(tipoObra);
-        int databaseSizeBeforeDelete = tipoObraRepository.findAll().size();
+        tipoobraRepository.saveAndFlush(tipoobra);
+        int databaseSizeBeforeDelete = tipoobraRepository.findAll().size();
 
-        // Get the tipoObra
-        restTipoObraMockMvc.perform(delete("/api/tipo-obras/{id}", tipoObra.getId())
+        // Get the tipoobra
+        restTipoobraMockMvc.perform(delete("/api/tipoobras/{id}", tipoobra.getId())
             .accept(TestUtil.APPLICATION_JSON_UTF8))
             .andExpect(status().isOk());
 
         // Validate the database is empty
-        List<TipoObra> tipoObraList = tipoObraRepository.findAll();
-        assertThat(tipoObraList).hasSize(databaseSizeBeforeDelete - 1);
+        List<Tipoobra> tipoobraList = tipoobraRepository.findAll();
+        assertThat(tipoobraList).hasSize(databaseSizeBeforeDelete - 1);
     }
 
     @Test
     @Transactional
     public void equalsVerifier() throws Exception {
-        TestUtil.equalsVerifier(TipoObra.class);
-        TipoObra tipoObra1 = new TipoObra();
-        tipoObra1.setId(1L);
-        TipoObra tipoObra2 = new TipoObra();
-        tipoObra2.setId(tipoObra1.getId());
-        assertThat(tipoObra1).isEqualTo(tipoObra2);
-        tipoObra2.setId(2L);
-        assertThat(tipoObra1).isNotEqualTo(tipoObra2);
-        tipoObra1.setId(null);
-        assertThat(tipoObra1).isNotEqualTo(tipoObra2);
+        TestUtil.equalsVerifier(Tipoobra.class);
+        Tipoobra tipoobra1 = new Tipoobra();
+        tipoobra1.setId(1L);
+        Tipoobra tipoobra2 = new Tipoobra();
+        tipoobra2.setId(tipoobra1.getId());
+        assertThat(tipoobra1).isEqualTo(tipoobra2);
+        tipoobra2.setId(2L);
+        assertThat(tipoobra1).isNotEqualTo(tipoobra2);
+        tipoobra1.setId(null);
+        assertThat(tipoobra1).isNotEqualTo(tipoobra2);
     }
 
     @Test
     @Transactional
     public void dtoEqualsVerifier() throws Exception {
-        TestUtil.equalsVerifier(TipoObraDTO.class);
-        TipoObraDTO tipoObraDTO1 = new TipoObraDTO();
-        tipoObraDTO1.setId(1L);
-        TipoObraDTO tipoObraDTO2 = new TipoObraDTO();
-        assertThat(tipoObraDTO1).isNotEqualTo(tipoObraDTO2);
-        tipoObraDTO2.setId(tipoObraDTO1.getId());
-        assertThat(tipoObraDTO1).isEqualTo(tipoObraDTO2);
-        tipoObraDTO2.setId(2L);
-        assertThat(tipoObraDTO1).isNotEqualTo(tipoObraDTO2);
-        tipoObraDTO1.setId(null);
-        assertThat(tipoObraDTO1).isNotEqualTo(tipoObraDTO2);
+        TestUtil.equalsVerifier(TipoobraDTO.class);
+        TipoobraDTO tipoobraDTO1 = new TipoobraDTO();
+        tipoobraDTO1.setId(1L);
+        TipoobraDTO tipoobraDTO2 = new TipoobraDTO();
+        assertThat(tipoobraDTO1).isNotEqualTo(tipoobraDTO2);
+        tipoobraDTO2.setId(tipoobraDTO1.getId());
+        assertThat(tipoobraDTO1).isEqualTo(tipoobraDTO2);
+        tipoobraDTO2.setId(2L);
+        assertThat(tipoobraDTO1).isNotEqualTo(tipoobraDTO2);
+        tipoobraDTO1.setId(null);
+        assertThat(tipoobraDTO1).isNotEqualTo(tipoobraDTO2);
     }
 
     @Test
     @Transactional
     public void testEntityFromId() {
-        assertThat(tipoObraMapper.fromId(42L).getId()).isEqualTo(42);
-        assertThat(tipoObraMapper.fromId(null)).isNull();
+        assertThat(tipoobraMapper.fromId(42L).getId()).isEqualTo(42);
+        assertThat(tipoobraMapper.fromId(null)).isNull();
     }
 }

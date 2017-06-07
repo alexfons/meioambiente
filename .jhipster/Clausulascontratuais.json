@@ -42,7 +42,7 @@
             "fieldType": "Integer"
         }
     ],
-    "changelogDate": "20170607001836",
+    "changelogDate": "20170607205438",
     "entityTableName": "clausulascontratuais",
     "dto": "mapstruct",
     "pagination": "no",

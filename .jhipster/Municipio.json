@@ -11,7 +11,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170607114322",
+    "changelogDate": "20170607205515",
     "entityTableName": "municipio",
     "dto": "mapstruct",
     "pagination": "no",

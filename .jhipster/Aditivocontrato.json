@@ -23,7 +23,7 @@
             "fieldType": "BigDecimal"
         }
     ],
-    "changelogDate": "20170515105925",
+    "changelogDate": "20170607205426",
     "entityTableName": "aditivocontrato",
     "dto": "mapstruct",
     "pagination": "no",

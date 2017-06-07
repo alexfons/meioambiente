@@ -1,0 +1,37 @@
+{
+    "meioambienteApp": {
+        "certifConfor" : {
+            "home": {
+                "title": "Certif Confors",
+                "createLabel": "Criar novo Certif Confor",
+                "createOrEditLabel": "Criar ou editar Certif Confor"
+            },
+            "created": "Um novo Certif Confor é criado com o identificador {{ param }}",
+            "updated": "Um Certif Confor é atualizado com o identificador {{ param }}",
+            "deleted": "Um Certif Confor é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Certif Confor {{ id }}?"
+            },
+            "detail": {
+                "title": "Certif Confor"
+            },
+            "data": "Data",
+            "dataliberacao": "Dataliberacao",
+            "dataparalisacao": "Dataparalisacao",
+            "datareinicio": "Datareinicio",
+            "edital": "Edital",
+            "item": "Item",
+            "liberacao": "Liberacao",
+            "liberacaoadministrativamente": "Liberacaoadministrativamente",
+            "periodo": "Periodo",
+            "texto": "Texto",
+            "texto2": "Texto 2",
+            "obra": "Obra",
+            "tipo": "Tipo",
+            "tipocertifConfor": "Tipocertif Confor",
+            "informesCertifIrreg": "Informes Certif Irreg",
+            "notificacaosCertifIrreg": "Notificacaos Certif Irreg",
+            "ocorrenciasCertifIrreg": "Ocorrencias Certif Irreg"
+        }
+    }
+}

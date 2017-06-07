@@ -23,7 +23,7 @@
             "fieldType": "BigDecimal"
         }
     ],
-    "changelogDate": "20170607011400",
+    "changelogDate": "20170607205537",
     "entityTableName": "referenciacontrato",
     "dto": "mapstruct",
     "pagination": "no",

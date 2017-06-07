@@ -18,7 +18,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170607011351",
+    "changelogDate": "20170607205519",
     "entityTableName": "obraatividade",
     "dto": "mapstruct",
     "pagination": "no",

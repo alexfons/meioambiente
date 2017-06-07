@@ -56,7 +56,7 @@
             "fieldType": "BigDecimal"
         }
     ],
-    "changelogDate": "20170607015437",
+    "changelogDate": "20170607205506",
     "entityTableName": "lancamentos",
     "dto": "mapstruct",
     "pagination": "no",

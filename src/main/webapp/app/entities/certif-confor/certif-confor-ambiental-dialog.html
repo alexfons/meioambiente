@@ -1,0 +1,137 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myCertifConforLabel" data-translate="meioambienteApp.certifConfor.home.createOrEditLabel">Create or edit a Certif Confor</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.certifConfor.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.certifConfor.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.certifConfor.data" for="field_data">Data</label>
+                <div class="input-group">
+                    <input id="field_data" type="text" class="form-control" name="data" datetime-picker="{{dateformat}}" ng-model="vm.certifConfor.data" is-open="vm.datePickerOpenStatus.data"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('data')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.certifConfor.dataliberacao" for="field_dataliberacao">Dataliberacao</label>
+                <div class="input-group">
+                    <input id="field_dataliberacao" type="text" class="form-control" name="dataliberacao" datetime-picker="{{dateformat}}" ng-model="vm.certifConfor.dataliberacao" is-open="vm.datePickerOpenStatus.dataliberacao"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataliberacao')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.certifConfor.dataparalisacao" for="field_dataparalisacao">Dataparalisacao</label>
+                <div class="input-group">
+                    <input id="field_dataparalisacao" type="text" class="form-control" name="dataparalisacao" datetime-picker="{{dateformat}}" ng-model="vm.certifConfor.dataparalisacao" is-open="vm.datePickerOpenStatus.dataparalisacao"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataparalisacao')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.certifConfor.datareinicio" for="field_datareinicio">Datareinicio</label>
+                <div class="input-group">
+                    <input id="field_datareinicio" type="text" class="form-control" name="datareinicio" datetime-picker="{{dateformat}}" ng-model="vm.certifConfor.datareinicio" is-open="vm.datePickerOpenStatus.datareinicio"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datareinicio')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.certifConfor.edital" for="field_edital">Edital</label>
+            <input type="text" class="form-control" name="edital" id="field_edital"
+                    ng-model="vm.certifConfor.edital"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.certifConfor.item" for="field_item">Item</label>
+            <input type="text" class="form-control" name="item" id="field_item"
+                    ng-model="vm.certifConfor.item"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.certifConfor.liberacao" for="field_liberacao">Liberacao</label>
+            <input type="text" class="form-control" name="liberacao" id="field_liberacao"
+                    ng-model="vm.certifConfor.liberacao"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.certifConfor.liberacaoadministrativamente" for="field_liberacaoadministrativamente">Liberacaoadministrativamente</label>
+                <input type="checkbox" name="liberacaoadministrativamente" id="field_liberacaoadministrativamente"
+                          ng-model="vm.certifConfor.liberacaoadministrativamente"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.certifConfor.periodo" for="field_periodo">Periodo</label>
+            <input type="text" class="form-control" name="periodo" id="field_periodo"
+                    ng-model="vm.certifConfor.periodo"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.certifConfor.texto" for="field_texto">Texto</label>
+            <input type="text" class="form-control" name="texto" id="field_texto"
+                    ng-model="vm.certifConfor.texto"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="meioambienteApp.certifConfor.texto2" for="field_texto2">Texto 2</label>
+            <input type="text" class="form-control" name="texto2" id="field_texto2"
+                    ng-model="vm.certifConfor.texto2"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="meioambienteApp.certifConfor.obra" for="field_obra">Obra</label>
+            <select class="form-control" id="field_obra" name="obra" ng-model="vm.certifConfor.obraId" ng-options="obra.id as obra.id for obra in vm.obras"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.certifConfor.tipo" for="field_tipo">Tipo</label>
+            <select class="form-control" id="field_tipo" name="tipo" ng-model="vm.certifConfor.tipoId" ng-options="tipocertifConfor.id as tipocertifConfor.id for tipocertifConfor in vm.tipocertifconfors"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.certifConfor.tipocertifConfor" for="field_tipocertifConfor">Tipocertif Confor</label>
+            <select class="form-control" id="field_tipocertifConfor" name="tipocertifConfor" ng-model="vm.certifConfor.tipocertifConforId" ng-options="tipocertifConfor.id as tipocertifConfor.id for tipocertifConfor in vm.tipocertifconfors"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.certifConfor.informesCertifIrreg" for="field_informesCertifIrreg">Informes Certif Irreg</label>
+            <select class="form-control" id="field_informesCertifIrreg" multiple name="informesCertifIrreg" ng-model="vm.certifConfor.informesCertifIrregs" ng-options="informeCertifIrreg as informeCertifIrreg.id for informeCertifIrreg in vm.informecertifirregs track by informeCertifIrreg.id"></select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.certifConfor.notificacaosCertifIrreg" for="field_notificacaosCertifIrreg">Notificacaos Certif Irreg</label>
+            <select class="form-control" id="field_notificacaosCertifIrreg" multiple name="notificacaosCertifIrreg" ng-model="vm.certifConfor.notificacaosCertifIrregs" ng-options="notificacaoCertifIrreg as notificacaoCertifIrreg.id for notificacaoCertifIrreg in vm.notificacaocertifirregs track by notificacaoCertifIrreg.id"></select>
+        </div>
+        <div class="form-group">
+            <label data-translate="meioambienteApp.certifConfor.ocorrenciasCertifIrreg" for="field_ocorrenciasCertifIrreg">Ocorrencias Certif Irreg</label>
+            <select class="form-control" id="field_ocorrenciasCertifIrreg" multiple name="ocorrenciasCertifIrreg" ng-model="vm.certifConfor.ocorrenciasCertifIrregs" ng-options="ocorrenciaCertifIrreg as ocorrenciaCertifIrreg.id for ocorrenciaCertifIrreg in vm.ocorrenciacertifirregs track by ocorrenciaCertifIrreg.id"></select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

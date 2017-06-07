@@ -18,7 +18,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170515105939",
+    "changelogDate": "20170607205502",
     "entityTableName": "historico",
     "dto": "mapstruct",
     "pagination": "no",

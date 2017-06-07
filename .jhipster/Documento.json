@@ -23,7 +23,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170515105937",
+    "changelogDate": "20170607205449",
     "entityTableName": "documento",
     "dto": "mapstruct",
     "pagination": "no",

@@ -72,7 +72,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170515105934",
+    "changelogDate": "20170607205533",
     "entityTableName": "projeto",
     "dto": "mapstruct",
     "pagination": "no",

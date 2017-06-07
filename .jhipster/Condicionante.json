@@ -27,7 +27,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170515105936",
+    "changelogDate": "20170607205440",
     "entityTableName": "condicionante",
     "dto": "mapstruct",
     "pagination": "no",

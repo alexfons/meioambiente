@@ -30,7 +30,7 @@
             "fieldType": "Float"
         }
     ],
-    "changelogDate": "20170515105945",
+    "changelogDate": "20170607205430",
     "entityTableName": "atividadeexecutadamensal",
     "dto": "mapstruct",
     "pagination": "no",

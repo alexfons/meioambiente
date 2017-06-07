@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Pagfuncionario.
+    -->
+    <changeSet id="20170607205528-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="contacontabilc1_id"
+                                 baseTableName="pagfuncionario"
+                                 constraintName="fk_pagfuncionario_contacontabilc1_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="planocontas"/>
+
+        <addForeignKeyConstraint baseColumnNames="contacontabilc2_id"
+                                 baseTableName="pagfuncionario"
+                                 constraintName="fk_pagfuncionario_contacontabilc2_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="planocontas"/>
+
+        <addForeignKeyConstraint baseColumnNames="contacontabild1_id"
+                                 baseTableName="pagfuncionario"
+                                 constraintName="fk_pagfuncionario_contacontabild1_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="planocontas"/>
+
+        <addForeignKeyConstraint baseColumnNames="contacontabild2_id"
+                                 baseTableName="pagfuncionario"
+                                 constraintName="fk_pagfuncionario_contacontabild2_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="planocontas"/>
+
+        <addForeignKeyConstraint baseColumnNames="divcontacontabilc1_id"
+                                 baseTableName="pagfuncionario"
+                                 constraintName="fk_pagfuncionario_divcontacontabilc1_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="planocontas"/>
+
+        <addForeignKeyConstraint baseColumnNames="divcontacontabild1_id"
+                                 baseTableName="pagfuncionario"
+                                 constraintName="fk_pagfuncionario_divcontacontabild1_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="planocontas"/>
+
+        <addForeignKeyConstraint baseColumnNames="juscontacontabilc1_id"
+                                 baseTableName="pagfuncionario"
+                                 constraintName="fk_pagfuncionario_juscontacontabilc1_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="planocontas"/>
+
+        <addForeignKeyConstraint baseColumnNames="juscontacontabild1_id"
+                                 baseTableName="pagfuncionario"
+                                 constraintName="fk_pagfuncionario_juscontacontabild1_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="planocontas"/>
+
+        <addForeignKeyConstraint baseColumnNames="fonte_id"
+                                 baseTableName="pagfuncionario"
+                                 constraintName="fk_pagfuncionario_fonte_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fonte"/>
+
+        <addForeignKeyConstraint baseColumnNames="idcategoriainversao_id"
+                                 baseTableName="pagfuncionario"
+                                 constraintName="fk_pagfuncionario_idcategoriainversao_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="categoriainversao"/>
+
+        <addForeignKeyConstraint baseColumnNames="idfuncionarios_id"
+                                 baseTableName="pagfuncionario"
+                                 constraintName="fk_pagfuncionario_idfuncionarios_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="funcionario"/>
+
+        <addForeignKeyConstraint baseColumnNames="idreferencia_id"
+                                 baseTableName="pagfuncionario"
+                                 constraintName="fk_pagfuncionario_idreferencia_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="referencia"/>
+
+    </changeSet>
+</databaseChangeLog>

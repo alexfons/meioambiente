@@ -30,7 +30,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170607015444",
+    "changelogDate": "20170607205513",
     "entityTableName": "movimentacao",
     "dto": "mapstruct",
     "pagination": "no",

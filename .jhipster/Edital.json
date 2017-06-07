@@ -79,7 +79,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170607011332",
+    "changelogDate": "20170607205450",
     "entityTableName": "edital",
     "dto": "mapstruct",
     "pagination": "no",

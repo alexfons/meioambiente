@@ -74,7 +74,7 @@
             "fieldType": "ZonedDateTime"
         }
     ],
-    "changelogDate": "20170607114327",
+    "changelogDate": "20170607205520",
     "entityTableName": "obrafisicomensal",
     "dto": "mapstruct",
     "pagination": "no",

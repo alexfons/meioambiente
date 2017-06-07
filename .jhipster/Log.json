@@ -22,7 +22,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170607015441",
+    "changelogDate": "20170607205510",
     "entityTableName": "log",
     "dto": "mapstruct",
     "pagination": "no",

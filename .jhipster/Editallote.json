@@ -38,7 +38,7 @@
             "fieldType": "BigDecimal"
         }
     ],
-    "changelogDate": "20170607011333",
+    "changelogDate": "20170607205451",
     "entityTableName": "editallote",
     "dto": "mapstruct",
     "pagination": "no",

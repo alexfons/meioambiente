@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Administrativo.
+    -->
+    <changeSet id="20170607205427-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="tipo_id"
+                                 baseTableName="administrativo"
+                                 constraintName="fk_administrativo_tipo_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tipoadministrativo"/>
+
+        <addForeignKeyConstraint baseColumnNames="obra_id"
+                                 baseTableName="administrativo"
+                                 constraintName="fk_administrativo_obra_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="obra"/>
+
+        <addForeignKeyConstraint baseColumnNames="administrativos_id"
+                                 baseTableName="administrativo_fotos"
+                                 constraintName="fk_administrativo_fotos_administrativos_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="administrativo"/>
+        <addForeignKeyConstraint baseColumnNames="fotos_id"
+                                 baseTableName="administrativo_fotos"
+                                 constraintName="fk_administrativo_fotos_fotos_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="foto"/>
+        
+        <addForeignKeyConstraint baseColumnNames="administrativos_id"
+                                 baseTableName="administrativo_docs"
+                                 constraintName="fk_administrativo_docs_administrativos_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="administrativo"/>
+        <addForeignKeyConstraint baseColumnNames="docs_id"
+                                 baseTableName="administrativo_docs"
+                                 constraintName="fk_administrativo_docs_docs_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="documento"/>
+        
+        <addForeignKeyConstraint baseColumnNames="administrativos_id"
+                                 baseTableName="administrativo_participantes"
+                                 constraintName="fk_administrativo_participantes_administrativos_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="administrativo"/>
+        <addForeignKeyConstraint baseColumnNames="participantes_id"
+                                 baseTableName="administrativo_participantes"
+                                 constraintName="fk_administrativo_participantes_participantes_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="participante"/>
+        
+    </changeSet>
+</databaseChangeLog>

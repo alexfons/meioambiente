@@ -7,7 +7,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170515105935",
+    "changelogDate": "20170607205527",
     "entityTableName": "orgaoemissor",
     "dto": "mapstruct",
     "pagination": "no",

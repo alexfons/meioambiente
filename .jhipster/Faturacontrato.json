@@ -94,7 +94,7 @@
             "fieldType": "BigDecimal"
         }
     ],
-    "changelogDate": "20170607011337",
+    "changelogDate": "20170607205455",
     "entityTableName": "faturacontrato",
     "dto": "mapstruct",
     "pagination": "no",

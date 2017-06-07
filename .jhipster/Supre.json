@@ -15,7 +15,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170607114353",
+    "changelogDate": "20170607205546",
     "entityTableName": "supre",
     "dto": "mapstruct",
     "pagination": "no",

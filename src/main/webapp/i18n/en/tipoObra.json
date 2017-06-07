@@ -1,19 +1,19 @@
 {
     "meioambienteApp": {
-        "tipoObra" : {
+        "tipoobra" : {
             "home": {
-                "title": "Tipo Obras",
-                "createLabel": "Create a new Tipo Obra",
-                "createOrEditLabel": "Create or edit a Tipo Obra"
+                "title": "Tipoobras",
+                "createLabel": "Create a new Tipoobra",
+                "createOrEditLabel": "Create or edit a Tipoobra"
             },
-            "created": "A new Tipo Obra is created with identifier {{ param }}",
-            "updated": "A Tipo Obra is updated with identifier {{ param }}",
-            "deleted": "A Tipo Obra is deleted with identifier {{ param }}",
+            "created": "A new Tipoobra is created with identifier {{ param }}",
+            "updated": "A Tipoobra is updated with identifier {{ param }}",
+            "deleted": "A Tipoobra is deleted with identifier {{ param }}",
             "delete": {
-                "question": "Are you sure you want to delete Tipo Obra {{ id }}?"
+                "question": "Are you sure you want to delete Tipoobra {{ id }}?"
             },
             "detail": {
-                "title": "Tipo Obra"
+                "title": "Tipoobra"
             },
             "descricao": "Descricao",
             "categoria": "Categoria",

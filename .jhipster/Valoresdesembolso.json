@@ -44,7 +44,7 @@
             "fieldType": "ZonedDateTime"
         }
     ],
-    "changelogDate": "20170607114405",
+    "changelogDate": "20170607205558",
     "entityTableName": "valoresdesembolso",
     "dto": "mapstruct",
     "pagination": "no",

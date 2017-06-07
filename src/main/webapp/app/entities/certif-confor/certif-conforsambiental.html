@@ -1,0 +1,106 @@
+<div>
+    <h2 data-translate="meioambienteApp.certifConfor.home.title">Certif Confors</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="certif-confor-ambiental.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="meioambienteApp.certifConfor.home.createLabel">
+                        Create new Certif Confor
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="meioambienteApp.certifConfor.data">Data</span></th>
+                    <th><span data-translate="meioambienteApp.certifConfor.dataliberacao">Dataliberacao</span></th>
+                    <th><span data-translate="meioambienteApp.certifConfor.dataparalisacao">Dataparalisacao</span></th>
+                    <th><span data-translate="meioambienteApp.certifConfor.datareinicio">Datareinicio</span></th>
+                    <th><span data-translate="meioambienteApp.certifConfor.edital">Edital</span></th>
+                    <th><span data-translate="meioambienteApp.certifConfor.item">Item</span></th>
+                    <th><span data-translate="meioambienteApp.certifConfor.liberacao">Liberacao</span></th>
+                    <th><span data-translate="meioambienteApp.certifConfor.liberacaoadministrativamente">Liberacaoadministrativamente</span></th>
+                    <th><span data-translate="meioambienteApp.certifConfor.periodo">Periodo</span></th>
+                    <th><span data-translate="meioambienteApp.certifConfor.texto">Texto</span></th>
+                    <th><span data-translate="meioambienteApp.certifConfor.texto2">Texto 2</span></th>
+                    <th><span data-translate="meioambienteApp.certifConfor.obra">Obra</span></th>
+                    <th><span data-translate="meioambienteApp.certifConfor.tipo">Tipo</span></th>
+                    <th><span data-translate="meioambienteApp.certifConfor.tipocertifConfor">Tipocertif Confor</span></th>
+                    <th><span data-translate="meioambienteApp.certifConfor.informesCertifIrreg">Informes Certif Irreg</span></th>
+                    <th><span data-translate="meioambienteApp.certifConfor.notificacaosCertifIrreg">Notificacaos Certif Irreg</span></th>
+                    <th><span data-translate="meioambienteApp.certifConfor.ocorrenciasCertifIrreg">Ocorrencias Certif Irreg</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="certifConfor in vm.certifConfors track by certifConfor.id">
+                    <td><a ui-sref="certif-confor-ambiental-detail({id:certifConfor.id})">{{certifConfor.id}}</a></td>
+                    <td>{{certifConfor.data | date:'medium'}}</td>
+                    <td>{{certifConfor.dataliberacao | date:'medium'}}</td>
+                    <td>{{certifConfor.dataparalisacao | date:'medium'}}</td>
+                    <td>{{certifConfor.datareinicio | date:'medium'}}</td>
+                    <td>{{certifConfor.edital}}</td>
+                    <td>{{certifConfor.item}}</td>
+                    <td>{{certifConfor.liberacao}}</td>
+                    <td>{{certifConfor.liberacaoadministrativamente}}</td>
+                    <td>{{certifConfor.periodo}}</td>
+                    <td>{{certifConfor.texto}}</td>
+                    <td>{{certifConfor.texto2}}</td>
+                    <td>
+                        <a ui-sref="obra-ambiental-detail({id:certifConfor.obraId})">{{certifConfor.obraId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="tipocertif-confor-ambiental-detail({id:certifConfor.tipoId})">{{certifConfor.tipoId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="tipocertif-confor-ambiental-detail({id:certifConfor.tipocertifConforId})">{{certifConfor.tipocertifConforId}}</a>
+                    </td>
+                    <td>
+                        <span ng-repeat="informesCertifIrreg in certifConfor.informesCertifIrregs">
+                            <a class="form-control-static" ui-sref="informe-certif-irreg-ambiental-detail({id: informesCertifIrreg.id})">{{informesCertifIrreg.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td>
+                        <span ng-repeat="notificacaosCertifIrreg in certifConfor.notificacaosCertifIrregs">
+                            <a class="form-control-static" ui-sref="notificacao-certif-irreg-ambiental-detail({id: notificacaosCertifIrreg.id})">{{notificacaosCertifIrreg.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td>
+                        <span ng-repeat="ocorrenciasCertifIrreg in certifConfor.ocorrenciasCertifIrregs">
+                            <a class="form-control-static" ui-sref="ocorrencia-certif-irreg-ambiental-detail({id: ocorrenciasCertifIrreg.id})">{{ocorrenciasCertifIrreg.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="certif-confor-ambiental-detail({id:certifConfor.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="certif-confor-ambiental.edit({id:certifConfor.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="certif-confor-ambiental.delete({id:certifConfor.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -14,7 +14,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170607114333",
+    "changelogDate": "20170607205526",
     "entityTableName": "ocorrenciapendencias",
     "dto": "mapstruct",
     "pagination": "no",

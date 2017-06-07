@@ -19,7 +19,7 @@
             "fieldType": "Float"
         }
     ],
-    "changelogDate": "20170607001844",
+    "changelogDate": "20170607205446",
     "entityTableName": "coordenada",
     "dto": "mapstruct",
     "pagination": "no",

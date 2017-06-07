@@ -20,7 +20,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170607001843",
+    "changelogDate": "20170607205445",
     "entityTableName": "contratoprojeto",
     "dto": "mapstruct",
     "pagination": "no",

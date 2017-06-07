@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Pagfuncionario.
+    -->
+    <changeSet id="20170607205528-1" author="jhipster">
+        <createTable tableName="pagfuncionario">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="datapagamento" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="idpagfuncionarios" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="nsolicitacao" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="percentual" type="decimal(10,2)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="salario" type="decimal(10,2)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="salariocontribuicao" type="decimal(10,2)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="salariototal" type="decimal(10,2)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="valorus" type="decimal(10,2)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contacontabilc1_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contacontabilc2_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contacontabild1_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="contacontabild2_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="divcontacontabilc1_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="divcontacontabild1_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="juscontacontabilc1_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="juscontacontabild1_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="fonte_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="idcategoriainversao_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="idfuncionarios_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="idreferencia_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="pagfuncionario" columnName="datapagamento" columnDataType="datetime"/>
+        
+    </changeSet>
+</databaseChangeLog>

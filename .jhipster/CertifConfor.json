@@ -1,0 +1,99 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "obra",
+            "otherEntityName": "obra",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "tipo",
+            "otherEntityName": "tipocertifConfor",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "tipocertifConfor",
+            "otherEntityName": "tipocertifConfor",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "informesCertifIrreg",
+            "otherEntityName": "informeCertifIrreg",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "notificacaosCertifIrreg",
+            "otherEntityName": "notificacaoCertifIrreg",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "ocorrenciasCertifIrreg",
+            "otherEntityName": "ocorrenciaCertifIrreg",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "data",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataliberacao",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataparalisacao",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "datareinicio",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "edital",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "item",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "liberacao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "liberacaoadministrativamente",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "periodo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "texto",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "texto2",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170607205437",
+    "entityTableName": "certif_confor",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "no",
+    "angularJSSuffix": "ambiental"
+}

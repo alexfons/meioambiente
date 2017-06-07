@@ -46,7 +46,7 @@
             "fieldType": "BigDecimal"
         }
     ],
-    "changelogDate": "20170607011347",
+    "changelogDate": "20170607205512",
     "entityTableName": "medicao",
     "dto": "mapstruct",
     "pagination": "no",

@@ -84,7 +84,7 @@
             "fieldType": "BigDecimal"
         }
     ],
-    "changelogDate": "20170607001845",
+    "changelogDate": "20170607205447",
     "entityTableName": "custosconcorrentes",
     "dto": "mapstruct",
     "pagination": "no",

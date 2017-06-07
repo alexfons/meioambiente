@@ -70,7 +70,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170515105940",
+    "changelogDate": "20170607205427",
     "entityTableName": "administrativo",
     "dto": "mapstruct",
     "pagination": "no",

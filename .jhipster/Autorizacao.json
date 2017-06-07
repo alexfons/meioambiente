@@ -220,7 +220,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170607001831",
+    "changelogDate": "20170607205433",
     "entityTableName": "autorizacao",
     "dto": "mapstruct",
     "pagination": "no",

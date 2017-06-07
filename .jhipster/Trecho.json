@@ -68,7 +68,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170515105932",
+    "changelogDate": "20170607205556",
     "entityTableName": "trecho",
     "dto": "mapstruct",
     "pagination": "no",

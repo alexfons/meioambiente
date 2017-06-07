@@ -42,7 +42,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170607114323",
+    "changelogDate": "20170607205516",
     "entityTableName": "notificacao",
     "dto": "mapstruct",
     "pagination": "no",

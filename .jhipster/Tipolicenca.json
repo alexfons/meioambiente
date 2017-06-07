@@ -15,7 +15,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170607015510",
+    "changelogDate": "20170607205553",
     "entityTableName": "tipolicenca",
     "dto": "mapstruct",
     "pagination": "no",

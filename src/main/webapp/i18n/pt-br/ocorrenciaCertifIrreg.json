@@ -1,0 +1,21 @@
+{
+    "meioambienteApp": {
+        "ocorrenciaCertifIrreg" : {
+            "home": {
+                "title": "Ocorrencia Certif Irregs",
+                "createLabel": "Criar novo Ocorrencia Certif Irreg",
+                "createOrEditLabel": "Criar ou editar Ocorrencia Certif Irreg"
+            },
+            "created": "Um novo Ocorrencia Certif Irreg é criado com o identificador {{ param }}",
+            "updated": "Um Ocorrencia Certif Irreg é atualizado com o identificador {{ param }}",
+            "deleted": "Um Ocorrencia Certif Irreg é deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Ocorrencia Certif Irreg {{ id }}?"
+            },
+            "detail": {
+                "title": "Ocorrencia Certif Irreg"
+            },
+            "ocorrencia": "Ocorrencia"
+        }
+    }
+}

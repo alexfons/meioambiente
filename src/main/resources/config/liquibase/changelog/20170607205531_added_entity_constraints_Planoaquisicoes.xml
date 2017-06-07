@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Planoaquisicoes.
+    -->
+    <changeSet id="20170607205531-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="fonte_id"
+                                 baseTableName="planoaquisicoes"
+                                 constraintName="fk_planoaquisicoes_fonte_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fonte"/>
+
+        <addForeignKeyConstraint baseColumnNames="idcontratoagente_id"
+                                 baseTableName="planoaquisicoes"
+                                 constraintName="fk_planoaquisicoes_idcontratoagente_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="contratoagente"/>
+
+        <addForeignKeyConstraint baseColumnNames="idedital_id"
+                                 baseTableName="planoaquisicoes"
+                                 constraintName="fk_planoaquisicoes_idedital_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="edital"/>
+
+    </changeSet>
+</databaseChangeLog>

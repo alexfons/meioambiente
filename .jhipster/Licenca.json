@@ -278,7 +278,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170607015438",
+    "changelogDate": "20170607205507",
     "entityTableName": "licenca",
     "dto": "mapstruct",
     "pagination": "no",

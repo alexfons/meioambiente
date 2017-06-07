@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Obrafisicomensal.
+    -->
+    <changeSet id="20170607205520-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="fisico_id"
+                                 baseTableName="obrafisicomensal"
+                                 constraintName="fk_obrafisicomensal_fisico_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fisico"/>
+
+        <addForeignKeyConstraint baseColumnNames="obrafisicomensals_id"
+                                 baseTableName="obrafisicomensal_atividadeexecutadamensals"
+                                 constraintName="fk_obrafisicomensal_atividadeexecutadamensals_obrafisicomensals_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="obrafisicomensal"/>
+        <addForeignKeyConstraint baseColumnNames="atividadeexecutadamensals_id"
+                                 baseTableName="obrafisicomensal_atividadeexecutadamensals"
+                                 constraintName="fk_obrafisicomensal_atividadeexecutadamensals_atividadeexecutadamensals_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="atividadeexecutadamensal"/>
+        
+    </changeSet>
+</databaseChangeLog>

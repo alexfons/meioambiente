@@ -114,7 +114,7 @@
             "fieldType": "BigDecimal"
         }
     ],
-    "changelogDate": "20170607001846",
+    "changelogDate": "20170607205448",
     "entityTableName": "desapropriacao",
     "dto": "mapstruct",
     "pagination": "no",

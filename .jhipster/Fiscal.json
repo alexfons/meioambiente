@@ -35,7 +35,7 @@
             "fieldType": "Long"
         }
     ],
-    "changelogDate": "20170515105931",
+    "changelogDate": "20170607205456",
     "entityTableName": "fiscal",
     "dto": "mapstruct",
     "pagination": "no",

@@ -15,7 +15,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170607114359",
+    "changelogDate": "20170607205552",
     "entityTableName": "tipocontrato",
     "dto": "mapstruct",
     "pagination": "no",

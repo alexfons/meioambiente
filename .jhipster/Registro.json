@@ -9,7 +9,7 @@
         }
     ],
     "fields": [],
-    "changelogDate": "20170607015500",
+    "changelogDate": "20170607205538",
     "entityTableName": "registro",
     "dto": "mapstruct",
     "pagination": "no",

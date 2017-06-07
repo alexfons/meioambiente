@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Autorizacao.
+    -->
+    <changeSet id="20170607205433-1" author="jhipster">
+        <createTable tableName="autorizacao">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="album" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="andamento" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="data" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="dataentregadocs" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="dataexpedicaoprorrogacao_1" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="dataexpedicaoprorrogacao_2" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="dataexpedicaoprorrogacao_3" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="datapedidoprorrogacao_1" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="datapedidoprorrogacao_2" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="datapedidoprorrogacao_3" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="datavalidadeprorrogacao_1" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="datavalidadeprorrogacao_2" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="datavalidadeprorrogacao_3" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="datavencimento" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="datavencimentoatual" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="descricao" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="docsentregues" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="fcei" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="fceidatapagamento" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="fceidataprotocolo" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="fceivalor" type="double">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="folder" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="inativo" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="kmfim" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="kminicio" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="lado" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="naoria" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="numero" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="numerooficioconcessaoprorrogacao_1" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="numerooficioconcessaoprorrogacao_2" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="numerooficioconcessaoprorrogacao_3" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="numerooficioprorrogacao_1" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="numerooficioprorrogacao_2" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="numerooficioprorrogacao_3" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="numeroprocesso" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="observacao" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="pendente" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="prazomes" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="prazovalidade" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="proprietario" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="reciboentregadocs" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="atividadelicenca_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="empresa_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="obra_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="orgaoemissor_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="projeto_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="tipoautorizacao_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="autorizacao" columnName="data" columnDataType="datetime"/>
+        <dropDefaultValue tableName="autorizacao" columnName="dataentregadocs" columnDataType="datetime"/>
+        <dropDefaultValue tableName="autorizacao" columnName="dataexpedicaoprorrogacao_1" columnDataType="datetime"/>
+        <dropDefaultValue tableName="autorizacao" columnName="dataexpedicaoprorrogacao_2" columnDataType="datetime"/>
+        <dropDefaultValue tableName="autorizacao" columnName="dataexpedicaoprorrogacao_3" columnDataType="datetime"/>
+        <dropDefaultValue tableName="autorizacao" columnName="datapedidoprorrogacao_1" columnDataType="datetime"/>
+        <dropDefaultValue tableName="autorizacao" columnName="datapedidoprorrogacao_2" columnDataType="datetime"/>
+        <dropDefaultValue tableName="autorizacao" columnName="datapedidoprorrogacao_3" columnDataType="datetime"/>
+        <dropDefaultValue tableName="autorizacao" columnName="datavalidadeprorrogacao_1" columnDataType="datetime"/>
+        <dropDefaultValue tableName="autorizacao" columnName="datavalidadeprorrogacao_2" columnDataType="datetime"/>
+        <dropDefaultValue tableName="autorizacao" columnName="datavalidadeprorrogacao_3" columnDataType="datetime"/>
+        <dropDefaultValue tableName="autorizacao" columnName="datavencimento" columnDataType="datetime"/>
+        <dropDefaultValue tableName="autorizacao" columnName="datavencimentoatual" columnDataType="datetime"/>
+        <dropDefaultValue tableName="autorizacao" columnName="fceidatapagamento" columnDataType="datetime"/>
+        <dropDefaultValue tableName="autorizacao" columnName="fceidataprotocolo" columnDataType="datetime"/>
+        
+        <createTable tableName="autorizacao_fotos">
+            <column name="fotos_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="autorizacaos_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="autorizacaos_id, fotos_id" tableName="autorizacao_fotos"/>
+        
+        <createTable tableName="autorizacao_docs">
+            <column name="docs_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="autorizacaos_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="autorizacaos_id, docs_id" tableName="autorizacao_docs"/>
+        
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity Solicitacao.
+    -->
+    <changeSet id="20170607205544-1" author="jhipster">
+        <createTable tableName="solicitacao">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="apresentamos" type="boolean">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="data" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="descricao" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="extenso" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="extenso_1" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="idsolicitacao" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="moeda" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="montante" type="decimal(10,2)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="nsolicitacao" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="oficio" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="solicitamos" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="idbanco_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>
+            <column name="id_contratoagente_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="solicitacao" columnName="data" columnDataType="datetime"/>
+        
+    </changeSet>
+</databaseChangeLog>

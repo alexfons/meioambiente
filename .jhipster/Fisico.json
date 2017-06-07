@@ -34,7 +34,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170607011339",
+    "changelogDate": "20170607205457",
     "entityTableName": "fisico",
     "dto": "mapstruct",
     "pagination": "no",

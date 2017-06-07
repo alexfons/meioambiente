@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Pendencias.
+    -->
+    <changeSet id="20170607205530-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="obra_id"
+                                 baseTableName="pendencias"
+                                 constraintName="fk_pendencias_obra_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="obra"/>
+
+        <addForeignKeyConstraint baseColumnNames="pendencias_id"
+                                 baseTableName="pendencias_fotos"
+                                 constraintName="fk_pendencias_fotos_pendencias_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pendencias"/>
+        <addForeignKeyConstraint baseColumnNames="fotos_id"
+                                 baseTableName="pendencias_fotos"
+                                 constraintName="fk_pendencias_fotos_fotos_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="foto"/>
+        
+        <addForeignKeyConstraint baseColumnNames="pendencias_id"
+                                 baseTableName="pendencias_ocorrenciaspendencias"
+                                 constraintName="fk_pendencias_ocorrenciaspendencias_pendencias_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pendencias"/>
+        <addForeignKeyConstraint baseColumnNames="ocorrenciaspendencias_id"
+                                 baseTableName="pendencias_ocorrenciaspendencias"
+                                 constraintName="fk_pendencias_ocorrenciaspendencias_ocorrenciaspendencias_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="ocorrenciapendencias"/>
+        
+    </changeSet>
+</databaseChangeLog>

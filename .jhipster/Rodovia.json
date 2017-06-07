@@ -7,7 +7,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170607001909",
+    "changelogDate": "20170607205542",
     "entityTableName": "rodovia",
     "dto": "mapstruct",
     "pagination": "no",

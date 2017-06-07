@@ -79,7 +79,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170607001833",
+    "changelogDate": "20170607205435",
     "entityTableName": "banco",
     "dto": "mapstruct",
     "pagination": "no",

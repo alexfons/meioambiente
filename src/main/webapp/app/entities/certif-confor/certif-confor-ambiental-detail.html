@@ -1,0 +1,93 @@
+
+<div>
+    <h2><span data-translate="meioambienteApp.certifConfor.detail.title">Certif Confor</span> {{vm.certifConfor.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="meioambienteApp.certifConfor.data">Data</span></dt>
+        <dd>
+            <span>{{vm.certifConfor.data | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.certifConfor.dataliberacao">Dataliberacao</span></dt>
+        <dd>
+            <span>{{vm.certifConfor.dataliberacao | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.certifConfor.dataparalisacao">Dataparalisacao</span></dt>
+        <dd>
+            <span>{{vm.certifConfor.dataparalisacao | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.certifConfor.datareinicio">Datareinicio</span></dt>
+        <dd>
+            <span>{{vm.certifConfor.datareinicio | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.certifConfor.edital">Edital</span></dt>
+        <dd>
+            <span>{{vm.certifConfor.edital}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.certifConfor.item">Item</span></dt>
+        <dd>
+            <span>{{vm.certifConfor.item}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.certifConfor.liberacao">Liberacao</span></dt>
+        <dd>
+            <span>{{vm.certifConfor.liberacao}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.certifConfor.liberacaoadministrativamente">Liberacaoadministrativamente</span></dt>
+        <dd>
+            <span>{{vm.certifConfor.liberacaoadministrativamente}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.certifConfor.periodo">Periodo</span></dt>
+        <dd>
+            <span>{{vm.certifConfor.periodo}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.certifConfor.texto">Texto</span></dt>
+        <dd>
+            <span>{{vm.certifConfor.texto}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.certifConfor.texto2">Texto 2</span></dt>
+        <dd>
+            <span>{{vm.certifConfor.texto2}}</span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.certifConfor.obra">Obra</span></dt>
+        <dd>
+            <a ui-sref="obra-ambiental-detail({id:vm.certifConfor.obraId})">{{vm.certifConfor.obraId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.certifConfor.tipo">Tipo</span></dt>
+        <dd>
+            <a ui-sref="tipocertif-confor-ambiental-detail({id:vm.certifConfor.tipoId})">{{vm.certifConfor.tipoId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.certifConfor.tipocertifConfor">Tipocertif Confor</span></dt>
+        <dd>
+            <a ui-sref="tipocertif-confor-ambiental-detail({id:vm.certifConfor.tipocertifConforId})">{{vm.certifConfor.tipocertifConforId}}</a>
+        </dd>
+        <dt><span data-translate="meioambienteApp.certifConfor.informesCertifIrreg">Informes Certif Irreg</span></dt>
+        <dd>
+            <span ng-repeat="informesCertifIrreg in vm.certifConfor.informesCertifIrregs">
+                <a ui-sref="informe-certif-irreg-ambiental-detail({id: informesCertifIrreg.id})">{{informesCertifIrreg.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.certifConfor.notificacaosCertifIrreg">Notificacaos Certif Irreg</span></dt>
+        <dd>
+            <span ng-repeat="notificacaosCertifIrreg in vm.certifConfor.notificacaosCertifIrregs">
+                <a ui-sref="notificacao-certif-irreg-ambiental-detail({id: notificacaosCertifIrreg.id})">{{notificacaosCertifIrreg.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="meioambienteApp.certifConfor.ocorrenciasCertifIrreg">Ocorrencias Certif Irreg</span></dt>
+        <dd>
+            <span ng-repeat="ocorrenciasCertifIrreg in vm.certifConfor.ocorrenciasCertifIrregs">
+                <a ui-sref="ocorrencia-certif-irreg-ambiental-detail({id: ocorrenciasCertifIrreg.id})">{{ocorrenciasCertifIrreg.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="certif-confor-ambiental-detail.edit({id:vm.certifConfor.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

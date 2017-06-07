@@ -254,7 +254,7 @@
             "fieldType": "ZonedDateTime"
         }
     ],
-    "changelogDate": "20170515105947",
+    "changelogDate": "20170607205432",
     "entityTableName": "auc",
     "dto": "mapstruct",
     "pagination": "infinite-scroll",

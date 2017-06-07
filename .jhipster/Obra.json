@@ -64,7 +64,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170515105941",
+    "changelogDate": "20170607205518",
     "entityTableName": "obra",
     "dto": "mapstruct",
     "pagination": "infinite-scroll",

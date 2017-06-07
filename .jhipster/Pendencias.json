@@ -46,7 +46,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170607114337",
+    "changelogDate": "20170607205530",
     "entityTableName": "pendencias",
     "dto": "mapstruct",
     "pagination": "no",

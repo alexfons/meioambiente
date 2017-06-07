@@ -51,7 +51,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170515105933",
+    "changelogDate": "20170607205452",
     "entityTableName": "empresa",
     "dto": "mapstruct",
     "pagination": "no",

@@ -23,7 +23,7 @@
             "fieldType": "BigDecimal"
         }
     ],
-    "changelogDate": "20170607001907",
+    "changelogDate": "20170607205536",
     "entityTableName": "referencia",
     "dto": "mapstruct",
     "pagination": "no",

@@ -23,7 +23,7 @@
             "fieldType": "Integer"
         }
     ],
-    "changelogDate": "20170607001857",
+    "changelogDate": "20170607205514",
     "entityTableName": "natureza",
     "dto": "mapstruct",
     "pagination": "no",

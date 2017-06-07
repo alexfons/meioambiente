@@ -51,7 +51,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170515105929",
+    "changelogDate": "20170607205500",
     "entityTableName": "foto",
     "dto": "mapstruct",
     "pagination": "pagination",

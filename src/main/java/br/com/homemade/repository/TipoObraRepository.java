@@ -1,15 +1,15 @@
 package br.com.homemade.repository;
 
-import br.com.homemade.domain.TipoObra;
+import br.com.homemade.domain.Tipoobra;
 
 import org.springframework.data.jpa.repository.*;
 
 import java.util.List;
 
 /**
- * Spring Data JPA repository for the TipoObra entity.
+ * Spring Data JPA repository for the Tipoobra entity.
  */
 @SuppressWarnings("unused")
-public interface TipoObraRepository extends JpaRepository<TipoObra,Long> {
+public interface TipoobraRepository extends JpaRepository<Tipoobra,Long> {
 
 }

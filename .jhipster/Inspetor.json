@@ -35,7 +35,7 @@
             "fieldType": "Long"
         }
     ],
-    "changelogDate": "20170515105930",
+    "changelogDate": "20170607205505",
     "entityTableName": "inspetor",
     "dto": "mapstruct",
     "pagination": "no",

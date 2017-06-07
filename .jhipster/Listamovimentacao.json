@@ -40,7 +40,7 @@
             "fieldType": "BigDecimal"
         }
     ],
-    "changelogDate": "20170607015440",
+    "changelogDate": "20170607205509",
     "entityTableName": "listamovimentacao",
     "dto": "mapstruct",
     "pagination": "no",

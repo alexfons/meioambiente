@@ -11,7 +11,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170515105944",
+    "changelogDate": "20170607205429",
     "entityTableName": "atividade",
     "dto": "mapstruct",
     "pagination": "no",

@@ -14,7 +14,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170515105928",
+    "changelogDate": "20170607205522",
     "entityTableName": "ocorrenciaapresentacao",
     "dto": "mapstruct",
     "pagination": "no",

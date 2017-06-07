@@ -18,7 +18,7 @@
             "fieldType": "String"
         }
     ],
-    "changelogDate": "20170607015505",
+    "changelogDate": "20170607205547",
     "entityTableName": "tabela",
     "dto": "mapstruct",
     "pagination": "no",
