@@ -13,12 +13,12 @@
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
 
-eureka:
-    client:
-        enabled: true
-    instance:
-        appname: meioambiente
-        instanceId: meioambiente:${spring.application.instance-id:${random.value}}
+#eureka:
+#    client:
+#        enabled: true
+#    instance:
+#        appname: meioambiente
+#        instanceId: meioambiente:${spring.application.instance-id:${random.value}}
 
 spring:
     application:
